@@ -20,6 +20,13 @@
   gap: var(--spacing-6);
 }
 
+.loader-logo-img {
+  height: 64px;
+  width: auto;
+  margin-bottom: 1rem;
+  object-fit: contain;
+}
+
 .loader-logo h2 {
   font-family: var(--font-heading);
   color: var(--text-primary);
