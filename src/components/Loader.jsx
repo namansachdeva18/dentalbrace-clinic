@@ -8,37 +8,40 @@ const Loader = ({ onComplete }) => {
   const lineRef = useRef(null);
 
   useEffect(() => {
-    const tl = gsap.timeline({
-      onComplete: onComplete
-    });
+    try {
+      const tl = gsap.timeline({
+        onComplete: onComplete
+      });
 
-    // Initial state setup
-    gsap.set(lineRef.current, { scaleX: 0, transformOrigin: "left center" });
-    
-    // Animation sequence
-    tl.to(logoRef.current, {
-      opacity: 1,
-      y: 0,
-      duration: 0.5,
-      ease: "power2.out"
-    })
-    .to(lineRef.current, {
-      scaleX: 1,
-      duration: 0.6,
-      ease: "power2.inOut"
-    })
-    .to(logoRef.current, {
-      opacity: 0,
-      y: -20,
-      duration: 0.3,
-      ease: "power2.in"
-    }, "+=0.1")
-    .to(loaderRef.current, {
-      opacity: 0,
-      duration: 0.4,
-      ease: "power2.inOut"
-    });
-
+      gsap.set(lineRef.current, { scaleX: 0, transformOrigin: "left center" });
+      
+      tl.to(logoRef.current, {
+        opacity: 1,
+        y: 0,
+        duration: 0.5,
+        ease: "power2.out"
+      })
+      .to(lineRef.current, {
+        scaleX: 1,
+        duration: 0.6,
+        ease: "power2.inOut"
+      })
+      .to(logoRef.current, {
+        opacity: 0,
+        y: -20,
+        duration: 0.3,
+        ease: "power2.in"
+      }, "+=0.1")
+      .to(loaderRef.current, {
+        opacity: 0,
+        duration: 0.4,
+        ease: "power2.inOut"
+      });
+    } catch (e) {
+      // If GSAP fails on any device, immediately call onComplete
+      // so the app never stays invisible
+      onComplete();
+    }
   }, [onComplete]);
 
   return (

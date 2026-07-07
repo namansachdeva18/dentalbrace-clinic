@@ -8,6 +8,15 @@ import './App.css';
 function App() {
   const [loading, setLoading] = useState(true);
 
+  // Safety net: if Loader's GSAP animation fails on slow mobile devices,
+  // force show the app after 3 seconds so the screen is never permanently blank.
+  useEffect(() => {
+    const safetyTimer = setTimeout(() => {
+      setLoading(false);
+    }, 3000);
+    return () => clearTimeout(safetyTimer);
+  }, []);
+
   useEffect(() => {
     if (loading) {
       document.body.style.overflow = 'hidden';
