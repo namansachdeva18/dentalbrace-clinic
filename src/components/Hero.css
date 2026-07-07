@@ -366,7 +366,8 @@
   }
 
   .hero-image-wrapper {
-    min-height: 250px;
-    height: 60vw; /* Keep it proportional on mobile so sides don't crop */
+    min-height: auto;
+    height: auto;
+    aspect-ratio: 16 / 9; /* Perfect widescreen ratio, shows full clinic without cropping */
   }
 }
