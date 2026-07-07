@@ -97,7 +97,6 @@ const PatientGallery = () => {
   const headingRef  = useRef(null);
   const gridRef     = useRef(null);
   const cardsRef    = useRef([]);
-  cardsRef.current  = [];
 
   const [lightbox, setLightbox]   = useState(null); // index of open image
 
@@ -165,9 +164,16 @@ const PatientGallery = () => {
     return () => ctx.revert();
   }, []);
 
+  const openLightbox  = (idx) => { setLightbox(idx); };
+  const closeLightbox = ()    => setLightbox(null);
+  const navLightbox   = (dir) => {
+    setLightbox(prev => (prev + dir + galleryItems.length) % galleryItems.length);
+  };
+
   // ── Lightbox keyboard nav ─────────────────────────────────────────────────
   useEffect(() => {
-    if (lightbox === null || galleryItems.length === 0) return;
+    if (lightbox === null) return;
+    document.body.style.overflow = 'hidden'; // lock scroll
 
     const handleKey = (e) => {
       if (e.key === 'Escape')     closeLightbox();
@@ -175,14 +181,11 @@ const PatientGallery = () => {
       if (e.key === 'ArrowLeft')  navLightbox(-1);
     };
     window.addEventListener('keydown', handleKey);
-    return () => window.removeEventListener('keydown', handleKey);
+    return () => {
+      document.body.style.overflow = 'auto'; // unlock scroll
+      window.removeEventListener('keydown', handleKey);
+    };
   }, [lightbox]);
-
-  const openLightbox  = (idx) => { setLightbox(idx); };
-  const closeLightbox = ()    => setLightbox(null);
-  const navLightbox   = (dir) => {
-    setLightbox(prev => (prev + dir + galleryItems.length) % galleryItems.length);
-  };
 
   const addRef = (el) => { if (el) cardsRef.current.push(el); };
 

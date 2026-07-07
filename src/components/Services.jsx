@@ -71,7 +71,6 @@ const Services = () => {
   const sectionRef = useRef(null);
   const headingRef = useRef(null);
   const cardsRef = useRef([]);
-  cardsRef.current = [];
 
   useEffect(() => {
     const ctx = gsap.context(() => {
