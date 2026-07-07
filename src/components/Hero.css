@@ -368,6 +368,10 @@
   .hero-image-wrapper {
     min-height: auto;
     height: auto;
-    aspect-ratio: 16 / 9; /* Perfect widescreen ratio, shows full clinic without cropping */
+    aspect-ratio: auto;
+  }
+
+  .hero-image {
+    height: auto; /* Let the image naturally define its height, zero cropping! */
   }
 }
