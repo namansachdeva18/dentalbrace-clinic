@@ -1,0 +1,66 @@
+.mb-16 { margin-bottom: var(--spacing-16); }
+
+.specialists-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-12);
+}
+
+.doctor-card {
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.doctor-info {
+  padding: var(--spacing-8);
+  flex-grow: 1;
+}
+
+.doctor-name {
+  font-family: var(--font-heading);
+  font-size: 1.75rem;
+  margin-bottom: 0.25rem;
+}
+
+.doctor-title {
+  font-weight: 600;
+  margin-bottom: var(--spacing-6);
+  font-size: 1.1rem;
+}
+
+.qualifications {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: var(--spacing-8);
+  color: var(--text-secondary);
+}
+
+.qual-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.specialties-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.specialties-tags span {
+  padding: 0.25rem 0.75rem;
+  background-color: var(--bg-color);
+  border: 1px solid rgba(62, 39, 35, 0.1);
+  border-radius: var(--radius-full);
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+@media (min-width: 992px) {
+  .specialists-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

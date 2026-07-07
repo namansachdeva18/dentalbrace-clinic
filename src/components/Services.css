@@ -1,0 +1,107 @@
+.services {
+  background-color: var(--white);
+}
+
+.services-header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto var(--spacing-16);
+}
+
+.section-badge {
+  display: inline-block;
+  padding: 0.25rem 1rem;
+  background-color: rgba(245, 124, 0, 0.1);
+  color: var(--accent-color);
+  border-radius: var(--radius-full);
+  font-weight: 600;
+  font-size: 0.875rem;
+  margin-bottom: var(--spacing-4);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.services-subtitle {
+  color: var(--text-secondary);
+  font-size: 1.125rem;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-6);
+}
+
+.service-card {
+  padding: var(--spacing-8);
+  border-radius: var(--radius-lg);
+  border: 1px solid transparent;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.2s ease;
+  opacity: 1;
+}
+
+.service-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--accent-color);
+}
+
+.service-icon {
+  margin-bottom: var(--spacing-6);
+  padding: 1rem;
+  background: rgba(245, 130, 32, 0.1);
+  color: var(--accent-color);
+  border-radius: var(--radius-md);
+  display: inline-flex;
+  width: 64px;
+  height: 64px;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.service-card:hover .service-icon {
+  background: var(--accent-color);
+  color: var(--white);
+}
+
+.service-title {
+  font-size: 1.5rem;
+  margin-bottom: var(--spacing-4);
+}
+
+.service-desc {
+  color: var(--text-secondary);
+  margin-bottom: var(--spacing-8);
+  flex-grow: 1;
+}
+
+.service-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  color: var(--accent-color);
+  margin-top: auto;
+  transition: gap 0.3s ease;
+}
+
+.service-link:hover {
+  gap: 0.75rem;
+}
+
+@media (min-width: 768px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .services-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

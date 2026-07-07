@@ -1,0 +1,264 @@
+/* src/index.css */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+:root {
+  /* Premium Healthcare Color System */
+  --bg-ivory: #FFF9F1;     /* Primary Background */
+  --bg-white: #FFFFFF;     /* Secondary Background / Cards */
+  --bg-cream: #FCF5E9;     /* Alternate Section Background */
+  --bg-navy: #0F3D3E;      /* Deep Navy/Teal for contrast/dark sections */
+  
+  --text-primary: #2E1F1B; /* Rich Dark Brown */
+  --text-secondary: #6B6B6B; /* Medium Warm Gray */
+  
+  --accent-color: #F58220; /* Warm Dental Orange */
+  --accent-hover: #E87413;
+  
+  --border-color: #EFE7DA;
+  --white: #FFFFFF;
+  
+  /* Setting the default body background to the Primary Background */
+  --bg-color: var(--bg-ivory); 
+  
+  /* Typography */
+  --font-heading: 'Outfit', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  
+  /* Luxury Shadows */
+  --shadow-sm: 0 4px 14px rgba(46, 31, 27, 0.03);
+  --shadow-md: 0 10px 30px rgba(46, 31, 27, 0.06);
+  --shadow-lg: 0 20px 40px rgba(46, 31, 27, 0.08);
+  
+  /* Border Radius (Premium Pill/Soft Card Look) */
+  --radius-sm: 0.75rem;   /* 12px */
+  --radius-md: 1rem;      /* 16px */
+  --radius-lg: 1.5rem;    /* 24px - Used for all major cards */
+  --radius-full: 9999px;  /* Pill shape for buttons */
+
+  /* Spacing System */
+  --spacing-1: 0.25rem;
+  --spacing-2: 0.5rem;
+  --spacing-3: 0.75rem;
+  --spacing-4: 1rem;
+  --spacing-6: 1.5rem;
+  --spacing-8: 2rem;
+  --spacing-12: 3rem;
+  --spacing-16: 4rem;
+  --spacing-24: 6rem;
+
+  /* Architectural Spacing */
+  --container-max: 1200px;
+  --container-pad: 1.5rem;
+  --section-pad-y: 56px;
+  --section-pad-y-lg: 96px;
+  --grid-gap: var(--spacing-8);
+  --grid-gap-lg: var(--spacing-12);
+  --card-pad: var(--spacing-8); /* 32px padding on cards */
+  --header-height: 90px;
+
+  /* Section badge shared style */
+  --badge-bg: rgba(245, 130, 32, 0.1);
+  --badge-border: rgba(245, 130, 32, 0.25);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--header-height); /* Ensure sticky header doesn't overlap anchors */
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+h1 {
+  font-family: var(--font-heading);
+  font-size: clamp(3rem, 6vw, 4.5rem);
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.02em;
+}
+
+h2 {
+  font-family: var(--font-heading);
+  font-size: clamp(2.2rem, 4vw, 3rem);
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.01em;
+}
+
+h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  line-height: 1.2;
+  margin-bottom: var(--spacing-4);
+  color: var(--text-primary);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--container-pad);
+}
+
+/* Utilities */
+.text-center { text-align: center; }
+.text-primary { color: var(--text-primary); }
+.text-accent { color: var(--accent-color); }
+.text-secondary { color: var(--text-secondary); }
+
+/* Background Utilities */
+.bg-ivory { background-color: var(--bg-ivory); }
+.bg-cream { background-color: var(--bg-cream); }
+.bg-white { background-color: var(--bg-white); }
+/* Alias for backward compatibility */
+.bg-secondary { background-color: var(--bg-cream); }
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.85rem 2rem;
+  font-family: var(--font-heading);
+  font-weight: 500;
+  font-size: 1.05rem;
+  border-radius: var(--radius-full); /* Pill shape */
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: none;
+  gap: 0.5rem;
+  text-decoration: none;
+}
+
+.btn-primary {
+  background-color: var(--accent-color);
+  color: var(--white);
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-primary:hover {
+  background-color: var(--accent-hover);
+  transform: scale(1.02); /* Subtle scale instead of translate */
+  box-shadow: var(--shadow-md);
+}
+
+.btn-outline {
+  background-color: var(--white);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-outline:hover {
+  background-color: var(--bg-cream);
+  transform: scale(1.02);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+  animation: fadeIn 0.8s ease forwards;
+}
+
+/* Premium Utilities */
+/* The user requested less glassmorphism and more solid premium medical/Apple feel */
+.glass {
+  background: var(--bg-white);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
+}
+
+.shadow-soft {
+  box-shadow: var(--shadow-md);
+}
+
+.hover-elevate {
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.hover-elevate:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.section-padding {
+  padding: var(--section-pad-y) 0;
+}
+
+@media (min-width: 768px) {
+  .section-padding {
+    padding: var(--section-pad-y-lg) 0;
+  }
+}
+
+.heading-primary {
+  font-size: 2.5rem;
+  letter-spacing: -0.02em;
+}
+
+@media (min-width: 768px) {
+  .heading-primary {
+    font-size: 3.5rem;
+  }
+}
+
+/* ── Shared Section Badge ──────────────────────────────────── */
+.section-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.45rem 1.2rem;
+  background: rgba(245, 130, 32, 0.1);
+  border: 1px solid rgba(245, 130, 32, 0.25);
+  border-radius: var(--radius-full);
+  color: var(--accent-color);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+}
+
+/* ── Mobile header height adjustment ──────────────────────── */
+@media (max-width: 768px) {
+  :root {
+    --header-height: 70px;
+  }
+
+  html {
+    scroll-padding-top: 70px;
+  }
+}

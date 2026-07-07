@@ -1,0 +1,349 @@
+/* ============================================================
+   PATIENT GALLERY — PatientGallery.css
+   ============================================================ */
+
+.gallery-section {
+  position: relative;
+  padding: 8rem 0;
+  background: linear-gradient(180deg, #fdfbf7 0%, #ffffff 100%);
+  overflow: hidden;
+}
+
+/* ── Background decorative blobs ─────────────────────────── */
+.gallery-bg-blob {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+  filter: blur(80px);
+}
+.gallery-bg-blob--1 {
+  width: 600px; height: 600px;
+  top: -200px; right: -200px;
+  background: radial-gradient(circle, rgba(245,130,32,0.06) 0%, transparent 70%);
+}
+.gallery-bg-blob--2 {
+  width: 500px; height: 500px;
+  bottom: -150px; left: -150px;
+  background: radial-gradient(circle, rgba(15,61,62,0.05) 0%, transparent 70%);
+}
+
+/* ── Heading ─────────────────────────────────────────────── */
+.gallery-heading {
+  text-align: center;
+  margin-bottom: 4.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Grid (Masonry using CSS Columns) ────────────────────── */
+.pg-grid {
+  column-count: 3;
+  column-gap: 2rem;
+  position: relative;
+  z-index: 1;
+  padding: 1rem;
+}
+
+/* ── Card base ───────────────────────────────────────────── */
+.pg-card {
+  break-inside: avoid;
+  margin-bottom: 2rem;
+  border-radius: 24px;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  background: #ffffff;
+  border: 1px solid rgba(0,0,0,0.06);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.04), 0 5px 15px rgba(0,0,0,0.02);
+  transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+  will-change: transform, box-shadow;
+}
+
+.pg-card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 30px 60px rgba(245,130,32,0.15), 0 15px 25px rgba(0,0,0,0.05);
+  border-color: rgba(245,130,32,0.3);
+}
+
+.pg-img-wrapper {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  border-bottom: 1px solid rgba(0,0,0,0.03);
+}
+
+.pg-img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  max-height: 400px;
+}
+
+.pg-card:hover .pg-img {
+  transform: scale(1.08);
+}
+
+.pg-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(15, 61, 62, 0.7), rgba(15, 61, 62, 0.1));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.pg-card:hover .pg-overlay {
+  opacity: 1;
+}
+
+.pg-zoom-icon {
+  color: white;
+  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));
+  transform: scale(0.5);
+  opacity: 0;
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.pg-card:hover .pg-zoom-icon {
+  transform: scale(1);
+  opacity: 1;
+}
+
+/* ── Review Content ──────────────────────────────────────── */
+.pg-review-content {
+  padding: 2rem 1.8rem;
+  position: relative;
+  background: #ffffff;
+  z-index: 2;
+}
+
+/* Decorative Quote Icon */
+.pg-quote-mark {
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  font-size: 5rem;
+  line-height: 1;
+  font-family: serif;
+  color: rgba(245, 130, 32, 0.08);
+  font-weight: 900;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.pg-stars {
+  display: flex;
+  gap: 3px;
+  color: #ffb400;
+  margin-bottom: 1rem;
+}
+
+.pg-review-text {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+  font-style: italic;
+  position: relative;
+  z-index: 1;
+}
+
+.pg-reviewer-area {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid rgba(0,0,0,0.06);
+  padding-top: 1.25rem;
+  margin-top: auto;
+}
+
+.pg-reviewer-name {
+  font-weight: 800;
+  color: var(--text-primary);
+  font-size: 0.95rem;
+}
+
+.pg-label {
+  font-size: 0.75rem;
+  padding: 0.4rem 0.8rem;
+  background: rgba(245, 130, 32, 0.12);
+  color: var(--accent-color);
+  border-radius: var(--radius-full);
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+/* ── Lightbox ────────────────────────────────────────────── */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 15, 20, 0.95);
+  backdrop-filter: blur(15px);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: lightbox-in 0.3s ease-out forwards;
+}
+
+@keyframes lightbox-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.lightbox-content {
+  position: relative;
+  max-width: 95vw;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: lightbox-scale 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+@keyframes lightbox-scale {
+  from { transform: scale(0.9); opacity: 0; }
+  to   { transform: scale(1);    opacity: 1; }
+}
+
+.lightbox-img {
+  max-width: 100%;
+  max-height: 65vh;
+  border-radius: 16px;
+  object-fit: contain;
+  box-shadow: 0 40px 100px rgba(0,0,0,0.8);
+}
+
+.lightbox-review-panel {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 2rem;
+  margin-top: 1.5rem;
+  width: 100%;
+  max-width: 800px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+  position: relative;
+}
+
+.lightbox-stars {
+  display: flex;
+  gap: 4px;
+  color: #ffb400;
+  margin-bottom: 1rem;
+  justify-content: center;
+}
+
+.lightbox-review-text {
+  color: var(--text-secondary);
+  font-style: italic;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 1.15rem;
+  line-height: 1.6;
+}
+
+.lightbox-reviewer-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid rgba(0,0,0,0.08);
+  padding-top: 1.25rem;
+}
+
+.lightbox-reviewer-name {
+  font-weight: 800;
+  color: var(--text-primary);
+  font-size: 1.1rem;
+}
+
+.lightbox-counter {
+  color: rgba(0,0,0,0.4);
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.lightbox-close {
+  position: fixed;
+  top: 2rem;
+  right: 2rem;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.3);
+  border-radius: 50%;
+  width: 54px;
+  height: 54px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 10001;
+}
+
+.lightbox-close:hover {
+  background: #f58220;
+  border-color: #f58220;
+  transform: rotate(90deg);
+}
+
+.lightbox-nav {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.3);
+  border-radius: 50%;
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 10001;
+}
+
+.lightbox-nav:hover {
+  background: #f58220;
+  border-color: #f58220;
+  transform: translateY(-50%) scale(1.1);
+}
+
+.lightbox-nav--prev { left: 2rem; }
+.lightbox-nav--next { right: 2rem; }
+
+/* ── Responsive ──────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .pg-grid {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 640px) {
+  .gallery-section { padding: 4rem 0; }
+
+  .pg-grid {
+    column-count: 1;
+  }
+
+  .lightbox-nav--prev { left: 0.5rem; width: 44px; height: 44px; }
+  .lightbox-nav--next { right: 0.5rem; width: 44px; height: 44px; }
+  .lightbox-close { top: 1rem; right: 1rem; width: 40px; height: 40px; }
+  
+  .lightbox-review-panel {
+    padding: 1.25rem;
+    margin-top: 1rem;
+  }
+  .lightbox-review-text {
+    font-size: 1rem;
+  }
+  .lightbox-img {
+    max-height: 50vh;
+  }
+}
