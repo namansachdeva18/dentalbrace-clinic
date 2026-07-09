@@ -43,7 +43,7 @@ const reviewsRow1 = [
     rating: 5,
     date: 'February 2024',
     treatment: 'Clear Aligners',
-    reviewText: 'I travelled all the way from Ludhiana specifically to see Dr. Sandeep Kumar for clear aligners — worth every kilometer. He has done 2000+ cases and the confidence he brings is unmatched. My teeth are perfectly straight now and treatment finished 2 months earlier than planned!',
+    reviewText: 'I travelled all the way from Ludhiana specifically to see Dr. Sandeep Kumar for clear aligners — worth every kilometer. He has done 3000+ cases and the confidence he brings is unmatched. My teeth are perfectly straight now and treatment finished 2 months earlier than planned!',
     doctorTreated: 'Dr. Sandeep Kumar',
   },
   {
@@ -167,7 +167,7 @@ const reviewsRow2 = [
     rating: 5,
     date: 'March 2024',
     treatment: 'All-on-6 Implants',
-    reviewText: 'Drove from Amritsar for All-on-6 full arch implants. Dr. Ritu is simply the best implantologist in Punjab. She has done 500+ implants and the expertise shows in every step. Complete jaw reconstruction done over 4 appointments. Life-changing results at a fair price.',
+    reviewText: 'Drove from Amritsar for All-on-6 full arch implants. Dr. Ritu is simply the best implantologist in Punjab. She has done 3000+ implants and the expertise shows in every step. Complete jaw reconstruction done over 4 appointments. Life-changing results at a fair price.',
     doctorTreated: 'Dr. Ritu Saneja',
   },
   {

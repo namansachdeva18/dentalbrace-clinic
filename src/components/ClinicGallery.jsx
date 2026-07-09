@@ -12,16 +12,76 @@ gsap.registerPlugin(ScrollTrigger);
      src: '/clinic/reception.jpg'
    ────────────────────────────────────────────────────────────────── */
 const clinicSlides = [
-  { id: 1,  src: '/clinic-gallery/clinic-1.jpg', caption: 'Reception & Waiting Lounge',    alt: 'Premium reception and waiting lounge at The DentalBrace Clinic Bibi Wala Road Bathinda — comfortable modern patient waiting area with elegant interior design', hint: 'Premium waiting area' },
-  { id: 2,  src: '/clinic-gallery/clinic-2.jpg', caption: 'Dental Treatment Chair',         alt: 'State-of-the-art dental treatment chair and operatory unit at The DentalBrace Clinic Bathinda — advanced computerised dental equipment for painless precision treatment', hint: 'State-of-the-art chair unit' },
-  { id: 3,  src: '/clinic-gallery/clinic-3.jpg', caption: 'Digital X-Ray Suite',           alt: 'Digital X-ray and OPG suite at The DentalBrace Clinic Bathinda — advanced RVG dental radiography technology for accurate diagnosis with minimum radiation exposure', hint: 'Advanced imaging technology' },
-  { id: 4,  src: '/clinic-gallery/clinic-4.jpg', caption: 'Orthodontics Consultation Room', alt: 'Orthodontics consultation room of Dr. Sandeep Kumar MDS Orthodontist at The DentalBrace Clinic Bathinda — dedicated space for Invisalign clear aligner and braces treatment planning', hint: 'Dr. Sandeep Kumar\'s cabin' },
-  { id: 5,  src: '/clinic-gallery/clinic-5.jpg', caption: 'Implantology OT',               alt: 'Sterile implantology operation theatre at The DentalBrace Clinic Bathinda — hospital-grade surgical suite used by Dr. Ritu Saneja for dental implant procedures and oral surgery in Punjab', hint: 'Sterile surgical suite' },
-  { id: 6,  src: '/clinic-gallery/clinic-6.jpg', caption: 'Digital Smile Lab',             alt: 'Digital smile design lab at The DentalBrace Clinic Bathinda — iTero intraoral scanner and CAD/CAM design suite for precision cosmetic dentistry smile makeovers and veneer fabrication', hint: 'Intraoral scanner & design suite' },
-  { id: 7,  src: '/clinic-gallery/clinic-7.jpg', caption: 'Sterilisation Unit',            alt: 'Hospital-grade autoclave sterilisation unit at The DentalBrace Clinic Bathinda — Class B autoclave and infection control protocol ensuring maximum patient safety and hygiene standards', hint: 'Hospital-grade autoclave zone' },
-  { id: 8,  src: '/clinic-gallery/clinic-8.jpg', caption: 'Kids\' Dentistry Area',          alt: 'Child-friendly kids dentistry area at The DentalBrace Clinic Bathinda — specially designed colourful and comfortable treatment room for paediatric dental care making dental visits fun for children', hint: 'Child-friendly treatment space' },
-  { id: 9,  src: '/clinic-gallery/clinic-9.jpg', caption: 'Clinic Exterior & Signage',     alt: 'Exterior view and signage of The DentalBrace Clinic and Implant Centre on Bibi Wala Road Bathinda Punjab — landmark dental clinic building easy to locate for patients across Bathinda and surrounding areas', hint: 'Our landmark on Bibi Wala Road' },
-  { id: 10, src: '/clinic-gallery/clinic-10.jpg', caption: 'Team at Work',                  alt: 'Dr. Sandeep Kumar and Dr. Ritu Saneja dental team at work performing treatment at The DentalBrace Clinic Bathinda — AIIMS-trained specialist dentists providing expert patient care in Punjab', hint: 'Dr. Sandeep & Dr. Ritu in action' },
+  { 
+    id: 1,  
+    src: '/clinic-gallery/reception-waiting-lounge-dentalbrace-bathinda.jpg', 
+    caption: 'Reception & Waiting Lounge',    
+    alt: 'Premium reception and waiting lounge at The DentalBrace Clinic Bibi Wala Road Bathinda — comfortable modern patient waiting area with elegant interior design', 
+    hint: 'Comfortable modern waiting lounge' 
+  },
+  { 
+    id: 2,  
+    src: '/clinic-gallery/best-invisalign-operatory-dental-chair-bathinda.jpg', 
+    caption: 'Modern Dental Operatory',         
+    alt: 'State-of-the-art dental treatment chair and operatory unit with Invisalign banner at The DentalBrace Clinic Bathinda — advanced computerised equipment', 
+    hint: 'Modern Invisalign operatory chair' 
+  },
+  { 
+    id: 3,  
+    src: '/clinic-gallery/dr-sandeep-kumar-using-digital-intraoral-scanner.jpg', 
+    caption: 'Digital Smile Scanning',           
+    alt: 'Dr. Sandeep Kumar using a digital intraoral scanner on a patient at The DentalBrace Clinic Bathinda — advanced iTero digital dental impression technology', 
+    hint: 'Dr. Sandeep Kumar scanning patient' 
+  },
+  { 
+    id: 4,  
+    src: '/clinic-gallery/dr-ritu-saneja-implantologist-treating-patient.jpg', 
+    caption: 'Expert Treatment in Progress', 
+    alt: 'Dr. Ritu Saneja treating a patient with the dental team at The DentalBrace Clinic Bathinda — providing expert dental implant and prosthodontics treatment', 
+    hint: 'Dr. Ritu Saneja treating patient' 
+  },
+  { 
+    id: 5,  
+    src: '/clinic-gallery/painless-dental-treatment-chair-bathinda.jpg', 
+    caption: 'Painless Treatment Suite',               
+    alt: 'Green dental treatment chair and modern dental operatory room setup at The DentalBrace Clinic Bathinda — designed for patient comfort and clean hygiene', 
+    hint: 'Modern dental treatment room' 
+  },
+  { 
+    id: 6,  
+    src: '/clinic-gallery/dentalbrace-clinic-entrance-lobby-bathinda.jpg', 
+    caption: 'Clinic Entrance & Lobby',             
+    alt: 'Entrance glass door and reception area of The DentalBrace Clinic Bathinda — welcoming interior layout with modern branding elements', 
+    hint: 'Welcoming clinic entrance door' 
+  },
+  { 
+    id: 7,  
+    src: '/clinic-gallery/invisalign-clear-aligner-patient-mouth-closeup.jpg', 
+    caption: 'Invisalign Clear Aligners',            
+    alt: 'Patient wearing Invisalign clear aligners close-up view at The DentalBrace Clinic Bathinda — virtually invisible orthodontic treatment in action', 
+    hint: 'Invisible aligners in patient mouth' 
+  },
+  { 
+    id: 8,  
+    src: '/clinic-gallery/invisalign-clear-aligner-treatment-kit-box.jpg', 
+    caption: 'Invisalign Treatment Kit',          
+    alt: 'Essentials by Invisalign orthodontic appliance box kit and packaging at The DentalBrace Clinic Bathinda — customized clear aligner sets for smile correction', 
+    hint: 'Invisalign aligner box kit' 
+  },
+  { 
+    id: 9,  
+    src: '/clinic-gallery/dental-clinic-exterior-signage-bathinda.jpg', 
+    caption: 'Clinic Exterior & Signage',     
+    alt: 'Exterior view and neon signage of The DentalBrace Clinic and Implant Centre on Bibi Wala Road Bathinda Punjab — leading orthodontic and dental implant hospital', 
+    hint: 'Our clinic frontage on Bibi Wala Road' 
+  },
+  { 
+    id: 10, 
+    src: '/clinic-gallery/dr-sandeep-kumar-dr-ritu-saneja-dental-team.jpg', 
+    caption: 'Our Expert Dental Team',                  
+    alt: 'Dr. Sandeep Kumar and Dr. Ritu Saneja posing with the dental staff team at The DentalBrace Clinic Bathinda — expert specialist dentists and hygienists in Punjab', 
+    hint: 'Dr. Sandeep, Dr. Ritu & staff' 
+  },
 ];
 
 const TOTAL   = clinicSlides.length;

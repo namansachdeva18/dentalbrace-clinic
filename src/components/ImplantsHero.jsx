@@ -112,7 +112,7 @@ const ImplantsHero = () => {
             }}>
               <div>
                 <div style={{ fontSize: '2.25rem', fontWeight: '800', color: 'var(--accent-color)' }}>
-                  <AnimatedCounter target={500} suffix="+" />
+                  <AnimatedCounter target={3000} suffix="+" />
                 </div>
                 <div style={{ color: 'var(--text-secondary)', fontSize: '0.875rem', fontWeight: '500' }}>
                   Implants Placed
@@ -157,8 +157,11 @@ const ImplantsHero = () => {
             }}>
               <Award size={32} style={{ color: 'var(--accent-color)', flexShrink: 0 }} />
               <div>
-                <div style={{ color: 'var(--text-primary)', fontWeight: '700', fontSize: '1rem' }}>Dr. Ritu Saneja — Gold Medalist, MDS</div>
-                <div style={{ color: 'var(--text-secondary)', fontSize: '0.875rem' }}>Prosthodontics · BHU Varanasi · Ex Sr. Resident AIIMS Bathinda</div>
+                <div style={{ color: 'var(--text-primary)', fontWeight: '700', fontSize: '1rem' }}>Dr. Ritu Saneja — Consultant Prosthodontist &amp; Implantologist</div>
+                <div style={{ color: 'var(--text-secondary)', fontSize: '0.875rem', lineHeight: '1.4' }}>
+                  MDS (Gold Medalist), BDS, MDS (Prosthodontics) - BHU Varanasi <br />
+                  Ex-Resident - AIIMS Delhi, PGIMER Chandigarh · Ex-Senior Resident - AIIMS Bathinda
+                </div>
               </div>
             </div>
 

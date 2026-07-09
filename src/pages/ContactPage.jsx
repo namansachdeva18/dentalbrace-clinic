@@ -18,11 +18,11 @@ const ContactPage = () => {
     >
       <Helmet>
         <title>Contact The DentalBrace Clinic Bathinda — Book Appointment | +91 74968-49392</title>
-        <meta name="description" content="Contact The DentalBrace Clinic & Implant Centre, Bibi Wala Road, Bathinda, Punjab. Call +91 74968-49392 or email thedentalbrace2019@gmail.com. Book a free consultation for Invisalign, dental implants, or smile makeover. Open Mon-Sat 9AM-8PM." />
+        <meta name="description" content="Contact The DentalBrace Clinic & Implant Centre, Bibi Wala Road, Bathinda, Punjab. Call +91 74968-49392 or email thedentalbrace2019@gmail.com. Book a consultation (just ₹200/-) for Invisalign, dental implants, or smile makeover. Open Mon-Sat 9AM-8PM." />
         <meta name="keywords" content="DentalBrace Bathinda contact, book dental appointment Bathinda, dental clinic Bibi Wala Road Bathinda, dentist phone number Bathinda, emergency dentist Bathinda" />
         <link rel="canonical" href="https://www.thedentalbrace.com/contact" />
-        <meta property="og:title" content="Contact The DentalBrace Clinic Bathinda | Book Free Consultation" />
-        <meta property="og:description" content="Book your free dental consultation at The DentalBrace Clinic, Bibi Wala Road, Bathinda. Call +91 74968-49392. Open Mon-Sat 9AM-8PM." />
+        <meta property="og:title" content="Contact The DentalBrace Clinic Bathinda | Book Consultation (Nominal Fee)" />
+        <meta property="og:description" content="Book your dental consultation (just ₹200/-) at The DentalBrace Clinic, Bibi Wala Road, Bathinda. Call +91 74968-49392. Open Mon-Sat 9AM-8PM." />
         <meta property="og:url" content="https://www.thedentalbrace.com/contact" />
         <meta property="og:image" content="https://www.thedentalbrace.com/hero-image.jpg" />
         <meta property="og:type" content="website" />

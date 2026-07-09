@@ -10,25 +10,25 @@ const servicesData = [
   {
     id: 2,
     title: 'Invisalign & Clear Aligners',
-    description: 'Bathinda\'s most experienced Invisalign provider. Dr. Sandeep Kumar has completed 2,000+ braces & aligner treatments — straighten your teeth without anyone knowing.',
+    description: 'Bathinda\'s most experienced Invisalign provider. Dr. Sandeep Kumar has completed 3,000+ braces & aligner treatments — straighten your teeth without anyone knowing.',
     icon: <Smile size={32} />,
     featured: true,
-    href: '#invisalign'
+    href: '#book'
   },
   {
     id: 7,
     title: 'Full Mouth Implants (FMR)',
-    description: 'Dr. Ritu Saneja — 500+ implants placed. All-on-4, All-on-6, and Full Mouth Rehabilitation using premium titanium implants and zirconia crowns.',
+    description: 'Dr. Ritu Saneja — 3,000+ implants placed. All-on-4, All-on-6, and Full Mouth Rehabilitation using premium titanium implants and zirconia crowns.',
     icon: <Shield size={32} />,
     featured: true,
-    href: '#implants-hero'
+    href: '#book'
   },
   {
     id: 1,
     title: 'Dental Implants',
     description: 'Permanent, natural-looking replacement for missing teeth using premium titanium implants with a near 99% success rate.',
     icon: <Shield size={32} />,
-    href: '#implants-hero'
+    href: '#book'
   },
   {
     id: 8,
@@ -42,14 +42,14 @@ const servicesData = [
     title: 'Smile Makeover',
     description: 'Customised cosmetic treatments — veneers, teeth whitening, composite bonding, and gum contouring — designed digitally for your face.',
     icon: <Sparkles size={32} />,
-    href: '#smile-makeover'
+    href: '#book'
   },
   {
     id: 4,
     title: 'Digital Dentistry',
     description: 'Advanced 3D intraoral scanning and precise digital planning for accurate treatments with no impressions needed.',
     icon: <ScanFace size={32} />,
-    href: '#digital'
+    href: '#book'
   },
   {
     id: 5,
@@ -125,7 +125,7 @@ const Services = () => {
           <span className="section-badge">Our Expertise</span>
           <h2 className="heading-primary mt-4">Specialist Dental Treatments in Bathinda</h2>
           <p className="services-subtitle text-secondary max-w-2xl mx-auto mt-4">
-            From Invisalign clear aligners to full mouth implants — led by AIIMS-trained orthodontists &amp; prosthodontists with 2,500+ cases completed.
+            From Invisalign clear aligners to full mouth implants — led by AIIMS-trained orthodontists &amp; prosthodontists with 10k+ transformed smiles.
           </p>
         </div>
 

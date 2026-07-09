@@ -19,7 +19,7 @@ const About = () => {
     >
       <Helmet>
         <title>About Us — Dr. Sandeep Kumar &amp; Dr. Ritu Saneja | The DentalBrace Clinic Bathinda</title>
-        <meta name="description" content="Learn about The DentalBrace Clinic in Bathinda — led by Dr. Sandeep Kumar (MDS Orthodontist, Ex-AIIMS) and Dr. Ritu Saneja (Gold Medalist Implantologist, Ex-AIIMS Bathinda). AIIMS-trained specialists delivering premium dental care since 2012 on Bibi Wala Road, Bathinda, Punjab." />
+        <meta name="description" content="Learn about The DentalBrace Clinic in Bathinda — led by Dr. Sandeep Kumar (BDS, MDS (Orthodontics) - BHU, Ex-Resident AIIMS) and Dr. Ritu Saneja (MDS (Gold Medalist), BDS, MDS (Prosthodontics) - BHU, Ex-Resident AIIMS/PGIMER, Ex-Senior Resident AIIMS Bathinda). AIIMS-trained specialists delivering premium dental care since 2012 on Bibi Wala Road, Bathinda, Punjab." />
         <meta name="keywords" content="About DentalBrace Bathinda, Dr Sandeep Kumar Orthodontist Bathinda, Dr Ritu Saneja Implantologist Bathinda, AIIMS trained dentist Bathinda, best dental clinic Bathinda about" />
         <link rel="canonical" href="https://www.thedentalbrace.com/about" />
         <meta property="og:title" content="About The DentalBrace Clinic Bathinda — AIIMS-Trained Specialists" />

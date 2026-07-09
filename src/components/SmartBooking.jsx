@@ -102,7 +102,7 @@ const SmartBooking = () => {
             How Can We Help You Today?
           </h2>
           <p style={{ color: 'rgba(255, 255, 255, 0.8)', fontSize: '1.1rem' }}>
-            Book your free consultation in under 60 seconds.
+            Book your consultation (just ₹200/-) in under 60 seconds.
           </p>
         </div>
 

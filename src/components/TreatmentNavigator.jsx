@@ -30,9 +30,8 @@ const TreatmentNavigator = () => {
           gridTemplateColumns: 'repeat(auto-fit, minmax(120px, 1fr))'
         }}>
           {navItems.map((item) => (
-            <a 
+            <div 
               key={item.id} 
-              href={item.href}
               className="nav-card"
               style={{
                 display: 'flex',
@@ -42,11 +41,11 @@ const TreatmentNavigator = () => {
                 backgroundColor: 'white',
                 padding: '1.5rem 0.5rem',
                 borderRadius: 'var(--radius-lg)',
-                textDecoration: 'none',
                 color: 'var(--text-primary)',
                 boxShadow: '0 2px 8px rgba(0,0,0,0.04)',
                 border: '1px solid rgba(0,0,0,0.02)',
-                transition: 'all 0.25s ease'
+                transition: 'all 0.25s ease',
+                cursor: 'default'
               }}
               onMouseEnter={e => {
                 e.currentTarget.style.transform = 'translateY(-4px)';
@@ -79,7 +78,7 @@ const TreatmentNavigator = () => {
               }}>
                 {item.label}
               </span>
-            </a>
+            </div>
           ))}
         </div>
       </div>

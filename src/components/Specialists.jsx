@@ -73,7 +73,7 @@ const Specialists = () => {
 
             <div className="doctor-info p-8 flex flex-col flex-grow">
               <h3 className="text-2xl font-bold text-primary mb-1">Dr. Sandeep Kumar</h3>
-              <p className="text-accent font-medium mb-1">Consultant Orthodontist &amp; Dentofacial Orthopedics</p>
+              <p className="text-accent font-medium mb-1">Consultant Orthodontist</p>
               <p className="text-secondary text-sm mb-5">Best Orthodontist in Bathinda — Invisalign &amp; Clear Aligner Expert</p>
 
               {/* Animated Stat Pill */}
@@ -87,7 +87,7 @@ const Specialists = () => {
               }}>
                 <Award size={16} style={{ color: 'var(--accent-color)' }} />
                 <span style={{ fontWeight: '800', color: 'var(--accent-color)', fontSize: '1.1rem' }}>
-                  <AnimatedCounter target={2000} suffix="+" />
+                  <AnimatedCounter target={3000} suffix="+" />
                 </span>
                 <span style={{ color: 'var(--text-secondary)', fontSize: '0.875rem', fontWeight: '500' }}>
                   Braces &amp; Aligner Cases
@@ -95,9 +95,8 @@ const Specialists = () => {
               </div>
 
               <div className="qualifications flex flex-col gap-3 text-secondary mb-8">
-                <div className="flex items-center gap-3"><GraduationCap size={20} className="text-accent" /> BDS, MDS Orthodontics</div>
-                <div className="flex items-center gap-3"><Award size={20} className="text-accent" /> BHU Varanasi</div>
-                <div className="flex items-center gap-3"><Star size={20} className="text-accent" /> Ex Resident AIIMS New Delhi</div>
+                <div className="flex items-center gap-3"><GraduationCap size={20} className="text-accent" /> BDS, MDS (Orthodontics) - BHU Varanasi</div>
+                <div className="flex items-center gap-3"><Star size={20} className="text-accent" /> Ex Resident - AIIMS New Delhi</div>
               </div>
 
               <div className="specialties-tags flex flex-wrap gap-2 mb-8">
@@ -139,7 +138,7 @@ const Specialists = () => {
               color: '#5a3e00', fontWeight: '700', fontSize: '0.75rem',
               letterSpacing: '0.5px', boxShadow: '0 4px 12px rgba(201,162,39,0.4)'
             }}>
-              <Medal size={12} /> Gold Medalist · BHU Varanasi
+              <Medal size={12} /> MDS (Gold Medalist) · BHU Varanasi
             </div>
 
             <div className="doctor-image-wrapper" style={{ height: '350px', overflow: 'hidden', display: 'flex', justifyContent: 'center', alignItems: 'flex-start' }}>
@@ -166,7 +165,7 @@ const Specialists = () => {
               }}>
                 <Award size={16} style={{ color: 'var(--accent-color)' }} />
                 <span style={{ fontWeight: '800', color: 'var(--accent-color)', fontSize: '1.1rem' }}>
-                  <AnimatedCounter target={500} suffix="+" />
+                  <AnimatedCounter target={3000} suffix="+" />
                 </span>
                 <span style={{ color: 'var(--text-secondary)', fontSize: '0.875rem', fontWeight: '500' }}>
                   Implants Placed
@@ -174,9 +173,10 @@ const Specialists = () => {
               </div>
 
               <div className="qualifications flex flex-col gap-3 text-secondary mb-8">
-                <div className="flex items-center gap-3"><GraduationCap size={20} className="text-accent" /> Gold Medalist, BDS, MDS Prosthodontics</div>
-                <div className="flex items-center gap-3"><Award size={20} className="text-accent" /> BHU Varanasi</div>
-                <div className="flex items-center gap-3"><Star size={20} className="text-accent" /> Ex Senior Resident AIIMS Bathinda</div>
+                <div className="flex items-center gap-3"><GraduationCap size={20} className="text-accent" /> BDS, MDS (Prosthodontics) - BHU Varanasi</div>
+                <div className="flex items-center gap-3"><Award size={20} className="text-accent" /> MDS (Gold Medalist)</div>
+                <div className="flex items-center gap-3"><Star size={20} className="text-accent" /> Ex-Resident - AIIMS Delhi, PGIMER Chandigarh</div>
+                <div className="flex items-center gap-3"><Star size={20} className="text-accent" /> Ex-Senior Resident - AIIMS Bathinda</div>
               </div>
 
               <div className="specialties-tags flex flex-wrap gap-2 mb-8">

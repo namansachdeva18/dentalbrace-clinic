@@ -71,6 +71,7 @@ const Header = () => {
             </button>
 
             <div className={`nav-links ${isMenuOpen ? 'open glass' : ''}`}>
+              <a href="#top" className="nav-link" onClick={handleNavClick}>Home</a>
               <div 
                 className="nav-item" 
                 onMouseEnter={() => handleMouseEnter('treatments')}

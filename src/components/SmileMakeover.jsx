@@ -73,7 +73,7 @@ const SmileMakeover = () => {
           </h2>
 
           <p style={{ color: 'rgba(255,255,255,0.65)', fontSize: '1.1rem', maxWidth: '600px', margin: '0 auto' }}>
-            Led by <strong style={{ color: 'white' }}>Dr. Ritu Saneja</strong> — Gold Medalist Prosthodontist — our smile makeovers are designed with digital precision and delivered with artistry.
+            Led by <strong style={{ color: 'white' }}>Dr. Ritu Saneja</strong> — MDS (Gold Medalist) Prosthodontist — our smile makeovers are designed with digital precision and delivered with artistry.
           </p>
         </div>
 
@@ -162,7 +162,7 @@ const SmileMakeover = () => {
               display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginTop: '1.5rem'
             }}>
               {[
-                { n: 500, suffix: '+', label: 'Implants by Dr. Ritu' },
+                { n: 3000, suffix: '+', label: 'Implants by Dr. Ritu' },
                 { n: 5.0, suffix: '★', label: 'Google Rating' }
               ].map((s, i) => (
                 <div key={i} style={{

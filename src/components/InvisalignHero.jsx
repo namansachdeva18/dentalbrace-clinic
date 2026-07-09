@@ -81,7 +81,7 @@ const InvisalignHero = () => {
             }}>
               <div>
                 <div style={{ fontSize: '2.25rem', fontWeight: '800', color: 'var(--accent-color)' }}>
-                  <AnimatedCounter target={2000} suffix="+" />
+                  <AnimatedCounter target={3000} suffix="+" />
                 </div>
                 <div style={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.875rem', fontWeight: '500' }}>
                   Braces &amp; Aligner Cases
@@ -125,8 +125,8 @@ const InvisalignHero = () => {
             }}>
               <Award size={32} style={{ color: 'var(--accent-color)', flexShrink: 0 }} />
               <div>
-                <div style={{ color: 'white', fontWeight: '700', fontSize: '1rem' }}>Dr. Sandeep Kumar — MDS Orthodontics</div>
-                <div style={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.875rem' }}>BHU Varanasi · Ex-Resident AIIMS New Delhi</div>
+                <div style={{ color: 'white', fontWeight: '700', fontSize: '1rem' }}>Dr. Sandeep Kumar — Consultant Orthodontist</div>
+                <div style={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.875rem' }}>BDS, MDS (Orthodontics) - BHU Varanasi · Ex Resident - AIIMS New Delhi</div>
               </div>
             </div>
 
@@ -143,7 +143,7 @@ const InvisalignHero = () => {
               onMouseEnter={e => e.currentTarget.style.transform = 'translateY(-2px)'}
               onMouseLeave={e => e.currentTarget.style.transform = 'none'}
               >
-                Get Free Invisalign Assessment <ArrowRight size={18} />
+                Get Invisalign Assessment (just ₹200/-) <ArrowRight size={18} />
               </a>
               <a href="tel:7496849392" style={{
                 display: 'inline-flex', alignItems: 'center', gap: '0.6rem',

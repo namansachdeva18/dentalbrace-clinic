@@ -38,8 +38,8 @@ const Hero = () => {
   }, []);
 
   const stats = [
-    { value: 2000, suffix: '+', label: 'Braces & Aligner Cases', icon: <HeartPulse size={18} /> },
-    { value: 500, suffix: '+', label: 'Implants Placed', icon: <ShieldCheck size={18} /> },
+    { value: 3000, suffix: '+', label: 'Braces & Aligner Cases', icon: <HeartPulse size={18} /> },
+    { value: 3000, suffix: '+', label: 'Implants Placed', icon: <ShieldCheck size={18} /> },
     { value: 5.0, suffix: '★', label: 'Google Rating', icon: <Star size={18} />, isDecimal: true },
     { value: 10, suffix: '+', label: 'Years Experience', icon: <Award size={18} /> },
   ];
@@ -60,13 +60,13 @@ const Hero = () => {
           {/* Main Headline */}
           <h1 className="hero-title">
             Bathinda's Most Trusted Specialists for{' '}
-            <span className="hero-title-accent">Braces, Implants</span>{' '}
+            <span className="hero-title-accent">Clear Aligners (Invisalign), Braces, Dental Implants</span>{' '}
             &amp; Smile Makeovers
           </h1>
 
           {/* Subtext */}
           <p className="hero-subtitle">
-            2,500+ transformed smiles — led by AIIMS-trained specialists. Free consultation available. Painless, precise, and permanent dental care.
+            10k+ transformed smiles — led by AIIMS-trained specialists. Consultation at a nominal ₹200/-. Painless, precise, and permanent dental care.
           </p>
 
           {/* Doctor Credentials */}
@@ -75,22 +75,22 @@ const Hero = () => {
               <CheckCircle size={16} color="#F58220" />
               <div>
                 <strong>Dr. Sandeep Kumar</strong>
-                <span>MDS Orthodontics · Ex-Resident, AIIMS New Delhi</span>
+                <span>BDS, MDS (Orthodontics) - BHU Varanasi · Ex Resident - AIIMS New Delhi</span>
               </div>
             </div>
             <div className="hero-doctor-badge">
               <CheckCircle size={16} color="#F58220" />
               <div>
                 <strong>Dr. Ritu Saneja</strong>
-                <span>Gold Medalist · MDS Prosthodontics · AIIMS Bathinda</span>
+                <span>MDS (Gold Medalist) · BDS, MDS (Prosthodontics) - BHU Varanasi · Ex-Resident - AIIMS Delhi, PGIMER Chandigarh · Ex-Senior Resident - AIIMS Bathinda</span>
               </div>
             </div>
           </div>
 
           {/* CTA Buttons */}
           <div className="hero-cta-group">
-            <a href="#contact" className="btn-hero-primary">
-              <Calendar size={20} /> Book Free Consultation <ArrowRight size={18} />
+            <a href="#book" className="btn-hero-primary">
+              <Calendar size={20} /> Book Consultation @ just ₹200/- <ArrowRight size={18} />
             </a>
             <a href="tel:7496849392" className="btn-hero-outline">
               <Phone size={20} /> 74968-49392
