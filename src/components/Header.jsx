@@ -58,7 +58,7 @@ const Header = () => {
         <nav className="main-nav">
           <div className="container nav-content">
             <div className="logo">
-              <Link to="/" onClick={handleNavClick} className="logo-link" style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+              <Link to="/" onClick={() => { handleNavClick(); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="logo-link" style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
                 <img src="/logo.png" alt="The DentalBrace Clinic and Implant Centre logo — Best Dental Clinic in Bathinda Punjab, Dr. Sandeep Kumar Orthodontist Dr. Ritu Saneja Implantologist" className="logo-img" style={{ height: '80px', width: 'auto', mixBlendMode: 'multiply' }} />
                 <div className="logo-text-wrapper" style={{ display: 'flex', flexDirection: 'column' }}>
                   <span className="logo-text">The DentalBrace</span>
