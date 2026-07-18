@@ -43,7 +43,7 @@ const reviewsRow1 = [
     rating: 5,
     date: 'February 2024',
     treatment: 'Clear Aligners',
-    reviewText: 'I travelled all the way from Ludhiana specifically to see Dr. Sandeep Kumar for clear aligners — worth every kilometer. He has done 3000+ cases and the confidence he brings is unmatched. My teeth are perfectly straight now and treatment finished 2 months earlier than planned!',
+    reviewText: 'I travelled all the way from Ludhiana specifically to see Dr. Sandeep Kumar for clear aligners — worth every kilometer. He has done 5500+ cases and the confidence he brings is unmatched. My teeth are perfectly straight now and treatment finished 2 months earlier than planned!',
     doctorTreated: 'Dr. Sandeep Kumar',
   },
   {
@@ -92,13 +92,13 @@ const reviewsRow1 = [
   },
   {
     id: 9,
-    name: 'Amit Verma',
-    location: 'Chandigarh',
-    avatar: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=150&auto=format&fit=crop',
+    name: 'Gurmail Singh',
+    location: 'USA',
+    avatar: '/patient-gallery/case-1.jpg',
     rating: 5,
-    date: 'September 2024',
+    date: 'July 2026',
     treatment: 'Full Mouth Rehabilitation',
-    reviewText: 'Came from Chandigarh for full mouth rehabilitation by Dr. Ritu Saneja. Multiple implants, crowns, and cosmetic work — all planned and executed flawlessly in a coordinated treatment plan. The digital planning they showed me beforehand matched the final result exactly. Exceptional.',
+    reviewText: 'I traveled all the way from the USA to Bathinda, Punjab, specifically for my Full Mouth Rehabilitation (FMI) at The DentalBrace Clinic. Dr. Ritu Saneja and her team executed my complete smile reconstruction using premium dental implants and zirconia crowns flawlessly. The state-of-the-art digital dentistry, clinical hygiene standards, and care were truly exceptional. Highly recommend this clinic for implants in India!',
     doctorTreated: 'Dr. Ritu Saneja',
   },
   {
@@ -167,7 +167,7 @@ const reviewsRow2 = [
     rating: 5,
     date: 'March 2024',
     treatment: 'All-on-6 Implants',
-    reviewText: 'Drove from Amritsar for All-on-6 full arch implants. Dr. Ritu is simply the best implantologist in Punjab. She has done 3000+ implants and the expertise shows in every step. Complete jaw reconstruction done over 4 appointments. Life-changing results at a fair price.',
+    reviewText: 'Drove from Amritsar for All-on-6 full arch implants. Dr. Ritu is simply the best implantologist in Punjab. She has done 5000+ implants and the expertise shows in every step. Complete jaw reconstruction done over 4 appointments. Life-changing results at a fair price.',
     doctorTreated: 'Dr. Ritu Saneja',
   },
   {

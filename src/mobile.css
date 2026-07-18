@@ -229,6 +229,11 @@
 /* ================================================================
    INVISALIGN HERO / IMPLANTS HERO  (inline-style sections)
    ================================================================ */
+@media (min-width: 769px) {
+  .implants-content { order: 2; }
+  .implants-slider { order: 1; }
+}
+
 @media (max-width: 768px) {
   /* Full-bleed showcase sections that use inline grid */
   section[id="invisalign"],

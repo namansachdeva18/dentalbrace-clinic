@@ -10,25 +10,25 @@ const timelineData = [
   {
     id: 1,
     title: 'Expert Specialists',
-    desc: 'Care delivered by highly qualified MDS specialists from top institutions.',
+    desc: <>Care delivered by highly qualified <strong className="text-primary font-bold">MDS specialists</strong> from top institutions.</>,
     icon: <Stethoscope size={24} />
   },
   {
     id: 2,
     title: 'Advanced Technology',
-    desc: 'State-of-the-art digital scanners and equipment for precise treatments.',
+    desc: <>State-of-the-art <strong className="text-primary font-bold">digital scanners</strong> and equipment for precise treatments.</>,
     icon: <Microscope size={24} />
   },
   {
     id: 3,
     title: 'Ethical Dentistry',
-    desc: 'Transparent consultations with no hidden costs or unnecessary procedures.',
+    desc: <>Transparent consultations with <strong className="text-primary font-bold">no hidden costs</strong> or unnecessary procedures.</>,
     icon: <ShieldCheck size={24} />
   },
   {
     id: 4,
     title: 'Comfortable Environment',
-    desc: 'A relaxing, anxiety-free atmosphere prioritizing your comfort and safety.',
+    desc: <>A relaxing, <strong className="text-primary font-bold">anxiety-free</strong> atmosphere prioritizing your comfort and safety.</>,
     icon: <HeartHandshake size={24} />
   }
 ];
@@ -75,7 +75,7 @@ const WhyUs = () => {
           {timelineData.map((item, index) => (
             <div 
               key={item.id} 
-              className={`timeline-item ${index % 2 === 0 ? 'left' : 'right'}`}
+              className={`timeline-item gpu-accelerated ${index % 2 === 0 ? 'left' : 'right'}`}
               ref={addToItems}
             >
               <div className="timeline-dot">

@@ -13,10 +13,10 @@ const galleryItems = [
   { 
     id: 1,  
     src: '/patient-gallery/case-1.jpg', 
-    alt: 'Invisalign clear aligner treatment result at The DentalBrace Clinic Bathinda — patient Gurpreet S. showing straight aligned teeth after Invisalign by Dr. Sandeep Kumar MDS Orthodontist, before and after smile transformation in Bathinda Punjab',  
-    label: 'Invisalign Treatment',
-    review: "Dr. Sandeep's Invisalign treatment completely transformed my smile. The process was painless, practically invisible, and perfectly managed. Highly recommend The DentalBrace Clinic for clear aligners in Bathinda!",
-    reviewer: "Gurpreet S."
+    alt: 'Full Mouth Rehabilitation (FMI) treatment result at The DentalBrace Clinic Bathinda — patient Gurmail Singh from USA showing complete smile reconstruction with dental implants and zirconia crowns by Dr. Ritu Saneja Gold Medalist Prosthodontist, best full mouth rehabilitation clinic in Bathinda Punjab India',  
+    label: 'Full Mouth Rehab',
+    review: "I traveled from the USA to Bathinda specifically for my Full Mouth Rehabilitation (FMI) at The DentalBrace Clinic. Dr. Ritu Saneja and her team executed my complex full mouth reconstruction using dental implants and zirconia crowns flawlessly. The digital planning, clinical hygiene, and warm patient care were truly world-class. Excellent results!",
+    reviewer: "Gurmail Singh (USA)"
   },
   { 
     id: 2,  
@@ -29,50 +29,50 @@ const galleryItems = [
   { 
     id: 3,  
     src: '/patient-gallery/case-3.jpg', 
-    alt: 'Smile makeover result with porcelain veneers at The DentalBrace Clinic Bathinda — patient showing dazzling white perfect smile after cosmetic dentistry by Dr. Ritu Saneja, best smile makeover clinic in Bathinda Punjab India',  
-    label: 'Smile Makeover',
-    review: "My smile makeover gave me the confidence I lacked for years. The team's digital precision and artistic eye for porcelain veneers is unmatched.",
-    reviewer: "Priya K."
+    alt: 'Invisalign clear aligners orthodontic treatment result at The DentalBrace Clinic Bathinda — patient Dr. Keerat showing perfectly aligned teeth after clear aligner therapy by Dr. Sandeep Kumar MDS Orthodontist, best Invisalign specialist in Bathinda Punjab India',  
+    label: 'Invisalign',
+    review: "As a healthcare professional, I highly value precision and hygiene. Dr. Sandeep Kumar's expertise in Invisalign completely exceeded my expectations. The digital scanning process was seamless, and my clear aligner treatment in Bathinda was comfortable, discreet, and delivered perfect results!",
+    reviewer: "Dr. Keerat"
   },
   { 
     id: 4,  
     src: '/patient-gallery/case-4.jpg', 
-    alt: 'Clear aligner orthodontic treatment result at The DentalBrace Clinic Bathinda — patient showing perfectly straight teeth after clear aligner therapy by Dr. Sandeep Kumar, certified Invisalign and clear aligner specialist Bathinda',  
-    label: 'Clear Aligners',
-    review: "The clear aligners were amazing. Dr. Sandeep is an exceptional orthodontist who guided me through every step to achieve perfectly straight teeth.",
-    reviewer: "Amanjot T."
+    alt: 'Dental veneers and implants treatment result by Dr. Ritu Saneja Gold Medalist Prosthodontist at The DentalBrace Clinic Bathinda — patient Ratandeep Kaur showing stunning smile transformation after cosmetic porcelain veneers and implants, best cosmetic dentistry clinic in Bathinda Punjab India',  
+    label: 'Veneers & Implants',
+    review: "Getting custom porcelain veneers and dental implants by Dr. Ritu Saneja completely transformed my smile. The digital planning was flawless, and the final results look incredibly natural and bright. Truly the best clinic for cosmetic smile makeovers and implants in Bathinda!",
+    reviewer: "Ratandeep Kaur"
   },
   { 
     id: 5,  
     src: '/patient-gallery/case-5.jpg', 
-    alt: 'Full mouth rehabilitation result at The DentalBrace Clinic Bathinda — patient after complete full mouth rehab with implants crowns and bridges by Dr. Ritu Saneja Gold Medalist Prosthodontist, best full mouth rehabilitation clinic Bathinda Punjab',  
-    label: 'Full Mouth Rehab',
-    review: "A complex full mouth rehab handled flawlessly. Their expertise in advanced dentistry and patient care shines through in every appointment.",
-    reviewer: "Suresh G."
+    alt: 'Clear aligners orthodontic treatment result at The DentalBrace Clinic Bathinda — patient Uday P. showing beautifully straight teeth after clear aligner therapy by Dr. Sandeep Kumar MDS Orthodontist, best Invisalign provider in Bathinda Punjab India',  
+    label: 'Clear Aligners',
+    review: "Dr. Sandeep's clear aligner treatment completely transformed my smile with zero disruption to my daily life. The digital tracking was highly precise, and the aligners were virtually invisible. Truly exceptional orthodontic care in Bathinda!",
+    reviewer: "Uday P."
   },
   { 
     id: 6,  
     src: '/patient-gallery/case-6.jpg', 
-    alt: 'Metal and ceramic dental braces treatment result at The DentalBrace Clinic Bathinda — patient showing beautifully aligned teeth after braces by Dr. Sandeep Kumar MDS Orthodontist, best orthodontist for braces in Bathinda Punjab',  
-    label: 'Braces Case',
-    review: "Best braces treatment in Bathinda! My teeth aligned beautifully, and the clinic's hygiene standards are incredibly reassuring.",
-    reviewer: "Mehak D."
+    alt: 'Maxillary obturator prosthesis treatment result at The DentalBrace Clinic Bathinda — patient Surinder S. showing improved quality of life after specialized prosthodontic rehabilitation by Dr. Ritu Saneja Gold Medalist Prosthodontist, best prosthodontist in Bathinda Punjab India',  
+    label: 'Maxillary Obturator',
+    review: "After my maxillary surgery, I needed a highly specialized prosthesis. Dr. Ritu Saneja crafted a custom maxillary obturator with absolute precision. Thanks to her exceptional prosthodontic expertise, I am finally able to breathe, eat, and speak properly again. Best prosthodontist in Bathinda!",
+    reviewer: "Surinder S."
   },
   { 
     id: 7,  
     src: '/patient-gallery/case-7.jpg', 
-    alt: 'Dental treatment before and after result at The DentalBrace Clinic Bathinda — dramatic smile transformation showing crooked to perfect teeth, cosmetic dentistry by AIIMS-trained dental specialists in Bathinda Punjab India',  
-    label: 'Before & After',
-    review: "The transformation is unbelievable. I can finally smile without hesitation thanks to the premium cosmetic dentistry here.",
-    reviewer: "Karan V."
+    alt: 'Clear aligners orthodontic treatment result at The DentalBrace Clinic Bathinda — patient Piyush showing straight teeth after clear aligner therapy by Dr. Sandeep Kumar MDS Orthodontist, best Invisalign provider in Bathinda Punjab India',  
+    label: 'Clear Aligners',
+    review: "Choosing The DentalBrace Clinic for my clear aligner treatment was the best decision. Dr. Sandeep Kumar guided me flawlessly through the invisible aligner process. The treatment was extremely comfortable, highly effective, and completely transformed my smile without anyone noticing I was wearing aligners!",
+    reviewer: "Piyush"
   },
   { 
     id: 8,  
     src: '/patient-gallery/case-8.jpg', 
-    alt: 'Zirconia dental crowns and bridges result at The DentalBrace Clinic Bathinda — patient showing natural-looking zirconia crowns by Dr. Ritu Saneja, best zirconia crown specialist in Bathinda Punjab India',  
-    label: 'Zirconia Crowns',
-    review: "Got Zirconia crowns here. They look exactly like real teeth and feel extremely durable. Excellent craftsmanship and zero discomfort.",
-    reviewer: "Harpreet B."
+    alt: 'Clear aligners orthodontic treatment result at The DentalBrace Clinic Bathinda — patient Dapinder Singh from Australia showing straight teeth after clear aligner therapy by Dr. Sandeep Kumar MDS Orthodontist, best Invisalign provider in Bathinda Punjab India',  
+    label: 'Clear Aligners',
+    review: "I traveled from Australia to Bathinda specifically for my clear aligner treatment with Dr. Sandeep Kumar. The process was incredibly smooth, and the aligners are so discreet that nobody even notices them. The clinic's international standards of care and Dr. Sandeep's orthodontic expertise are truly world-class. Highly recommended!",
+    reviewer: "Dapinder Singh (Australia)"
   },
   { 
     id: 9,  
@@ -80,15 +80,15 @@ const galleryItems = [
     alt: 'All-on-4 full mouth dental implants result at The DentalBrace Clinic Bathinda — patient showing complete arch fixed teeth after All-on-4 implants by Dr. Ritu Saneja Gold Medalist Implantologist, best All-on-4 clinic in Bathinda Punjab',  
     label: 'All-on-4 Implants',
     review: "The All-on-4 implants changed my life. I can eat everything normally now with fixed teeth. Truly a gold standard clinic for implantology.",
-    reviewer: "Ramesh C."
+    reviewer: "Sushil Khurana"
   },
   { 
     id: 10, 
     src: '/patient-gallery/case-10.jpg', 
-    alt: 'Cosmetic smile transformation result at The DentalBrace Clinic Bathinda — patient showing complete aesthetic smile makeover with veneers and whitening by Dr. Ritu Saneja, top cosmetic dentist in Bathinda Punjab India', 
-    label: 'Smile Transformation',
-    review: "A life-changing experience. The highly aesthetic results and utmost care for patient comfort make them the top dentists in the region.",
-    reviewer: "Anita P."
+    alt: 'Dental implants and complete dentures treatment result at The DentalBrace Clinic Bathinda — patient Usha Rani showing fixed dentures by Dr. Ritu Saneja Gold Medalist Prosthodontist, best dental implants clinic in Bathinda Punjab India', 
+    label: 'Implants & Dentures',
+    review: "I received dental implants and custom dentures from Dr. Ritu Saneja. The precision of her work is exceptional. My new teeth feel completely natural, and I can eat and speak with total confidence again. Highly recommend The DentalBrace Clinic for anyone needing high-quality implants and dentures in Bathinda!",
+    reviewer: "Usha Rani"
   },
 ];
 
@@ -134,9 +134,8 @@ const PatientGallery = () => {
             ease: 'expo.out',
             scrollTrigger: {
               trigger: card,
-              start: 'top 92%', // Trigger just as it comes into view
-              end: 'top 50%',
-              toggleActions: 'play none none reverse', // Reverses when scrolling back up
+              start: 'top 85%', // Trigger just as it comes into view
+              once: true,
             }
           }
         );

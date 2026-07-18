@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { MapPin, Phone, Mail, Clock } from 'lucide-react';
 import './Footer.css';
 
@@ -8,14 +9,16 @@ const Footer = () => {
         
         <div className="footer-col brand-col">
           <div className="footer-logo" style={{ display: 'flex', alignItems: 'flex-start', gap: '0.75rem' }}>
-            <img src="/logo.png" alt="The DentalBrace Clinic and Implant Centre Bathinda — official logo, best dental clinic in Bathinda Punjab India" style={{ height: '48px', width: 'auto' }} />
+            <Link to="/">
+              <img src="/logo.png" alt="The DentalBrace Clinic and Implant Centre Bathinda — official logo, best dental clinic in Bathinda Punjab India" style={{ height: '48px', width: 'auto' }} />
+            </Link>
             <div style={{ display: 'flex', flexDirection: 'column' }}>
               <span className="logo-text">The DentalBrace</span>
               <span className="logo-subtext">Clinic & Implant Centre</span>
             </div>
           </div>
-          <p className="footer-desc">
-            Bathinda's leading multi-specialty dental centre offering premium care with state-of-the-art digital dentistry. Your smile is our passion.
+          <p className="footer-desc text-sm">
+            Bathinda's leading multi-specialty dental centre. Proudly serving patients from Bathinda, Mansa, Sri Muktsar Sahib, Faridkot, Barnala, and across Punjab with premium digital dentistry.
           </p>
           <div className="social-links">
             <a 
@@ -45,28 +48,38 @@ const Footer = () => {
           </div>
         </div>
 
+        {/* Treatments Column */}
         <div className="footer-col">
           <h4 className="footer-heading">Treatments</h4>
           <ul className="footer-links">
-            <li><a href="#services">Dental Implants</a></li>
-            <li><a href="#services">Invisible Braces</a></li>
-            <li><a href="#services">Smile Designing</a></li>
-            <li><a href="#services">Root Canal</a></li>
-            <li><a href="#services">Full Mouth Rehab</a></li>
+            <li><Link to="/treatments/dental-implants">Dental Implants</Link></li>
+            <li><Link to="/treatments/invisalign">Invisalign & Aligners</Link></li>
+            <li><Link to="/treatments/smile-makeover">Smile Makeover</Link></li>
+            <li><Link to="/treatments/root-canal">Root Canal</Link></li>
+            <li><Link to="/treatments/all-on-4">All-on-4 Implants</Link></li>
+            <li><Link to="/treatments/teeth-whitening">Teeth Whitening</Link></li>
+            <li><Link to="/treatments/veneers">Dental Veneers</Link></li>
+            <li><Link to="/treatments/braces">Braces</Link></li>
           </ul>
         </div>
 
+        {/* Quick Links Column */}
         <div className="footer-col">
           <h4 className="footer-heading">Quick Links</h4>
           <ul className="footer-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About Us</a></li>
-            <li><a href="#specialists">Our Specialists</a></li>
-            <li><a href="#gallery">Smile Gallery</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><Link to="/">Home</Link></li>
+            <li><Link to="/about">About Us</Link></li>
+            <li><Link to="/doctors/dr-sandeep-kumar">Dr. Sandeep Kumar</Link></li>
+            <li><Link to="/doctors/dr-ritu-saneja">Dr. Ritu Saneja</Link></li>
+            <li><Link to="/faq">FAQs</Link></li>
+            <li><Link to="/contact">Contact Us</Link></li>
+            <li><a href="/#book">Book Appointment</a></li>
+            <li><Link to="/gallery">Smile Gallery</Link></li>
+            <li><Link to="/blog">Blog & Patient Hub</Link></li>
           </ul>
         </div>
 
+        {/* Contact Column */}
         <div className="footer-col contact-col">
           <h4 className="footer-heading">Get in Touch</h4>
           <ul className="footer-contact-list">
@@ -94,8 +107,9 @@ const Footer = () => {
         <div className="container footer-bottom-content">
           <p>&copy; {new Date().getFullYear()} The DentalBrace Clinic & Implant Centre. All rights reserved.</p>
           <div className="footer-legal">
-            <a href="#">Privacy Policy</a>
-            <a href="#">Terms of Service</a>
+            <Link to="/about">About</Link>
+            <Link to="/contact">Contact</Link>
+            <Link to="/faq">FAQs</Link>
           </div>
         </div>
       </div>

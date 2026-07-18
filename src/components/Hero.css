@@ -225,6 +225,104 @@
   font-weight: 500;
 }
 
+/* ---- IMPACT CARD ---- */
+.hero-impact-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 1.25rem 1.75rem;
+  background: linear-gradient(135deg, rgba(245, 130, 32, 0.08) 0%, rgba(255, 255, 255, 0.02) 100%);
+  border: 1px solid rgba(245, 130, 32, 0.2);
+  border-radius: var(--radius-md);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hero-impact-card:hover {
+  border-color: rgba(245, 130, 32, 0.35);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px rgba(245, 130, 32, 0.08);
+}
+
+.hero-impact-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -150%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.06),
+    transparent
+  );
+  transform: skewX(-25deg);
+  animation: impact-shine 6s infinite ease-in-out;
+}
+
+@keyframes impact-shine {
+  0% { left: -150%; }
+  25% { left: 150%; }
+  100% { left: 150%; }
+}
+
+.hero-impact-badge {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.hero-impact-icon {
+  color: #F58220;
+  background: rgba(245, 130, 32, 0.12);
+  padding: 0.75rem;
+  border-radius: 50%;
+  box-sizing: content-box;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(245, 130, 32, 0.15);
+}
+
+.hero-impact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.hero-impact-label {
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 1.2px;
+  color: #F58220;
+  text-transform: uppercase;
+}
+
+.hero-impact-text {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.hero-impact-divider {
+  width: 1px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.12);
+  flex-shrink: 0;
+}
+
+.hero-impact-counter {
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: #FFFFFF;
+  letter-spacing: -1px;
+  line-height: 1;
+  text-shadow: 0 0 15px rgba(245, 130, 32, 0.2);
+  white-space: nowrap;
+}
+
 /* ---- RIGHT PANEL ---- */
 .hero-right {
   position: relative;
@@ -242,7 +340,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center center;
+  object-position: center 85%;
   display: block;
 }
 
@@ -367,11 +465,38 @@
 
   .hero-image-wrapper {
     min-height: auto;
-    height: auto;
+    height: 380px;
     aspect-ratio: auto;
+    position: relative;
+    overflow: hidden;
   }
 
   .hero-image {
-    height: auto; /* Let the image naturally define its height, zero cropping! */
+    height: 100%;
+    object-fit: cover;
+    object-position: center 85%;
+    display: block;
+  }
+
+  .hero-impact-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+    padding: 1.5rem;
+  }
+
+  .hero-impact-badge {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .hero-impact-divider {
+    width: 80%;
+    height: 1px;
+  }
+
+  .hero-impact-counter {
+    font-size: 2.75rem;
   }
 }

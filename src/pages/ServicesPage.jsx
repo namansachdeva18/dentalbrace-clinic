@@ -14,7 +14,7 @@ const ServicesPage = () => {
       title: "Cosmetic Dentistry",
       icon: <Sparkles size={32} className="text-accent" />,
       services: [
-        { name: "Digital Smile Designing", slug: "smile-designing" },
+        { name: "Smile Makeover", slug: "smile-makeover" },
         { name: "Dental Veneers", slug: "veneers" },
         { name: "Teeth Whitening", slug: "teeth-whitening" }
       ]
@@ -23,8 +23,8 @@ const ServicesPage = () => {
       title: "Implantology",
       icon: <Stethoscope size={32} className="text-accent" />,
       services: [
-        { name: "Single Tooth Implant", slug: "single-implant" },
-        { name: "Full Mouth Implants", slug: "full-mouth-implants" }
+        { name: "Dental Implants", slug: "dental-implants" },
+        { name: "All-on-4 Implants", slug: "all-on-4" }
       ]
     },
     {
@@ -32,7 +32,7 @@ const ServicesPage = () => {
       icon: <Scissors size={32} className="text-accent" />,
       services: [
         { name: "Invisalign", slug: "invisalign" },
-        { name: "Metal Braces", slug: "metal-braces" }
+        { name: "Metal Braces", slug: "braces" }
       ]
     }
   ];
@@ -77,7 +77,7 @@ const ServicesPage = () => {
               <ul style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                 {cat.services.map((service, j) => (
                   <li key={j}>
-                    <Link to={`/treatment/${service.slug}`} className="text-secondary hover:text-accent" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', paddingBottom: '0.5rem', borderBottom: '1px solid rgba(0,0,0,0.05)', transition: 'color 0.3s ease' }}>
+                    <Link to={`/treatments/${service.slug}`} className="text-secondary hover:text-accent" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', paddingBottom: '0.5rem', borderBottom: '1px solid rgba(0,0,0,0.05)', transition: 'color 0.3s ease' }}>
                       {service.name} <ArrowRight size={16} />
                     </Link>
                   </li>

@@ -60,8 +60,8 @@ const ContactSection = () => {
           loading="lazy" 
           title="Clinic Location"
         ></iframe>
-        {/* Overlay to ensure readability */}
-        <div style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, backgroundColor: 'rgba(255, 249, 241, 0.6)', backdropFilter: 'blur(4px)' }}></div>
+        {/* Overlay to ensure readability and elegance */}
+        <div style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, backgroundColor: 'rgba(253, 251, 247, 0.9)', backdropFilter: 'blur(8px)' }}></div>
       </div>
 
       <div className="container" style={{ position: 'relative', zIndex: 1, padding: '4rem 0' }}>
@@ -76,11 +76,12 @@ const ContactSection = () => {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '2rem', alignItems: 'stretch', maxWidth: '1000px', margin: '0 auto' }}>
           
           {/* Left Panel: Contact Info (Navy Theme) */}
-          <div className="contact-info p-8" style={{ 
+          <div className="contact-info" style={{ 
             backgroundColor: '#0F3D3E', 
             color: 'white',
+            padding: '3rem',
             borderRadius: 'var(--radius-lg)',
-            boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.4)',
+            boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.3)',
             display: 'flex', flexDirection: 'column'
           }}>
             <h3 style={{ fontSize: '1.75rem', fontWeight: '800', marginBottom: '2rem', color: '#FFF9F1' }}>Clinic Details</h3>
@@ -140,11 +141,12 @@ const ContactSection = () => {
           </div>
 
           {/* Right Panel: Contact Form (Ivory Theme) */}
-          <div className="contact-form-container p-8" style={{ 
-            backgroundColor: '#FFF9F1', 
+          <div className="contact-form-container" style={{ 
+            backgroundColor: 'white', 
+            padding: '3rem',
             borderRadius: 'var(--radius-lg)',
-            boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.15)',
-            border: '1px solid rgba(255,255,255,0.5)'
+            boxShadow: '0 20px 40px rgba(0, 0, 0, 0.08)',
+            border: '1px solid rgba(0,0,0,0.05)'
           }}>
             <h3 style={{ fontSize: '1.75rem', fontWeight: '800', marginBottom: '2rem', color: 'var(--text-primary)' }}>Request Appointment</h3>
             <form className="contact-form" onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>

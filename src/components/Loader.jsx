@@ -48,7 +48,7 @@ const Loader = ({ onComplete }) => {
     <div className="loader-container" ref={loaderRef}>
       <div className="loader-content">
         <div className="loader-logo" ref={logoRef} style={{ opacity: 0, transform: 'translateY(20px)' }}>
-          <img src="/logo.png" alt="The DentalBrace Clinic Logo" className="loader-logo-img" />
+          <img src="/logo.png" alt="The DentalBrace Clinic Bathinda — Top Rated Dental Clinic Logo" className="loader-logo-img" />
           <h2>The DentalBrace</h2>
           <p>Clinic & Implant Centre</p>
         </div>

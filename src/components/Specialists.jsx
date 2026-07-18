@@ -16,7 +16,8 @@ const Specialists = () => {
       gsap.from(cardsRef.current, {
         scrollTrigger: {
           trigger: sectionRef.current,
-          start: "top 75%",
+          start: "top 85%",
+          once: true,
         },
         y: 40,
         opacity: 0,
@@ -48,7 +49,7 @@ const Specialists = () => {
         <div className="specialists-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: '3rem' }}>
 
           {/* Dr. Sandeep Kumar */}
-          <div className="doctor-card glass hover-elevate overflow-hidden flex flex-col" style={{ padding: '0', position: 'relative' }} ref={addToCards}>
+          <div className="doctor-card glass hover-elevate overflow-hidden flex flex-col gpu-accelerated" style={{ padding: '0', position: 'relative' }} ref={addToCards}>
 
             {/* #1 Badge */}
             <div style={{
@@ -87,7 +88,7 @@ const Specialists = () => {
               }}>
                 <Award size={16} style={{ color: 'var(--accent-color)' }} />
                 <span style={{ fontWeight: '800', color: 'var(--accent-color)', fontSize: '1.1rem' }}>
-                  <AnimatedCounter target={3000} suffix="+" />
+                  <AnimatedCounter target={5500} suffix="+" />
                 </span>
                 <span style={{ color: 'var(--text-secondary)', fontSize: '0.875rem', fontWeight: '500' }}>
                   Braces &amp; Aligner Cases
@@ -126,7 +127,7 @@ const Specialists = () => {
           </div>
 
           {/* Dr. Ritu Saneja */}
-          <div className="doctor-card glass hover-elevate overflow-hidden flex flex-col" style={{ padding: '0', position: 'relative' }} ref={addToCards}>
+          <div className="doctor-card glass hover-elevate overflow-hidden flex flex-col gpu-accelerated" style={{ padding: '0', position: 'relative' }} ref={addToCards}>
 
             {/* Gold Medalist Badge */}
             <div style={{
@@ -165,7 +166,7 @@ const Specialists = () => {
               }}>
                 <Award size={16} style={{ color: 'var(--accent-color)' }} />
                 <span style={{ fontWeight: '800', color: 'var(--accent-color)', fontSize: '1.1rem' }}>
-                  <AnimatedCounter target={3000} suffix="+" />
+                  <AnimatedCounter target={5000} suffix="+" />
                 </span>
                 <span style={{ color: 'var(--text-secondary)', fontSize: '0.875rem', fontWeight: '500' }}>
                   Implants Placed

@@ -73,12 +73,23 @@ html {
 }
 
 body {
-  font-family: var(--font-body);
-  background-color: var(--bg-color);
+  font-family: 'Outfit', sans-serif;
   color: var(--text-primary);
+  background-color: var(--bg-ivory);
   line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 
+ * 120fps Hardware Acceleration
+ * Ensures smooth scrolling and rendering on ProMotion/High-Refresh-Rate devices 
+ */
+.gpu-accelerated, .hero-image, .patient-gallery-img, .service-card, .doctors-intro__stat-number, .animated-counter {
+  will-change: transform, opacity;
+  transform: translateZ(0);
+  backface-visibility: hidden;
 }
 
 h1 {
@@ -136,6 +147,7 @@ img {
 .text-primary { color: var(--text-primary); }
 .text-accent { color: var(--accent-color); }
 .text-secondary { color: var(--text-secondary); }
+.text-white { color: #FFFFFF; }
 
 /* Background Utilities */
 .bg-ivory { background-color: var(--bg-ivory); }

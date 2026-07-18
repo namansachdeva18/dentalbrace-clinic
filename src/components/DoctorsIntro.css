@@ -1,0 +1,475 @@
+/* ── DoctorsIntro Section ─────────────────────────────────── */
+
+.doctors-intro {
+  background: var(--bg-ivory);
+  padding: 96px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Soft background accent blob */
+.doctors-intro::before {
+  content: '';
+  position: absolute;
+  top: -120px;
+  right: -120px;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(245, 130, 32, 0.06) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.doctors-intro .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Header ─────────────────────────────────────────────────── */
+.doctors-intro__header {
+  text-align: center;
+  margin-bottom: 72px;
+}
+
+.doctors-intro__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.45rem 1.2rem;
+  background: rgba(245, 130, 32, 0.1);
+  border: 1px solid rgba(245, 130, 32, 0.25);
+  border-radius: 9999px;
+  color: var(--accent-color);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 1.25rem;
+}
+
+.doctors-intro__title {
+  font-family: var(--font-heading);
+  font-size: clamp(2.2rem, 4vw, 3.2rem);
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin-bottom: 1rem;
+}
+
+.doctors-intro__title span {
+  color: var(--accent-color);
+}
+
+.doctors-intro__subtitle {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  max-width: 580px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* ── Combined Hero Photo Banner ─────────────────────────── */
+.doctors-intro__combined {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 0;
+  background: var(--bg-navy);
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow: 0 32px 80px rgba(15, 61, 62, 0.18);
+  min-height: 520px;
+  margin-bottom: 4rem;
+}
+
+/* Left — text panel */
+.doctors-intro__combined-text {
+  padding: 56px 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+}
+
+.doctors-intro__combined-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.35rem 0.9rem;
+  background: rgba(245, 130, 32, 0.08);
+  border: 1px solid rgba(245, 130, 32, 0.15);
+  border-radius: 9999px;
+  color: #d18d4f;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+  width: fit-content;
+}
+
+.doctors-intro__combined-heading {
+  font-family: var(--font-heading);
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  margin-bottom: 1rem;
+}
+
+.doctors-intro__combined-heading em {
+  font-style: normal;
+  color: #ffa855;
+}
+
+.doctors-intro__combined-desc {
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 0.98rem;
+  line-height: 1.75;
+  margin-bottom: 2.5rem;
+  max-width: 380px;
+}
+
+.doctors-intro__stats-row {
+  display: flex;
+  gap: 2.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.doctors-intro__stat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.doctors-intro__stat-number {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  font-weight: 800;
+  color: #ffa855;
+  line-height: 1;
+}
+
+.doctors-intro__stat-label {
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.6);
+  font-weight: 500;
+  letter-spacing: 0.3px;
+}
+
+.doctors-intro__combined-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.85rem 2rem;
+  background: var(--accent-color);
+  color: white;
+  border-radius: 9999px;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  width: fit-content;
+  box-shadow: 0 8px 24px rgba(245, 130, 32, 0.35);
+}
+
+.doctors-intro__combined-cta:hover {
+  background: var(--accent-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(245, 130, 32, 0.45);
+  color: white;
+}
+
+/* Right — photo panel */
+.doctors-intro__combined-photo {
+  position: relative;
+  overflow: hidden;
+}
+
+.doctors-intro__combined-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+}
+
+/* Dark gradient overlay on photo for blending */
+.doctors-intro__combined-photo::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, var(--bg-navy) 0%, transparent 30%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* ── Individual Doctor Cards ────────────────────────────── */
+.doctors-intro__cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.doctors-intro__card {
+  background: var(--bg-white);
+  border-radius: 24px;
+  border: 1px solid var(--border-color);
+  overflow: hidden;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+}
+
+.doctors-intro__card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 24px 60px rgba(46, 31, 27, 0.1);
+}
+
+.doctors-intro__card-photo-wrap {
+  position: relative;
+  height: 320px;
+  overflow: hidden;
+  background: var(--bg-cream);
+}
+
+.doctors-intro__card-photo-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  transition: transform 0.6s ease;
+}
+
+.doctors-intro__card:hover .doctors-intro__card-photo-wrap img {
+  transform: scale(1.04);
+}
+
+.doctors-intro__card-badge {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  z-index: 5;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.32rem 0.85rem;
+  border-radius: 9999px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  backdrop-filter: blur(8px);
+}
+
+.doctors-intro__card-badge--orange {
+  background: var(--accent-color);
+  color: white;
+  box-shadow: 0 4px 14px rgba(245, 130, 32, 0.4);
+}
+
+.doctors-intro__card-badge--gold {
+  background: linear-gradient(135deg, #c9a227, #e8c84e);
+  color: #3d2800;
+  box-shadow: 0 4px 14px rgba(201, 162, 39, 0.4);
+}
+
+/* Bottom photo gradient */
+.doctors-intro__card-photo-wrap::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: linear-gradient(to top, var(--bg-white) 0%, transparent 100%);
+  z-index: 2;
+  pointer-events: none;
+}
+
+.doctors-intro__card-body {
+  padding: 1.75rem 2rem 2rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.doctors-intro__card-name {
+  font-family: var(--font-heading);
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.2rem;
+}
+
+.doctors-intro__card-role {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--accent-color);
+  margin-bottom: 0.85rem;
+  letter-spacing: 0.2px;
+}
+
+.doctors-intro__card-bio {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 1.25rem;
+}
+
+.doctors-intro__card-quals {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  margin-bottom: 1.5rem;
+}
+
+.doctors-intro__card-qual {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  font-size: 0.83rem;
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
+.doctors-intro__card-qual svg {
+  flex-shrink: 0;
+  margin-top: 1px;
+  color: var(--accent-color);
+}
+
+.doctors-intro__card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-bottom: 1.75rem;
+}
+
+.doctors-intro__card-tags span {
+  padding: 0.3rem 0.8rem;
+  background: rgba(245, 130, 32, 0.07);
+  border: 1px solid rgba(245, 130, 32, 0.18);
+  border-radius: 9999px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--accent-color);
+}
+
+.doctors-intro__card-cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  padding: 0.8rem 1.5rem;
+  border-radius: 9999px;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  background: var(--accent-color);
+  color: white;
+  box-shadow: 0 6px 20px rgba(245, 130, 32, 0.25);
+  margin-top: auto;
+}
+
+.doctors-intro__card-cta:hover {
+  background: var(--accent-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(245, 130, 32, 0.38);
+  color: white;
+}
+
+/* ── Trust Strip ─────────────────────────────────────────── */
+.doctors-intro__trust {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-top: 3.5rem;
+  padding-top: 2.5rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.doctors-intro__trust-item {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.doctors-intro__trust-item svg {
+  color: var(--accent-color);
+  flex-shrink: 0;
+}
+
+.doctors-intro__trust-divider {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--border-color);
+}
+
+/* ── Responsive ─────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .doctors-intro__combined {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  .doctors-intro__combined-photo {
+    height: 340px;
+    order: -1;
+  }
+
+  .doctors-intro__combined-photo::before {
+    background: linear-gradient(to bottom, transparent 50%, var(--bg-navy) 100%);
+  }
+
+  .doctors-intro__combined-text {
+    padding: 40px 32px;
+  }
+
+  .doctors-intro__stats-row {
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 720px) {
+  .doctors-intro {
+    padding: 64px 0;
+  }
+
+  .doctors-intro__header {
+    margin-bottom: 48px;
+  }
+
+  .doctors-intro__cards {
+    grid-template-columns: 1fr;
+  }
+
+  .doctors-intro__combined-text {
+    padding: 32px 24px;
+  }
+
+  .doctors-intro__stats-row {
+    gap: 1.25rem;
+    flex-wrap: wrap;
+  }
+
+  .doctors-intro__trust {
+    gap: 1rem;
+  }
+
+  .doctors-intro__trust-divider {
+    display: none;
+  }
+}

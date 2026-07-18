@@ -68,7 +68,7 @@ const InvisalignHero = () => {
             </h2>
 
             <p style={{ color: 'rgba(255,255,255,0.75)', fontSize: '1.125rem', lineHeight: '1.8', marginBottom: '2.5rem' }}>
-              Get straighter teeth without anyone knowing. Invisible, removable, and comfortable — Invisalign clear aligners are custom-made for your smile by <strong style={{ color: 'white' }}>Dr. Sandeep Kumar</strong>, Bathinda's most experienced orthodontist.
+              Get <strong className="text-white font-bold">straighter teeth without anyone knowing</strong>. Invisible, removable, and comfortable — Invisalign clear aligners are custom-made for your smile by <strong className="text-accent font-bold">Bathinda's leading orthodontic specialists</strong>.
             </p>
 
             {/* Stat Counter Row */}
@@ -81,7 +81,7 @@ const InvisalignHero = () => {
             }}>
               <div>
                 <div style={{ fontSize: '2.25rem', fontWeight: '800', color: 'var(--accent-color)' }}>
-                  <AnimatedCounter target={3000} suffix="+" />
+                  <AnimatedCounter target={5500} suffix="+" />
                 </div>
                 <div style={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.875rem', fontWeight: '500' }}>
                   Braces &amp; Aligner Cases
@@ -101,11 +101,11 @@ const InvisalignHero = () => {
             {/* Benefits List */}
             <ul style={{ display: 'flex', flexDirection: 'column', gap: '0.9rem', marginBottom: '2.5rem' }}>
               {[
-                'Nearly invisible — no one can tell you\'re wearing them',
-                'Removable for eating, brushing & special occasions',
-                'Treats crowding, gaps, overbites & underbites',
-                'Dentofacial orthopedics for jaw alignment',
-                'Faster than traditional braces in most cases'
+                <><strong className="text-white font-bold">Nearly invisible</strong> — no one can tell you're wearing them</>,
+                <><strong className="text-white font-bold">Removable</strong> for eating, brushing & special occasions</>,
+                <>Treats crowding, gaps, overbites & underbites</>,
+                <>Dentofacial orthopedics for jaw alignment</>,
+                <><strong className="text-white font-bold">Faster than traditional braces</strong> in most cases</>
               ].map((item, i) => (
                 <li key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.75rem', color: 'rgba(255,255,255,0.8)' }}>
                   <CheckCircle size={18} style={{ color: 'var(--accent-color)', flexShrink: 0, marginTop: '2px' }} />
@@ -114,21 +114,6 @@ const InvisalignHero = () => {
               ))}
             </ul>
 
-            {/* Credentials Badge */}
-            <div style={{
-              display: 'flex', alignItems: 'center', gap: '1rem',
-              padding: '1rem 1.5rem',
-              background: 'rgba(255,255,255,0.05)',
-              borderRadius: 'var(--radius-md)',
-              border: '1px solid rgba(255,255,255,0.08)',
-              marginBottom: '2rem'
-            }}>
-              <Award size={32} style={{ color: 'var(--accent-color)', flexShrink: 0 }} />
-              <div>
-                <div style={{ color: 'white', fontWeight: '700', fontSize: '1rem' }}>Dr. Sandeep Kumar — Consultant Orthodontist</div>
-                <div style={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.875rem' }}>BDS, MDS (Orthodontics) - BHU Varanasi · Ex Resident - AIIMS New Delhi</div>
-              </div>
-            </div>
 
             <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
               <a href="#book" style={{
@@ -168,8 +153,8 @@ const InvisalignHero = () => {
               </p>
             </div>
             <BeforeAfterSlider
-              beforeImage="/images/before_aligners_indian.png"
-              afterImage="/images/after_aligners_indian.png"
+              beforeImage="/images/before_aligners_v3.png"
+              afterImage="/images/after_aligners_v3.png"
               beforeAlt="Real patient before Invisalign clear aligner treatment at The DentalBrace Clinic Bathinda — showing crowded overlapping teeth requiring orthodontic correction by Dr. Sandeep Kumar"
               afterAlt="Same real patient after Invisalign treatment by Dr. Sandeep Kumar at The DentalBrace Clinic Bathinda — beautifully straight aligned teeth, certified Invisalign provider result in Bathinda Punjab"
             />

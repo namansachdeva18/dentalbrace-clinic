@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
-import { Calendar, Phone, Star, ShieldCheck, HeartPulse, Award, ArrowRight, CheckCircle } from 'lucide-react';
+import { Calendar, Phone, Star, ShieldCheck, HeartPulse, Award, ArrowRight, CheckCircle, Users } from 'lucide-react';
 import AnimatedCounter from './AnimatedCounter';
 import './Hero.css';
 
@@ -30,7 +30,7 @@ const Hero = () => {
         { y: 0, opacity: 1, duration: 1.8, ease: 'power2.out', delay: 1.6 }
       );
       gsap.to(floatingCardRef.current, {
-        y: '-=5', duration: 7, yoyo: true, repeat: -1, ease: 'sine.inOut', delay: 3.4
+        y: '-=10', duration: 4, yoyo: true, repeat: -1, ease: 'sine.inOut', delay: 3.4
       });
     }, heroRef);
 
@@ -38,8 +38,8 @@ const Hero = () => {
   }, []);
 
   const stats = [
-    { value: 3000, suffix: '+', label: 'Braces & Aligner Cases', icon: <HeartPulse size={18} /> },
-    { value: 3000, suffix: '+', label: 'Implants Placed', icon: <ShieldCheck size={18} /> },
+    { value: 5500, suffix: '+', label: 'Braces & Aligner Cases', icon: <HeartPulse size={18} /> },
+    { value: 5000, suffix: '+', label: 'Implants Placed', icon: <ShieldCheck size={18} /> },
     { value: 5.0, suffix: '★', label: 'Google Rating', icon: <Star size={18} />, isDecimal: true },
     { value: 10, suffix: '+', label: 'Years Experience', icon: <Award size={18} /> },
   ];
@@ -66,7 +66,7 @@ const Hero = () => {
 
           {/* Subtext */}
           <p className="hero-subtitle">
-            10k+ transformed smiles — led by AIIMS-trained specialists. Consultation at a nominal ₹200/-. Painless, precise, and permanent dental care.
+            <strong className="text-white font-bold">10k+ transformed smiles</strong> — led by <strong className="text-accent font-bold">AIIMS-trained specialists</strong>. Consultation at a nominal ₹200/-. <strong className="text-white font-bold">Painless, precise, and permanent</strong> dental care.
           </p>
 
           {/* Doctor Credentials */}
@@ -97,22 +97,22 @@ const Hero = () => {
             </a>
           </div>
 
-          {/* Stat Chips */}
-          <div className="hero-stats-row">
-            {stats.map((s, i) => (
-              <div key={i} className="hero-stat-chip">
-                <span className="hero-stat-icon">{s.icon}</span>
-                <span className="hero-stat-value">
-                  {s.isDecimal
-                    ? s.value
-                    : <AnimatedCounter target={s.value} suffix={s.suffix} />
-                  }
-                  {s.isDecimal ? s.suffix : ''}
-                </span>
-                <span className="hero-stat-label">{s.label}</span>
+          {/* Impact Banner */}
+          <div className="hero-impact-card">
+            <div className="hero-impact-badge">
+              <Users size={20} className="hero-impact-icon" />
+              <div className="hero-impact-info">
+                <span className="hero-impact-label">Community Trust</span>
+                <span className="hero-impact-text">Total Patients Impacted &amp; Smiling</span>
               </div>
-            ))}
+            </div>
+            <div className="hero-impact-divider" />
+            <div className="hero-impact-counter">
+              <AnimatedCounter target={10000} suffix="+" />
+            </div>
           </div>
+
+
 
         </div>
       </div>
@@ -121,7 +121,7 @@ const Hero = () => {
       <div className="hero-right" ref={rightRef}>
         <div className="hero-image-wrapper">
           <img
-            src="/hero-image.jpg"
+            src="/hero-image.jpg?v=3"
             alt="Exterior view of The DentalBrace Clinic and Implant Centre on Bibi Wala Road Bathinda Punjab — showing clinic signboard with Dr. Sandeep Kumar MDS Consultant Orthodontist Ex-AIIMS PGI CHD and Dr. Ritu Saneja MDS Prosthodontist Implantologist Gold Medalist, phone number 74968-49392, premium dental clinic building Bathinda"
             className="hero-image"
             fetchpriority="high"
@@ -132,7 +132,7 @@ const Hero = () => {
         </div>
 
         {/* Floating review card */}
-        <div className="hero-floating-card" ref={floatingCardRef}>
+        <div className="hero-floating-card gpu-accelerated" ref={floatingCardRef}>
           <div className="hero-floating-stars">
             {[1,2,3,4,5].map(s => <Star key={s} size={14} fill="#F58220" color="#F58220" />)}
           </div>

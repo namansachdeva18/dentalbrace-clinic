@@ -73,116 +73,98 @@ const SmileMakeover = () => {
           </h2>
 
           <p style={{ color: 'rgba(255,255,255,0.65)', fontSize: '1.1rem', maxWidth: '600px', margin: '0 auto' }}>
-            Led by <strong style={{ color: 'white' }}>Dr. Ritu Saneja</strong> — MDS (Gold Medalist) Prosthodontist — our smile makeovers are designed with digital precision and delivered with artistry.
+            Our cosmetic smile makeovers are designed with <strong className="text-accent font-bold">digital precision</strong> and delivered with unparalleled artistry to give you the <strong className="text-white font-bold">perfect, confident smile</strong>.
           </p>
         </div>
 
-        {/* Main Grid */}
+        {/* Split Editorial Layout */}
         <div style={{
           display: 'grid',
           gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-          gap: '4rem',
-          alignItems: 'center',
+          gap: '2rem',
           marginBottom: '4rem'
         }}>
-
-          {/* Treatment Cards */}
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+          {/* Left: Stunning Macro Image */}
+          <div style={{
+            position: 'relative',
+            borderRadius: 'var(--radius-lg)',
+            overflow: 'hidden',
+            minHeight: '400px',
+            boxShadow: '0 20px 40px rgba(0,0,0,0.2)'
+          }}>
+            <img 
+              src="/images/new_after_makeover.png" 
+              alt="Cosmetic smile makeover with custom porcelain veneers at The DentalBrace Clinic Bathinda Punjab"
+              style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', objectFit: 'cover' }}
+            />
+          </div>
+          
+          {/* Right: Treatment Cards Bento Grid */}
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
+            gap: '1.5rem',
+            alignContent: 'center'
+          }}>
             {treatments.map((t, i) => (
-              <div
-                key={i}
-                style={{
-                  display: 'flex', gap: '1.25rem', alignItems: 'flex-start',
-                  padding: '1.5rem',
-                  background: 'rgba(255,255,255,0.05)',
-                  borderRadius: 'var(--radius-md)',
-                  border: '1px solid rgba(255,255,255,0.08)',
-                  transition: 'all 0.2s ease',
-                  cursor: 'default'
-                }}
-                onMouseEnter={e => {
-                  e.currentTarget.style.background = 'rgba(245,130,32,0.1)';
-                  e.currentTarget.style.borderColor = 'rgba(245,130,32,0.3)';
-                }}
-                onMouseLeave={e => {
-                  e.currentTarget.style.background = 'rgba(255,255,255,0.05)';
-                  e.currentTarget.style.borderColor = 'rgba(255,255,255,0.08)';
-                }}
+              <div key={i} style={{
+                background: 'rgba(255,255,255,0.03)',
+                padding: '1.5rem',
+                borderRadius: 'var(--radius-md)',
+                border: '1px solid rgba(255,255,255,0.08)',
+                transition: 'all 0.3s ease'
+              }}
+              onMouseEnter={e => {
+                e.currentTarget.style.background = 'rgba(255,255,255,0.08)';
+                e.currentTarget.style.transform = 'translateY(-2px)';
+              }}
+              onMouseLeave={e => {
+                e.currentTarget.style.background = 'rgba(255,255,255,0.03)';
+                e.currentTarget.style.transform = 'none';
+              }}
               >
-                <span style={{
-                  width: '44px', height: '44px', borderRadius: 'var(--radius-sm)',
-                  background: 'rgba(245,130,32,0.15)',
-                  display: 'flex', alignItems: 'center', justifyContent: 'center',
-                  color: 'var(--accent-color)', fontSize: '1.25rem', flexShrink: 0
-                }}>
-                  {t.icon}
-                </span>
-                <div>
-                  <h3 style={{ color: 'white', fontWeight: '700', fontSize: '1.05rem', marginBottom: '0.4rem' }}>
-                    {t.title}
-                  </h3>
-                  <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.9rem', lineHeight: '1.6', margin: 0 }}>
-                    {t.desc}
-                  </p>
-                </div>
+                <span style={{ color: 'var(--accent-color)', fontSize: '1.5rem', display: 'block', marginBottom: '1rem' }}>{t.icon}</span>
+                <h3 style={{ color: 'white', fontWeight: '700', fontSize: '1.1rem', marginBottom: '0.5rem' }}>{t.title}</h3>
+                <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.9rem', lineHeight: '1.6', margin: 0 }}>{t.desc}</p>
               </div>
             ))}
-
-            {/* CTA */}
-            <a href="#book" style={{
-              display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: '0.6rem',
-              padding: '1rem 2rem', marginTop: '0.5rem',
-              background: 'var(--accent-color)',
-              color: 'white', borderRadius: 'var(--radius-full)',
-              fontWeight: '700', textDecoration: 'none',
-              fontSize: '1rem', transition: 'all 0.2s ease',
-              boxShadow: '0 4px 20px rgba(245,130,32,0.4)'
-            }}
-            onMouseEnter={e => e.currentTarget.style.transform = 'translateY(-2px)'}
-            onMouseLeave={e => e.currentTarget.style.transform = 'none'}
-            >
-              Book Smile Makeover Consultation <ArrowRight size={18} />
-            </a>
-          </div>
-
-          {/* Before / After Slider */}
-          <div>
-            <p style={{ color: 'rgba(255,255,255,0.5)', fontSize: '0.8rem', textAlign: 'center', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '1rem' }}>
-              Drag to Compare — Real Results
-            </p>
-            <BeforeAfterSlider
-              beforeImage="/images/before_makeover_indian.png"
-              afterImage="/images/after_makeover_indian.png"
-              beforeAlt="Indian patient before cosmetic smile makeover at The DentalBrace Clinic Bathinda — showing stained, discoloured and chipped teeth requiring porcelain veneers and teeth whitening by Dr. Ritu Saneja"
-              afterAlt="Same Indian patient after full smile makeover with porcelain veneers and teeth whitening by Dr. Ritu Saneja Gold Medalist Prosthodontist at The DentalBrace Clinic Bathinda — dazzling white perfectly shaped celebrity smile"
-            />
-
-            {/* Micro stats */}
-            <div style={{
-              display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginTop: '1.5rem'
-            }}>
-              {[
-                { n: 3000, suffix: '+', label: 'Implants by Dr. Ritu' },
-                { n: 5.0, suffix: '★', label: 'Google Rating' }
-              ].map((s, i) => (
-                <div key={i} style={{
-                  padding: '1rem', textAlign: 'center',
-                  background: 'rgba(255,255,255,0.05)',
-                  borderRadius: 'var(--radius-md)',
-                  border: '1px solid rgba(255,255,255,0.08)'
-                }}>
-                  <div style={{ fontSize: '1.75rem', fontWeight: '800', color: 'var(--accent-color)' }}>
-                    {i === 0 ? <AnimatedCounter target={s.n} suffix={s.suffix} /> : `${s.n}${s.suffix}`}
-                  </div>
-                  <div style={{ color: 'rgba(255,255,255,0.55)', fontSize: '0.8rem', marginTop: '0.2rem' }}>
-                    {s.label}
-                  </div>
-                </div>
-              ))}
-            </div>
           </div>
         </div>
+
+        {/* Action and SEO Stats */}
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '2rem', alignItems: 'center', justifyContent: 'center' }}>
+          <a href="#book" style={{
+            display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: '0.6rem',
+            padding: '1.25rem 2.5rem',
+            background: 'var(--accent-color)',
+            color: 'white', borderRadius: 'var(--radius-full)',
+            fontWeight: '700', textDecoration: 'none',
+            fontSize: '1.1rem', transition: 'all 0.2s ease',
+            boxShadow: '0 4px 20px rgba(245,130,32,0.4)'
+          }}
+          onMouseEnter={e => e.currentTarget.style.transform = 'translateY(-2px)'}
+          onMouseLeave={e => e.currentTarget.style.transform = 'none'}
+          >
+            Book Smile Makeover <ArrowRight size={18} />
+          </a>
+        </div>
       </div>
+
+      {/* Structured Data for SEO */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{
+        __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "MedicalProcedure",
+          "name": "Cosmetic Smile Makeover",
+          "procedureType": "CosmeticProcedure",
+          "description": "Comprehensive cosmetic dentistry including porcelain veneers, composite bonding, and teeth whitening.",
+          "bodyLocation": "Teeth",
+          "provider": {
+            "@type": "MedicalClinic",
+            "name": "The DentalBrace Clinic Bathinda"
+          }
+        })
+      }} />
     </section>
   );
 };

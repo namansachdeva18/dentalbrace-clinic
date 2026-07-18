@@ -1,4 +1,5 @@
 import { Award, Shield, Users, Clock } from 'lucide-react';
+import { motion } from 'framer-motion';
 import '../pages/About.css';
 
 const AboutSection = () => {
@@ -8,7 +9,14 @@ const AboutSection = () => {
       <div className="section-padding">
         <div className="container" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '4rem', alignItems: 'center' }}>
           
-          <div style={{ position: 'relative' }}>
+          <motion.div 
+            style={{ position: 'relative' }}
+            className="gpu-accelerated"
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.2, margin: "0px 0px -100px 0px" }}
+            transition={{ duration: 0.6 }}
+          >
             <div 
               style={{
                 position: 'absolute',
@@ -28,39 +36,45 @@ const AboutSection = () => {
                 style={{ width: '100%', height: '100%', objectFit: 'cover', minHeight: '500px' }}
               />
             </div>
-          </div>
+          </motion.div>
           
-          <div className="about-text-content">
+          <motion.div 
+            className="about-text-content gpu-accelerated"
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.2, margin: "0px 0px -100px 0px" }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
             <span className="section-badge">Our Story</span>
             <h2 className="heading-primary mt-4">Setting the Gold Standard in Dentistry</h2>
             <p className="about-subtitle text-secondary text-lg mt-6 leading-relaxed">
-              Founded with a vision to bring world-class dental care to Bathinda, our clinic combines AIIMS-trained expertise with cutting-edge digital technology to deliver painless, precise, and permanent results.
+              Founded with a vision to bring world-class dental care to <strong className="text-accent font-bold">Bathinda</strong>, our clinic combines <strong className="text-primary font-bold">AIIMS-trained expertise</strong> with cutting-edge digital technology to deliver <strong className="text-primary font-bold">painless, precise, and permanent</strong> results.
             </p>
             
             <div className="mission-list mt-8" style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
-              <div className="flex items-start gap-4">
+              <motion.div className="flex items-start gap-4" whileHover={{ x: 10 }}>
                 <Shield size={28} className="text-accent flex-shrink-0 mt-1" />
                 <div>
                   <h3 className="text-xl font-bold text-primary">Ethical Practice</h3>
                   <p className="text-secondary mt-1">Transparent treatments prioritizing your long-term health.</p>
                 </div>
-              </div>
-              <div className="flex items-start gap-4">
+              </motion.div>
+              <motion.div className="flex items-start gap-4" whileHover={{ x: 10 }}>
                 <Users size={28} className="text-accent flex-shrink-0 mt-1" />
                 <div>
                   <h3 className="text-xl font-bold text-primary">Patient-First Philosophy</h3>
                   <p className="text-secondary mt-1">Tailored to your clinical needs, aesthetic goals, and comfort.</p>
                 </div>
-              </div>
-              <div className="flex items-start gap-4">
+              </motion.div>
+              <motion.div className="flex items-start gap-4" whileHover={{ x: 10 }}>
                 <Award size={28} className="text-accent flex-shrink-0 mt-1" />
                 <div>
                   <h3 className="text-xl font-bold text-primary">Clinical Excellence</h3>
-                  <p className="text-secondary mt-1">Specialists trained at India's premier institutes.</p>
+                  <p className="text-secondary mt-1">Specialists trained at <strong className="text-primary font-bold">India's premier institutes</strong>.</p>
                 </div>
-              </div>
+              </motion.div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
 
