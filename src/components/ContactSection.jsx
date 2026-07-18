@@ -1,5 +1,9 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { MapPin, Phone, Mail, Clock, Calendar, User, Stethoscope, MessageSquare, Navigation, Loader2, CheckCircle2 } from 'lucide-react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
@@ -10,6 +14,27 @@ const ContactSection = () => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
+  
+  const formRef = useRef(null);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      gsap.set(formRef.current, { transformPerspective: 1200 });
+      gsap.fromTo(formRef.current,
+        { opacity: 0, y: 50, scale: 0.95, rotationX: -5 },
+        { 
+          opacity: 1, y: 0, scale: 1, rotationX: 0, 
+          duration: 1, ease: 'expo.out',
+          scrollTrigger: {
+            trigger: formRef.current,
+            start: "top 85%",
+            once: true
+          }
+        }
+      );
+    });
+    return () => ctx.revert();
+  }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -75,7 +100,7 @@ const ContactSection = () => {
           </p>
         </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '2rem', alignItems: 'stretch', maxWidth: '1000px', margin: '0 auto' }}>
+        <div ref={formRef} className="gpu-accelerated" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '2rem', alignItems: 'stretch', maxWidth: '1000px', margin: '0 auto' }}>
           
           {/* Left Panel: Contact Info (Navy Theme) */}
           <div className="contact-info" style={{ 

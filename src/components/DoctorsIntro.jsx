@@ -29,10 +29,18 @@ const DoctorsIntro = () => {
         x: 40, opacity: 0, duration: 0.9, ease: 'power3.out', delay: 0.1,
       });
 
-      // Cards stagger up
-      gsap.from(cardsRef.current, {
-        scrollTrigger: { trigger: cardsRef.current[0], start: 'top 85%', once: true },
-        y: 50, opacity: 0, duration: 0.75, stagger: 0.2, ease: 'power3.out',
+      // Cards pop in individually
+      cardsRef.current.forEach((card) => {
+        if (!card) return;
+        gsap.set(card, { transformPerspective: 1200 });
+        gsap.fromTo(card,
+          { y: 50, opacity: 0, scale: 0.95, rotationX: -10 },
+          {
+            scrollTrigger: { trigger: card, start: 'top 85%', once: true },
+            y: 0, opacity: 1, scale: 1, rotationX: 0,
+            duration: 0.8, ease: 'expo.out'
+          }
+        );
       });
 
       // Trust strip fades in

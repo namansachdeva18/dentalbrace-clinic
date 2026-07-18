@@ -13,17 +13,31 @@ const Specialists = () => {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.from(cardsRef.current, {
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: "top 85%",
-          once: true,
-        },
-        y: 40,
-        opacity: 0,
-        duration: 0.8,
-        stagger: 0.15,
-        ease: "power3.out"
+      cardsRef.current.forEach((card, i) => {
+        if (!card) return;
+        
+        gsap.set(card, { transformPerspective: 1200 });
+        gsap.fromTo(card,
+          { 
+            y: 60, 
+            opacity: 0, 
+            scale: 0.95, 
+            rotationX: -10 
+          },
+          {
+            scrollTrigger: {
+              trigger: card,
+              start: "top 85%", // Trigger exactly when this specific card comes into view
+              once: true,
+            },
+            y: 0,
+            opacity: 1,
+            scale: 1,
+            rotationX: 0,
+            duration: 0.9,
+            ease: "expo.out"
+          }
+        );
       });
     }, sectionRef);
     return () => ctx.revert();

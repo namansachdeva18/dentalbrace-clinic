@@ -40,16 +40,30 @@ const WhyUs = () => {
   useEffect(() => {
     const ctx = gsap.context(() => {
       itemsRef.current.forEach((item, index) => {
-        gsap.from(item, {
-          scrollTrigger: {
-            trigger: item,
-            start: "top 85%",
+        gsap.set(item, { transformPerspective: 1200 });
+        gsap.fromTo(item, 
+          { 
+            x: index % 2 === 0 ? -40 : 40, 
+            y: 30, 
+            opacity: 0, 
+            scale: 0.95, 
+            rotationX: -10 
           },
-          x: index % 2 === 0 ? -50 : 50,
-          opacity: 0,
-          duration: 0.8,
-          ease: "power2.out"
-        });
+          {
+            scrollTrigger: {
+              trigger: item,
+              start: "top 85%",
+              once: true,
+            },
+            x: 0,
+            y: 0,
+            opacity: 1,
+            scale: 1,
+            rotationX: 0,
+            duration: 0.9,
+            ease: "expo.out"
+          }
+        );
       });
     }, sectionRef);
 
