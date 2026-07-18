@@ -139,21 +139,33 @@ const Services = () => {
         }
       );
 
-      gsap.fromTo(cardsRef.current, 
-        { y: 40, opacity: 0 },
-        {
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: "top 85%", // Trigger a bit earlier just in case
-            once: true,
+      // Cool individual card animations that trigger sequentially as scrolled (Perfect for mobile)
+      cardsRef.current.forEach((card, i) => {
+        if (!card) return;
+        
+        gsap.set(card, { transformPerspective: 1200 });
+        gsap.fromTo(card,
+          { 
+            y: 60, 
+            opacity: 0, 
+            scale: 0.95, 
+            rotationX: -10 
           },
-          y: 0,
-          opacity: 1,
-          duration: 0.6,
-          stagger: 0.1,
-          ease: "power2.out"
-        }
-      );
+          {
+            scrollTrigger: {
+              trigger: card,
+              start: "top 85%", // Trigger exactly when this specific card comes into view
+              once: true,
+            },
+            y: 0,
+            opacity: 1,
+            scale: 1,
+            rotationX: 0,
+            duration: 0.9,
+            ease: "expo.out"
+          }
+        );
+      });
     }, sectionRef);
 
     return () => ctx.revert();
