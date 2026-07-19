@@ -172,3 +172,9 @@
     grid-template-columns: 2fr 1fr 1fr 1.5fr;
   }
 }
+
+@media (max-width: 1180px) {
+  .footer {
+    padding-bottom: 70px;
+  }
+}

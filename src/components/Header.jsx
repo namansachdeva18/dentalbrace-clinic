@@ -103,7 +103,7 @@ const Header = () => {
                         <h4>Implantology & Prosthetics</h4>
                         <Link to="/treatments/dental-implants" onClick={handleNavClick}>Dental Implants</Link>
                         <Link to="/treatments/all-on-4" onClick={handleNavClick}>All-on-4 / All-on-6</Link>
-                        <Link to="/treatments/maxillofacial-prosthetics" onClick={handleNavClick} style={{ color: 'var(--accent-color)', fontWeight: '600' }}>Maxillofacial Prosthetics</Link>
+                        <Link to="/treatments/maxillofacial-prosthetics" onClick={handleNavClick}>Maxillofacial Prosthetics</Link>
                       </div>
                       <div className="mega-column">
                         <h4>Cosmetic Dentistry</h4>
