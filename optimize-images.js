@@ -22,7 +22,7 @@ const PUBLIC_DIR = path.join(__dirname, 'public');
 const JPG_QUALITY  = 80;   // 75-85 is visually lossless for photos
 const PNG_QUALITY  = 85;
 const WEBP_QUALITY = 82;
-const WEBP_SIZE_THRESHOLD_KB = 200; // generate .webp for images > this size
+const WEBP_SIZE_THRESHOLD_KB = 0; // Generate WebP for ALL images (avoids 404s on <picture> sources)
 
 // ─── Helpers ──────────────────────────────────────────────────────────────────
 function getAllImages(dir, results = []) {

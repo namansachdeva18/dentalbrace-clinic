@@ -107,7 +107,10 @@ const ContactPage = () => {
             {/* Left Side: Contact Info & Image */}
             <div className="contact-info-col">
               <div className="contact-image-card shadow-soft rounded-2xl overflow-hidden mb-8 relative">
-                <img src="/images/my-contact-photo.jpg" alt="The DentalBrace Clinic Reception" className="w-full h-64 object-cover" onError={(e) => { e.target.src = "/images/premium_indian_clinic_interior.png" }} />
+                <picture>
+                  <source srcSet="/images/my-contact-photo.webp" type="image/webp" />
+                  <img src="/images/my-contact-photo.jpg" alt="The DentalBrace Clinic Reception" className="w-full h-64 object-cover" loading="lazy" decoding="async" onError={(e) => { e.target.src = "/images/premium_indian_clinic_interior.png" }} />
+                </picture>
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end p-6 text-white">
                   <h3 className="text-xl font-bold mb-1">State-of-the-Art Facility</h3>
                   <p className="text-sm text-gray-200">Designed for your ultimate comfort.</p>

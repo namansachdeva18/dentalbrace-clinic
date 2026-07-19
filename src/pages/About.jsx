@@ -59,7 +59,10 @@ const About = () => {
       {/* Image Break */}
       <section className="about-image-break container fade-in" style={{ animationDelay: '0.4s' }}>
         <div className="about-image-wrapper glass shadow-lg">
-           <img src="/doctors-combined.jpg" alt="Dr. Sandeep Kumar and Dr. Ritu Saneja, expert dental specialists and founders of The DentalBrace Clinic Bathinda Punjab" className="about-main-img" loading="lazy" />
+           <picture>
+             <source srcSet="/doctors-combined.webp" type="image/webp" />
+             <img src="/doctors-combined.jpg" alt="Dr. Sandeep Kumar and Dr. Ritu Saneja, expert dental specialists and founders of The DentalBrace Clinic Bathinda Punjab" className="about-main-img" loading="lazy" decoding="async" />
+           </picture>
         </div>
       </section>
 

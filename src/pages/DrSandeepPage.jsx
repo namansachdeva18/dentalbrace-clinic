@@ -70,7 +70,10 @@ const DrSandeepPage = () => {
               </div>
             </div>
             <div className="doctor-hero-photo">
-              <img src="/dr-sandeep.jpg" alt="Dr. Sandeep Kumar — Best Orthodontist in Bathinda, MDS BHU, Ex-Resident AIIMS New Delhi, Certified Invisalign Provider" />
+              <picture>
+                <source srcSet="/dr-sandeep.webp" type="image/webp" />
+                <img src="/dr-sandeep.jpg" alt="Dr. Sandeep Kumar — Best Orthodontist in Bathinda, MDS BHU, Ex-Resident AIIMS New Delhi, Certified Invisalign Provider" fetchPriority="high" decoding="async" />
+              </picture>
             </div>
           </div>
         </div>
@@ -174,7 +177,10 @@ const DrSandeepPage = () => {
             <div className="sidebar-card glass shadow-lg">
               <h3 className="sidebar-title">Meet Our Other Specialist</h3>
               <Link to="/doctors/dr-ritu-saneja" className="other-doctor-card">
-                <img src="/dr-ritu.jpg" alt="Dr. Ritu Saneja — Gold Medalist Prosthodontist and Implantologist at The DentalBrace Clinic Bathinda Punjab" loading="lazy" />
+                <picture>
+                  <source srcSet="/dr-ritu.webp" type="image/webp" />
+                  <img src="/dr-ritu.jpg" alt="Dr. Ritu Saneja — Gold Medalist Prosthodontist and Implantologist at The DentalBrace Clinic Bathinda Punjab" loading="lazy" decoding="async" />
+                </picture>
                 <div>
                   <strong>Dr. Ritu Saneja</strong>
                   <p>Consultant Prosthodontist & Implantologist</p>
