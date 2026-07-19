@@ -271,7 +271,7 @@
   cursor: pointer;
 }
 
-@media (max-width: 1180px) {
+@media (max-width: 1300px) {
   .top-bar-content {
     justify-content: space-between;
     flex-wrap: nowrap;
@@ -309,7 +309,7 @@
   }
 }
 
-@media (max-width: 1180px) {
+@media (max-width: 1300px) {
   .mobile-menu-btn {
     display: block;
   }
