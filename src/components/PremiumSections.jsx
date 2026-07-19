@@ -54,9 +54,9 @@ const PremiumSections = () => {
           </div>
           <div className="premium-visual" style={{ borderRadius: 'var(--radius-lg)', overflow: 'hidden', boxShadow: 'var(--shadow-lg)' }}>
             <picture>
-              <source srcSet="/images/digital_dentistry_indian.webp" type="image/webp" />
+              <source srcSet="/clinic-gallery/invisalign-clear-aligner-patient-mouth-closeup.webp" type="image/webp" />
               <img 
-                src="/images/digital_dentistry_indian.png" 
+                src="/clinic-gallery/invisalign-clear-aligner-patient-mouth-closeup.jpg" 
                 alt="Digital dentistry at The DentalBrace Clinic Bathinda — intraoral scanner and 3D digital treatment planning by Dr. Sandeep Kumar MDS Orthodontics" 
                 style={{ width: '100%', height: '100%', objectFit: 'cover', minHeight: '400px' }}
                 loading="lazy"

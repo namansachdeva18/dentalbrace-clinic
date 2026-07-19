@@ -222,7 +222,7 @@ const ContactPage = () => {
                   ) : isSuccess ? (
                     <><CheckCircle2 size={20} /> Request Sent!</>
                   ) : (
-                    <><Calendar size={20} /> Book Consultation (₹200/-)</>
+                    <><Calendar size={20} /> Book Consultation</>
                   )}
                 </button>
                 <p className="text-center text-xs text-gray-500 mt-4" style={{ textAlign: 'center' }}>Your information is kept strictly confidential.</p>

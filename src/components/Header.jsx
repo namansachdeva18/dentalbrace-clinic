@@ -96,12 +96,14 @@ const Header = () => {
                         <h4>Orthodontics</h4>
                         <Link to="/treatments/invisalign" onClick={handleNavClick}>Invisalign & Clear Aligners</Link>
                         <Link to="/treatments/braces" onClick={handleNavClick}>Traditional Braces</Link>
+                        <Link to="/treatments/dentofacial-orthopedics" onClick={handleNavClick}>Dentofacial Orthopedics</Link>
                         <Link to="/treatments/kids-dentistry" onClick={handleNavClick}>Kids Dentistry</Link>
                       </div>
                       <div className="mega-column">
-                        <h4>Implantology</h4>
+                        <h4>Implantology & Prosthetics</h4>
                         <Link to="/treatments/dental-implants" onClick={handleNavClick}>Dental Implants</Link>
                         <Link to="/treatments/all-on-4" onClick={handleNavClick}>All-on-4 / All-on-6</Link>
+                        <Link to="/treatments/maxillofacial-prosthetics" onClick={handleNavClick} style={{ color: 'var(--accent-color)', fontWeight: '600' }}>Maxillofacial Prosthetics</Link>
                       </div>
                       <div className="mega-column">
                         <h4>Cosmetic Dentistry</h4>

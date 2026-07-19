@@ -1,5 +1,5 @@
 import React from 'react';
-import { Smile, Shield, Sparkles, AlignCenter, Zap, Gem, Activity, Baby, ScanLine, Brain, Layers, Stethoscope } from 'lucide-react';
+import { Smile, Shield, Sparkles, AlignCenter, Zap, Gem, Activity, Baby, ScanLine, Brain, Layers, Stethoscope, ScanFace } from 'lucide-react';
 
 const navItems = [
   { id: 1, label: 'Invisalign', icon: <Smile size={40} strokeWidth={1.5} />, href: '#invisalign' },
@@ -13,6 +13,7 @@ const navItems = [
   { id: 9, label: 'Digital Scan', icon: <ScanLine size={40} strokeWidth={1.5} />, href: '#digital' },
   { id: 10, label: 'Dentofacial Ortho', icon: <Brain size={40} strokeWidth={1.5} />, href: '#treatments' },
   { id: 11, label: 'All-on-4', icon: <Layers size={40} strokeWidth={1.5} />, href: '#implants-hero' },
+  { id: 13, label: 'Maxillofacial', icon: <ScanFace size={40} strokeWidth={1.5} />, href: '/treatments/maxillofacial-prosthetics' },
   { id: 12, label: 'General Checkup', icon: <Stethoscope size={40} strokeWidth={1.5} />, href: '#book' },
 ];
 

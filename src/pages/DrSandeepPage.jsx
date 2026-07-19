@@ -43,7 +43,7 @@ const DrSandeepPage = () => {
     <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0 }} transition={{ duration: 0.45 }}>
       <Helmet>
         <title>Dr. Sandeep Kumar — Best Orthodontist in Bathinda | Invisalign Specialist | The DentalBrace</title>
-        <meta name="description" content="Dr. Sandeep Kumar — MDS Orthodontics (BHU Varanasi), Ex-Resident AIIMS New Delhi. Best orthodontist in Bathinda with 5500+ braces & Invisalign cases. Book consultation at ₹200/-." />
+        <meta name="description" content="Dr. Sandeep Kumar — MDS Orthodontics (BHU Varanasi), Ex-Resident AIIMS New Delhi. Best orthodontist in Bathinda with 5500+ braces & Invisalign cases. Book consultation." />
         <meta name="keywords" content="Dr Sandeep Kumar orthodontist Bathinda, best orthodontist Bathinda, Invisalign specialist Bathinda, braces doctor Bathinda, AIIMS trained orthodontist Bathinda" />
         <link rel="canonical" href="https://www.thedentalbrace.com/doctors/dr-sandeep-kumar" />
         <script type="application/ld+json">{JSON.stringify(drSandeepSchema)}</script>
@@ -168,7 +168,7 @@ const DrSandeepPage = () => {
           <aside className="doctor-sidebar">
             <div className="sidebar-card doctor-cta">
               <h3 className="cta-title">Book with Dr. Sandeep</h3>
-              <p className="cta-subtitle">Consultation at a nominal ₹200/-. Get a personalized treatment plan.</p>
+              <p className="cta-subtitle">Book your consultation today. Get a personalized treatment plan.</p>
               <a href="/#book" className="btn btn-primary w-full" style={{ display: 'block', textAlign: 'center' }}>Book Appointment</a>
               <a href="tel:7496849392" className="btn btn-outline w-full" style={{ display: 'block', textAlign: 'center', marginTop: '0.75rem' }}>
                 <Phone size={14} style={{ display: 'inline', marginRight: '0.4rem' }} /> +91 74968-49392

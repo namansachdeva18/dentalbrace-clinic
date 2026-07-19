@@ -66,7 +66,7 @@ const blogArticles = {
       <div class="cta-box">
         <h3>Ready to Transform Your Smile?</h3>
         <p>The best way to know which treatment is right for you is through a professional assessment. Book a consultation with Dr. Sandeep Kumar (Ex-AIIMS), Bathinda's leading Invisalign provider.</p>
-        <a href="/#book" class="btn btn-primary">Book Consultation (₹200/-)</a>
+        <a href="/#book" class="btn btn-primary">Book Consultation</a>
       </div>
     `
   },
@@ -109,7 +109,7 @@ const blogArticles = {
       <div class="cta-box">
         <h3>Restore Your Smile Permanently</h3>
         <p>Don't let missing teeth hold you back. Dr. Ritu Saneja has successfully placed over 5,000 implants. Schedule your consultation today to get a personalised treatment plan and cost breakdown.</p>
-        <a href="/#book" class="btn btn-primary">Book Consultation (₹200/-)</a>
+        <a href="/#book" class="btn btn-primary">Book Consultation</a>
       </div>
     `
   },

@@ -3,7 +3,7 @@ import { ChevronDown, Search } from 'lucide-react';
 
 const faqs = [
   // Invisalign
-  { category: 'Invisalign', q: "How much does Invisalign cost in Bathinda?", a: "The cost of Invisalign in Bathinda varies by the complexity of the case and number of aligners needed. Dr. Sandeep Kumar offers flexible EMI plans starting from competitive prices. Book a consultation for just ₹200/- to get your personalised quote." },
+  { category: 'Invisalign', q: "How much does Invisalign cost in Bathinda?", a: "The cost of Invisalign in Bathinda varies by the complexity of the case and number of aligners needed. Dr. Sandeep Kumar offers flexible EMI plans starting from competitive prices. Book a consultation for today to get your personalised quote." },
   { category: 'Invisalign', q: "Is Invisalign better than traditional metal braces?", a: "Invisalign is often preferred for its near-invisibility, comfort, and removability. It allows you to eat anything, brush normally, and is virtually undetectable. Dr. Sandeep has completed 5,500+ aligner cases and will recommend the best option for your case." },
   { category: 'Invisalign', q: "How long does Invisalign treatment take in Bathinda?", a: "Most Invisalign treatments are completed in 12–18 months. Mild cases can be done in as little as 6 months. You'll wear each set of aligners for about 1–2 weeks before progressing to the next." },
   { category: 'Invisalign', q: "Are clear aligners really invisible?", a: "Clear aligners are made of virtually invisible polyurethane plastic. When worn, most people won't notice them unless they look very closely — making them ideal for working professionals and adults." },

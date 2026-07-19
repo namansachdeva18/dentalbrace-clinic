@@ -103,8 +103,8 @@ const InvisalignHero = () => {
               {[
                 <><strong className="text-white font-bold">Nearly invisible</strong> — no one can tell you're wearing them</>,
                 <><strong className="text-white font-bold">Removable</strong> for eating, brushing & special occasions</>,
-                <>Treats crowding, gaps, overbites & underbites</>,
-                <>Dentofacial orthopedics for jaw alignment</>,
+                <><strong className="text-white font-bold">Treats crowding, gaps,</strong> overbites & underbites</>,
+                <><strong className="text-white font-bold">Dentofacial orthopedics</strong> for jaw alignment</>,
                 <><strong className="text-white font-bold">Faster than traditional braces</strong> in most cases</>
               ].map((item, i) => (
                 <li key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.75rem', color: 'rgba(255,255,255,0.8)' }}>
@@ -128,7 +128,7 @@ const InvisalignHero = () => {
               onMouseEnter={e => e.currentTarget.style.transform = 'translateY(-2px)'}
               onMouseLeave={e => e.currentTarget.style.transform = 'none'}
               >
-                Get Invisalign Assessment (just ₹200/-) <ArrowRight size={18} />
+                Get Invisalign Assessment (today) <ArrowRight size={18} />
               </a>
               <a href="tel:7496849392" style={{
                 display: 'inline-flex', alignItems: 'center', gap: '0.6rem',
@@ -153,7 +153,7 @@ const InvisalignHero = () => {
               </p>
             </div>
             <BeforeAfterSlider
-              beforeImage="/images/before_aligners_v3.png"
+              beforeImage="/images/before_aligners_v3.jpg"
               afterImage="/images/after_aligners_v3.png"
               beforeAlt="Real patient before Invisalign clear aligner treatment at The DentalBrace Clinic Bathinda — showing crowded overlapping teeth requiring orthodontic correction by Dr. Sandeep Kumar"
               afterAlt="Same real patient after Invisalign treatment by Dr. Sandeep Kumar at The DentalBrace Clinic Bathinda — beautifully straight aligned teeth, certified Invisalign provider result in Bathinda Punjab"

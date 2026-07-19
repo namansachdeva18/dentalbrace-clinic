@@ -71,7 +71,7 @@ const DoctorsIntro = () => {
             Thousands of Smiles
           </h2>
           <p className="doctors-intro__subtitle">
-            AIIMS-trained experts with 10+ years of combined experience — bringing world-class orthodontic and implant care to Bathinda.
+            <strong className="text-accent">AIIMS-trained experts</strong> with 10+ years of combined experience — bringing <strong className="text-accent">world-class orthodontic and implant care</strong> to <strong className="text-accent">Bathinda</strong>.
           </p>
         </div>
 
@@ -87,7 +87,7 @@ const DoctorsIntro = () => {
               &amp; <em>Dr. Ritu Saneja</em>
             </h3>
             <p className="doctors-intro__combined-desc">
-              Together, they form a powerhouse duo — one mastering every nuance of teeth alignment &amp; bite correction, the other transforming smiles through world-class implants and prosthodontic artistry.
+              Together, they form a powerhouse duo — one mastering every nuance of <strong className="text-accent">teeth alignment &amp; bite correction</strong>, the other transforming smiles through <strong className="text-accent">world-class implants and prosthodontic artistry</strong>.
             </p>
 
             {/* Key Stats */}
@@ -155,15 +155,15 @@ const DoctorsIntro = () => {
               <div className="doctors-intro__card-quals">
                 <div className="doctors-intro__card-qual">
                   <GraduationCap size={14} />
-                  <span>BDS, MDS (Orthodontics) — BHU Varanasi</span>
+                  <span>BDS, MDS (Orthodontics) — <strong className="text-accent">BHU Varanasi</strong></span>
                 </div>
                 <div className="doctors-intro__card-qual">
                   <Award size={14} />
-                  <span>Ex Resident — AIIMS New Delhi</span>
+                  <span>Ex Resident — <strong className="text-accent">AIIMS New Delhi</strong></span>
                 </div>
                 <div className="doctors-intro__card-qual">
                   <CheckCircle2 size={14} />
-                  <span>Certified Invisalign Provider</span>
+                  <span><strong className="text-accent">Certified Invisalign Provider</strong></span>
                 </div>
               </div>
 
@@ -208,19 +208,19 @@ const DoctorsIntro = () => {
               <div className="doctors-intro__card-quals">
                 <div className="doctors-intro__card-qual">
                   <GraduationCap size={14} />
-                  <span>BDS, MDS (Prosthodontics) — BHU Varanasi</span>
+                  <span>BDS, MDS (Prosthodontics) — <strong className="text-accent">BHU Varanasi</strong></span>
                 </div>
                 <div className="doctors-intro__card-qual">
                   <Medal size={14} />
-                  <span>MDS Gold Medalist</span>
+                  <span><strong className="text-accent">MDS Gold Medalist</strong></span>
                 </div>
                 <div className="doctors-intro__card-qual">
                   <Award size={14} />
-                  <span>Ex-Resident — AIIMS Delhi &amp; PGIMER Chandigarh</span>
+                  <span>Ex-Resident — <strong className="text-accent">AIIMS Delhi</strong> &amp; <strong className="text-accent">PGIMER Chandigarh</strong></span>
                 </div>
                 <div className="doctors-intro__card-qual">
                   <Award size={14} />
-                  <span>Ex-Senior Resident — AIIMS Bathinda</span>
+                  <span>Ex-Senior Resident — <strong className="text-accent">AIIMS Bathinda</strong></span>
                 </div>
               </div>
 
@@ -244,27 +244,27 @@ const DoctorsIntro = () => {
         <div className="doctors-intro__trust" ref={trustRef}>
           <div className="doctors-intro__trust-item">
             <GraduationCap size={18} />
-            <span><strong className="font-bold">AIIMS-Trained</strong> Specialists</span>
+            <span><strong className="text-accent font-bold">AIIMS-Trained</strong> Specialists</span>
           </div>
           <div className="doctors-intro__trust-divider" />
           <div className="doctors-intro__trust-item">
             <Users size={18} />
-            <span><strong className="font-bold">10k+</strong> Happy Patients</span>
+            <span><strong className="text-accent font-bold">50k+</strong> Happy Patients</span>
           </div>
           <div className="doctors-intro__trust-divider" />
           <div className="doctors-intro__trust-item">
             <Star size={18} />
-            <span><strong className="font-bold">5★</strong> Google Rating</span>
+            <span><strong className="text-accent font-bold">5★</strong> Google Rating</span>
           </div>
           <div className="doctors-intro__trust-divider" />
           <div className="doctors-intro__trust-item">
             <Shield size={18} />
-            <span><strong className="font-bold">10+ Years</strong> of Excellence</span>
+            <span><strong className="text-accent font-bold">10+ Years</strong> of Excellence</span>
           </div>
           <div className="doctors-intro__trust-divider" />
           <div className="doctors-intro__trust-item">
             <CheckCircle2 size={18} />
-            <span><strong className="font-bold">Painless</strong>, Ethical Care</span>
+            <span><strong className="text-accent font-bold">Painless</strong>, Ethical Care</span>
           </div>
         </div>
 

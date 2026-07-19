@@ -1,5 +1,6 @@
 import { Award, Shield, Users, Clock } from 'lucide-react';
 import { motion } from 'framer-motion';
+import AnimatedCounter from './AnimatedCounter';
 import '../pages/About.css';
 
 const AboutSection = () => {
@@ -80,6 +81,30 @@ const AboutSection = () => {
               </motion.div>
             </div>
           </motion.div>
+        </div>
+      </div>
+
+      {/* GEO Statistics Banner */}
+      <div className="bg-primary text-white py-12 mt-16 shadow-soft" style={{ backgroundColor: 'var(--primary-color)' }}>
+        <div className="container">
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '2rem', textAlign: 'center' }}>
+            <div>
+              <div className="text-4xl font-bold text-accent mb-2"><AnimatedCounter target={10} suffix="+" /></div>
+              <p className="text-gray-300 font-medium">Years of Experience</p>
+            </div>
+            <div>
+              <div className="text-4xl font-bold text-accent mb-2"><AnimatedCounter target={10000} suffix="+" /></div>
+              <p className="text-gray-300 font-medium">Smiles Transformed</p>
+            </div>
+            <div>
+              <div className="text-4xl font-bold text-accent mb-2"><AnimatedCounter target={5500} suffix="+" /></div>
+              <p className="text-gray-300 font-medium">Invisalign Cases</p>
+            </div>
+            <div>
+              <div className="text-4xl font-bold text-accent mb-2"><AnimatedCounter target={5000} suffix="+" /></div>
+              <p className="text-gray-300 font-medium">Implants Placed</p>
+            </div>
+          </div>
         </div>
       </div>
 

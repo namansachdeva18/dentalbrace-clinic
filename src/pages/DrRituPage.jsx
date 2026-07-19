@@ -41,7 +41,7 @@ const DrRituPage = () => {
     <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0 }} transition={{ duration: 0.45 }}>
       <Helmet>
         <title>Dr. Ritu Saneja — Gold Medalist Implantologist Bathinda | Prosthodontist | The DentalBrace</title>
-        <meta name="description" content="Dr. Ritu Saneja — MDS Gold Medalist (Prosthodontics, BHU), Ex-Resident AIIMS Delhi & PGIMER. 5000+ implants placed. Best implantologist & prosthodontist in Bathinda. Book ₹200/-." />
+        <meta name="description" content="Dr. Ritu Saneja — MDS Gold Medalist (Prosthodontics, BHU), Ex-Resident AIIMS Delhi & PGIMER. 5000+ implants placed. Best implantologist & prosthodontist in Bathinda. Book consultation." />
         <meta name="keywords" content="Dr Ritu Saneja implantologist Bathinda, best implantologist Bathinda, prosthodontist Bathinda, dental implants specialist Bathinda, AIIMS trained implantologist" />
         <link rel="canonical" href="https://www.thedentalbrace.com/doctors/dr-ritu-saneja" />
         <script type="application/ld+json">{JSON.stringify(drRituSchema)}</script>
@@ -171,7 +171,7 @@ const DrRituPage = () => {
           <aside className="doctor-sidebar">
             <div className="sidebar-card doctor-cta">
               <h3 className="cta-title">Book with Dr. Ritu</h3>
-              <p className="cta-subtitle">Consultation at a nominal ₹200/-. Get a personalized treatment plan from a Gold Medalist.</p>
+              <p className="cta-subtitle">Book your consultation today. Get a personalized treatment plan from a Gold Medalist.</p>
               <a href="/#book" className="btn btn-primary w-full" style={{ display: 'block', textAlign: 'center' }}>Book Appointment</a>
               <a href="tel:7496849392" className="btn btn-outline w-full" style={{ display: 'block', textAlign: 'center', marginTop: '0.75rem' }}>
                 <Phone size={14} style={{ display: 'inline', marginRight: '0.4rem' }} /> +91 74968-49392

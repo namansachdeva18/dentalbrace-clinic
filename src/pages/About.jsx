@@ -44,7 +44,7 @@ const About = () => {
                 <span className="about-stat-label">Years of Trust</span>
               </div>
               <div className="about-stat">
-                <span className="about-stat-number">10k+</span>
+                <span className="about-stat-number">50k+</span>
                 <span className="about-stat-label">Happy Patients</span>
               </div>
               <div className="about-stat">

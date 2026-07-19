@@ -100,36 +100,39 @@
 .hero-doctors {
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
+  gap: 1rem;
 }
 
 .hero-doctor-badge {
   display: flex;
   align-items: flex-start;
-  gap: 0.75rem;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  gap: 1rem;
+  background: white;
+  border: 1px solid rgba(0, 0, 0, 0.05);
   border-radius: var(--radius-md);
-  padding: 0.75rem 1rem;
+  padding: 1rem 1.25rem;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
 .hero-doctor-badge svg {
   flex-shrink: 0;
+  margin-top: 3px;
+}
+
+.hero-doctor-badge > div > strong:first-child {
+  display: block;
+  color: var(--accent-color);
+  font-size: 1.1rem;
+  font-weight: 800;
+  margin-bottom: 4px;
+}
+
+.hero-doctor-badge > div > span:last-child {
+  display: block;
+  color: var(--text-color);
+  font-size: 0.85rem;
   margin-top: 2px;
-}
-
-.hero-doctor-badge strong {
-  display: block;
-  color: white;
-  font-size: 0.95rem;
-  font-weight: 700;
-}
-
-.hero-doctor-badge span {
-  display: block;
-  color: rgba(255, 255, 255, 0.55);
-  font-size: 0.8rem;
-  margin-top: 1px;
+  line-height: 1.5;
 }
 
 /* ---- CTA BUTTONS ---- */

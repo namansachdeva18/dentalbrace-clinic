@@ -11,7 +11,7 @@ const servicesData = [
   {
     id: 2,
     title: 'Invisalign & Clear Aligners',
-    description: 'Bathinda\'s most experienced Invisalign provider. Dr. Sandeep Kumar has completed 5,500+ braces & aligner treatments — straighten your teeth without anyone knowing.',
+    description: <><strong className="text-accent font-semibold">Bathinda's most experienced Invisalign provider</strong>.<br/><strong className="text-accent font-semibold">Dr. Sandeep Kumar</strong> has completed <strong className="text-accent font-semibold">5,500+ braces &amp; aligner treatments</strong> — straighten your teeth without anyone knowing.</>,
     icon: <Smile size={32} />,
     featured: true,
     href: '#book'
@@ -19,7 +19,7 @@ const servicesData = [
   {
     id: 7,
     title: 'Full Mouth Implants (FMR)',
-    description: 'Dr. Ritu Saneja — 5,000+ implants placed. All-on-4, All-on-6, and Full Mouth Rehabilitation using premium titanium implants and zirconia crowns.',
+    description: <><strong className="text-accent font-semibold">Dr. Ritu Saneja</strong> — <strong className="text-accent font-semibold">5,000+ implants placed</strong>.<br/><strong className="text-accent font-semibold">All-on-4, All-on-6, and Full Mouth Rehabilitation</strong> using premium titanium implants and zirconia crowns.</>,
     icon: <Shield size={32} />,
     featured: true,
     href: '#book'
@@ -27,93 +27,101 @@ const servicesData = [
   {
     id: 1,
     title: 'Dental Implants',
-    description: 'Permanent, natural-looking replacement for missing teeth using premium titanium implants with a near 99% success rate.',
+    description: <><strong className="text-accent font-semibold">Permanent, natural-looking replacement</strong> for missing teeth using <strong className="text-accent font-semibold">premium titanium implants</strong> with a near 99% success rate.</>,
     icon: <Shield size={32} />,
     href: '#book'
   },
   {
     id: 8,
     title: 'Dentofacial Orthopedics',
-    description: 'Jaw growth correction and alignment for children & teens. Early intervention for underbites, overbites, and jaw discrepancies.',
+    description: <><strong className="text-accent font-semibold">Jaw growth correction</strong> and alignment for children & teens. <strong className="text-accent font-semibold">Early intervention</strong> for underbites, overbites, and jaw discrepancies.</>,
     icon: <Brain size={32} />,
-    href: '#book'
+    href: '/treatments/dentofacial-orthopedics'
   },
   {
     id: 3,
     title: 'Smile Makeover',
-    description: 'Customised cosmetic treatments — veneers, teeth whitening, composite bonding, and gum contouring — designed digitally for your face.',
+    description: <><strong className="text-accent font-semibold">Customised cosmetic treatments</strong> — veneers, teeth whitening, composite bonding, and gum contouring — <strong className="text-accent font-semibold">designed digitally</strong> for your face.</>,
     icon: <Sparkles size={32} />,
     href: '#book'
   },
   {
     id: 4,
     title: 'Digital Dentistry',
-    description: 'Advanced 3D intraoral scanning and precise digital planning for accurate treatments with no impressions needed.',
+    description: <><strong className="text-accent font-semibold">Advanced 3D intraoral scanning</strong> and precise digital planning for accurate treatments with <strong className="text-accent font-semibold">no impressions needed</strong>.</>,
     icon: <ScanFace size={32} />,
     href: '#book'
   },
   {
     id: 5,
     title: 'Root Canal Treatment',
-    description: 'Painless, single-visit root canal procedures using rotary endodontics — save your natural tooth with zero discomfort.',
+    description: <><strong className="text-accent font-semibold">Painless, single-visit</strong> root canal procedures using rotary endodontics — save your natural tooth with <strong className="text-accent font-semibold">zero discomfort</strong>.</>,
     icon: <Activity size={32} />,
     href: '/treatments/root-canal'
   },
   {
     id: 6,
     title: 'General Dentistry',
-    description: 'Comprehensive dental care including checkups, cleaning, fillings, and extractions for the whole family.',
+    description: <><strong className="text-accent font-semibold">Comprehensive dental care</strong> including checkups, cleaning, fillings, and extractions for the <strong className="text-accent font-semibold">whole family</strong>.</>,
     icon: <Stethoscope size={32} />,
     href: '#book'
   },
   {
     id: 9,
     title: 'Teeth Whitening',
-    description: 'Professional LED & laser whitening — up to 8 shades brighter in a single 60-minute session. Safe, painless, and long-lasting results by Dr. Ritu Saneja.',
+    description: <><strong className="text-accent font-semibold">Professional LED & laser whitening</strong> — up to 8 shades brighter in a single 60-minute session. <strong className="text-accent font-semibold">Safe, painless, and long-lasting</strong> results by Dr. Ritu Saneja.</>,
     icon: <Zap size={32} />,
     href: '/treatments/teeth-whitening'
   },
   {
     id: 10,
     title: 'Dental Veneers',
-    description: 'Ultra-thin porcelain or composite veneers for a Hollywood smile in just 2 visits. Designed digitally with DSD so you preview your result before treatment begins.',
+    description: <><strong className="text-accent font-semibold">Ultra-thin porcelain or composite veneers</strong> for a Hollywood smile in just 2 visits. <strong className="text-accent font-semibold">Designed digitally with DSD</strong> so you preview your result before treatment begins.</>,
     icon: <Gem size={32} />,
     href: '/treatments/veneers'
   },
   {
     id: 11,
     title: 'Dental Crown & Bridge',
-    description: 'Premium full-zirconia crowns and fixed bridges that restore strength, function, and natural appearance. Designed with 3D scanning — no putty impressions.',
+    description: <><strong className="text-accent font-semibold">Premium full-zirconia crowns</strong> and fixed bridges that restore strength, function, and natural appearance. Designed with <strong className="text-accent font-semibold">3D scanning</strong> — no putty impressions.</>,
     icon: <Shield size={32} />,
     href: '/treatments/dental-crown-bridge'
   },
   {
     id: 12,
     title: 'Kids Dentistry',
-    description: 'Gentle, fear-free dental care for children aged 2–16. Cavity treatment, fluoride sealants, and early orthodontic screening in a welcoming, child-friendly environment.',
+    description: <><strong className="text-accent font-semibold">Gentle, fear-free dental care</strong> for children aged 2–16. Cavity treatment, fluoride sealants, and <strong className="text-accent font-semibold">early orthodontic screening</strong> in a welcoming, child-friendly environment.</>,
     icon: <Baby size={32} />,
     href: '/treatments/kids-dentistry'
   },
   {
     id: 13,
     title: 'Gum Treatment & Scaling',
-    description: 'Stop bleeding gums permanently with professional scaling, polishing, and periodontitis therapy. Healthy gums are the foundation of a healthy smile.',
+    description: <><strong className="text-accent font-semibold">Stop bleeding gums permanently</strong> with professional scaling, polishing, and periodontitis therapy. Healthy gums are the <strong className="text-accent font-semibold">foundation of a healthy smile</strong>.</>,
     icon: <Droplets size={32} />,
     href: '/treatments/gum-treatment'
   },
   {
     id: 14,
     title: 'Wisdom Tooth Removal',
-    description: 'Painless surgical extraction of impacted or infected wisdom teeth — completed in a single same-day appointment with minimal post-operative discomfort.',
+    description: <><strong className="text-accent font-semibold">Painless surgical extraction</strong> of impacted or infected wisdom teeth — completed in a <strong className="text-accent font-semibold">single same-day appointment</strong> with minimal post-operative discomfort.</>,
     icon: <Wind size={32} />,
     href: '/treatments/wisdom-tooth-removal'
   },
   {
     id: 15,
     title: 'Composite Bonding',
-    description: 'Fix chipped, gapped, or stained teeth in 90 minutes — no drilling, no injections. An affordable cosmetic solution with immediate visible results.',
+    description: <><strong className="text-accent font-semibold">Fix chipped, gapped, or stained teeth</strong> in 90 minutes — <strong className="text-accent font-semibold">no drilling, no injections</strong>. An affordable cosmetic solution with immediate visible results.</>,
     icon: <Sparkles size={32} />,
     href: '/treatments/composite-bonding'
+  },
+  {
+    id: 16,
+    title: 'Maxillofacial Prosthetics',
+    description: <><strong className="text-accent font-semibold">Advanced rehabilitation</strong> for oral and facial defects — restoring function, speech, and aesthetics with <strong className="text-accent font-semibold">custom prostheses in Bathinda</strong> by <strong className="text-accent font-semibold">Dr. Ritu Saneja</strong>.</>,
+    icon: <ScanFace size={32} />,
+    featured: true,
+    href: '/treatments/maxillofacial-prosthetics'
   }
 ];
 
@@ -187,7 +195,7 @@ const Services = () => {
           <span className="section-badge">Our Expertise</span>
           <h2 className="heading-primary mt-4">Specialist Dental Treatments in Bathinda</h2>
           <p className="services-subtitle text-secondary max-w-2xl mx-auto mt-4">
-            From Invisalign clear aligners to full mouth implants — led by AIIMS-trained orthodontists &amp; prosthodontists with 10k+ transformed smiles.
+            From Invisalign clear aligners to full mouth implants — led by <strong className="text-accent font-semibold">AIIMS-trained orthodontists &amp; prosthodontists</strong> with <strong className="text-accent font-semibold">50k+ transformed smiles</strong>.
           </p>
         </div>
 

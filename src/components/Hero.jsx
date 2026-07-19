@@ -60,29 +60,29 @@ const Hero = () => {
           {/* Main Headline */}
           <h1 className="hero-title">
             Bathinda's Most Trusted Specialists for{' '}
-            <span className="hero-title-accent">Clear Aligners (Invisalign), Braces, Dental Implants</span>{' '}
+            <span className="hero-title-accent">Clear Aligners (Invisalign), Braces, Dental Implants, Maxillofacial Prosthetics</span>{' '}
             &amp; Smile Makeovers
           </h1>
 
           {/* Subtext */}
           <p className="hero-subtitle">
-            <strong className="text-white font-bold">10k+ transformed smiles</strong> — led by <strong className="text-accent font-bold">AIIMS-trained specialists</strong>. Consultation at a nominal ₹200/-. <strong className="text-white font-bold">Painless, precise, and permanent</strong> dental care.
+            <strong className="text-white font-bold">50k+ transformed smiles</strong> — led by <strong className="text-accent font-bold">AIIMS-trained specialists</strong>. Comprehensive care ranging from painless cosmetic dentistry to <strong className="text-white font-bold">advanced maxillofacial rehabilitation</strong>. Expert consultations available.
           </p>
 
           {/* Doctor Credentials */}
           <div className="hero-doctors">
             <div className="hero-doctor-badge">
-              <CheckCircle size={16} color="#F58220" />
+              <CheckCircle size={20} color="#F58220" />
               <div>
                 <strong>Dr. Sandeep Kumar</strong>
-                <span>BDS, MDS (Orthodontics) - BHU Varanasi · Ex Resident - AIIMS New Delhi</span>
+                <span>BDS, <strong className="text-accent">MDS (Orthodontics)</strong> - <strong className="text-accent">BHU Varanasi</strong> · Ex Resident - <strong className="text-accent">AIIMS New Delhi</strong></span>
               </div>
             </div>
             <div className="hero-doctor-badge">
-              <CheckCircle size={16} color="#F58220" />
+              <CheckCircle size={20} color="#F58220" />
               <div>
                 <strong>Dr. Ritu Saneja</strong>
-                <span>MDS (Gold Medalist) · BDS, MDS (Prosthodontics) - BHU Varanasi · Ex-Resident - AIIMS Delhi, PGIMER Chandigarh · Ex-Senior Resident - AIIMS Bathinda</span>
+                <span>MDS (<strong className="text-accent">Gold Medalist</strong>) · BDS, <strong className="text-accent">MDS (Prosthodontics)</strong> - <strong className="text-accent">BHU Varanasi</strong> · Ex-Resident - <strong className="text-accent">AIIMS Delhi</strong>, <strong className="text-accent">PGIMER Chandigarh</strong> · Ex-Senior Resident - <strong className="text-accent">AIIMS Bathinda</strong></span>
               </div>
             </div>
           </div>
@@ -90,7 +90,7 @@ const Hero = () => {
           {/* CTA Buttons */}
           <div className="hero-cta-group">
             <a href="#book" className="btn-hero-primary">
-              <Calendar size={20} /> Book Consultation @ just ₹200/- <ArrowRight size={18} />
+              <Calendar size={20} /> Book Consultation @ today <ArrowRight size={18} />
             </a>
             <a href="tel:7496849392" className="btn-hero-outline">
               <Phone size={20} /> 74968-49392
@@ -108,7 +108,7 @@ const Hero = () => {
             </div>
             <div className="hero-impact-divider" />
             <div className="hero-impact-counter">
-              <AnimatedCounter target={10000} suffix="+" />
+              <AnimatedCounter target={50000} suffix="+" />
             </div>
           </div>
 

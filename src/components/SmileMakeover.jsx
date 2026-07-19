@@ -5,22 +5,22 @@ import BeforeAfterSlider from './BeforeAfterSlider';
 const treatments = [
   {
     title: 'Porcelain Veneers',
-    desc: 'Ultra-thin shells that instantly transform chipped, stained or misshapen teeth into a flawless celebrity smile.',
+    desc: <><strong className="text-white font-bold">Ultra-thin shells</strong> that instantly transform chipped, stained or misshapen teeth into a <strong className="text-white font-bold">flawless celebrity smile</strong>.</>,
     icon: '✦'
   },
   {
     title: 'Teeth Whitening',
-    desc: 'Professional-grade laser whitening that delivers up to 8 shades brighter results in a single sitting.',
+    desc: <><strong className="text-white font-bold">Professional-grade laser whitening</strong> that delivers up to <strong className="text-white font-bold">8 shades brighter results</strong> in a single sitting.</>,
     icon: '☀'
   },
   {
     title: 'Composite Bonding',
-    desc: 'Same-day, affordable reshaping of teeth using tooth-coloured composite resin — no drilling required.',
+    desc: <><strong className="text-white font-bold">Same-day, affordable reshaping</strong> of teeth using tooth-coloured composite resin — <strong className="text-white font-bold">no drilling required</strong>.</>,
     icon: '◈'
   },
   {
     title: 'Gum Contouring',
-    desc: 'Laser reshaping of the gum line to reveal more of your teeth and create the perfect smile frame.',
+    desc: <><strong className="text-white font-bold">Laser reshaping</strong> of the gum line to reveal more of your teeth and create the <strong className="text-white font-bold">perfect smile frame</strong>.</>,
     icon: '❋'
   }
 ];

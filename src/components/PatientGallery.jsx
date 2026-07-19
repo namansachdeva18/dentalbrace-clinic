@@ -24,7 +24,7 @@ const galleryItems = [
     alt: 'Dental implant treatment result by Dr. Ritu Saneja Gold Medalist Prosthodontist at The DentalBrace Clinic Bathinda — patient showing natural-looking dental implant replacing missing tooth, best implantologist in Bathinda Punjab',  
     label: 'Dental Implant Case',
     review: "I got my dental implants done by Dr. Ritu. Highly professional, and the results look incredibly natural and function perfectly. Best prosthodontist in the city!",
-    reviewer: "Rajesh M."
+    reviewer: "Manjeet Kaur Chahal (USA / Barnala)"
   },
   { 
     id: 3,  
@@ -56,7 +56,7 @@ const galleryItems = [
     alt: 'Maxillary obturator prosthesis treatment result at The DentalBrace Clinic Bathinda — patient Surinder S. showing improved quality of life after specialized prosthodontic rehabilitation by Dr. Ritu Saneja Gold Medalist Prosthodontist, best prosthodontist in Bathinda Punjab India',  
     label: 'Maxillary Obturator',
     review: "After my maxillary surgery, I needed a highly specialized prosthesis. Dr. Ritu Saneja crafted a custom maxillary obturator with absolute precision. Thanks to her exceptional prosthodontic expertise, I am finally able to breathe, eat, and speak properly again. Best prosthodontist in Bathinda!",
-    reviewer: "Surinder S."
+    reviewer: "Ramlal"
   },
   { 
     id: 7,  
@@ -88,7 +88,7 @@ const galleryItems = [
     alt: 'Dental implants and complete dentures treatment result at The DentalBrace Clinic Bathinda — patient Usha Rani showing fixed dentures by Dr. Ritu Saneja Gold Medalist Prosthodontist, best dental implants clinic in Bathinda Punjab India', 
     label: 'Implants & Dentures',
     review: "I received dental implants and custom dentures from Dr. Ritu Saneja. The precision of her work is exceptional. My new teeth feel completely natural, and I can eat and speak with total confidence again. Highly recommend The DentalBrace Clinic for anyone needing high-quality implants and dentures in Bathinda!",
-    reviewer: "Usha Rani"
+    reviewer: "Usha Rani (Mandi Dabwali)"
   },
 ];
 

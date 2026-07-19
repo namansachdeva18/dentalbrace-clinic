@@ -11,6 +11,7 @@ import WhyUs from '../components/WhyUs';
 import ContactSection from '../components/ContactSection';
 import InvisalignHero from '../components/InvisalignHero';
 import ImplantsHero from '../components/ImplantsHero';
+import MaxillofacialHero from '../components/MaxillofacialHero';
 import SmileMakeover from '../components/SmileMakeover';
 import Testimonials from '../components/Testimonials';
 import TreatmentNavigator from '../components/TreatmentNavigator';
@@ -91,7 +92,7 @@ const Home = () => {
         "@id": "https://thedentalbrace.com/#webpage",
         "url": "https://thedentalbrace.com/",
         "name": "Best Invisalign & Dental Implants Clinic in Bathinda | The DentalBrace",
-        "description": "Bathinda's #1 Invisalign provider & implant clinic. 5500+ braces & aligner cases by Dr. Sandeep Kumar. 5000+ implants by Dr. Ritu Saneja. Book consultation (just ₹200/-)."
+        "description": "Bathinda's #1 Invisalign provider & implant clinic. 5500+ braces & aligner cases by Dr. Sandeep Kumar. 5000+ implants by Dr. Ritu Saneja. Book consultation."
       },
       { "@type": "Review", "itemReviewed": { "@type": "Dentist", "name": "The DentalBrace Clinic" }, "reviewRating": { "@type": "Rating", "ratingValue": "5" }, "author": { "@type": "Person", "name": "Priya Sharma" }, "reviewBody": "Got my Invisalign done by Dr. Sandeep Kumar and honestly it changed my life! I was always conscious of my teeth but now I smile at everyone. The aligners were completely invisible — my own family didn't notice until I told them. Best orthodontist in Bathinda by far!" },
       { "@type": "Review", "itemReviewed": { "@type": "Dentist", "name": "The DentalBrace Clinic" }, "reviewRating": { "@type": "Rating", "ratingValue": "5" }, "author": { "@type": "Person", "name": "Rohit Malhotra" }, "reviewBody": "Dr. Ritu Saneja placed 3 dental implants for me and the experience was completely painless. She explained the entire process in advance so there were no surprises. The implants look and feel exactly like my natural teeth. It's been 8 months and they are perfect." },
@@ -164,7 +165,7 @@ const Home = () => {
     >
       <Helmet>
         <title>Best Invisalign &amp; Dental Implants Clinic in Bathinda | The DentalBrace</title>
-        <meta name="description" content="Bathinda's #1 Invisalign provider & implant clinic. 5500+ braces & aligner cases by Dr. Sandeep Kumar. 5000+ implants by Dr. Ritu Saneja (Gold Medalist). Consultation at a nominal ₹200/-." />
+        <meta name="description" content="Bathinda's #1 Invisalign provider & implant clinic. 5500+ braces & aligner cases by Dr. Sandeep Kumar. 5000+ implants by Dr. Ritu Saneja (Gold Medalist). Book your consultation today." />
         <meta name="keywords" content="Invisalign Bathinda, Clear Aligners Bathinda, Dental Implants Bathinda, Best Orthodontist Bathinda, Smile Makeover Bathinda, Full Mouth Implants Bathinda, Dentofacial Orthopedics Bathinda" />
         <script type="application/ld+json">{JSON.stringify(schema)}</script>
         <script type="application/ld+json">{JSON.stringify(localBusinessSchema)}</script>
@@ -188,6 +189,9 @@ const Home = () => {
 
         {/* 4. Implants Showcase — Dr. Ritu's flagship */}
         <ImplantsHero />
+
+        {/* 4.5 Maxillofacial Prosthetics Showcase */}
+        <MaxillofacialHero />
 
         {/* 5. Digital Dentistry & Before/After */}
         <div id="digital"><PremiumSections /></div>

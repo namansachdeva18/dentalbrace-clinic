@@ -3,6 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { motion } from 'framer-motion';
 import { CheckCircle2, Calendar, Phone, Activity, Clock, ShieldCheck, ArrowLeft, ArrowRight } from 'lucide-react';
+import BeforeAfterSlider from '../components/BeforeAfterSlider';
 import './TreatmentTemplate.css';
 
 // ─── Keyword Highlighter Helper ────────────────────────────────────────────────
@@ -14,7 +15,17 @@ const highlightKeywords = (text) => {
     'Bathinda', 'Punjab', 
     'Dr. Sandeep Kumar', 'Dr. Ritu Saneja', 'Gold Medalist', 'Ex-Resident', 'AIIMS', 'PGIMER',
     'Invisalign', 'Clear Aligners', 'Dental Implants', 'All-on-4', 'Smile Makeover',
-    '5500+', '5000+', 'painless', 'permanent', 'virtually invisible'
+    '5500+', '5000+', 'painless', 'permanent', 'virtually invisible',
+    'Orthodontics', 'Prosthodontist', 'Implantologist', 'Paediatric Dentistry',
+    'Metal Braces', 'Ceramic Braces', 'Lingual Braces', 'Self-Ligating Braces',
+    'Full Mouth Rehabilitation', 'Dentures', 'Zirconia', 'Maxillofacial Prosthetics',
+    'Kids Dentistry', 'Palate Expansion', 'Myofunctional Appliances', 'Myofunctional Trainers',
+    'Root Canal', 'Single Sitting Root Canal', 'Teeth Whitening', 'Veneers', 'Gum Treatment', 
+    'Scaling & Polishing', 'Smile Design', 'Digital Smile Design', 'Best Dentist', 'Best Orthodontist',
+    'clear aligner', 'overbite', 'underbite', 'crossbite', 'diastema', 'SmartTrack', 'iTero', 'ClinCheck',
+    'titanium screw', 'zirconia crown', 'osseointegration', 'bone loss', 'CBCT', 'All-on-6',
+    'composite bonding', 'gum contouring', 'LED whitening', 'laser bleaching', 'Hollywood Smile', 'rotary endodontics',
+    'mouth-breathing', 'breathing issues', 'snoring', 'sleep apnea', 'airway size', 'sleep issues'
   ];
   
   const sortedKeywords = keywords.sort((a, b) => b.length - a.length);
@@ -23,8 +34,7 @@ const highlightKeywords = (text) => {
   const parts = text.split(regexPattern);
   return parts.map((part, i) => {
     if (sortedKeywords.some(kw => kw.toLowerCase() === part.toLowerCase())) {
-      const isAccent = ['Dr. Sandeep Kumar', 'Dr. Ritu Saneja', 'Gold Medalist', 'Invisalign', 'All-on-4', '5500+', '5000+'].some(kw => kw.toLowerCase() === part.toLowerCase());
-      return <strong key={i} className={isAccent ? 'text-accent font-bold' : 'font-bold text-primary'}>{part}</strong>;
+      return <strong key={i} className="text-accent font-bold">{part}</strong>;
     }
     return part;
   });
@@ -37,7 +47,7 @@ const treatmentData = {
     title: 'Invisalign in Bathinda',
     subtitle: 'Straighten your teeth without anyone knowing. Bathinda\'s most experienced Invisalign provider — 5500+ cases.',
     metaTitle: 'Invisalign in Bathinda | Best Invisalign Provider | Dr. Sandeep Kumar | The DentalBrace',
-    metaDesc: 'Get Invisalign clear aligners in Bathinda from Dr. Sandeep Kumar — 5500+ cases, certified Invisalign provider, Ex-AIIMS. Virtually invisible braces. Book consultation ₹200/-.',
+    metaDesc: 'Get Invisalign clear aligners in Bathinda from Dr. Sandeep Kumar — 5500+ cases, certified Invisalign provider, Ex-AIIMS. Virtually invisible braces. Book consultation.',
     overview: 'Invisalign is the world\'s most advanced clear aligner system — a series of custom-made, virtually invisible removable trays that gradually straighten your teeth without metal brackets or wires. At The DentalBrace Clinic, Invisalign is performed by Dr. Sandeep Kumar (MDS Orthodontics, BHU Varanasi, Ex-Resident AIIMS New Delhi) — Bathinda\'s certified Invisalign provider with 5500+ aligner cases. Each set of aligners is worn for 1–2 weeks before progressing to the next, moving your teeth with precision until your smile is perfectly aligned. No food restrictions. No discomfort. No one will know you\'re in treatment.',
     symptoms: ['Crowded or overlapping teeth', 'Gaps between teeth (diastema)', 'Overbite, underbite, or crossbite', 'Protruding front teeth', 'Relapsed teeth after previous braces'],
     idealFor: 'Teenagers and adults who want straight teeth discreetly, without the appearance of metal braces. Especially popular with working professionals, brides, and students.',
@@ -55,10 +65,12 @@ const treatmentData = {
       { step: 6, title: 'Retainers', desc: 'After treatment, retainers are provided to maintain your new smile permanently.' }
     ],
     faqs: [
-      { q: 'How much does Invisalign cost in Bathinda?', a: 'Invisalign cost varies by case complexity and number of aligners needed. Book a consultation (₹200/-) for a personalized quote. We offer EMI options.' },
+      { q: 'How much does Invisalign cost in Bathinda?', a: 'Invisalign cost varies by case complexity and number of aligners needed. Book a consultation for a personalized quote. We offer EMI options.' },
       { q: 'Is Invisalign as effective as braces?', a: 'For most cases — yes. Invisalign can treat the same conditions as braces including crowding, gaps, overbite, and underbite. Dr. Sandeep will assess your case and recommend the best option.' },
       { q: 'Can I eat normally with Invisalign?', a: 'Yes! Remove the aligners before eating and drinking (except water). Brush, floss, and put them back. No food restrictions at all.' },
-      { q: 'How long does Invisalign take?', a: 'Most cases complete in 12–18 months. Mild cases can take as little as 6 months. Dr. Sandeep will give you a precise timeline based on your 3D scan.' }
+      { q: 'How long does Invisalign take?', a: 'Most cases complete in 12–18 months. Mild cases can take as little as 6 months. Dr. Sandeep will give you a precise timeline based on your 3D scan.' },
+      { q: 'What happens if I lose or break an Invisalign aligner?', a: 'Contact Dr. Sandeep immediately. In most cases, he will advise you to move on to your next set of aligners slightly early, or revert to your previous set while a replacement is ordered. Do not leave your teeth unsupported.' },
+      { q: 'Can I drink tea or coffee while wearing Invisalign?', a: 'No. Hot beverages can warp the SmartTrack material, and dark liquids can stain the clear plastic. You must remove your aligners before drinking anything other than plain, cool water.' }
     ]
   },
 
@@ -66,7 +78,7 @@ const treatmentData = {
     title: 'Dental Implants in Bathinda',
     subtitle: 'The permanent solution for missing teeth. 5000+ implants placed by Dr. Ritu Saneja (Gold Medalist).',
     metaTitle: 'Dental Implants in Bathinda | Best Implant Clinic | Dr. Ritu Saneja | The DentalBrace',
-    metaDesc: 'Get dental implants in Bathinda from Dr. Ritu Saneja — Gold Medalist, Ex-AIIMS, 5000+ implants placed. Permanent, natural-looking tooth replacement. Book ₹200/-.',
+    metaDesc: 'Get dental implants in Bathinda from Dr. Ritu Saneja — Gold Medalist, Ex-AIIMS, 5000+ implants placed. Permanent, natural-looking tooth replacement. Book consultation.',
     overview: 'A dental implant is a small titanium screw surgically placed into the jawbone to replace the root of a missing tooth. Once integrated, a custom crown is attached on top — creating a replacement tooth that looks, feels, and functions exactly like a natural tooth. At The DentalBrace Clinic, implants are placed by Dr. Ritu Saneja (MDS Gold Medalist, Ex-Resident AIIMS Delhi & PGIMER Chandigarh) who has placed over 5,000 implants. We use only premium-grade implants with a 99%+ success rate and offer a 5-year guarantee.',
     symptoms: ['One or more missing teeth', 'Tooth extracted or knocked out', 'Loose or failing dental bridge', 'Dentures that don\'t fit comfortably', 'Bone loss from long-standing tooth gap'],
     idealFor: 'Anyone with one or more missing teeth who wants a permanent, fixed solution that doesn\'t involve grinding adjacent teeth (unlike a bridge). Suitable for adults of any age with adequate bone.',
@@ -85,7 +97,7 @@ const treatmentData = {
     faqs: [
       { q: 'Are dental implants painful?', a: 'The procedure is done under local anaesthesia — you feel no pain during surgery. Mild soreness for 3–5 days after is normal and managed with prescribed pain medication.' },
       { q: 'How long do dental implants last?', a: 'With proper oral hygiene and regular checkups, dental implants can last a lifetime. The crown typically lasts 15–20 years.' },
-      { q: 'What is the cost of a dental implant in Bathinda?', a: 'Implant costs vary by brand, type, and number of implants. Book a ₹200/- consultation for a detailed cost breakdown with EMI options.' },
+      { q: 'What is the cost of a dental implant in Bathinda?', a: 'Implant costs vary by brand, type, and number of implants. Book a consultation for a detailed cost breakdown with EMI options.' },
       { q: 'Can anyone get dental implants?', a: 'Most adults are candidates. We evaluate bone density, gum health, and medical history. Patients with uncontrolled diabetes or very low bone volume may require pre-treatment.' }
     ]
   },
@@ -94,7 +106,7 @@ const treatmentData = {
     title: 'All-on-4 Dental Implants in Bathinda',
     subtitle: 'Get a complete set of fixed teeth in just one day — All-on-4 full arch implants by Dr. Ritu Saneja.',
     metaTitle: 'All-on-4 Dental Implants in Bathinda | Full Mouth Implants | The DentalBrace',
-    metaDesc: 'All-on-4 full arch dental implants in Bathinda by Dr. Ritu Saneja (Gold Medalist, 5000+ implants). Fixed permanent teeth in 1 day. Full mouth rehabilitation. Book ₹200/-.',
+    metaDesc: 'All-on-4 full arch dental implants in Bathinda by Dr. Ritu Saneja (Gold Medalist, 5000+ implants). Fixed permanent teeth in 1 day. Full mouth rehabilitation. Book consultation.',
     overview: 'All-on-4 is a revolutionary implant technique that replaces an entire arch of missing teeth (12–14 teeth) using just four strategically placed implants. Compared to conventional full dentures or replacing each tooth individually, All-on-4 provides a permanently fixed solution in a single day. The four implants are placed at precise angles to maximize contact with available bone — meaning even patients with significant bone loss who were told they\'re "not candidates" for implants can often still benefit. Dr. Ritu Saneja has performed hundreds of All-on-4 procedures with exceptional success.',
     symptoms: ['Multiple or all teeth missing in upper or lower jaw', 'Loose or ill-fitting full dentures', 'Significant tooth decay requiring full extraction', 'Severe gum disease causing multiple tooth loss', 'Old fixed bridges that have failed'],
     idealFor: 'Patients who have lost all or most of their teeth in one or both jaws and want a permanent, fixed solution — not removable dentures.',
@@ -123,7 +135,7 @@ const treatmentData = {
     title: 'Smile Makeover in Bathinda',
     subtitle: 'A completely customised cosmetic transformation designed digitally for your face — see results before treatment begins.',
     metaTitle: 'Smile Makeover in Bathinda | Digital Smile Design | Cosmetic Dentist | The DentalBrace',
-    metaDesc: 'Get a complete smile makeover in Bathinda by Dr. Ritu Saneja (Gold Medalist). Veneers, whitening, gum contouring & composite bonding — designed digitally. Book ₹200/-.',
+    metaDesc: 'Get a complete smile makeover in Bathinda by Dr. Ritu Saneja (Gold Medalist). Veneers, whitening, gum contouring & composite bonding — designed digitally. Book consultation.',
     overview: 'A smile makeover is a comprehensive, fully customised plan that combines multiple cosmetic dental procedures to transform your smile completely. At The DentalBrace Clinic, every smile makeover begins with Digital Smile Design (DSD) — a technology that maps your facial proportions and lets you preview your exact results before any treatment begins. Dr. Ritu Saneja (MDS Gold Medalist) then combines the appropriate procedures — veneers, teeth whitening, composite bonding, gum contouring, and crowns — to achieve your ideal smile in the minimum number of appointments.',
     symptoms: ['Multiple cosmetic concerns at once', 'Discoloured and misshapen teeth', 'Chipped or cracked front teeth', 'Gummy smile or uneven gum line', 'Gaps, crowding, or uneven tooth sizes'],
     idealFor: 'Patients planning for a wedding, important event, or simply wanting to invest in a complete, permanent smile transformation. Best for those with 2+ cosmetic concerns.',
@@ -151,7 +163,7 @@ const treatmentData = {
     title: 'Braces in Bathinda',
     subtitle: 'Metal, ceramic & lingual braces — the most reliable path to a perfect smile, by Dr. Sandeep Kumar (Ex-AIIMS).',
     metaTitle: 'Braces in Bathinda | Metal, Ceramic & Lingual Braces | Dr. Sandeep Kumar | The DentalBrace',
-    metaDesc: 'Get braces treatment in Bathinda by Dr. Sandeep Kumar — MDS Orthodontics (BHU), Ex-Resident AIIMS. Metal, ceramic, and lingual braces. 5500+ cases. Book ₹200/-.',
+    metaDesc: 'Get braces treatment in Bathinda by Dr. Sandeep Kumar — MDS Orthodontics (BHU), Ex-Resident AIIMS. Metal, ceramic, and lingual braces. 5500+ cases. Book consultation.',
     overview: 'Traditional braces remain the most reliable, predictable, and cost-effective orthodontic treatment for a wide range of dental issues. At The DentalBrace Clinic, braces are placed and managed by Dr. Sandeep Kumar — an MDS-qualified orthodontist (BHU Varanasi) and Ex-Resident of AIIMS New Delhi with 5500+ cases of experience. We offer three types: metal braces (most effective for complex cases), ceramic braces (tooth-colored for a discreet look), and lingual braces (hidden entirely behind the teeth — completely invisible from outside). All braces are of the highest quality, with Damon self-ligating brackets available for faster treatment.',
     symptoms: ['Crowded or overlapping teeth', 'Protruding front teeth', 'Deep overbite or open bite', 'Crossbite or underbite', 'Wide gaps between teeth', 'Jaw misalignment affecting bite'],
     idealFor: 'Patients of all ages with moderate to complex orthodontic issues. Also the most affordable option for comprehensive teeth straightening. Children (7+), teenagers, and adults all benefit.',
@@ -171,7 +183,7 @@ const treatmentData = {
       { q: 'Which is better — braces or Invisalign?', a: 'Both are effective. Braces are better for complex movements; Invisalign is preferred for mild-moderate cases where aesthetics during treatment matter. Dr. Sandeep will recommend what\'s best for your specific case.' },
       { q: 'Do braces hurt?', a: 'Mild soreness for 3–5 days after each tightening appointment is normal. The brackets are smooth and do not injure cheeks. Most patients adapt within a week.' },
       { q: 'Can adults get braces?', a: 'Absolutely. There is no age limit for orthodontic treatment. Ceramic and lingual braces are especially popular with adult patients for their discreet appearance.' },
-      { q: 'How much do braces cost in Bathinda?', a: 'Cost depends on type (metal/ceramic/lingual) and duration. Book a ₹200/- consultation for an exact quote with EMI payment plans.' }
+      { q: 'How much do braces cost in Bathinda?', a: 'Cost depends on type (metal/ceramic/lingual) and duration. Book a consultation for an exact quote with EMI payment plans.' }
     ]
   },
 
@@ -179,7 +191,7 @@ const treatmentData = {
     title: '3D Intraoral Scanner in Bathinda',
     subtitle: 'Precision dentistry with no messy putty impressions. Experience the future of dental scanning.',
     metaTitle: '3D Intraoral Scanner in Bathinda | Digital Dentistry | The DentalBrace',
-    metaDesc: 'Experience comfortable, putty-free 3D intraoral scanning at The DentalBrace Clinic in Bathinda. Highly accurate digital models for clear aligners, crowns, and implants. Book ₹200/-.',
+    metaDesc: 'Experience comfortable, putty-free 3D intraoral scanning at The DentalBrace Clinic in Bathinda. Highly accurate digital models for clear aligners, crowns, and implants. Book consultation.',
     overview: 'An intraoral scanner is a compact digital camera used to capture highly detailed 3D images of your teeth and gums in just a few minutes. At The DentalBrace Clinic, we use advanced 3D scanning technology to eliminate the need for traditional, uncomfortable putty impressions. This digital precision allows for better treatment planning, a faster workflow, and highly accurate results for everything from Invisalign aligners to custom dental crowns and implants.',
     symptoms: ['Gag reflex with traditional putty impressions', 'Need for highly accurate dental prosthetics', 'Planning for Invisalign or clear aligners', 'Requirement for precise implant placement', 'Desire to visualize treatment outcomes digitally'],
     idealFor: 'Any patient needing dental impressions for crowns, bridges, implants, or orthodontics who prefers a fast, comfortable, and highly precise digital alternative.',
@@ -207,7 +219,7 @@ const treatmentData = {
     title: 'Digital Dentistry in Bathinda',
     subtitle: 'Intraoral scanning, 3D imaging & digital treatment planning — precision dentistry with no putty impressions.',
     metaTitle: 'Digital Dentistry in Bathinda | 3D Intraoral Scanner | Digital Smile Design | The DentalBrace',
-    metaDesc: 'Experience digital dentistry in Bathinda at The DentalBrace Clinic. 3D intraoral scanning, CBCT imaging, Digital Smile Design, and CAD/CAM restorations. Book ₹200/-.',
+    metaDesc: 'Experience digital dentistry in Bathinda at The DentalBrace Clinic. 3D intraoral scanning, CBCT imaging, Digital Smile Design, and CAD/CAM restorations. Book consultation.',
     overview: 'The DentalBrace Clinic is Bathinda\'s most advanced digital dental practice — using cutting-edge technology to plan, preview, and execute treatments with unmatched precision and comfort. Digital dentistry eliminates traditional putty impressions (messy, uncomfortable), produces far more accurate treatment plans, and allows you to see your results digitally before a single tooth is touched. From 3D intraoral scanning to CAD/CAM-milled crowns and Digital Smile Design, our technology ensures every treatment is faster, more accurate, and more predictable.',
     symptoms: ['Seeking precise, modern dental care', 'Uncomfortable with traditional impressions', 'Wanting to preview smile changes before treatment', 'Complex reconstruction requiring precise planning', 'Needing accurate implant placement planning'],
     idealFor: 'Every patient at our clinic. Digital workflows benefit all treatments — from a simple crown to a full mouth rehabilitation. Particularly valuable for implants, aligners, veneers, and smile makeovers.',
@@ -235,7 +247,7 @@ const treatmentData = {
     title: 'Teeth Whitening in Bathinda',
     subtitle: '8 shades brighter — in a single session. Professionally done, long-lasting results.',
     metaTitle: 'Teeth Whitening in Bathinda | Professional Laser Whitening | The DentalBrace',
-    metaDesc: 'Professional teeth whitening in Bathinda by Dr. Ritu Saneja. LED & laser whitening — 8 shades brighter in 1 session. Safe, painless, long-lasting. Book ₹200/- consultation.',
+    metaDesc: 'Professional teeth whitening in Bathinda by Dr. Ritu Saneja. LED & laser whitening — 8 shades brighter in 1 session. Safe, painless, long-lasting. Book consultation.',
     overview: 'Professional teeth whitening at The DentalBrace Clinic uses advanced LED and laser bleaching technology to remove deep stains caused by tea, coffee, tobacco, and ageing. Unlike over-the-counter strips, our clinical-grade whitening gel penetrates the enamel to break down intrinsic and extrinsic stains — delivering results up to 8 shades brighter in a single 60-minute session. Treatment is performed by Dr. Ritu Saneja (MDS Gold Medalist) and is completely safe, painless, and does not damage your enamel.',
     symptoms: ['Yellow or stained teeth', 'Coffee / tea / tobacco discolouration', 'Age-related darkening', 'Antibiotic staining (tetracycline)', 'Enamel surface stains'],
     idealFor: 'Anyone looking for a brighter smile before a wedding, job interview, or special occasion. Also ideal for smokers or regular tea/coffee drinkers wanting to reverse discolouration.',
@@ -263,7 +275,7 @@ const treatmentData = {
     title: 'Dental Veneers in Bathinda',
     subtitle: 'Hollywood smile in 2 visits. Ultra-thin porcelain shells for a flawless, permanent smile.',
     metaTitle: 'Dental Veneers in Bathinda | Porcelain Veneers | The DentalBrace Clinic',
-    metaDesc: 'Get dental veneers in Bathinda by Dr. Ritu Saneja (MDS Gold Medalist). Porcelain & composite veneers for a perfect smile. Book consultation at ₹200/- only.',
+    metaDesc: 'Get dental veneers in Bathinda by Dr. Ritu Saneja (MDS Gold Medalist). Porcelain & composite veneers for a perfect smile. Book consultation.',
     overview: 'Dental veneers are ultra-thin, custom-crafted porcelain or composite shells bonded to the front surface of your teeth to correct colour, shape, size, and alignment. At The DentalBrace Clinic, veneers are designed using Digital Smile Design (DSD) software so you see your final result before any treatment begins. Performed by Dr. Ritu Saneja (MDS Gold Medalist, BHU Varanasi, Ex-AIIMS), veneers are the fastest way to achieve a permanent smile transformation — often called the "Hollywood Smile".',
     symptoms: ['Discoloured or stained teeth that don\'t whiten', 'Chipped or cracked teeth', 'Slightly misaligned teeth', 'Gaps between teeth', 'Worn-down or short teeth'],
     idealFor: 'Patients who want a permanent, dramatic smile transformation without extensive orthodontic treatment. Ideal for those with multiple cosmetic concerns at once.',
@@ -291,15 +303,15 @@ const treatmentData = {
     title: 'Root Canal Treatment in Bathinda',
     subtitle: 'Single-visit, painless RCT using rotary endodontics. Save your natural tooth — no extraction needed.',
     metaTitle: 'Root Canal Treatment in Bathinda | Painless Single Visit RCT | The DentalBrace',
-    metaDesc: 'Painless root canal treatment in Bathinda using advanced rotary endodontics. Single-session RCT available. Book a ₹200/- consultation at The DentalBrace Clinic.',
+    metaDesc: 'Painless root canal treatment in Bathinda using advanced rotary endodontics. Single-session RCT available. Book a consultation at The DentalBrace Clinic.',
     overview: 'Root canal treatment (RCT) is a procedure to save a severely infected or decayed tooth that would otherwise require extraction. At The DentalBrace Clinic, we use Rotary Endodontic technology — a motorised, nickel-titanium file system — to clean the infected pulp quickly, precisely, and completely painlessly. With our advanced single-visit RCT, most cases are completed in one appointment. The treated tooth is then sealed with a biocompatible material and crowned to restore its full function.',
     symptoms: ['Severe toothache, especially when chewing', 'Prolonged sensitivity to hot and cold', 'Darkening or discolouration of the tooth', 'Swelling or tenderness in nearby gums', 'A persistent pimple on the gums'],
     idealFor: 'Patients with a deeply infected, cracked, or severely decayed tooth who want to save their natural tooth rather than opt for an extraction and implant.',
     benefits: ['Save your natural tooth — avoid extraction', 'Completely painless with local anaesthesia', 'Single-visit treatment available', '90%+ success rate', 'Followed by a crown for full restoration'],
     technology: 'Rotary Endodontic Files (NiTi), Apex Locator, Dental Operating Microscope',
-    duration: '60–90 Minutes (single visit)',
-    recovery: 'Mild soreness for 1–2 days',
-    doctor: 'Dr. Ritu Saneja',
+    duration: '3-5 Days',
+    recovery: 'Mild soreness for 3-5 days',
+    doctor: 'Dr. Sandeep Kumar & Dr. Ritu Saneja',
     process: [
       { step: 1, title: 'Diagnosis & X-Ray', desc: 'Digital X-rays show the extent of infection and root anatomy.' },
       { step: 2, title: 'Local Anaesthesia', desc: 'The area is numbed completely — you will feel nothing during treatment.' },
@@ -319,7 +331,7 @@ const treatmentData = {
     title: 'Dental Crown & Bridge in Bathinda',
     subtitle: 'Zirconia crowns that look, feel and last like natural teeth — guaranteed for 5 years.',
     metaTitle: 'Dental Crown & Bridge in Bathinda | Zirconia Crown | The DentalBrace Clinic',
-    metaDesc: 'Dental crown and bridge treatment in Bathinda. Premium zirconia & porcelain crowns by Dr. Ritu Saneja. Replace missing teeth permanently. Book at ₹200/-.',
+    metaDesc: 'Dental crown and bridge treatment in Bathinda. Premium zirconia & porcelain crowns by Dr. Ritu Saneja. Replace missing teeth permanently. Book consultation.',
     overview: 'Dental crowns are tooth-shaped caps placed over damaged, weakened, or root-canal-treated teeth to restore their full shape, strength, and function. A dental bridge uses two crowns as anchors to replace one or more missing teeth without surgery. At The DentalBrace Clinic, we use premium full-zirconia crowns — the strongest, most natural-looking dental crown material available. All crowns are designed digitally using 3D scans, ensuring a perfect fit and shade match in just 2 appointments.',
     symptoms: ['Cracked, broken, or severely decayed tooth', 'Weak tooth after root canal treatment', 'Missing one or more teeth', 'Old metal or discoloured crowns that need replacement', 'A tooth worn down from grinding'],
     idealFor: 'Patients with damaged teeth needing protection, or those with missing teeth who prefer a non-surgical option over implants.',
@@ -347,27 +359,27 @@ const treatmentData = {
     title: 'Kids Dentistry in Bathinda',
     subtitle: 'Gentle, fun, and completely fear-free dental care for children aged 2–16 years.',
     metaTitle: 'Kids Dentist in Bathinda | Paediatric Dentistry | The DentalBrace Clinic',
-    metaDesc: 'Paediatric dentist in Bathinda for kids aged 2–16 years. Gentle, painless kids dentistry by expert MDS doctors. First visit friendly. Book at ₹200/-.',
-    overview: 'Children\'s dental health sets the foundation for a lifetime of healthy smiles. At The DentalBrace Clinic, we provide comprehensive paediatric dentistry in a warm, welcoming environment specifically designed to help kids feel safe and comfortable. From their first tooth to their teenage years, our specialists address milk tooth cavities, eruption issues, jaw development, and early orthodontic concerns. We believe every child\'s first dental visit should be positive — because a child who isn\'t afraid of the dentist will take care of their teeth for life.',
-    symptoms: ['Visible cavities or dark spots on teeth', 'Toothache or sensitivity in children', 'Delayed or early tooth eruption', 'Thumb sucking or mouth breathing habits', 'Crooked milk teeth or crowding'],
-    idealFor: 'Children from 2 to 16 years for routine checkups, cavity treatment, fluoride applications, fissure sealants, and early orthodontic assessment.',
-    benefits: ['Fear-free, child-friendly environment', 'Painless cavity treatment techniques', 'Early orthodontic screening by Dr. Sandeep', 'Fluoride & sealant protection', 'Habit counselling (thumb sucking, tongue thrusting)'],
-    technology: 'Digital X-Rays (Low Radiation), Laser Cavity Detection, Nitrous Oxide Sedation (if required)',
+    metaDesc: 'Paediatric dentist in Bathinda for kids aged 2–16 years. Gentle, painless kids dentistry, palate expansion, and myofunctional appliances for jaw growth. Book consultation.',
+    overview: 'Children\'s dental health sets the foundation for a lifetime of healthy smiles. At The DentalBrace Clinic, we provide comprehensive paediatric dentistry in a warm, welcoming environment specifically designed to help kids feel safe and comfortable. From their first tooth to their teenage years, our specialists address milk tooth cavities, eruption issues, jaw development, and early orthodontic concerns. We strongly focus on early interceptive orthodontics, utilising palate expansion and myofunctional appliances to correct narrow jaws, mouth-breathing habits, and related breathing issues (like snoring or sleep apnea) early on. We believe every child\'s first dental visit should be positive — because a child who isn\'t afraid of the dentist will take care of their teeth for life.',
+    symptoms: ['Visible cavities or dark spots on teeth', 'Toothache or sensitivity in children', 'Thumb sucking, mouth-breathing, or tongue thrusting', 'Narrow jaws or severe crowding of milk teeth', 'Snoring, sleep apnea, or sleep issues related to airway size'],
+    idealFor: 'Children from 2 to 16 years for routine checkups, cavity treatment, fluoride applications, and early orthodontic assessment for jaw growth correction.',
+    benefits: ['Fear-free, child-friendly environment', 'Early jaw growth correction with Palate Expansion', 'Myofunctional appliances for mouth-breathing & habits', 'Improves breathing issues and opens the airway size', 'Painless cavity treatment & fluoride protection', 'Prevents complex braces or jaw surgery later in life'],
+    technology: 'Digital X-Rays (Low Radiation), Laser Cavity Detection, Myofunctional Trainers',
     duration: '30–45 Minutes per visit',
     recovery: 'Immediate',
     doctor: 'Dr. Sandeep Kumar',
     process: [
       { step: 1, title: 'Friendly First Visit', desc: 'We let the child explore the chair and instruments so nothing feels scary.' },
       { step: 2, title: 'Dental Examination', desc: 'We check all teeth, gums, bite, and jaw development with low-radiation digital X-rays.' },
-      { step: 3, title: 'Cleaning & Fluoride', desc: 'Professional cleaning and fluoride application to strengthen enamel.' },
-      { step: 4, title: 'Treatment Planning', desc: 'Any cavities or orthodontic concerns are discussed with parents in simple language.' },
-      { step: 5, title: 'Sealants', desc: 'We apply protective sealants to back molar grooves to prevent cavity formation.' }
+      { step: 3, title: 'Growth Assessment', desc: 'Dr. Sandeep evaluates jaw growth for early signs of narrow palates or mouth-breathing.' },
+      { step: 4, title: 'Treatment Planning', desc: 'Any cavities, habit breaking needs, or orthodontic concerns are discussed with parents in simple language.' },
+      { step: 5, title: 'Preventive Care', desc: 'We apply protective sealants or provide myofunctional trainers to guide proper growth.' }
     ],
     faqs: [
+      { q: 'What is a Palate Expander and does my child need one?', a: 'A palate expander is an early orthodontic appliance used to gently widen a child\'s narrow upper jaw. It creates room for adult teeth to come in straight and significantly improves nasal breathing. Dr. Sandeep can assess if your child needs one during a growth checkup.' },
+      { q: 'How do Myofunctional Appliances help my child?', a: 'Myofunctional appliances (like trainers) correct bad oral habits like thumb sucking, tongue thrusting, and mouth breathing. They train the facial muscles to function correctly, guiding natural jaw growth and preventing severe crooked teeth later.' },
       { q: 'At what age should I bring my child to a dentist?', a: 'The first dental visit should be within 6 months of the first tooth appearing, or by age 1 — whichever comes first. Early visits help prevent problems and build comfort.' },
-      { q: 'My child is afraid of the dentist — how do you handle this?', a: 'We use a "tell-show-do" approach — we explain and demonstrate every instrument before using it. Our child-friendly team ensures no child leaves with a bad memory.' },
-      { q: 'Should I treat milk teeth even if they will fall out?', a: 'Absolutely. Infected milk teeth cause pain, spread infection, and can damage the permanent tooth developing underneath. Healthy milk teeth also ensure proper jaw development.' },
-      { q: 'When should a child start orthodontic treatment?', a: 'An orthodontic screening should happen by age 7–8. Dr. Sandeep can identify early jaw or bite problems and treat them while the jaw is still growing — preventing complex treatment later.' }
+      { q: 'Should I treat milk teeth even if they will fall out?', a: 'Absolutely. Infected milk teeth cause pain, spread infection, and can damage the permanent tooth developing underneath. Healthy milk teeth also ensure proper jaw development.' }
     ]
   },
 
@@ -375,7 +387,7 @@ const treatmentData = {
     title: 'Gum Treatment in Bathinda',
     subtitle: 'Stop bleeding gums permanently. Professional scaling, polishing & gum disease treatment.',
     metaTitle: 'Gum Treatment in Bathinda | Scaling & Polishing | Periodontist | The DentalBrace',
-    metaDesc: 'Expert gum treatment in Bathinda. Painless scaling, polishing, and gum disease (periodontitis) therapy. Healthy gums are the foundation of a healthy smile. Book ₹200/-.',
+    metaDesc: 'Expert gum treatment in Bathinda. Painless scaling, polishing, and gum disease (periodontitis) therapy. Healthy gums are the foundation of a healthy smile. Book consultation.',
     overview: 'Gum disease (periodontitis) is the leading cause of adult tooth loss in India — and most people don\'t know they have it until significant damage is done. At The DentalBrace Clinic, we provide comprehensive gum treatment including professional scaling & polishing (cleaning), deep root planing, gum flap surgery (if required), and maintenance therapy. Healthy gums are not just essential for your oral health — research links gum disease to heart disease, diabetes, and premature birth. Our goal is to give you a healthy gum foundation that supports your teeth for life.',
     symptoms: ['Bleeding gums when brushing or eating', 'Red, swollen, or tender gums', 'Bad breath (halitosis) that doesn\'t go away', 'Receding gums / teeth appearing longer', 'Loose teeth or gaps forming between teeth'],
     idealFor: 'Anyone with bleeding gums, bad breath, or visible tartar buildup. Also recommended for diabetics, smokers, and pregnant women who are at higher risk for gum disease.',
@@ -403,7 +415,7 @@ const treatmentData = {
     title: 'Wisdom Tooth Removal in Bathinda',
     subtitle: 'Painless surgical extraction — same day procedure. Expert oral surgery for impacted wisdom teeth.',
     metaTitle: 'Wisdom Tooth Removal in Bathinda | Painless Extraction | The DentalBrace Clinic',
-    metaDesc: 'Expert wisdom tooth removal in Bathinda. Painless surgical extraction of impacted wisdom teeth by MDS specialists. Same-day procedure. Book consultation at ₹200/-.',
+    metaDesc: 'Expert wisdom tooth removal in Bathinda. Painless surgical extraction of impacted wisdom teeth by MDS specialists. Same-day procedure. Book consultation.',
     overview: 'Wisdom teeth (third molars) often don\'t have enough room to erupt properly and become "impacted" — partially or fully trapped under the gum or bone. Impacted wisdom teeth cause severe pain, infections (pericoronitis), crowding of other teeth, and cysts. At The DentalBrace Clinic, we perform wisdom tooth extractions using precise surgical techniques under local anaesthesia — ensuring a smooth, painless procedure and a quick recovery. Most extractions are completed in 20–40 minutes with minimal post-operative discomfort.',
     symptoms: ['Jaw pain at the back of the mouth', 'Swollen or bleeding gums around the back teeth', 'Difficulty opening the mouth or chewing', 'Bad taste or bad breath from back teeth', 'Recurring infection in the same area'],
     idealFor: 'Patients with impacted, partially erupted, or infected wisdom teeth. Also recommended when wisdom teeth are causing crowding of other teeth or are decayed beyond restoration.',
@@ -431,7 +443,7 @@ const treatmentData = {
     title: 'Composite Bonding in Bathinda',
     subtitle: 'Fix chipped, gapped, or stained teeth in 90 minutes — no drilling, no injections.',
     metaTitle: 'Composite Bonding in Bathinda | Tooth Bonding | Chipped Tooth Repair | The DentalBrace',
-    metaDesc: 'Composite bonding in Bathinda for chipped, cracked, or gapped teeth. Quick, painless, affordable tooth bonding by Dr. Ritu Saneja. No drilling needed. Book ₹200/-.',
+    metaDesc: 'Composite bonding in Bathinda for chipped, cracked, or gapped teeth. Quick, painless, affordable tooth bonding by Dr. Ritu Saneja. No drilling needed. Book consultation.',
     overview: 'Composite bonding is a quick, minimally invasive cosmetic procedure where a tooth-coloured composite resin is sculpted directly onto your teeth to correct chips, cracks, gaps, discolouration, or uneven shapes. Unlike veneers, bonding requires no tooth reduction in most cases — making it completely reversible. The resin is applied, shaped, and hardened with a curing light in a single appointment. Composite bonding is the most affordable route to a noticeably improved smile and is performed by Dr. Ritu Saneja, who is known for her artistry and attention to aesthetic detail.',
     symptoms: ['Chipped or cracked front teeth', 'Small gaps between teeth (diastema)', 'Discoloured teeth that don\'t whiten', 'Slightly uneven or misshapen teeth', 'Short teeth due to grinding'],
     idealFor: 'Patients with minor to moderate cosmetic concerns who want an affordable, same-day smile improvement without the commitment of veneers or crowns.',
@@ -455,12 +467,67 @@ const treatmentData = {
     ]
   },
 
+  'maxillofacial-prosthetics': {
+    title: 'Maxillofacial Prosthetics in Bathinda',
+    subtitle: 'Advanced rehabilitation for oral and facial defects — restoring function and aesthetics.',
+    metaTitle: 'Maxillofacial Prosthetics in Bathinda | The DentalBrace Clinic',
+    metaDesc: 'Specialized maxillofacial prosthetics by Dr. Ritu Saneja in Bathinda. Custom prostheses for oral and facial defects to restore function and confidence.',
+    overview: 'Maxillofacial prosthetics is a highly specialized branch of dentistry focused on rehabilitating patients with congenital or acquired defects of the head and neck. These defects may result from cancer surgery, trauma, or birth anomalies (like cleft palate). Dr. Ritu Saneja (MDS Prosthodontics, Gold Medalist, Ex-Resident AIIMS Delhi) has extensive experience in designing custom prostheses that restore speech, swallowing, chewing, and facial aesthetics, helping patients regain their confidence and quality of life.',
+    symptoms: ['Loss of oral or facial structures due to surgery or trauma', 'Difficulty in speech or swallowing', 'Congenital defects like cleft lip or palate', 'Need for obturators or speech bulbs'],
+    idealFor: 'Patients requiring rehabilitation after head and neck cancer surgeries, trauma, or congenital anomalies.',
+    benefits: ['Restores essential functions like speech and swallowing', 'Improves facial aesthetics and symmetry', 'Custom-designed for a perfect, comfortable fit', 'Enhances psychological well-being and confidence'],
+    technology: '3D Scanning, Advanced Silicone and Acrylic Materials, Precision Casting',
+    duration: 'Varies based on complexity',
+    recovery: 'Varies based on prosthesis',
+    doctor: 'Dr. Ritu Saneja',
+    process: [
+      { step: 1, title: 'Detailed Evaluation', desc: 'A thorough assessment of the defect using 3D imaging and clinical examination.' },
+      { step: 2, title: 'Impression & Scanning', desc: 'Precise measurements and impressions are taken to ensure an accurate fit.' },
+      { step: 3, title: 'Design & Fabrication', desc: 'The custom prosthesis is designed and fabricated using advanced, biocompatible materials.' },
+      { step: 4, title: 'Trial & Adjustments', desc: 'The prosthesis is tested for fit, comfort, and function. Adjustments are made as needed.' },
+      { step: 5, title: 'Final Placement', desc: 'The final prosthesis is placed, and detailed care instructions are provided.' }
+    ],
+    faqs: [
+      { q: 'Is the prosthesis comfortable?', a: 'Yes, every prosthesis is custom-made to fit your unique anatomy precisely, ensuring maximum comfort.' },
+      { q: 'How do I care for my maxillofacial prosthesis?', a: 'You will receive specific instructions, which typically include daily cleaning with a soft brush and mild soap, and storing it properly when not in use.' },
+      { q: 'Will it look natural?', a: 'Modern materials and Dr. Ritu Saneja\'s expertise ensure that the prosthesis blends seamlessly with your natural tissues for a realistic appearance.' }
+    ],
+    beforeAfterSlots: 2
+  },
+
+  'dentofacial-orthopedics': {
+    title: 'Dentofacial Orthopedics in Bathinda',
+    subtitle: 'Advanced jaw growth correction and structural alignment for children and teens.',
+    metaTitle: 'Dentofacial Orthopedics Bathinda | Jaw Correction | The DentalBrace Clinic',
+    metaDesc: 'Expert Dentofacial Orthopedics in Bathinda by AIIMS-trained specialist Dr. Sandeep Kumar. Early intervention for jaw discrepancies, underbites, and overbites.',
+    overview: 'While orthodontics focuses on managing tooth movement, Dentofacial Orthopedics involves the guidance of facial growth and development, which occurs largely during childhood and adolescence. Dr. Sandeep Kumar, an AIIMS-trained specialist in Orthodontics and Dentofacial Orthopedics, uses advanced custom appliances to guide the jawbone\'s growth. Early intervention can correct severe structural issues like underbites, overbites, and narrow palates before the bones fully fuse, often preventing the need for complex jaw surgeries later in life.',
+    symptoms: ['Severe overbite (upper jaw protrudes significantly)', 'Underbite (lower jaw protrudes past the upper jaw)', 'Crossbite or very narrow upper palate', 'Difficulty in chewing, biting, or speech development', 'Mouth breathing or sleep apnea symptoms in children'],
+    idealFor: 'Children and young adolescents (typically between ages 7 and 14) who are still growing and present with skeletal jaw discrepancies.',
+    benefits: ['Guides proper facial and jaw growth', 'Prevents the need for invasive jaw surgeries later in life', 'Creates adequate space for adult teeth to erupt normally', 'Improves breathing, speech, and overall facial symmetry'],
+    technology: 'Palatal Expanders, Twin Block Appliances, Headgear, Herbst Appliance',
+    duration: '6 to 18 months (depending on growth phase)',
+    recovery: 'Minimal (Initial adjustment period to appliances)',
+    doctor: 'Dr. Sandeep Kumar',
+    process: [
+      { step: 1, title: 'Growth Assessment', desc: 'Thorough evaluation of the child\'s jaw growth, facial structure, and tooth development using advanced imaging.' },
+      { step: 2, title: 'Appliance Fabrication', desc: 'Custom dentofacial appliances (like expanders or functional appliances) are precisely designed.' },
+      { step: 3, title: 'Active Phase', desc: 'The appliance is worn as prescribed to gently guide jaw growth into the correct skeletal position.' },
+      { step: 4, title: 'Monitoring & Adjustment', desc: 'Regular visits to monitor growth spurts and adjust the appliances for optimal results.' },
+      { step: 5, title: 'Transition to Orthodontics', desc: 'Once the jaw is structurally aligned, traditional braces or aligners may be used to perfect the alignment of the teeth.' }
+    ],
+    faqs: [
+      { q: 'At what age should my child be evaluated?', a: 'The American Association of Orthodontists recommends that children have their first orthodontic evaluation by age 7. This is the ideal time to detect and intercept jaw growth issues.' },
+      { q: 'Are dentofacial appliances painful?', a: 'There may be some initial discomfort or a feeling of pressure for a few days as the child gets used to the appliance, but it is generally very well tolerated.' },
+      { q: 'Can adults get dentofacial orthopedics?', a: 'Because adult jaw bones are fully fused and no longer growing, true dentofacial orthopedics is limited. Severe adult jaw discrepancies usually require orthognathic (jaw) surgery combined with orthodontics.' }
+    ]
+  },
+
   // Legacy entry kept for fallback
   'smile-designing': {
     title: 'Digital Smile Designing in Bathinda',
     subtitle: 'Precision crafted aesthetics for a flawless smile — preview your results before treatment begins.',
     metaTitle: 'Digital Smile Design in Bathinda | Smile Makeover | The DentalBrace Clinic',
-    metaDesc: 'Digital Smile Design in Bathinda by Dr. Ritu Saneja. Preview your perfect smile before any treatment. Book consultation at ₹200/-.',
+    metaDesc: 'Digital Smile Design in Bathinda by Dr. Ritu Saneja. Preview your perfect smile before any treatment. Book consultation.',
     overview: 'Digital Smile Design (DSD) is a revolutionary approach in cosmetic dentistry that allows us to design and preview your ideal smile before any physical treatment begins. Using high-resolution photography, video analysis, and 3D digital software, we map your facial proportions and create a fully customised smile that suits your face, lips, and personality.',
     symptoms: ['Chipped or worn teeth', 'Gaps between teeth', 'Discoloration', 'Asymmetrical smile'],
     idealFor: 'Patients looking for a complete, predictable cosmetic overhaul of their smile.',
@@ -559,7 +626,7 @@ const TreatmentTemplate = () => {
             <span><ShieldCheck size={15} /> {data.doctor}</span>
           </div>
           <a href="/#book" className="btn btn-primary" style={{ marginTop: '1.5rem', display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>
-            Book Consultation (₹200/-) <ArrowRight size={16} />
+            Book Consultation <ArrowRight size={16} />
           </a>
         </div>
       </div>
@@ -579,6 +646,30 @@ const TreatmentTemplate = () => {
               <h2 className="heading-secondary">What is {data.title.split(' in ')[0]}?</h2>
               <p className="text-secondary text-lg leading-relaxed">{highlightKeywords(data.overview)}</p>
             </motion.div>
+
+            {/* Before & After Slots */}
+            {data.beforeAfterSlots && (
+              <motion.div 
+                className="treatment-section"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.6 }}
+              >
+                <h2 className="heading-secondary">Before & After Results</h2>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>
+                  {Array.from({ length: data.beforeAfterSlots }).map((_, idx) => (
+                    <BeforeAfterSlider
+                      key={idx}
+                      beforeImage={`/images/${slug}_${idx + 1}_before.jpg`}
+                      afterImage={`/images/${slug}_${idx + 1}_after.jpg`}
+                      beforeAlt={`Patient before ${data.title} at The DentalBrace Clinic Bathinda`}
+                      afterAlt={`Patient after ${data.title} at The DentalBrace Clinic Bathinda`}
+                    />
+                  ))}
+                </div>
+              </motion.div>
+            )}
 
             {/* Symptoms & Ideal Candidate */}
             <div className="treatment-section symptoms-grid">
@@ -695,7 +786,7 @@ const TreatmentTemplate = () => {
             {/* CTA */}
             <div className="sidebar-card doctor-cta">
               <h3 className="cta-title">Ready to get started?</h3>
-              <p className="cta-subtitle">Book a consultation with our AIIMS-trained specialists today at just ₹200/-.</p>
+              <p className="cta-subtitle">Book a consultation with our AIIMS-trained specialists today.</p>
               <a href="/#book" className="btn btn-primary w-full" style={{ display: 'block', textAlign: 'center' }}>Book Now</a>
               <a href="tel:7496849392" className="btn btn-outline w-full" style={{ display: 'block', textAlign: 'center', marginTop: '0.75rem' }}>
                 <Phone size={15} style={{ display: 'inline', marginRight: '0.4rem' }} />
