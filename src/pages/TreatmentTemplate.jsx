@@ -749,7 +749,7 @@ const TreatmentTemplate = () => {
               <div className="faq-main-list">
                 {data.faqs.map((faq, i) => (
                   <details key={i} className="faq-accordion">
-                    <summary className="faq-accordion-q">{highlightKeywords(faq.q)}</summary>
+                    <summary className="faq-accordion-q"><span>{highlightKeywords(faq.q)}</span></summary>
                     <p className="faq-accordion-a">{highlightKeywords(faq.a)}</p>
                   </details>
                 ))}
