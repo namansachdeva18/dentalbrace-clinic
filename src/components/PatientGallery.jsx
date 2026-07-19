@@ -226,14 +226,20 @@ const PatientGallery = () => {
               aria-label={`View ${item.label} Review`}
             >
               <div className="pg-img-wrapper">
-                <img 
-                  src={item.src} 
-                  alt={item.alt} 
-                  title={`${item.label} — The DentalBrace Clinic Bathinda`}
-                  className="pg-img" 
-                  loading="lazy"
-                  decoding="async"
-                />
+                <picture>
+                  <source
+                    srcSet={item.src.replace(/\.(jpg|jpeg|png)$/i, '.webp')}
+                    type="image/webp"
+                  />
+                  <img 
+                    src={item.src} 
+                    alt={item.alt} 
+                    title={`${item.label} — The DentalBrace Clinic Bathinda`}
+                    className="pg-img" 
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </picture>
                 <div className="pg-overlay">
                   <ZoomIn size={48} className="pg-zoom-icon" />
                 </div>
@@ -287,11 +293,18 @@ const PatientGallery = () => {
           )}
 
           <div className="lightbox-content" onClick={(e) => e.stopPropagation()}>
-            <img
-              src={galleryItems[lightbox].src}
-              alt={galleryItems[lightbox].alt}
-              className="lightbox-img"
-            />
+            <picture>
+              <source
+                srcSet={galleryItems[lightbox].src.replace(/\.(jpg|jpeg|png)$/i, '.webp')}
+                type="image/webp"
+              />
+              <img
+                src={galleryItems[lightbox].src}
+                alt={galleryItems[lightbox].alt}
+                className="lightbox-img"
+                decoding="async"
+              />
+            </picture>
             
             <div className="lightbox-review-panel" onClick={(e) => e.stopPropagation()}>
               <div className="lightbox-stars">

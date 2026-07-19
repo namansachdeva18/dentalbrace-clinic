@@ -92,11 +92,16 @@ const SmileMakeover = () => {
             minHeight: '400px',
             boxShadow: '0 20px 40px rgba(0,0,0,0.2)'
           }}>
-            <img 
-              src="/images/new_after_makeover.png" 
-              alt="Cosmetic smile makeover with custom porcelain veneers at The DentalBrace Clinic Bathinda Punjab"
-              style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', objectFit: 'cover' }}
-            />
+            <picture>
+              <source srcSet="/images/new_after_makeover.webp" type="image/webp" />
+              <img 
+                src="/images/new_after_makeover.png" 
+                alt="Cosmetic smile makeover with custom porcelain veneers at The DentalBrace Clinic Bathinda Punjab"
+                style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', objectFit: 'cover' }}
+                loading="lazy"
+                decoding="async"
+              />
+            </picture>
           </div>
           
           {/* Right: Treatment Cards Bento Grid */}

@@ -58,13 +58,19 @@ const BeforeAfterSlider = ({ beforeImage, afterImage, beforeAlt = "Before", afte
       onTouchStart={(e) => { setIsDragging(true); handleMove(e.touches[0].clientX); }}
     >
       {/* After Image (Background) */}
-      <img 
-        src={afterImage} 
-        alt={afterAlt} 
-        loading="lazy"
-        decoding="async"
-        style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', objectFit: 'cover' }} 
-      />
+      <picture>
+        <source
+          srcSet={afterImage.replace(/\.(jpg|jpeg|png)$/i, '.webp')}
+          type="image/webp"
+        />
+        <img 
+          src={afterImage} 
+          alt={afterAlt} 
+          loading="lazy"
+          decoding="async"
+          style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', objectFit: 'cover' }} 
+        />
+      </picture>
       <div style={{
         position: 'absolute',
         top: '1rem',
@@ -90,13 +96,19 @@ const BeforeAfterSlider = ({ beforeImage, afterImage, beforeAlt = "Before", afte
           clipPath: `inset(0 ${100 - sliderPosition}% 0 0)`
         }}
       >
-        <img 
-          src={beforeImage} 
-          alt={beforeAlt} 
-          loading="lazy"
-          decoding="async"
-          style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', objectFit: 'cover', maxWidth: 'none' }} 
-        />
+        <picture>
+          <source
+            srcSet={beforeImage.replace(/\.(jpg|jpeg|png)$/i, '.webp')}
+            type="image/webp"
+          />
+          <img 
+            src={beforeImage} 
+            alt={beforeAlt} 
+            loading="lazy"
+            decoding="async"
+            style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', objectFit: 'cover', maxWidth: 'none' }} 
+          />
+        </picture>
         <div style={{
           position: 'absolute',
           top: '1rem',

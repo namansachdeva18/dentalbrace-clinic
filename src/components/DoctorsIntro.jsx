@@ -113,11 +113,15 @@ const DoctorsIntro = () => {
 
           {/* Right: photo */}
           <div className="doctors-intro__combined-photo">
-            <img
-              src="/doctors-combined.jpg"
-              alt="Dr. Sandeep Kumar and Dr. Ritu Saneja — The DentalBrace Clinic Bathinda — Expert Orthodontist and Implantologist duo"
-              loading="lazy"
-            />
+            <picture>
+              <source srcSet="/doctors-combined.webp" type="image/webp" />
+              <img
+                src="/doctors-combined.jpg"
+                alt="Dr. Sandeep Kumar and Dr. Ritu Saneja — The DentalBrace Clinic Bathinda — Expert Orthodontist and Implantologist duo"
+                loading="lazy"
+                decoding="async"
+              />
+            </picture>
           </div>
         </div>
 
@@ -130,11 +134,15 @@ const DoctorsIntro = () => {
               <div className="doctors-intro__card-badge doctors-intro__card-badge--orange">
                 <Star size={11} fill="white" /> #1 Invisalign Provider · Bathinda
               </div>
-              <img
-                src="/dr-sandeep.jpg"
-                alt="Dr. Sandeep Kumar — Best Orthodontist in Bathinda — MDS Orthodontics, AIIMS New Delhi, Invisalign Expert"
-                loading="lazy"
-              />
+              <picture>
+                <source srcSet="/dr-sandeep.webp" type="image/webp" />
+                <img
+                  src="/dr-sandeep.jpg"
+                  alt="Dr. Sandeep Kumar — Best Orthodontist in Bathinda — MDS Orthodontics, AIIMS New Delhi, Invisalign Expert"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </picture>
             </div>
 
             <div className="doctors-intro__card-body">
@@ -179,11 +187,15 @@ const DoctorsIntro = () => {
               <div className="doctors-intro__card-badge doctors-intro__card-badge--gold">
                 <Medal size={11} /> MDS Gold Medalist · BHU Varanasi
               </div>
-              <img
-                src="/dr-ritu.jpg"
-                alt="Dr. Ritu Saneja — Best Implantologist &amp; Prosthodontist in Bathinda — Gold Medalist MDS, AIIMS, PGIMER"
-                loading="lazy"
-              />
+              <picture>
+                <source srcSet="/dr-ritu.webp" type="image/webp" />
+                <img
+                  src="/dr-ritu.jpg"
+                  alt="Dr. Ritu Saneja — Best Implantologist &amp; Prosthodontist in Bathinda — Gold Medalist MDS, AIIMS, PGIMER"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </picture>
             </div>
 
             <div className="doctors-intro__card-body">

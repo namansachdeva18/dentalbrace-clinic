@@ -53,10 +53,11 @@
     <!-- ══ Preconnect (Performance — helps LCP) ════════════════════════════ -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preconnect" href="https://images.unsplash.com" />
     <link rel="dns-prefetch" href="https://www.google-analytics.com" />
 
     <!-- ══ Preload Hero Image (Critical for LCP Score) ═════════════════════ -->
+    <!-- Preload WebP for modern browsers, fallback JPG for legacy -->
+    <link rel="preload" as="image" href="/hero-image.webp" type="image/webp" />
     <link rel="preload" as="image" href="/hero-image.jpg" />
 
     <!-- ══ LocalBusiness Schema (Google Knowledge Panel) ════════════════════ -->

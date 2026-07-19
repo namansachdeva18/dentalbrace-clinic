@@ -53,11 +53,16 @@ const PremiumSections = () => {
             </ul>
           </div>
           <div className="premium-visual" style={{ borderRadius: 'var(--radius-lg)', overflow: 'hidden', boxShadow: 'var(--shadow-lg)' }}>
-            <img 
-              src="/images/digital_dentistry_indian.png" 
-              alt="Digital dentistry at The DentalBrace Clinic Bathinda — intraoral scanner and 3D digital treatment planning by Dr. Sandeep Kumar MDS Orthodontics" 
-              style={{ width: '100%', height: '100%', objectFit: 'cover', minHeight: '400px' }}
-            />
+            <picture>
+              <source srcSet="/images/digital_dentistry_indian.webp" type="image/webp" />
+              <img 
+                src="/images/digital_dentistry_indian.png" 
+                alt="Digital dentistry at The DentalBrace Clinic Bathinda — intraoral scanner and 3D digital treatment planning by Dr. Sandeep Kumar MDS Orthodontics" 
+                style={{ width: '100%', height: '100%', objectFit: 'cover', minHeight: '400px' }}
+                loading="lazy"
+                decoding="async"
+              />
+            </picture>
           </div>
         </div>
       </section>

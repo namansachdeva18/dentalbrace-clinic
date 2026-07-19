@@ -30,11 +30,16 @@ const AboutSection = () => {
               }}
             ></div>
             <div className="about-image-container" style={{ position: 'relative', borderRadius: 'var(--radius-lg)', overflow: 'hidden', boxShadow: 'var(--shadow-md)', zIndex: 1 }}>
-              <img 
-                src="/clinic-interior.jpg" 
-                alt="State-of-the-art premium dental clinic interior at The DentalBrace Clinic Bathinda — modern dental treatment room with advanced equipment on Bibi Wala Road Punjab" 
-                style={{ width: '100%', height: '100%', objectFit: 'cover', minHeight: '500px' }}
-              />
+              <picture>
+                <source srcSet="/clinic-interior.webp" type="image/webp" />
+                <img 
+                  src="/clinic-interior.jpg" 
+                  alt="State-of-the-art premium dental clinic interior at The DentalBrace Clinic Bathinda — modern dental treatment room with advanced equipment on Bibi Wala Road Punjab" 
+                  style={{ width: '100%', height: '100%', objectFit: 'cover', minHeight: '500px' }}
+                  loading="lazy"
+                  decoding="async"
+                />
+              </picture>
             </div>
           </motion.div>
           

@@ -285,13 +285,20 @@ const ClinicGallery = () => {
                   }}
                 >
                   {slide.src && !imageErrors[slide.id] ? (
-                    <img
-                      src={slide.src}
-                      alt={slide.alt || slide.caption}
-                      className="cgal-img"
-                      loading="lazy"
-                      onError={() => handleImageError(slide.id)}
-                    />
+                    <picture>
+                      <source
+                        srcSet={slide.src.replace(/\.(jpg|jpeg|png)$/i, '.webp')}
+                        type="image/webp"
+                      />
+                      <img
+                        src={slide.src}
+                        alt={slide.alt || slide.caption}
+                        className="cgal-img"
+                        loading={i === 0 ? 'eager' : 'lazy'}
+                        decoding="async"
+                        onError={() => handleImageError(slide.id)}
+                      />
+                    </picture>
                   ) : (
                     <div className="cgal-placeholder">
                       <div className="cgal-ph-icon">

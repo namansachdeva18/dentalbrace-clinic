@@ -10,7 +10,10 @@ const Footer = () => {
         <div className="footer-col brand-col">
           <div className="footer-logo" style={{ display: 'flex', alignItems: 'flex-start', gap: '0.75rem' }}>
             <Link to="/">
-              <img src="/logo.png" alt="The DentalBrace Clinic and Implant Centre Bathinda — official logo, best dental clinic in Bathinda Punjab India" style={{ height: '48px', width: 'auto' }} />
+              <picture>
+                <source srcSet="/logo.webp" type="image/webp" />
+                <img src="/logo.png" alt="The DentalBrace Clinic and Implant Centre Bathinda — official logo, best dental clinic in Bathinda Punjab India" style={{ height: '48px', width: 'auto' }} loading="lazy" />
+              </picture>
             </Link>
             <div style={{ display: 'flex', flexDirection: 'column' }}>
               <span className="logo-text">The DentalBrace</span>
