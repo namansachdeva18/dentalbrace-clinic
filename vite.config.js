@@ -14,11 +14,20 @@ export default defineConfig({
     // Split vendor chunks for better long-term caching
     rollupOptions: {
       output: {
-        manualChunks: {
-          'vendor-react':  ['react', 'react-dom', 'react-router-dom'],
-          'vendor-gsap':   ['gsap'],
-          'vendor-motion': ['framer-motion'],
-          'vendor-ui':     ['lucide-react'],
+        // Vite 8 (rolldown) requires manualChunks as a function, not an object
+        manualChunks: (id) => {
+          if (id.includes('node_modules/react') || id.includes('node_modules/react-dom') || id.includes('node_modules/react-router-dom')) {
+            return 'vendor-react';
+          }
+          if (id.includes('node_modules/gsap')) {
+            return 'vendor-gsap';
+          }
+          if (id.includes('node_modules/framer-motion')) {
+            return 'vendor-motion';
+          }
+          if (id.includes('node_modules/lucide-react')) {
+            return 'vendor-ui';
+          }
         },
         // Compact asset file names
         assetFileNames: 'assets/[name]-[hash][extname]',
