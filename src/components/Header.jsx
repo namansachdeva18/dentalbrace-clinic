@@ -17,15 +17,15 @@ const Header = () => {
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
   
   const handleMouseEnter = (menu) => {
-    if(window.innerWidth > 992) setActiveMegaMenu(menu);
+    if(window.innerWidth > 1180) setActiveMegaMenu(menu);
   };
   
   const handleMouseLeave = () => {
-    if(window.innerWidth > 992) setActiveMegaMenu(null);
+    if(window.innerWidth > 1180) setActiveMegaMenu(null);
   };
 
   const handleClickMenu = (menu) => {
-    if(window.innerWidth <= 992) {
+    if(window.innerWidth <= 1180) {
       setActiveMegaMenu(activeMegaMenu === menu ? null : menu);
     }
   };

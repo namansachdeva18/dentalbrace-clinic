@@ -271,7 +271,7 @@
   cursor: pointer;
 }
 
-@media (max-width: 992px) {
+@media (max-width: 1180px) {
   .top-bar-content {
     justify-content: space-between;
     flex-wrap: nowrap;
