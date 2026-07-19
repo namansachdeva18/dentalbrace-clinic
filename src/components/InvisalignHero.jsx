@@ -109,7 +109,7 @@ const InvisalignHero = () => {
               ].map((item, i) => (
                 <li key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.75rem', color: 'rgba(255,255,255,0.8)' }}>
                   <CheckCircle size={18} style={{ color: 'var(--accent-color)', flexShrink: 0, marginTop: '2px' }} />
-                  {item}
+                  <span>{item}</span>
                 </li>
               ))}
             </ul>
