@@ -85,7 +85,7 @@ const AboutSection = () => {
       </div>
 
       {/* GEO Statistics Banner */}
-      <div className="bg-primary text-white py-12 mt-16 shadow-soft" style={{ backgroundColor: 'var(--primary-color)' }}>
+      <div className="text-white py-12 mt-16 shadow-soft" style={{ backgroundColor: 'var(--bg-navy)' }}>
         <div className="container">
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '2rem', textAlign: 'center' }}>
             <div>
