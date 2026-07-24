@@ -71,7 +71,7 @@ const DoctorsIntro = () => {
             Thousands of Smiles
           </h2>
           <p className="doctors-intro__subtitle">
-            <strong className="text-accent">AIIMS-trained experts</strong> with 10+ years of combined experience — bringing <strong className="text-accent">world-class orthodontic and implant care</strong> to <strong className="text-accent">Bathinda</strong>.
+            <strong className="text-accent">BHU &amp; AIIMS-trained experts</strong> with 10+ years of combined experience — bringing <strong className="text-accent">world-class orthodontic and implant care</strong> to <strong className="text-accent">Bathinda</strong>.
           </p>
         </div>
 
@@ -244,7 +244,7 @@ const DoctorsIntro = () => {
         <div className="doctors-intro__trust" ref={trustRef}>
           <div className="doctors-intro__trust-item">
             <GraduationCap size={18} />
-            <span><strong className="text-accent font-bold">AIIMS-Trained</strong> Specialists</span>
+            <span><strong className="text-accent font-bold">BHU &amp; AIIMS-Trained</strong> Specialists</span>
           </div>
           <div className="doctors-intro__trust-divider" />
           <div className="doctors-intro__trust-item">

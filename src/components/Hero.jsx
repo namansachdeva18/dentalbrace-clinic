@@ -66,7 +66,7 @@ const Hero = () => {
 
           {/* Subtext */}
           <p className="hero-subtitle">
-            <strong className="text-white font-bold">50k+ transformed smiles</strong> — led by <strong className="text-accent font-bold">AIIMS-trained specialists</strong>. Comprehensive care ranging from painless cosmetic dentistry to <strong className="text-white font-bold">advanced maxillofacial rehabilitation</strong>. Expert consultations available.
+            <strong className="text-white font-bold">50k+ transformed smiles</strong> — led by <strong className="text-accent font-bold">BHU &amp; AIIMS-trained specialists</strong>. Comprehensive care ranging from painless cosmetic dentistry to <strong className="text-white font-bold">advanced maxillofacial rehabilitation</strong>. Expert consultations available.
           </p>
 
           {/* Doctor Credentials */}
@@ -90,7 +90,7 @@ const Hero = () => {
           {/* CTA Buttons */}
           <div className="hero-cta-group">
             <a href="#book" className="btn-hero-primary">
-              <Calendar size={20} /> Book Consultation @ today <ArrowRight size={18} />
+              <Calendar size={20} /> Book Consultation <ArrowRight size={18} />
             </a>
             <a href="tel:7496849392" className="btn-hero-outline">
               <Phone size={20} /> 74968-49392

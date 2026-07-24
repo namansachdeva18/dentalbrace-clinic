@@ -195,7 +195,7 @@ const Services = () => {
           <span className="section-badge">Our Expertise</span>
           <h2 className="heading-primary mt-4">Specialist Dental Treatments in Bathinda</h2>
           <p className="services-subtitle text-secondary max-w-2xl mx-auto mt-4">
-            From Invisalign clear aligners to full mouth implants — led by <strong className="text-accent font-semibold">AIIMS-trained orthodontists &amp; prosthodontists</strong> with <strong className="text-accent font-semibold">50k+ transformed smiles</strong>.
+            From Invisalign clear aligners to full mouth implants — led by <strong className="text-accent font-semibold">BHU &amp; AIIMS-trained orthodontists &amp; prosthodontists</strong> with <strong className="text-accent font-semibold">50k+ transformed smiles</strong>.
           </p>
         </div>
 

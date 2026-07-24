@@ -54,7 +54,7 @@ const AboutSection = () => {
             <span className="section-badge">Our Story</span>
             <h2 className="heading-primary mt-4">Setting the Gold Standard in Dentistry</h2>
             <p className="about-subtitle text-secondary text-lg mt-6 leading-relaxed">
-              Founded with a vision to bring world-class dental care to <strong className="text-accent font-bold">Bathinda</strong>, our clinic combines <strong className="text-primary font-bold">AIIMS-trained expertise</strong> with cutting-edge digital technology to deliver <strong className="text-primary font-bold">painless, precise, and permanent</strong> results.
+              Founded with a vision to bring world-class dental care to <strong className="text-accent font-bold">Bathinda</strong>, our clinic combines <strong className="text-primary font-bold">BHU &amp; AIIMS-trained expertise</strong> with cutting-edge digital technology to deliver <strong className="text-primary font-bold">painless, precise, and permanent</strong> results.
             </p>
             
             <div className="mission-list mt-8" style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
