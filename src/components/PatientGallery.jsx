@@ -237,6 +237,8 @@ const PatientGallery = () => {
                     alt={item.alt} 
                     title={`${item.label} — The DentalBrace Clinic Bathinda`}
                     className="pg-img" 
+                    width="600"
+                    height="450"
                     loading="lazy"
                     decoding="async"
                   />
@@ -303,6 +305,9 @@ const PatientGallery = () => {
                 src={galleryItems[lightbox].src}
                 alt={galleryItems[lightbox].alt}
                 className="lightbox-img"
+                width="800"
+                height="600"
+                loading="lazy"
                 decoding="async"
               />
             </picture>
