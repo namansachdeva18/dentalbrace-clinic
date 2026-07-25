@@ -20,10 +20,10 @@ const Hero = () => {
         { y: 0, opacity: 1, duration: 1, stagger: 0.12, ease: 'power3.out', delay: 0.2 }
       );
 
-      // Right image reveal
+      // Right image reveal (only scale, no opacity to preserve LCP)
       gsap.fromTo(rightRef.current,
-        { scale: 1.06, opacity: 0 },
-        { scale: 1, opacity: 1, duration: 1.5, ease: 'power3.out', delay: 0.3 }
+        { scale: 1.04 },
+        { scale: 1, duration: 1.5, ease: 'power3.out', delay: 0.1 }
       );
 
       // Floating card — gentle rise in, then ultra-slow breathe

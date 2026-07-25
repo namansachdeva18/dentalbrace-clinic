@@ -30,7 +30,10 @@
     "terser": "^5.49.0"
   },
   "browserslist": [
-    "defaults",
+    "last 2 versions",
+    "> 0.2%",
+    "not dead",
+    "not op_mini all",
     "not IE 11"
   ]
 }
