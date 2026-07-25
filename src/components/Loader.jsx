@@ -1,5 +1,6 @@
 'use client';
 import { useEffect, useRef } from 'react';
+import Image from 'next/image';
 import gsap from 'gsap';
 import './Loader.css';
 
@@ -49,10 +50,14 @@ const Loader = ({ onComplete }) => {
     <div className="loader-container" ref={loaderRef}>
       <div className="loader-content">
         <div className="loader-logo" ref={logoRef} style={{ opacity: 0, transform: 'translateY(20px)' }}>
-          <picture>
-              <source srcSet="/logo.webp" type="image/webp" />
-              <img src="/logo.png" alt="The DentalBrace Clinic Bathinda — Top Rated Dental Clinic Logo" className="loader-logo-img" />
-            </picture>
+          <Image 
+            src="/logo.webp" 
+            alt="The DentalBrace Clinic Bathinda — Top Rated Dental Clinic Logo" 
+            className="loader-logo-img" 
+            width={120} 
+            height={120} 
+            priority={true} 
+          />
           <h2>The DentalBrace</h2>
           <p>Clinic & Implant Centre</p>
         </div>

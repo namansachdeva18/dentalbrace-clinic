@@ -1,5 +1,6 @@
 'use client';
 import { Star, ExternalLink, BadgeCheck } from 'lucide-react';
+import Image from 'next/image';
 import AnimatedCounter from './AnimatedCounter';
 
 const reviewsRow1 = [
@@ -277,9 +278,11 @@ const ReviewCard = ({ review }) => (
 
     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
       <div style={{ display: 'flex', alignItems: 'center', gap: '0.875rem' }}>
-        <img
+        <Image
           src={review.avatar}
           alt={`${review.name} — ${review.treatment} patient at The DentalBrace Bathinda`}
+          width={52}
+          height={52}
           style={{
             width: '52px', height: '52px', borderRadius: '50%',
             objectFit: 'cover',

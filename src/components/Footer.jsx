@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { MapPin, Phone, Mail, Clock } from 'lucide-react';
 import './Footer.css';
 
@@ -10,10 +11,13 @@ const Footer = () => {
         <div className="footer-col brand-col">
           <div className="footer-logo" style={{ display: 'flex', alignItems: 'flex-start', gap: '0.75rem' }}>
             <Link href="/">
-              <picture>
-                <source srcSet="/logo.webp" type="image/webp" />
-                <img src="/logo.png" alt="The DentalBrace Clinic and Implant Centre Bathinda — official logo, best dental clinic in Bathinda Punjab India" style={{ height: '48px', width: 'auto' }} loading="lazy" />
-              </picture>
+              <Image 
+                src="/logo.webp" 
+                alt="The DentalBrace Clinic and Implant Centre Bathinda — official logo, best dental clinic in Bathinda Punjab India" 
+                style={{ height: '48px', width: 'auto' }} 
+                width={100}
+                height={100}
+              />
             </Link>
             <div style={{ display: 'flex', flexDirection: 'column' }}>
               <span className="logo-text">The DentalBrace</span>
