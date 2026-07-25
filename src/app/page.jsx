@@ -127,7 +127,7 @@ const Home = () => {
 
   return (
     <div className="page-wrapper">
-      
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
 
       <main id="top">
         {/* 1. Hero */}

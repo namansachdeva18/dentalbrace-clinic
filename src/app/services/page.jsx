@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 
 
 import Link from 'next/link';
-import { ArrowRight, Sparkles, Stethoscope, Scissors } from 'lucide-react';
+import { ArrowRight, Sparkles, Stethoscope, SmilePlus, Monitor, Wrench } from 'lucide-react';
 
 const ServicesPage = () => {
   useEffect(() => {
@@ -12,30 +12,53 @@ const ServicesPage = () => {
 
   const categories = [
     {
+      title: "Orthodontics",
+      icon: <SmilePlus size={32} className="text-accent" />,
+      services: [
+        { name: "Invisalign & Clear Aligners", slug: "invisalign" },
+        { name: "Traditional Braces", slug: "braces" },
+        { name: "Dentofacial Orthopedics", slug: "dentofacial-orthopedics" },
+        { name: "Kids Dentistry", slug: "kids-dentistry" },
+      ]
+    },
+    {
+      title: "Implantology & Prosthetics",
+      icon: <Stethoscope size={32} className="text-accent" />,
+      services: [
+        { name: "Dental Implants", slug: "dental-implants" },
+        { name: "All-on-4 / All-on-6 Implants", slug: "all-on-4" },
+        { name: "Maxillofacial Prosthetics", slug: "maxillofacial-prosthetics" },
+      ]
+    },
+    {
       title: "Cosmetic Dentistry",
       icon: <Sparkles size={32} className="text-accent" />,
       services: [
         { name: "Smile Makeover", slug: "smile-makeover" },
         { name: "Dental Veneers", slug: "veneers" },
-        { name: "Teeth Whitening", slug: "teeth-whitening" }
+        { name: "Teeth Whitening", slug: "teeth-whitening" },
+        { name: "Composite Bonding", slug: "composite-bonding" },
+        { name: "Digital Smile Design", slug: "smile-designing" },
       ]
     },
     {
-      title: "Implantology",
-      icon: <Stethoscope size={32} className="text-accent" />,
+      title: "General Dentistry",
+      icon: <Wrench size={32} className="text-accent" />,
       services: [
-        { name: "Dental Implants", slug: "dental-implants" },
-        { name: "All-on-4 Implants", slug: "all-on-4" }
+        { name: "Root Canal Treatment", slug: "root-canal" },
+        { name: "Dental Crown & Bridge", slug: "dental-crown-bridge" },
+        { name: "Gum Treatment & Scaling", slug: "gum-treatment" },
+        { name: "Wisdom Tooth Removal", slug: "wisdom-tooth-removal" },
       ]
     },
     {
-      title: "Orthodontics",
-      icon: <Scissors size={32} className="text-accent" />,
+      title: "Digital Dentistry",
+      icon: <Monitor size={32} className="text-accent" />,
       services: [
-        { name: "Invisalign", slug: "invisalign" },
-        { name: "Metal Braces", slug: "braces" }
+        { name: "Digital Dentistry Overview", slug: "digital-dentistry" },
+        { name: "3D Intraoral Scanner", slug: "3d-intraoral-scanner" },
       ]
-    }
+    },
   ];
 
   return (

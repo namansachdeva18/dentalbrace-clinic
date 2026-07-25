@@ -119,7 +119,7 @@ const servicesData = [
   {
     id: 16,
     title: 'Maxillofacial Prosthetics',
-    description: <><strong className="text-accent font-semibold">Advanced rehabilitation</strong> for oral and facial defects — restoring function, speech, and aesthetics with <strong className="text-accent font-semibold">custom prostheses in Bathinda</strong> by <strong className="text-accent font-semibold">Dr. Ritu Saneja</strong>.</>,
+    description: <><strong className="text-accent font-semibold">Advanced rehabilitation</strong> for oral and facial defects — restoring function, speech, and aesthetics with <strong className="text-accent font-semibold">custom prosthesis in Bathinda</strong> by <strong className="text-accent font-semibold">Dr. Ritu Saneja</strong>.</>,
     icon: <ScanFace size={32} />,
     featured: true,
     href: '/treatments/maxillofacial-prosthetics'

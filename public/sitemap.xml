@@ -1,7 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://www.thedentalbrace.com/</loc></url>
-  <url><loc>https://www.thedentalbrace.com/about</loc></url>
-  <url><loc>https://www.thedentalbrace.com/services</loc></url>
-  <url><loc>https://www.thedentalbrace.com/contact</loc></url>
+  <!-- Core Pages -->
+  <url><loc>https://www.thedentalbrace.com/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://www.thedentalbrace.com/about</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.thedentalbrace.com/services</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.thedentalbrace.com/contact</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.thedentalbrace.com/faq</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.thedentalbrace.com/gallery</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.thedentalbrace.com/blog</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+
+  <!-- Doctors -->
+  <url><loc>https://www.thedentalbrace.com/doctors</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.thedentalbrace.com/doctors/dr-sandeep-kumar</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.thedentalbrace.com/doctors/dr-ritu-saneja</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+
+  <!-- Treatments — Orthodontics -->
+  <url><loc>https://www.thedentalbrace.com/treatments/invisalign</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.thedentalbrace.com/treatments/braces</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.thedentalbrace.com/treatments/dentofacial-orthopedics</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.thedentalbrace.com/treatments/kids-dentistry</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+
+  <!-- Treatments — Implantology & Prosthetics -->
+  <url><loc>https://www.thedentalbrace.com/treatments/dental-implants</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.thedentalbrace.com/treatments/all-on-4</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.thedentalbrace.com/treatments/maxillofacial-prosthetics</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+
+  <!-- Treatments — Cosmetic Dentistry -->
+  <url><loc>https://www.thedentalbrace.com/treatments/smile-makeover</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.thedentalbrace.com/treatments/veneers</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.thedentalbrace.com/treatments/teeth-whitening</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.thedentalbrace.com/treatments/composite-bonding</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+
+  <!-- Treatments — General Dentistry -->
+  <url><loc>https://www.thedentalbrace.com/treatments/root-canal</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.thedentalbrace.com/treatments/dental-crown-bridge</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.thedentalbrace.com/treatments/gum-treatment</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.thedentalbrace.com/treatments/wisdom-tooth-removal</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+
+  <!-- Treatments — Digital Dentistry -->
+  <url><loc>https://www.thedentalbrace.com/treatments/digital-dentistry</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.thedentalbrace.com/treatments/3d-intraoral-scanner</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.thedentalbrace.com/treatments/smile-designing</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+
+  <!-- Blog Posts -->
+  <url><loc>https://www.thedentalbrace.com/blog/invisalign-vs-braces</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.thedentalbrace.com/blog/dental-implants-cost-bathinda</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.thedentalbrace.com/blog/digital-smile-design</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+
+  <!-- Legal -->
+  <url><loc>https://www.thedentalbrace.com/privacy</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://www.thedentalbrace.com/terms</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
 </urlset>

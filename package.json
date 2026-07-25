@@ -7,9 +7,7 @@
     "dev": "next dev",
     "build": "next build",
     
-    "lint": "eslint .",
-    "preview": "vite preview",
-    "optimize-images": "node optimize-images.js"
+    "lint": "eslint ."
   },
   "dependencies": {
     "framer-motion": "^12.42.2",
@@ -30,13 +28,5 @@
     "globals": "^17.6.0",
     "sharp": "^0.35.3",
     "terser": "^5.49.0"
-  },
-  "reactSnap": {
-    "source": "dist",
-    "skipThirdPartyRequests": true,
-    "puppeteerArgs": [
-      "--no-sandbox",
-      "--disable-setuid-sandbox"
-    ]
   }
 }
