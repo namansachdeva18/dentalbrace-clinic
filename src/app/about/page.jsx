@@ -1,6 +1,6 @@
 'use client';
 import { useEffect } from 'react';
-
+import Image from 'next/image';
 
 import { Award, Shield, Users, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
@@ -47,10 +47,16 @@ const About = () => {
       {/* Image Break */}
       <section className="about-image-break container fade-in" style={{ animationDelay: '0.4s' }}>
         <div className="about-image-wrapper glass shadow-lg">
-           <picture>
-             <source srcSet="/doctors-combined.webp" type="image/webp" />
-             <img src="/doctors-combined.jpg" alt="Dr. Sandeep Kumar and Dr. Ritu Saneja, expert dental specialists and founders of The DentalBrace Clinic Bathinda Punjab" className="about-main-img" loading="lazy" decoding="async" />
-           </picture>
+           <Image
+             src="/doctors-combined.webp"
+             alt="Dr. Sandeep Kumar and Dr. Ritu Saneja, expert dental specialists and founders of The DentalBrace Clinic Bathinda Punjab"
+             className="about-main-img"
+             width={800}
+             height={600}
+             style={{ width: '100%', height: 'auto', objectFit: 'cover' }}
+             sizes="(max-width: 768px) 100vw, 50vw"
+             priority={true}
+           />
         </div>
       </section>
 

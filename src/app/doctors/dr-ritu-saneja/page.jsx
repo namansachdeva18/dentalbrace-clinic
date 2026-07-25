@@ -1,5 +1,6 @@
 'use client';
 import { useEffect } from 'react';
+import Image from 'next/image';
 
 
 import Link from 'next/link';
@@ -74,10 +75,14 @@ const DrRituPage = () => {
               </div>
             </div>
             <div className="doctor-hero-photo">
-              <picture>
-                <source srcSet="/dr-ritu.webp" type="image/webp" />
-                <img src="/dr-ritu.jpg" alt="Dr. Ritu Saneja — Gold Medalist Implantologist in Bathinda, MDS Prosthodontics BHU, Ex-Resident AIIMS Delhi PGIMER Chandigarh" fetchPriority="high" decoding="async" />
-              </picture>
+              <Image
+                src="/dr-ritu.webp"
+                alt="Dr. Ritu Saneja — Gold Medalist Implantologist in Bathinda, MDS Prosthodontics BHU, Ex-Resident AIIMS Delhi PGIMER Chandigarh"
+                priority={true}
+                width={380}
+                height={480}
+                style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top' }}
+              />
             </div>
           </div>
         </div>

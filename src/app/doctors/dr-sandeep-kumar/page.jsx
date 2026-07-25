@@ -1,5 +1,6 @@
 'use client';
 import { useEffect } from 'react';
+import Image from 'next/image';
 
 
 import Link from 'next/link';
@@ -75,10 +76,14 @@ const DrSandeepPage = () => {
               </div>
             </div>
             <div className="doctor-hero-photo">
-              <picture>
-                <source srcSet="/dr-sandeep.webp" type="image/webp" />
-                <img src="/dr-sandeep.jpg" alt="Dr. Sandeep Kumar — Best Orthodontist in Bathinda, MDS BHU, Ex-Resident AIIMS New Delhi, Certified Invisalign Provider" fetchPriority="high" decoding="async" />
-              </picture>
+              <Image
+                src="/dr-sandeep.webp"
+                alt="Dr. Sandeep Kumar — Best Orthodontist in Bathinda, MDS BHU, Ex-Resident AIIMS New Delhi, Certified Invisalign Provider"
+                priority={true}
+                width={380}
+                height={480}
+                style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top' }}
+              />
             </div>
           </div>
         </div>
