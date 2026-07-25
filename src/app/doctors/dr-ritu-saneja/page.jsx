@@ -14,7 +14,7 @@ const drRituSchema = {
   "name": "Dr. Ritu Saneja",
   "jobTitle": "Consultant Prosthodontist & Implantologist",
   "description": "MDS Gold Medalist (Prosthodontics) — BHU Varanasi. Ex-Resident AIIMS Delhi & PGIMER Chandigarh. Ex-Senior Resident AIIMS Bathinda. 5000+ implants placed. Bathinda's leading implantologist.",
-  "image": "https://www.thedentalbrace.com/dr-ritu.jpg",
+  "image": "https://thedentalbrace.com/dr-ritu.jpg",
   "telephone": "+917496849392",
   "url": "https://thedentalbrace.com/doctors/dr-ritu-saneja",
   "medicalSpecialty": [

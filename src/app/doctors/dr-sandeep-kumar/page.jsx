@@ -14,7 +14,7 @@ const drSandeepSchema = {
   "name": "Dr. Sandeep Kumar",
   "jobTitle": "Consultant Orthodontist & Certified Invisalign Provider",
   "description": "BDS, MDS (Orthodontics) - BHU Varanasi. Ex-Resident AIIMS New Delhi. 5500+ braces & aligner cases. Bathinda's leading Invisalign provider and orthodontist.",
-  "image": "https://www.thedentalbrace.com/dr-sandeep.jpg",
+  "image": "https://thedentalbrace.com/dr-sandeep.jpg",
   "telephone": "+917496849392",
   "url": "https://thedentalbrace.com/doctors/dr-sandeep-kumar",
   "medicalSpecialty": [

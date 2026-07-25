@@ -24,7 +24,7 @@ export const metadata = {
   title: 'Best Invisalign & Dental Implants in Bathinda | The DentalBrace Clinic',
   description: "The DentalBrace — Bathinda's #1 clinic for Invisalign Clear Aligners, Full Mouth Dental Implants, Smile Makeovers & Dentofacial Orthopedics. AIIMS-trained specialists Dr. Sandeep Kumar & Dr. Ritu Saneja. 5000+ braces & aligner cases. 3000+ implants placed. Consultation at a nominal ₹200/-. 196, Bibi Wala Rd, near LIC Building, opposite Petrol Pump, Kamla Nehru Colony, Bathinda, Punjab.",
   alternates: {
-    canonical: 'https://www.thedentalbrace.com/',
+    canonical: 'https://thedentalbrace.com/',
   },
   icons: {
     icon: '/favicon-logo.png',
@@ -33,12 +33,12 @@ export const metadata = {
   themeColor: '#F58220',
   openGraph: {
     type: 'website',
-    url: 'https://www.thedentalbrace.com/',
+    url: 'https://thedentalbrace.com/',
     title: 'Best Invisalign & Dental Implants Clinic in Bathinda | The DentalBrace',
     description: '5000+ braces & aligner cases. 3000+ implants placed. AIIMS-trained Dr. Sandeep Kumar (Orthodontist) & Dr. Ritu Saneja (Gold Medalist Implantologist). Book your consultation today (just ₹200/-) in Bathinda, Punjab.',
     images: [
       {
-        url: 'https://www.thedentalbrace.com/hero-image.jpg',
+        url: 'https://thedentalbrace.com/hero-image.jpg',
         width: 1200,
         height: 630,
         alt: 'The DentalBrace Clinic and Implant Centre, 196, Bibi Wala Rd Bathinda — Dr. Sandeep Kumar Orthodontist and Dr. Ritu Saneja Implantologist',
@@ -52,7 +52,7 @@ export const metadata = {
     site: '@thedentalbrace',
     title: 'Best Invisalign & Dental Implants in Bathinda | The DentalBrace',
     description: "Bathinda's most experienced orthodontist & implantologist team. AIIMS-trained. 10k+ transformed smiles. Consultation at a nominal ₹200/-.",
-    images: ['https://www.thedentalbrace.com/hero-image.jpg'],
+    images: ['https://thedentalbrace.com/hero-image.jpg'],
   },
 };
 

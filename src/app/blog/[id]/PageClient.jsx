@@ -147,21 +147,21 @@ const BlogPost = ({ params }) => {
     "@type": "Article",
     "headline": article.title,
     "image": [
-      "https://www.thedentalbrace.com" + article.image
+      "https://thedentalbrace.com" + article.image
     ],
     "datePublished": new Date(article.date).toISOString(),
     "dateModified": new Date(article.date).toISOString(),
     "author": [{
         "@type": "Person",
         "name": article.author,
-        "url": "https://www.thedentalbrace.com/about"
+        "url": "https://thedentalbrace.com/about"
       }],
     "publisher": {
       "@type": "Organization",
       "name": "The DentalBrace Clinic",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://www.thedentalbrace.com/logo.png"
+        "url": "https://thedentalbrace.com/logo.png"
       }
     },
     "description": article.metaDesc
@@ -171,9 +171,9 @@ const BlogPost = ({ params }) => {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.thedentalbrace.com/" },
-      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.thedentalbrace.com/blog" },
-      { "@type": "ListItem", "position": 3, "name": article.title, "item": "https://www.thedentalbrace.com/blog/" + id }
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://thedentalbrace.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://thedentalbrace.com/blog" },
+      { "@type": "ListItem", "position": 3, "name": article.title, "item": "https://thedentalbrace.com/blog/" + id }
     ]
   };
 
@@ -241,9 +241,9 @@ const BlogPost = ({ params }) => {
                 <Share2 size={18} /> Share this article:
               </span>
               <div className="share-buttons">
-                <a href={"https://www.facebook.com/sharer/sharer.php?u=https://www.thedentalbrace.com/blog/" + id} target="_blank" rel="noopener noreferrer" className="share-btn fb">Facebook</a>
-                <a href={"https://twitter.com/intent/tweet?url=https://www.thedentalbrace.com/blog/" + id + "&text=" + encodeURIComponent(article.title)} target="_blank" rel="noopener noreferrer" className="share-btn tw">Twitter</a>
-                <a href={"https://api.whatsapp.com/send?text=" + encodeURIComponent(article.title + " https://www.thedentalbrace.com/blog/" + id)} target="_blank" rel="noopener noreferrer" className="share-btn wa">WhatsApp</a>
+                <a href={"https://www.facebook.com/sharer/sharer.php?u=https://thedentalbrace.com/blog/" + id} target="_blank" rel="noopener noreferrer" className="share-btn fb">Facebook</a>
+                <a href={"https://twitter.com/intent/tweet?url=https://thedentalbrace.com/blog/" + id + "&text=" + encodeURIComponent(article.title)} target="_blank" rel="noopener noreferrer" className="share-btn tw">Twitter</a>
+                <a href={"https://api.whatsapp.com/send?text=" + encodeURIComponent(article.title + " https://thedentalbrace.com/blog/" + id)} target="_blank" rel="noopener noreferrer" className="share-btn wa">WhatsApp</a>
               </div>
             </div>
           </div>
