@@ -259,7 +259,7 @@ const TreatmentTemplate = ({ params }) => {
                 boxShadow: '0 10px 30px rgba(0,0,0,0.03)'
               }}>
                 <div style={{ position: 'absolute', top: '-20px', left: '2.5rem', backgroundColor: 'var(--accent-color)', color: 'white', width: '40px', height: '40px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '28px', fontFamily: 'serif', fontStyle: 'italic', boxShadow: '0 4px 10px rgba(245, 130, 32, 0.3)', paddingTop: '10px' }}>
-                  "
+                  &quot;
                 </div>
                 <blockquote style={{ margin: 0, marginTop: '0.5rem' }}>
                   <p style={{ fontSize: '1.15rem', fontStyle: 'italic', color: 'var(--text-primary)', lineHeight: '1.8', fontWeight: '500' }}>
