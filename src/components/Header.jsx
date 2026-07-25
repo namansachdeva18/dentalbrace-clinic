@@ -68,6 +68,7 @@ const Header = () => {
                   style={{ height: '80px', width: 'auto', mixBlendMode: 'multiply' }} 
                   width={175} 
                   height={175} 
+                  sizes="105px"
                   priority={true} 
                 />
                 <div className="logo-text-wrapper" style={{ display: 'flex', flexDirection: 'column' }}>

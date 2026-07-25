@@ -1,6 +1,7 @@
 'use client';
 import { useEffect, useRef } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Award, GraduationCap, Star, Medal } from 'lucide-react';
@@ -81,16 +82,14 @@ const Specialists = () => {
             </div>
 
             <div className="doctor-image-wrapper" style={{ height: '350px', overflow: 'hidden', display: 'flex', justifyContent: 'center', alignItems: 'flex-start' }}>
-              <picture>
-                <source srcSet="/dr-sandeep.webp" type="image/webp" />
-                <img
-                  src="/dr-sandeep.jpg"
-                  alt="Dr. Sandeep Kumar — Best Orthodontist in Bathinda, Punjab — MDS Orthodontics BHU Varanasi, Ex-Resident AIIMS New Delhi, Certified Invisalign Provider, specialist in clear aligners braces and jaw correction at The DentalBrace Clinic 196, Bibi Wala Rd Bathinda"
-                  style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top center' }}
-                  loading="lazy"
-                  decoding="async"
-                />
-              </picture>
+              <Image
+                src="/dr-sandeep.webp"
+                alt="Dr. Sandeep Kumar — Best Orthodontist in Bathinda, Punjab — MDS Orthodontics BHU Varanasi, Ex-Resident AIIMS New Delhi, Certified Invisalign Provider, specialist in clear aligners braces and jaw correction at The DentalBrace Clinic 196, Bibi Wala Rd Bathinda"
+                width={648}
+                height={795}
+                style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top center' }}
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
             </div>
 
             <div className="doctor-info p-8 flex flex-col flex-grow">
@@ -164,16 +163,14 @@ const Specialists = () => {
             </div>
 
             <div className="doctor-image-wrapper" style={{ height: '350px', overflow: 'hidden', display: 'flex', justifyContent: 'center', alignItems: 'flex-start' }}>
-              <picture>
-                <source srcSet="/dr-ritu.webp" type="image/webp" />
-                <img
-                  src="/dr-ritu.jpg"
-                  alt="Dr. Ritu Saneja — Best Implantologist and Prosthodontist in Bathinda, Punjab — Gold Medalist MDS Prosthodontics BHU Varanasi, Ex-Senior Resident AIIMS Bathinda, specialist in full mouth dental implants All-on-4 veneers and smile makeover at The DentalBrace Clinic"
-                  style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top center' }}
-                  loading="lazy"
-                  decoding="async"
-                />
-              </picture>
+              <Image
+                src="/dr-ritu.webp"
+                alt="Dr. Ritu Saneja — Best Implantologist and Prosthodontist in Bathinda, Punjab — Gold Medalist MDS Prosthodontics BHU Varanasi, Ex-Senior Resident AIIMS Bathinda, specialist in full mouth dental implants All-on-4 veneers and smile makeover at The DentalBrace Clinic"
+                width={648}
+                height={795}
+                style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top center' }}
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
             </div>
 
             <div className="doctor-info p-8 flex flex-col flex-grow">

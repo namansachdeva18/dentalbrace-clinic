@@ -169,10 +169,14 @@ const DrSandeepPage = () => {
             <div className="sidebar-card glass shadow-lg">
               <h3 className="sidebar-title">Meet Our Other Specialist</h3>
               <Link href="/doctors/dr-ritu-saneja" className="other-doctor-card">
-                <picture>
-                  <source srcSet="/dr-ritu.webp" type="image/webp" />
-                  <img src="/dr-ritu.jpg" alt="Dr. Ritu Saneja — Gold Medalist Prosthodontist and Implantologist at The DentalBrace Clinic Bathinda Punjab" loading="lazy" decoding="async" />
-                </picture>
+                <Image
+                  src="/dr-ritu.webp"
+                  alt="Dr. Ritu Saneja — Gold Medalist Prosthodontist and Implantologist at The DentalBrace Clinic Bathinda Punjab"
+                  width={200}
+                  height={200}
+                  style={{ width: '60px', height: '60px', objectFit: 'cover', borderRadius: '50%' }}
+                  sizes="120px"
+                />
                 <div>
                   <strong>Dr. Ritu Saneja</strong>
                   <p>Consultant Prosthodontist & Implantologist</p>

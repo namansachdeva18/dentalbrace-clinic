@@ -7,6 +7,7 @@ import {
   CheckCircle2, Medal, Stethoscope, Users
 } from 'lucide-react';
 import Link from 'next/link';
+import Image from 'next/image';
 import AnimatedCounter from './AnimatedCounter';
 import './DoctorsIntro.css';
 
@@ -114,15 +115,14 @@ const DoctorsIntro = () => {
 
           {/* Right: photo */}
           <div className="doctors-intro__combined-photo">
-            <picture>
-              <source srcSet="/doctors-combined.webp" type="image/webp" />
-              <img
-                src="/doctors-combined.jpg"
-                alt="Dr. Sandeep Kumar and Dr. Ritu Saneja — The DentalBrace Clinic Bathinda — Expert Orthodontist and Implantologist duo"
-                loading="lazy"
-                decoding="async"
-              />
-            </picture>
+            <Image
+              src="/doctors-combined.webp"
+              alt="Dr. Sandeep Kumar and Dr. Ritu Saneja — The DentalBrace Clinic Bathinda — Expert Orthodontist and Implantologist duo"
+              width={893}
+              height={595}
+              style={{ width: '100%', height: 'auto', objectFit: 'cover' }}
+              sizes="(max-width: 768px) 100vw, 50vw"
+            />
           </div>
         </div>
 
@@ -135,15 +135,14 @@ const DoctorsIntro = () => {
               <div className="doctors-intro__card-badge doctors-intro__card-badge--orange">
                 <Star size={11} fill="white" /> #1 Invisalign Provider · Bathinda
               </div>
-              <picture>
-                <source srcSet="/dr-sandeep.webp" type="image/webp" />
-                <img
-                  src="/dr-sandeep.jpg"
-                  alt="Dr. Sandeep Kumar — Best Orthodontist in Bathinda — MDS Orthodontics, AIIMS New Delhi, Invisalign Expert"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </picture>
+              <Image
+                src="/dr-sandeep.webp"
+                alt="Dr. Sandeep Kumar — Best Orthodontist in Bathinda — MDS Orthodontics, AIIMS New Delhi, Invisalign Expert"
+                width={648}
+                height={795}
+                style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top center' }}
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
             </div>
 
             <div className="doctors-intro__card-body">
@@ -188,15 +187,14 @@ const DoctorsIntro = () => {
               <div className="doctors-intro__card-badge doctors-intro__card-badge--gold">
                 <Medal size={11} /> MDS Gold Medalist · BHU Varanasi
               </div>
-              <picture>
-                <source srcSet="/dr-ritu.webp" type="image/webp" />
-                <img
-                  src="/dr-ritu.jpg"
-                  alt="Dr. Ritu Saneja — Best Implantologist &amp; Prosthodontist in Bathinda — Gold Medalist MDS, AIIMS, PGIMER"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </picture>
+              <Image
+                src="/dr-ritu.webp"
+                alt="Dr. Ritu Saneja — Best Implantologist & Prosthodontist in Bathinda — Gold Medalist MDS, AIIMS, PGIMER"
+                width={648}
+                height={795}
+                style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top center' }}
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
             </div>
 
             <div className="doctors-intro__card-body">

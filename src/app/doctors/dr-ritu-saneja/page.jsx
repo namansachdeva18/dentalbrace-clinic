@@ -173,10 +173,14 @@ const DrRituPage = () => {
             <div className="sidebar-card glass shadow-lg">
               <h3 className="sidebar-title">Meet Our Other Specialist</h3>
               <Link href="/doctors/dr-sandeep-kumar" className="other-doctor-card">
-                <picture>
-                  <source srcSet="/dr-sandeep.webp" type="image/webp" />
-                  <img src="/dr-sandeep.jpg" alt="Dr. Sandeep Kumar — Consultant Orthodontist and Invisalign Specialist at The DentalBrace Clinic Bathinda Punjab" loading="lazy" decoding="async" />
-                </picture>
+                <Image
+                  src="/dr-sandeep.webp"
+                  alt="Dr. Sandeep Kumar — Consultant Orthodontist and Invisalign Specialist at The DentalBrace Clinic Bathinda Punjab"
+                  width={200}
+                  height={200}
+                  style={{ width: '60px', height: '60px', objectFit: 'cover', borderRadius: '50%' }}
+                  sizes="120px"
+                />
                 <div>
                   <strong>Dr. Sandeep Kumar</strong>
                   <p>Consultant Orthodontist & Invisalign Specialist</p>

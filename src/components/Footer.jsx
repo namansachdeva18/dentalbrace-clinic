@@ -17,6 +17,7 @@ const Footer = () => {
                 style={{ height: '48px', width: 'auto' }} 
                 width={100}
                 height={100}
+                sizes="60px"
               />
             </Link>
             <div style={{ display: 'flex', flexDirection: 'column' }}>
