@@ -1,5 +1,6 @@
+'use client';
 import { useEffect, useRef } from 'react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ArrowRight, Sparkles, Activity, Shield, Smile, ScanFace, Stethoscope, Brain, Gem, Droplets, Baby, Wind, Zap } from 'lucide-react';
@@ -14,7 +15,7 @@ const servicesData = [
     description: <><strong className="text-accent font-semibold">Bathinda's most experienced Invisalign provider</strong>.<br/><strong className="text-accent font-semibold">Dr. Sandeep Kumar</strong> has completed <strong className="text-accent font-semibold">5,500+ braces &amp; aligner treatments</strong> — straighten your teeth without anyone knowing.</>,
     icon: <Smile size={32} />,
     featured: true,
-    href: '#book'
+    href: '/treatments/invisalign'
   },
   {
     id: 7,
@@ -22,14 +23,14 @@ const servicesData = [
     description: <><strong className="text-accent font-semibold">Dr. Ritu Saneja</strong> — <strong className="text-accent font-semibold">5,000+ implants placed</strong>.<br/><strong className="text-accent font-semibold">All-on-4, All-on-6, and Full Mouth Rehabilitation</strong> using premium titanium implants and zirconia crowns.</>,
     icon: <Shield size={32} />,
     featured: true,
-    href: '#book'
+    href: '/treatments/all-on-4'
   },
   {
     id: 1,
     title: 'Dental Implants',
     description: <><strong className="text-accent font-semibold">Permanent, natural-looking replacement</strong> for missing teeth using <strong className="text-accent font-semibold">premium titanium implants</strong> with a near 99% success rate.</>,
     icon: <Shield size={32} />,
-    href: '#book'
+    href: '/treatments/dental-implants'
   },
   {
     id: 8,
@@ -43,14 +44,14 @@ const servicesData = [
     title: 'Smile Makeover',
     description: <><strong className="text-accent font-semibold">Customised cosmetic treatments</strong> — veneers, teeth whitening, composite bonding, and gum contouring — <strong className="text-accent font-semibold">designed digitally</strong> for your face.</>,
     icon: <Sparkles size={32} />,
-    href: '#book'
+    href: '/treatments/smile-makeover'
   },
   {
     id: 4,
     title: 'Digital Dentistry',
     description: <><strong className="text-accent font-semibold">Advanced 3D intraoral scanning</strong> and precise digital planning for accurate treatments with <strong className="text-accent font-semibold">no impressions needed</strong>.</>,
     icon: <ScanFace size={32} />,
-    href: '#book'
+    href: '/treatments/digital-dentistry'
   },
   {
     id: 5,
@@ -64,7 +65,7 @@ const servicesData = [
     title: 'General Dentistry',
     description: <><strong className="text-accent font-semibold">Comprehensive dental care</strong> including checkups, cleaning, fillings, and extractions for the <strong className="text-accent font-semibold">whole family</strong>.</>,
     icon: <Stethoscope size={32} />,
-    href: '#book'
+    href: '/treatments/digital-dentistry'
   },
   {
     id: 9,
@@ -147,29 +148,22 @@ const Services = () => {
         }
       );
 
-      // Cool individual card animations that trigger sequentially as scrolled (Perfect for mobile)
       cardsRef.current.forEach((card, i) => {
         if (!card) return;
         
-        gsap.set(card, { transformPerspective: 1200 });
+        gsap.set(card, { transformPerspective: 1000 });
         gsap.fromTo(card,
-          { 
-            y: 60, 
-            opacity: 0, 
-            scale: 0.95, 
-            rotationX: -10 
-          },
+          { y: 50, opacity: 0, scale: 0.95 },
           {
             scrollTrigger: {
               trigger: card,
-              start: "top 85%", // Trigger exactly when this specific card comes into view
+              start: "top 85%",
               once: true,
             },
             y: 0,
             opacity: 1,
             scale: 1,
-            rotationX: 0,
-            duration: 0.9,
+            duration: 0.8,
             ease: "expo.out"
           }
         );
@@ -189,33 +183,31 @@ const Services = () => {
   const regularServices = servicesData.filter(s => !s.featured);
 
   return (
-    <section className="services section-padding bg-cream" id="services" ref={sectionRef}>
+    <section className="services section-padding bg-ivory" id="services" ref={sectionRef}>
       <div className="container">
-        <div className="services-header text-center mb-14" ref={headingRef}>
-          <span className="section-badge">Our Expertise</span>
-          <h2 className="heading-primary mt-4">Specialist Dental Treatments in Bathinda</h2>
-          <p className="services-subtitle text-secondary max-w-2xl mx-auto mt-4">
-            From Invisalign clear aligners to full mouth implants — led by <strong className="text-accent font-semibold">BHU &amp; AIIMS-trained orthodontists &amp; prosthodontists</strong> with <strong className="text-accent font-semibold">50k+ transformed smiles</strong>.
+        
+        {/* Section Header */}
+        <div className="text-center mb-16" ref={headingRef}>
+          <span className="section-badge">World-Class Treatments</span>
+          <h2 className="heading-primary mt-4">Advanced Dental Care for Every Need</h2>
+          <p className="text-secondary max-w-2xl mx-auto mt-4">
+            From invisible aligners to full mouth implants — executed with digital precision by Bathinda's leading specialists.
           </p>
         </div>
 
-        {/* Featured Treatments — Invisalign & Implants */}
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))', gap: '2rem', marginBottom: '2rem' }}>
+        {/* Featured Showcase (Invisalign & Implants) */}
+        <div className="featured-services-grid mb-12" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '2rem' }}>
           {featuredServices.map((service) => (
             <div
               key={service.id}
-              className="service-card service-card-featured glass gpu-accelerated"
+              className="service-card featured-service-card glass hover-elevate gpu-accelerated"
               ref={addToCards}
               style={{
-                padding: '2rem',
-                borderRadius: 'var(--radius-lg)',
-                border: '2px solid var(--accent-color)',
-                background: 'linear-gradient(135deg, rgba(245,130,32,0.06) 0%, white 100%)',
+                padding: '2.25rem',
+                border: '2px solid rgba(245,130,32,0.3)',
                 position: 'relative',
-                overflow: 'hidden',
                 display: 'flex',
-                flexDirection: 'column',
-                transition: 'all 0.25s ease'
+                flexDirection: 'column'
               }}
               onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-4px)'; e.currentTarget.style.boxShadow = 'var(--shadow-lg)'; }}
               onMouseLeave={e => { e.currentTarget.style.transform = 'none'; e.currentTarget.style.boxShadow = 'none'; }}
@@ -234,7 +226,7 @@ const Services = () => {
               <h3 className="service-title text-xl font-bold mb-3 text-primary">{service.title}</h3>
               <p className="service-desc text-secondary mb-6 leading-relaxed" style={{ flexGrow: 1 }}>{service.description}</p>
               {service.href.startsWith('/') ? (
-                <Link to={service.href} className="service-link text-accent font-semibold flex items-center gap-2" style={{ textDecoration: 'none' }}>
+                <Link href={service.href} className="service-link text-accent font-semibold flex items-center gap-2" style={{ textDecoration: 'none' }}>
                   Learn More <ArrowRight size={16} />
                 </Link>
               ) : (
@@ -261,7 +253,7 @@ const Services = () => {
               <h3 className="service-title text-xl font-bold mb-3 text-primary">{service.title}</h3>
               <p className="service-desc text-secondary mb-6 leading-relaxed" style={{ flexGrow: 1 }}>{service.description}</p>
               {service.href.startsWith('/') ? (
-                <Link to={service.href} className="service-link text-accent font-semibold flex items-center gap-2" style={{ textDecoration: 'none' }}>
+                <Link href={service.href} className="service-link text-accent font-semibold flex items-center gap-2" style={{ textDecoration: 'none' }}>
                   Learn More <ArrowRight size={16} />
                 </Link>
               ) : (
@@ -278,4 +270,3 @@ const Services = () => {
 };
 
 export default Services;
-

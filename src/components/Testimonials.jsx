@@ -1,3 +1,4 @@
+'use client';
 import { Star, ExternalLink, BadgeCheck } from 'lucide-react';
 import AnimatedCounter from './AnimatedCounter';
 

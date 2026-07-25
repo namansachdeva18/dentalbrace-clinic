@@ -21,7 +21,7 @@ const Contact = () => {
                 <div className="info-icon text-accent"><MapPin size={24} /></div>
                 <div>
                   <h4>Location</h4>
-                  <p>Bibi Wala Road, Bathinda, Punjab</p>
+                  <p>196, Bibi Wala Rd, near LIC Building, opposite Petrol Pump, Kamla Nehru Colony, Bathinda, Punjab 151001, India</p>
                 </div>
               </div>
               <div className="info-item">
@@ -57,7 +57,7 @@ const Contact = () => {
               </div>
               <div className="form-group">
                 <label htmlFor="phone">Phone Number</label>
-                <input type="tel" id="phone" placeholder="+91 XXXXX XXXXX" required />
+                <input type="tel" id="phone" placeholder="+91 XXXXX XXXXX" onInput={(e) => e.target.value = e.target.value.replace(/[^0-9+]/g, '')} required />
               </div>
               <div className="form-group">
                 <label htmlFor="service">Interested In</label>

@@ -1,4 +1,6 @@
+'use client';
 import { useEffect, useRef } from 'react';
+import Link from 'next/link';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Award, GraduationCap, Star, Medal } from 'lucide-react';
@@ -83,7 +85,7 @@ const Specialists = () => {
                 <source srcSet="/dr-sandeep.webp" type="image/webp" />
                 <img
                   src="/dr-sandeep.jpg"
-                  alt="Dr. Sandeep Kumar — Best Orthodontist in Bathinda, Punjab — MDS Orthodontics BHU Varanasi, Ex-Resident AIIMS New Delhi, Certified Invisalign Provider, specialist in clear aligners braces and jaw correction at The DentalBrace Clinic Bibi Wala Road Bathinda"
+                  alt="Dr. Sandeep Kumar — Best Orthodontist in Bathinda, Punjab — MDS Orthodontics BHU Varanasi, Ex-Resident AIIMS New Delhi, Certified Invisalign Provider, specialist in clear aligners braces and jaw correction at The DentalBrace Clinic 196, Bibi Wala Rd Bathinda"
                   style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top center' }}
                   loading="lazy"
                   decoding="async"
@@ -129,18 +131,18 @@ const Specialists = () => {
               </div>
 
               <div style={{ display: 'flex', gap: '0.75rem', flexDirection: 'column', marginTop: 'auto' }}>
-                <a href="#book" className="btn btn-primary w-full" style={{ textAlign: 'center', display: 'block' }}>
+                <a href="/#book" className="btn btn-primary w-full" style={{ textAlign: 'center', display: 'block' }}>
                   Book with Dr. Sandeep
                 </a>
-                <a href="#invisalign" style={{
+                <Link href="/treatments/invisalign" style={{
                   display: 'block', textAlign: 'center', padding: '0.75rem',
                   color: 'var(--accent-color)', fontWeight: '600', fontSize: '0.9rem',
                   textDecoration: 'none', borderRadius: 'var(--radius-md)',
                   border: '1px solid rgba(245,130,32,0.2)',
                   transition: 'all 0.2s ease'
                 }}>
-                  View Invisalign Results →
-                </a>
+                  View Invisalign Details →
+                </Link>
               </div>
             </div>
           </div>
@@ -214,18 +216,18 @@ const Specialists = () => {
               </div>
 
               <div style={{ display: 'flex', gap: '0.75rem', flexDirection: 'column', marginTop: 'auto' }}>
-                <a href="#book" className="btn btn-primary w-full" style={{ textAlign: 'center', display: 'block' }}>
+                <a href="/#book" className="btn btn-primary w-full" style={{ textAlign: 'center', display: 'block' }}>
                   Book with Dr. Ritu
                 </a>
-                <a href="#smile-makeover" style={{
+                <Link href="/treatments/smile-makeover" style={{
                   display: 'block', textAlign: 'center', padding: '0.75rem',
                   color: 'var(--accent-color)', fontWeight: '600', fontSize: '0.9rem',
                   textDecoration: 'none', borderRadius: 'var(--radius-md)',
                   border: '1px solid rgba(245,130,32,0.2)',
                   transition: 'all 0.2s ease'
                 }}>
-                  View Smile Makeover Results →
-                </a>
+                  View Smile Makeover Details →
+                </Link>
               </div>
             </div>
           </div>
@@ -236,4 +238,3 @@ const Specialists = () => {
 };
 
 export default Specialists;
-

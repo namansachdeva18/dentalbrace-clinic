@@ -1,3 +1,4 @@
+'use client';
 /**
  * LazyImage.jsx
  * Drop-in replacement for <img> that:

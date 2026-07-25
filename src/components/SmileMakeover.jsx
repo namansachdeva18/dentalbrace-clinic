@@ -1,3 +1,4 @@
+'use client';
 import { Sparkles, ArrowRight, Star } from 'lucide-react';
 import AnimatedCounter from './AnimatedCounter';
 import BeforeAfterSlider from './BeforeAfterSlider';
@@ -138,7 +139,7 @@ const SmileMakeover = () => {
 
         {/* Action and SEO Stats */}
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: '2rem', alignItems: 'center', justifyContent: 'center' }}>
-          <a href="#book" style={{
+          <a href="/#book" style={{
             display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: '0.6rem',
             padding: '1.25rem 2.5rem',
             background: 'var(--accent-color)',

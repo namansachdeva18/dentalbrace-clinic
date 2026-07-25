@@ -1,3 +1,4 @@
+'use client';
 import { useState, useEffect, useRef } from 'react';
 import { MapPin, Phone, Mail, Clock, Calendar, User, Stethoscope, MessageSquare, Navigation, Loader2, CheckCircle2 } from 'lucide-react';
 import gsap from 'gsap';
@@ -98,6 +99,9 @@ const ContactSection = () => {
           <p className="max-w-2xl mx-auto mt-4" style={{ color: 'var(--text-primary)', fontWeight: '500', textShadow: '0 1px 4px rgba(255,255,255,0.8)' }}>
             Visit our premium facility or book an appointment online. We are ready to assist you.
           </p>
+          <p className="max-w-2xl mx-auto mt-2" style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', fontWeight: '500' }}>
+            Proudly serving patients from Bathinda, Rampura Phul, Talwandi Sabo, Mansa, Muktsar, Faridkot, and Mandi Dabwali.
+          </p>
         </div>
 
         <div ref={formRef} className="gpu-accelerated" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '2rem', alignItems: 'stretch', maxWidth: '1000px', margin: '0 auto' }}>
@@ -118,7 +122,7 @@ const ContactSection = () => {
                 <MapPin color="var(--accent-color)" size={28} className="flex-shrink-0 mt-1" />
                 <div>
                   <strong style={{ fontSize: '1.1rem', display: 'block', marginBottom: '0.25rem', color: '#FFF9F1' }}>Address</strong>
-                  <p style={{ color: 'rgba(255,255,255,0.8)', lineHeight: '1.6' }}>Bibi Wala Road, Opp. HP Petrol Pump,<br/>Near LIC Office, BATHINDA</p>
+                  <p style={{ color: 'rgba(255,255,255,0.8)', lineHeight: '1.6' }}>196, Bibi Wala Rd, near LIC Building, opposite Petrol Pump, Kamla Nehru Colony, Bathinda, Punjab 151001, India</p>
                 </div>
               </li>
               <li style={{ display: 'flex', alignItems: 'flex-start', gap: '1rem' }}>
@@ -198,7 +202,7 @@ const ContactSection = () => {
                   type="tel" 
                   placeholder="Phone Number" 
                   value={formData.phone}
-                  onChange={(e) => setFormData({...formData, phone: e.target.value})}
+                  onChange={(e) => setFormData({...formData, phone: e.target.value.replace(/[^0-9+]/g, '')})}
                   style={{ width: '100%', padding: '1.1rem 1rem 1.1rem 44px', borderRadius: 'var(--radius-md)', border: '1px solid rgba(0,0,0,0.1)', backgroundColor: 'white', color: 'var(--text-primary)', outline: 'none', transition: 'all 0.3s ease' }} 
                   onFocus={(e) => { e.target.style.borderColor = 'var(--accent-color)'; e.target.style.boxShadow = '0 0 0 3px rgba(245, 130, 32, 0.1)'; }}
                   onBlur={(e) => { e.target.style.borderColor = 'rgba(0,0,0,0.1)'; e.target.style.boxShadow = 'none'; }}

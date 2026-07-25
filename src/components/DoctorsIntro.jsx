@@ -1,3 +1,4 @@
+'use client';
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -5,7 +6,7 @@ import {
   GraduationCap, Award, Star, Shield, ArrowRight,
   CheckCircle2, Medal, Stethoscope, Users
 } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import AnimatedCounter from './AnimatedCounter';
 import './DoctorsIntro.css';
 
@@ -175,7 +176,7 @@ const DoctorsIntro = () => {
                 <span>Kids Braces</span>
               </div>
 
-              <Link to="/doctors/dr-sandeep-kumar" className="doctors-intro__card-cta">
+              <Link href="/doctors/dr-sandeep-kumar" className="doctors-intro__card-cta">
                 View Profile <ArrowRight size={15} />
               </Link>
             </div>
@@ -232,7 +233,7 @@ const DoctorsIntro = () => {
                 <span>Zirconia Crowns</span>
               </div>
 
-              <Link to="/doctors/dr-ritu-saneja" className="doctors-intro__card-cta">
+              <Link href="/doctors/dr-ritu-saneja" className="doctors-intro__card-cta">
                 View Profile <ArrowRight size={15} />
               </Link>
             </div>

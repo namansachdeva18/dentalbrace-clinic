@@ -1,20 +1,22 @@
+'use client';
 import React from 'react';
+import Link from 'next/link';
 import { Smile, Shield, Sparkles, AlignCenter, Zap, Gem, Activity, Baby, ScanLine, Brain, Layers, Stethoscope, ScanFace } from 'lucide-react';
 
 const navItems = [
-  { id: 1, label: 'Invisalign', icon: <Smile size={40} strokeWidth={1.5} />, href: '#invisalign' },
-  { id: 2, label: 'Dental Implants', icon: <Shield size={40} strokeWidth={1.5} />, href: '#implants-hero' },
-  { id: 3, label: 'Smile Makeover', icon: <Sparkles size={40} strokeWidth={1.5} />, href: '#smile-makeover' },
-  { id: 4, label: 'Braces', icon: <AlignCenter size={40} strokeWidth={1.5} />, href: '#treatments' },
-  { id: 5, label: 'Teeth Whitening', icon: <Zap size={40} strokeWidth={1.5} />, href: '#treatments' },
-  { id: 6, label: 'Veneers', icon: <Gem size={40} strokeWidth={1.5} />, href: '#treatments' },
-  { id: 7, label: 'Root Canal', icon: <Activity size={40} strokeWidth={1.5} />, href: '#treatments' },
-  { id: 8, label: 'Kids Dentistry', icon: <Baby size={40} strokeWidth={1.5} />, href: '#book' },
-  { id: 9, label: 'Digital Scan', icon: <ScanLine size={40} strokeWidth={1.5} />, href: '#digital' },
-  { id: 10, label: 'Dentofacial Ortho', icon: <Brain size={40} strokeWidth={1.5} />, href: '#treatments' },
-  { id: 11, label: 'All-on-4', icon: <Layers size={40} strokeWidth={1.5} />, href: '#implants-hero' },
+  { id: 1, label: 'Invisalign', icon: <Smile size={40} strokeWidth={1.5} />, href: '/treatments/invisalign' },
+  { id: 2, label: 'Dental Implants', icon: <Shield size={40} strokeWidth={1.5} />, href: '/treatments/dental-implants' },
+  { id: 3, label: 'Smile Makeover', icon: <Sparkles size={40} strokeWidth={1.5} />, href: '/treatments/smile-makeover' },
+  { id: 4, label: 'Braces', icon: <AlignCenter size={40} strokeWidth={1.5} />, href: '/treatments/braces' },
+  { id: 5, label: 'Teeth Whitening', icon: <Zap size={40} strokeWidth={1.5} />, href: '/treatments/teeth-whitening' },
+  { id: 6, label: 'Veneers', icon: <Gem size={40} strokeWidth={1.5} />, href: '/treatments/veneers' },
+  { id: 7, label: 'Root Canal', icon: <Activity size={40} strokeWidth={1.5} />, href: '/treatments/root-canal' },
+  { id: 8, label: 'Kids Dentistry', icon: <Baby size={40} strokeWidth={1.5} />, href: '/treatments/kids-dentistry' },
+  { id: 9, label: 'Digital Scan', icon: <ScanLine size={40} strokeWidth={1.5} />, href: '/treatments/digital-dentistry' },
+  { id: 10, label: 'Dentofacial Ortho', icon: <Brain size={40} strokeWidth={1.5} />, href: '/treatments/dentofacial-orthopedics' },
+  { id: 11, label: 'All-on-4', icon: <Layers size={40} strokeWidth={1.5} />, href: '/treatments/all-on-4' },
   { id: 13, label: 'Maxillofacial', icon: <ScanFace size={40} strokeWidth={1.5} />, href: '/treatments/maxillofacial-prosthetics' },
-  { id: 12, label: 'General Checkup', icon: <Stethoscope size={40} strokeWidth={1.5} />, href: '#book' },
+  { id: 12, label: 'General Checkup', icon: <Stethoscope size={40} strokeWidth={1.5} />, href: '/treatments/digital-dentistry' },
 ];
 
 const TreatmentNavigator = () => {
@@ -31,8 +33,9 @@ const TreatmentNavigator = () => {
           gridTemplateColumns: 'repeat(auto-fit, minmax(120px, 1fr))'
         }}>
           {navItems.map((item) => (
-            <div 
+            <Link 
               key={item.id} 
+              href={item.href}
               className="nav-card"
               style={{
                 display: 'flex',
@@ -46,7 +49,8 @@ const TreatmentNavigator = () => {
                 boxShadow: '0 2px 8px rgba(0,0,0,0.04)',
                 border: '1px solid rgba(0,0,0,0.02)',
                 transition: 'all 0.25s ease',
-                cursor: 'default'
+                textDecoration: 'none',
+                cursor: 'pointer'
               }}
               onMouseEnter={e => {
                 e.currentTarget.style.transform = 'translateY(-4px)';
@@ -79,7 +83,7 @@ const TreatmentNavigator = () => {
               }}>
                 {item.label}
               </span>
-            </div>
+            </Link>
           ))}
         </div>
       </div>

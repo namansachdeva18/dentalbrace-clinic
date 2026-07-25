@@ -1,6 +1,6 @@
 import { CheckCircle2, Calendar, Phone, Activity, Clock, ShieldCheck } from 'lucide-react';
 import TreatmentHero from './TreatmentHero';
-import '../pages/TreatmentTemplate.css';
+import '@/pages/TreatmentTemplate.css';
 
 const TreatmentSection = ({ data, id }) => {
   return (

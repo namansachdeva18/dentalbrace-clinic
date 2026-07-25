@@ -1,3 +1,4 @@
+'use client';
 import { Award, CheckCircle, ArrowRight, Star, Medal } from 'lucide-react';
 import AnimatedCounter from './AnimatedCounter';
 import BeforeAfterSlider from './BeforeAfterSlider';
@@ -129,7 +130,7 @@ const ImplantsHero = () => {
             </div>
 
             <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-              <a href="#book" style={{
+              <a href="/#book" style={{
                 display: 'inline-flex', alignItems: 'center', gap: '0.6rem',
                 padding: '1rem 2rem',
                 background: 'var(--accent-color)',

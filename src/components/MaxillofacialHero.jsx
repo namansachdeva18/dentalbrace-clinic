@@ -1,3 +1,4 @@
+'use client';
 import { Award, CheckCircle, ArrowRight, ShieldCheck, Heart } from 'lucide-react';
 import BeforeAfterSlider from './BeforeAfterSlider';
 

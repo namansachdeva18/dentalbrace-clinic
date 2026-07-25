@@ -1,3 +1,4 @@
+'use client';
 import { useEffect, useRef, useState, useCallback } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -16,7 +17,7 @@ const clinicSlides = [
     id: 1,
     src: '/clinic-gallery/reception-waiting-lounge-dentalbrace-bathinda.jpg',
     caption: 'Reception & Waiting Lounge',
-    alt: 'Premium reception and waiting lounge at The DentalBrace Clinic Bibi Wala Road Bathinda — comfortable modern patient waiting area with elegant interior design',
+    alt: 'Premium reception and waiting lounge at The DentalBrace Clinic 196, Bibi Wala Rd Bathinda — comfortable modern patient waiting area with elegant interior design',
     hint: 'Comfortable modern waiting lounge'
   },
   {
@@ -72,8 +73,8 @@ const clinicSlides = [
     id: 9,
     src: '/clinic-gallery/dental-clinic-exterior-signage-bathinda.jpg',
     caption: 'Clinic Exterior & Signage',
-    alt: 'Exterior view and neon signage of The DentalBrace Clinic and Implant Centre on Bibi Wala Road Bathinda Punjab — leading orthodontic and dental implant hospital',
-    hint: 'Our clinic frontage on Bibi Wala Road'
+    alt: 'Exterior view and neon signage of The DentalBrace Clinic and Implant Centre at 196, Bibi Wala Rd Bathinda Punjab — leading orthodontic and dental implant hospital',
+    hint: 'Our clinic frontage at 196, Bibi Wala Rd'
   },
   {
     id: 10,
@@ -93,7 +94,6 @@ const clinicSlides = [
 
 const TOTAL = clinicSlides.length;
 const AUTO_MS = 3500; // auto-rotate interval (ms)
-
 const ClinicGallery = () => {
   const sectionRef = useRef(null);
   const headingRef = useRef(null);

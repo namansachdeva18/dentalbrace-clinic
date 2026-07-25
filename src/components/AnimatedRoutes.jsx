@@ -1,20 +1,23 @@
-import { Routes, Route, useLocation } from 'react-router-dom';
+'use client';
+import { usePathname } from 'next/navigation';
+import { Routes, Route } from 'react-router-dom';
+
 import { AnimatePresence } from 'framer-motion';
 
-import Home from '../pages/Home';
-import About from '../pages/About';
-import ContactPage from '../pages/ContactPage';
-import FAQPage from '../pages/FAQPage';
-import ServicesPage from '../pages/ServicesPage';
-import TreatmentTemplate from '../pages/TreatmentTemplate';
+import Home from '@/pages/Home';
+import About from '@/pages/About';
+import ContactPage from '@/pages/ContactPage';
+import FAQPage from '@/pages/FAQPage';
+import ServicesPage from '@/pages/ServicesPage';
+import TreatmentTemplate from '@/pages/TreatmentTemplate';
 // Import other pages as needed
 
 const AnimatedRoutes = () => {
-  const location = useLocation();
+  const pathname = usePathname();
 
   return (
     <AnimatePresence mode="wait">
-      <Routes location={location} key={location.pathname}>
+      <Routes location={location} key={pathname}>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<ContactPage />} />

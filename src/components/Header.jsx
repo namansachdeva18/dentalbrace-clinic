@@ -1,5 +1,6 @@
+'use client';
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { Phone, MapPin, Clock, Menu, X, ChevronDown, Search, ArrowRight } from 'lucide-react';
 import './Header.css';
 
@@ -58,7 +59,7 @@ const Header = () => {
         <nav className="main-nav">
           <div className="container nav-content">
             <div className="logo">
-              <Link to="/" onClick={() => { handleNavClick(); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="logo-link" style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+              <Link href="/" onClick={() => { handleNavClick(); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="logo-link" style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
                 <picture>
                   <source srcSet="/logo.webp" type="image/webp" />
                   <img src="/logo.png" alt="The DentalBrace Clinic and Implant Centre logo — Best Dental Clinic in Bathinda Punjab, Dr. Sandeep Kumar Orthodontist Dr. Ritu Saneja Implantologist" className="logo-img" style={{ height: '80px', width: 'auto', mixBlendMode: 'multiply' }} fetchPriority="high" />
@@ -75,7 +76,7 @@ const Header = () => {
             </button>
 
             <div className={`nav-links ${isMenuOpen ? 'open glass' : ''}`}>
-              <Link to="/" className="nav-link" onClick={handleNavClick}>Home</Link>
+              <Link href="/" className="nav-link" onClick={handleNavClick}>Home</Link>
               <div 
                 className="nav-item" 
                 onMouseEnter={() => handleMouseEnter('treatments')}
@@ -86,31 +87,31 @@ const Header = () => {
                     <div className="mega-menu-grid">
                       <div className="mega-column">
                         <h4>General Dentistry</h4>
-                        <Link to="/treatments/root-canal" onClick={handleNavClick}>Root Canal Treatment</Link>
-                        <Link to="/treatments/dental-crown-bridge" onClick={handleNavClick}>Dental Crown & Bridge</Link>
-                        <Link to="/treatments/gum-treatment" onClick={handleNavClick}>Gum Treatment & Scaling</Link>
-                        <Link to="/treatments/wisdom-tooth-removal" onClick={handleNavClick}>Wisdom Tooth Removal</Link>
-                        <Link to="/treatments/digital-dentistry" onClick={handleNavClick}>General Checkup</Link>
+                        <Link href="/treatments/root-canal" onClick={handleNavClick}>Root Canal Treatment</Link>
+                        <Link href="/treatments/dental-crown-bridge" onClick={handleNavClick}>Dental Crown & Bridge</Link>
+                        <Link href="/treatments/gum-treatment" onClick={handleNavClick}>Gum Treatment & Scaling</Link>
+                        <Link href="/treatments/wisdom-tooth-removal" onClick={handleNavClick}>Wisdom Tooth Removal</Link>
+                        <Link href="/treatments/digital-dentistry" onClick={handleNavClick}>General Checkup</Link>
                       </div>
                       <div className="mega-column">
                         <h4>Orthodontics</h4>
-                        <Link to="/treatments/invisalign" onClick={handleNavClick}>Invisalign & Clear Aligners</Link>
-                        <Link to="/treatments/braces" onClick={handleNavClick}>Traditional Braces</Link>
-                        <Link to="/treatments/dentofacial-orthopedics" onClick={handleNavClick}>Dentofacial Orthopedics</Link>
-                        <Link to="/treatments/kids-dentistry" onClick={handleNavClick}>Kids Dentistry</Link>
+                        <Link href="/treatments/invisalign" onClick={handleNavClick}>Invisalign & Clear Aligners</Link>
+                        <Link href="/treatments/braces" onClick={handleNavClick}>Traditional Braces</Link>
+                        <Link href="/treatments/dentofacial-orthopedics" onClick={handleNavClick}>Dentofacial Orthopedics</Link>
+                        <Link href="/treatments/kids-dentistry" onClick={handleNavClick}>Kids Dentistry</Link>
                       </div>
                       <div className="mega-column">
                         <h4>Implantology & Prosthetics</h4>
-                        <Link to="/treatments/dental-implants" onClick={handleNavClick}>Dental Implants</Link>
-                        <Link to="/treatments/all-on-4" onClick={handleNavClick}>All-on-4 / All-on-6</Link>
-                        <Link to="/treatments/maxillofacial-prosthetics" onClick={handleNavClick}>Maxillofacial Prosthetics</Link>
+                        <Link href="/treatments/dental-implants" onClick={handleNavClick}>Dental Implants</Link>
+                        <Link href="/treatments/all-on-4" onClick={handleNavClick}>All-on-4 / All-on-6</Link>
+                        <Link href="/treatments/maxillofacial-prosthetics" onClick={handleNavClick}>Maxillofacial Prosthetics</Link>
                       </div>
                       <div className="mega-column">
                         <h4>Cosmetic Dentistry</h4>
-                        <Link to="/treatments/smile-makeover" onClick={handleNavClick}>Smile Makeover</Link>
-                        <Link to="/treatments/veneers" onClick={handleNavClick}>Dental Veneers</Link>
-                        <Link to="/treatments/teeth-whitening" onClick={handleNavClick}>Teeth Whitening</Link>
-                        <Link to="/treatments/composite-bonding" onClick={handleNavClick}>Composite Bonding</Link>
+                        <Link href="/treatments/smile-makeover" onClick={handleNavClick}>Smile Makeover</Link>
+                        <Link href="/treatments/veneers" onClick={handleNavClick}>Dental Veneers</Link>
+                        <Link href="/treatments/teeth-whitening" onClick={handleNavClick}>Teeth Whitening</Link>
+                        <Link href="/treatments/composite-bonding" onClick={handleNavClick}>Composite Bonding</Link>
                       </div>
                     </div>
                   </div>
@@ -126,15 +127,15 @@ const Header = () => {
                   <div className="mega-menu glass shadow-soft">
                     <div className="mega-menu-grid two-col">
                       <div className="mega-column">
-                        <Link to="/treatments/digital-dentistry" onClick={handleNavClick}>Digital Dentistry Overview</Link>
-                        <Link to="/treatments/3d-intraoral-scanner" onClick={handleNavClick}>3D Intraoral Scanner</Link>
-                        <Link to="/treatments/smile-designing" onClick={handleNavClick}>Digital Smile Design</Link>
+                        <Link href="/treatments/digital-dentistry" onClick={handleNavClick}>Digital Dentistry Overview</Link>
+                        <Link href="/treatments/3d-intraoral-scanner" onClick={handleNavClick}>3D Intraoral Scanner</Link>
+                        <Link href="/treatments/smile-designing" onClick={handleNavClick}>Digital Smile Design</Link>
                       </div>
                       <div className="mega-column">
                         <div className="mega-promo" style={{background: 'var(--secondary-bg)', padding: '1rem', borderRadius: 'var(--radius-md)'}}>
                           <h4>Experience the Future</h4>
                           <p className="text-secondary text-sm">Our advanced digital workflow ensures precision and comfort.</p>
-                          <Link to="/treatments/digital-dentistry" className="text-accent" onClick={handleNavClick} style={{display: 'flex', alignItems: 'center', gap: '0.25rem', marginTop: '0.5rem', fontWeight: 600}}>Explore Technology <ArrowRight size={14}/></Link>
+                          <Link href="/treatments/digital-dentistry" className="text-accent" onClick={handleNavClick} style={{display: 'flex', alignItems: 'center', gap: '0.25rem', marginTop: '0.5rem', fontWeight: 600}}>Explore Technology <ArrowRight size={14}/></Link>
                         </div>
                       </div>
                     </div>
@@ -148,8 +149,8 @@ const Header = () => {
                   <div className="mega-menu glass shadow-soft">
                     <div className="mega-menu-grid two-col">
                        <div className="mega-column">
-                          <Link to="/doctors/dr-sandeep-kumar" onClick={handleNavClick}>Dr. Sandeep Kumar — Orthodontist</Link>
-                          <Link to="/doctors/dr-ritu-saneja" onClick={handleNavClick}>Dr. Ritu Saneja — Prosthodontist</Link>
+                          <Link href="/doctors/dr-sandeep-kumar" onClick={handleNavClick}>Dr. Sandeep Kumar — Orthodontist</Link>
+                          <Link href="/doctors/dr-ritu-saneja" onClick={handleNavClick}>Dr. Ritu Saneja — Prosthodontist</Link>
                        </div>
                     </div>
                   </div>
@@ -176,11 +177,11 @@ const Header = () => {
                 )}
               </div>
 
-              <Link to="/about" className="nav-link" onClick={handleNavClick}>About</Link>
-              <Link to="/blog" className="nav-link" onClick={handleNavClick}>Blog</Link>
-              <Link to="/contact" className="nav-link" onClick={handleNavClick}>Contact</Link>
+              <Link href="/about" className="nav-link" onClick={handleNavClick}>About</Link>
+              <Link href="/blog" className="nav-link" onClick={handleNavClick}>Blog</Link>
+              <Link href="/contact" className="nav-link" onClick={handleNavClick}>Contact</Link>
               
-              <a href="#book" className="btn btn-primary nav-cta magnetic" onClick={handleNavClick} style={{ whiteSpace: 'nowrap' }}>Book Appointment</a>
+              <a href="/#book" className="btn btn-primary nav-cta magnetic" onClick={handleNavClick} style={{ whiteSpace: 'nowrap' }}>Book Appointment</a>
             </div>
           </div>
         </nav>
@@ -200,7 +201,7 @@ const Header = () => {
         <a href="https://maps.app.goo.gl/uksfFySwX9RL5uu56?g_st=iw" target="_blank" rel="noopener noreferrer" className="bottom-bar-item">
           <MapPin size={20} /> Directions
         </a>
-        <a href="#book" className="bottom-bar-item primary-bg">
+        <a href="/#book" className="bottom-bar-item primary-bg">
           Book
         </a>
       </div>

@@ -1,3 +1,4 @@
+'use client';
 import { Award, CheckCircle, ArrowRight, Star } from 'lucide-react';
 import AnimatedCounter from './AnimatedCounter';
 import BeforeAfterSlider from './BeforeAfterSlider';
@@ -116,7 +117,7 @@ const InvisalignHero = () => {
 
 
             <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-              <a href="#book" style={{
+              <a href="/#book" style={{
                 display: 'inline-flex', alignItems: 'center', gap: '0.6rem',
                 padding: '1rem 2rem',
                 background: 'var(--accent-color)',
@@ -128,7 +129,7 @@ const InvisalignHero = () => {
               onMouseEnter={e => e.currentTarget.style.transform = 'translateY(-2px)'}
               onMouseLeave={e => e.currentTarget.style.transform = 'none'}
               >
-                Get Invisalign Assessment (today) <ArrowRight size={18} />
+                Get Invisalign Assessment <ArrowRight size={18} />
               </a>
               <a href="tel:7496849392" style={{
                 display: 'inline-flex', alignItems: 'center', gap: '0.6rem',

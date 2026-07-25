@@ -1,7 +1,8 @@
+'use client';
 import { Award, Shield, Users, Clock } from 'lucide-react';
 import { motion } from 'framer-motion';
 import AnimatedCounter from './AnimatedCounter';
-import '../pages/About.css';
+import '@/pages/About.css';
 
 const AboutSection = () => {
   return (
@@ -35,7 +36,7 @@ const AboutSection = () => {
                 <source srcSet="/clinic-interior.webp" type="image/webp" />
                 <img 
                   src="/clinic-interior.jpg" 
-                  alt="State-of-the-art premium dental clinic interior at The DentalBrace Clinic Bathinda — modern dental treatment room with advanced equipment on Bibi Wala Road Punjab" 
+                  alt="State-of-the-art premium dental clinic interior at The DentalBrace Clinic Bathinda — modern dental treatment room with advanced equipment at 196, Bibi Wala Rd Punjab" 
                   style={{ width: '100%', height: '100%', objectFit: 'cover', minHeight: '500px' }}
                   loading="lazy"
                   decoding="async"

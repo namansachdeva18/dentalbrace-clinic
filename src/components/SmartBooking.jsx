@@ -1,3 +1,4 @@
+'use client';
 import React, { useState } from 'react';
 import { ChevronRight, ArrowRight, CheckCircle2, UserCircle2, CalendarDays, MessageCircle, Send, Loader2 } from 'lucide-react';
 
@@ -102,7 +103,7 @@ const SmartBooking = () => {
             How Can We Help You Today?
           </h2>
           <p style={{ color: 'rgba(255, 255, 255, 0.8)', fontSize: '1.1rem' }}>
-            Book your consultation (<strong className="text-accent font-bold">today</strong>) in <strong className="text-white font-bold">under 60 seconds</strong>.
+            Book your consultation in <strong className="text-white font-bold">under 60 seconds</strong>.
           </p>
         </div>
 
@@ -258,7 +259,7 @@ const SmartBooking = () => {
                     type="tel" 
                     placeholder="Enter your mobile number"
                     value={patientPhone}
-                    onChange={(e) => setPatientPhone(e.target.value)}
+                    onChange={(e) => setPatientPhone(e.target.value.replace(/[^0-9+]/g, ''))}
                     style={{ 
                       width: '100%', padding: '0.8rem', borderRadius: 'var(--radius-md)', 
                       border: '1px solid var(--border-color)', outline: 'none'

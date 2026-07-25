@@ -1,5 +1,5 @@
 import { Calendar, Phone, MessageCircle, ChevronRight, Activity, Clock, Zap } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import './TreatmentHero.css';
 
 const TreatmentHero = ({ data }) => {
@@ -20,9 +20,9 @@ const TreatmentHero = ({ data }) => {
         <div className="treatment-hero-content">
           {/* Breadcrumb */}
           <nav className="hero-breadcrumb">
-            <Link to="/" className="breadcrumb-link">Home</Link>
+            <Link href="/" className="breadcrumb-link">Home</Link>
             <ChevronRight size={14} className="breadcrumb-separator" />
-            <Link to="/treatments" className="breadcrumb-link">Treatments</Link>
+            <Link href="/services" className="breadcrumb-link">Treatments</Link>
             <ChevronRight size={14} className="breadcrumb-separator" />
             <span className="breadcrumb-current">{data.title}</span>
           </nav>
@@ -31,7 +31,7 @@ const TreatmentHero = ({ data }) => {
           <p className="hero-intro text-lg opacity-90 mb-8">{data.subtitle}</p>
           
           <div className="hero-cta-group">
-            <a href="#book" className="btn btn-primary"><Calendar size={20} /> Book Appointment</a>
+            <a href="/#book" className="btn btn-primary"><Calendar size={20} /> Book Appointment</a>
             <a href="tel:7496849392" className="btn btn-outline glass text-white"><Phone size={20} /> Call Now</a>
             <a href="https://api.whatsapp.com/send/?phone=917496849392&text=Hi%21%20I%20would%20like%20to%20book%20an%20appointment%20at%20The%20DentalBrace%20Clinic." target="_blank" rel="noreferrer" className="btn btn-whatsapp"><MessageCircle size={20} /> WhatsApp</a>
           </div>

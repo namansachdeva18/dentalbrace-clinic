@@ -1,29 +1,32 @@
-import { Routes, Route, useLocation } from 'react-router-dom';
+'use client';
+import { usePathname } from 'next/navigation';
+import { Routes, Route } from 'react-router-dom';
+
 import { AnimatePresence } from 'framer-motion';
 import Header from './Header';
 import Footer from './Footer';
-import Home from '../pages/Home';
-import TreatmentTemplate from '../pages/TreatmentTemplate';
-import About from '../pages/About';
-import ContactPage from '../pages/ContactPage';
-import FAQPage from '../pages/FAQPage';
-import DrSandeepPage from '../pages/DrSandeepPage';
-import DrRituPage from '../pages/DrRituPage';
-import GalleryPage from '../pages/GalleryPage';
-import ServicesPage from '../pages/ServicesPage';
-import Blog from '../pages/Blog';
-import BlogPost from '../pages/BlogPost';
-import NotFound from '../pages/NotFound';
+import Home from '@/pages/Home';
+import TreatmentTemplate from '@/pages/TreatmentTemplate';
+import About from '@/pages/About';
+import ContactPage from '@/pages/ContactPage';
+import FAQPage from '@/pages/FAQPage';
+import DrSandeepPage from '@/pages/DrSandeepPage';
+import DrRituPage from '@/pages/DrRituPage';
+import GalleryPage from '@/pages/GalleryPage';
+import ServicesPage from '@/pages/ServicesPage';
+import Blog from '@/pages/Blog';
+import BlogPost from '@/pages/BlogPost';
+import NotFound from '@/pages/NotFound';
 
 const AppLayout = () => {
-  const location = useLocation();
+  const pathname = usePathname();
 
   return (
     <>
       <Header />
       <main style={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
         <AnimatePresence mode="wait">
-          <Routes location={location} key={location.pathname}>
+          <Routes location={location} key={pathname}>
             {/* ── Core Pages ──────────────────────────────── */}
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
