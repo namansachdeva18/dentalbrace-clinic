@@ -120,7 +120,7 @@ const InvisalignHero = () => {
               <a href="/#book" style={{
                 display: 'inline-flex', alignItems: 'center', gap: '0.6rem',
                 padding: '1rem 2rem',
-                background: 'var(--accent-text-dark)',
+                background: 'var(--accent-color)',
                 color: 'white', borderRadius: 'var(--radius-full)',
                 fontWeight: '700', textDecoration: 'none',
                 fontSize: '1rem', transition: 'all 0.2s ease',

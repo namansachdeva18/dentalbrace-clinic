@@ -121,7 +121,7 @@
 
 .hero-doctor-badge > div > strong:first-child {
   display: block;
-  color: var(--accent-text-dark);
+  color: var(--accent-color);
   font-size: 1.1rem;
   font-weight: 800;
   margin-bottom: 4px;
@@ -148,7 +148,7 @@
   align-items: center;
   gap: 0.6rem;
   padding: 1rem 2rem;
-  background: var(--accent-text-dark);
+  background: #F58220;
   color: white;
   border-radius: var(--radius-full);
   font-weight: 700;

@@ -11,7 +11,6 @@
   --text-secondary: #6B6B6B; /* Medium Warm Gray */
   
   --accent-color: #F58220; /* Warm Dental Orange */
-  --accent-text-dark: #C55000; /* Darker orange for text contrast */
   --accent-hover: #E87413;
   
   --border-color: #EFE7DA;
@@ -145,7 +144,7 @@ img {
 /* Utilities */
 .text-center { text-align: center; }
 .text-primary { color: var(--text-primary); }
-.text-accent { color: var(--accent-text-dark); }
+.text-accent { color: var(--accent-color); }
 .text-secondary { color: var(--text-secondary); }
 .text-white { color: #FFFFFF; }
 
