@@ -87,7 +87,7 @@
 
 .logo-subtext {
   font-size: 0.75rem;
-  color: var(--accent-color);
+  color: var(--accent-text-dark);
   letter-spacing: 1px;
   text-transform: uppercase;
   font-weight: 600;
@@ -253,14 +253,14 @@
 }
 
 .bottom-bar-item.primary-bg {
-  background: var(--accent-color);
+  background: var(--accent-text-dark);
   color: var(--white);
   font-weight: 600;
   font-size: 0.9rem;
 }
 
 .text-whatsapp {
-  color: #25D366;
+  color: #1E9E49;
 }
 
 .mobile-menu-btn {
