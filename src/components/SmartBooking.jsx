@@ -216,6 +216,7 @@ const SmartBooking = () => {
                   <select 
                     value={selectedTime}
                     onChange={(e) => setSelectedTime(e.target.value)}
+                    aria-label="Select Appointment Time"
                     style={{ 
                       width: '100%', padding: '0.8rem', borderRadius: 'var(--radius-md)', 
                       border: '1px solid var(--border-color)', outline: 'none'

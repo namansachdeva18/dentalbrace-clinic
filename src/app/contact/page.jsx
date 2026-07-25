@@ -183,7 +183,7 @@ const ContactPage = () => {
                 <div className="input-group">
                   <label htmlFor="treatment">What are you looking for?</label>
                   <div className="select-wrapper">
-                    <select id="treatment" value={formData.treatment} onChange={(e) => setFormData({...formData, treatment: e.target.value})} required>
+                    <select id="treatment" value={formData.treatment} onChange={(e) => setFormData({...formData, treatment: e.target.value})} required aria-label="Select a treatment">
                       <option value="" disabled>Select a treatment...</option>
                       <option value="implants">Dental Implants</option>
                       <option value="invisalign">Invisalign / Clear Aligners</option>

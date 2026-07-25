@@ -226,11 +226,11 @@ const Services = () => {
               <h3 className="service-title text-xl font-bold mb-3 text-primary">{service.title}</h3>
               <p className="service-desc text-secondary mb-6 leading-relaxed" style={{ flexGrow: 1 }}>{service.description}</p>
               {service.href.startsWith('/') ? (
-                <Link href={service.href} className="service-link text-accent font-semibold flex items-center gap-2" style={{ textDecoration: 'none' }}>
+                <Link href={service.href} className="service-link text-accent font-semibold flex items-center gap-2" style={{ textDecoration: 'none' }} aria-label={`Learn more about ${service.title}`}>
                   Learn More <ArrowRight size={16} />
                 </Link>
               ) : (
-                <a href={service.href} className="service-link text-accent font-semibold flex items-center gap-2" style={{ textDecoration: 'none' }}>
+                <a href={service.href} className="service-link text-accent font-semibold flex items-center gap-2" style={{ textDecoration: 'none' }} aria-label={`Learn more about ${service.title}`}>
                   Learn More <ArrowRight size={16} />
                 </a>
               )}
@@ -253,11 +253,11 @@ const Services = () => {
               <h3 className="service-title text-xl font-bold mb-3 text-primary">{service.title}</h3>
               <p className="service-desc text-secondary mb-6 leading-relaxed" style={{ flexGrow: 1 }}>{service.description}</p>
               {service.href.startsWith('/') ? (
-                <Link href={service.href} className="service-link text-accent font-semibold flex items-center gap-2" style={{ textDecoration: 'none' }}>
+                <Link href={service.href} className="service-link text-accent font-semibold flex items-center gap-2" style={{ textDecoration: 'none' }} aria-label={`Learn more about ${service.title}`}>
                   Learn More <ArrowRight size={16} />
                 </Link>
               ) : (
-                <a href={service.href} className="service-link text-accent font-semibold flex items-center gap-2" style={{ textDecoration: 'none' }}>
+                <a href={service.href} className="service-link text-accent font-semibold flex items-center gap-2" style={{ textDecoration: 'none' }} aria-label={`Learn more about ${service.title}`}>
                   Learn More <ArrowRight size={16} />
                 </a>
               )}

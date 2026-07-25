@@ -176,7 +176,7 @@ const reviewsRow2 = [
     id: 16,
     name: 'Deepika Singh',
     location: 'Bathinda',
-    avatar: 'https://images.unsplash.com/photo-1531123897727-8f129e1bf98c?q=80&w=150&auto=format&fit=crop',
+    avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=150&auto=format&fit=crop',
     rating: 5,
     date: 'April 2024',
     treatment: 'Teen Aligners',

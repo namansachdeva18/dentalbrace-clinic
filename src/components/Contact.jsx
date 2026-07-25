@@ -61,7 +61,7 @@ const Contact = () => {
               </div>
               <div className="form-group">
                 <label htmlFor="service">Interested In</label>
-                <select id="service" required>
+                <select id="service" required aria-label="Select a treatment">
                   <option value="">Select a treatment</option>
                   <option value="implants">Dental Implants</option>
                   <option value="braces">Invisible Braces</option>

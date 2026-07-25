@@ -215,6 +215,7 @@ const ContactSection = () => {
                 <select 
                   value={formData.treatment}
                   onChange={(e) => setFormData({...formData, treatment: e.target.value})}
+                  aria-label="Select Treatment"
                   style={{ width: '100%', padding: '1.1rem 1rem 1.1rem 44px', borderRadius: 'var(--radius-md)', border: '1px solid rgba(0,0,0,0.1)', backgroundColor: 'white', color: 'var(--text-primary)', outline: 'none', transition: 'all 0.3s ease', appearance: 'none', cursor: 'pointer' }}
                   onFocus={(e) => { e.target.style.borderColor = 'var(--accent-color)'; e.target.style.boxShadow = '0 0 0 3px rgba(245, 130, 32, 0.1)'; }}
                   onBlur={(e) => { e.target.style.borderColor = 'rgba(0,0,0,0.1)'; e.target.style.boxShadow = 'none'; }}
