@@ -276,8 +276,12 @@ const ReviewCard = ({ review }) => (
       background: 'var(--accent-color)'
     }} />
 
+    <div itemProp="itemReviewed" itemScope itemType="https://schema.org/MedicalBusiness" style={{ display: 'none' }}>
+      <meta itemProp="name" content="The Dental Brace Clinic" />
+    </div>
+
     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
-      <div style={{ display: 'flex', alignItems: 'center', gap: '0.875rem' }}>
+      <div style={{ display: 'flex', alignItems: 'center', gap: '0.875rem' }} itemProp="author" itemScope itemType="https://schema.org/Person">
         <Image
           src={review.avatar}
           alt={`${review.name} — ${review.treatment} patient at The DentalBrace Bathinda`}
@@ -288,10 +292,9 @@ const ReviewCard = ({ review }) => (
             objectFit: 'cover',
             border: '2px solid rgba(245,130,32,0.2)'
           }}
-          itemProp="author"
         />
         <div>
-          <div style={{ fontWeight: '700', color: 'var(--text-primary)', fontSize: '1rem' }} itemProp="author">{review.name}</div>
+          <div style={{ fontWeight: '700', color: 'var(--text-primary)', fontSize: '1rem' }} itemProp="name">{review.name}</div>
           <div style={{ color: 'var(--text-secondary)', fontSize: '0.8rem' }}>{review.location}</div>
         </div>
       </div>
@@ -399,6 +402,9 @@ const Testimonials = () => {
           }}
           itemScope itemType="https://schema.org/AggregateRating"
           >
+            <div itemProp="itemReviewed" itemScope itemType="https://schema.org/MedicalBusiness" style={{ display: 'none' }}>
+              <meta itemProp="name" content="The Dental Brace Clinic" />
+            </div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
               <GoogleIcon />
               <span style={{ fontWeight: '700', color: '#555', fontSize: '0.9rem' }}>Google</span>
