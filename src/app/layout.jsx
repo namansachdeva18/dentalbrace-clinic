@@ -4,6 +4,21 @@ import '../mobile.css';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import TransitionWrapper from './TransitionWrapper';
+import { Outfit, Inter } from 'next/font/google';
+
+const outfit = Outfit({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700'],
+  variable: '--font-heading',
+  display: 'swap',
+});
+
+const inter = Inter({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600'],
+  variable: '--font-body',
+  display: 'swap',
+});
 
 export const metadata = {
   title: 'Best Invisalign & Dental Implants in Bathinda | The DentalBrace Clinic',
@@ -47,7 +62,7 @@ export default function RootLayout({ children }) {
       <head>
         <meta name="twitter:image:alt" content="The DentalBrace Clinic exterior Bathinda Punjab" />
       </head>
-      <body suppressHydrationWarning>
+      <body className={`${outfit.variable} ${inter.variable}`} suppressHydrationWarning>
         <Header />
         <main style={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
           <TransitionWrapper>

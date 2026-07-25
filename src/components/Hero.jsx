@@ -1,5 +1,6 @@
 'use client';
 import { useEffect, useRef } from 'react';
+import Image from 'next/image';
 import gsap from 'gsap';
 import { Calendar, Phone, Star, ShieldCheck, HeartPulse, Award, ArrowRight, CheckCircle, Users } from 'lucide-react';
 import AnimatedCounter from './AnimatedCounter';
@@ -121,17 +122,14 @@ const Hero = () => {
       {/* RIGHT — Image Panel */}
       <div className="hero-right" ref={rightRef}>
         <div className="hero-image-wrapper">
-          <picture>
-            <source srcSet="/hero-image.webp" type="image/webp" />
-            <img
-              src="/hero-image.jpg?v=3"
-              alt="Exterior view of The DentalBrace Clinic and Implant Centre at 196, Bibi Wala Rd Bathinda Punjab — showing clinic signboard with Dr. Sandeep Kumar MDS Consultant Orthodontist Ex-AIIMS PGI CHD and Dr. Ritu Saneja MDS Prosthodontist Implantologist Gold Medalist, phone number 74968-49392, premium dental clinic building Bathinda"
-              className="hero-image"
-              fetchPriority="high"
-              decoding="async"
-              loading="eager"
-            />
-          </picture>
+          <Image
+            src="/hero-image.webp"
+            alt="Exterior view of The DentalBrace Clinic and Implant Centre at 196, Bibi Wala Rd Bathinda Punjab — showing clinic signboard with Dr. Sandeep Kumar MDS Consultant Orthodontist Ex-AIIMS PGI CHD and Dr. Ritu Saneja MDS Prosthodontist Implantologist Gold Medalist, phone number 74968-49392, premium dental clinic building Bathinda"
+            className="hero-image"
+            priority={true}
+            fill
+            sizes="(max-width: 1100px) 100vw, 50vw"
+          />
           {/* Gradient overlay on bottom */}
           <div className="hero-image-overlay" />
         </div>
