@@ -1,11 +1,3 @@
-export const generateMetadata = () => {
-  return {
-    title: "Best Invisalign & Dental Implants Clinic in Bathinda | The DentalBrace",
-    description: "Bathinda's #1 Invisalign provider & implant clinic. 5500+ braces & aligner cases by Dr. Sandeep Kumar. 5000+ implants by Dr. Ritu Saneja (Gold Medalist). Book your consultation today.",
-  };
-};
-
-
 
 import Hero from '@/components/Hero';
 import FAQSection from '@/components/FAQSection';
@@ -75,6 +67,13 @@ const Home = () => {
           "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
           "opens": "09:00",
           "closes": "20:00"
+        },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.9",
+          "reviewCount": "124",
+          "bestRating": "5",
+          "worstRating": "1"
         },
         "sameAs": [
           "https://www.instagram.com/thedentalbrace_bathinda?igsh=MWhxaXNpejU5bjFhdw==",
