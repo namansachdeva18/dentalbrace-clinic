@@ -426,16 +426,31 @@
   }
 
   .doctors-intro__combined-photo {
-    height: 340px;
+    /* Let the photo determine its own height naturally */
+    height: auto;
+    aspect-ratio: 4 / 3;
     order: -1;
   }
 
+  .doctors-intro__combined-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+  }
+
+  /* On mobile, gradient blends downward from photo into text panel */
   .doctors-intro__combined-photo::before {
-    background: linear-gradient(to bottom, transparent 50%, var(--bg-navy) 100%);
+    background: linear-gradient(
+      to bottom,
+      transparent 0%,
+      transparent 55%,
+      var(--bg-navy) 100%
+    );
   }
 
   .doctors-intro__combined-text {
-    padding: 40px 32px;
+    padding: 32px 28px 40px;
   }
 
   .doctors-intro__stats-row {
@@ -457,7 +472,16 @@
   }
 
   .doctors-intro__combined-text {
-    padding: 32px 24px;
+    padding: 28px 20px 36px;
+  }
+
+  /* Remove the gap between photo and text — they should feel connected */
+  .doctors-intro__combined-photo {
+    aspect-ratio: 3 / 2;
+  }
+
+  .doctors-intro__combined-heading {
+    font-size: 1.75rem;
   }
 
   .doctors-intro__stats-row {
