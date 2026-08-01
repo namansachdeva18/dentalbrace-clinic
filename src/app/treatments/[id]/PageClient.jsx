@@ -83,22 +83,35 @@ const TreatmentTemplate = ({ params }) => {
     }
   };
 
-  // Service schema — supports aggregateRating for Google rich star results
-  const serviceSchema = {
+  // Dentist (LocalBusiness) schema — Google-supported type for aggregateRating rich results
+  const clinicRatingSchema = {
     "@context": "https://schema.org",
-    "@type": "Service",
-    "name": data.title,
-    "description": data.overview,
-    "url": `https://www.thedentalbrace.com/treatments/${slug}`,
-    "provider": {
-      "@type": "Dentist",
-      "name": "The DentalBrace Clinic & Implant Centre",
-      "url": "https://www.thedentalbrace.com"
+    "@type": "Dentist",
+    "name": "The DentalBrace Clinic & Implant Centre",
+    "url": "https://www.thedentalbrace.com",
+    "telephone": "+917496849392",
+    "image": "https://www.thedentalbrace.com/favicon-logo.png",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "196, Bibi Wala Rd, near LIC Building, opposite Petrol Pump, Kamla Nehru Colony",
+      "addressLocality": "Bathinda",
+      "addressRegion": "Punjab",
+      "postalCode": "151001",
+      "addressCountry": "IN"
     },
-    "areaServed": {
-      "@type": "City",
-      "name": "Bathinda"
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "30.210994",
+      "longitude": "74.945475"
     },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+        "opens": "09:00",
+        "closes": "20:00"
+      }
+    ],
     "aggregateRating": {
       "@type": "AggregateRating",
       "ratingValue": "4.9",
@@ -132,7 +145,7 @@ const TreatmentTemplate = ({ params }) => {
     <div className="page-wrapper">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(medicalProcedureSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(clinicRatingSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableSchema) }} />
 
