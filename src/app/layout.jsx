@@ -21,13 +21,18 @@ const inter = Inter({
 });
 
 export const metadata = {
+  metadataBase: new URL('https://www.thedentalbrace.com'),
   title: 'Best Invisalign & Dental Implants in Bathinda | The DentalBrace Clinic',
   description: "The DentalBrace — Bathinda's #1 clinic for Invisalign Clear Aligners, Full Mouth Dental Implants, Smile Makeovers & Dentofacial Orthopedics. AIIMS-trained specialists Dr. Sandeep Kumar & Dr. Ritu Saneja. 5000+ braces & aligner cases. 3000+ implants placed. Consultation at a nominal ₹200/-. 196, Bibi Wala Rd, near LIC Building, opposite Petrol Pump, Kamla Nehru Colony, Bathinda, Punjab.",
   alternates: {
-    canonical: 'https://thedentalbrace.com/',
+    canonical: 'https://www.thedentalbrace.com/',
   },
   icons: {
-    icon: '/favicon-logo.png',
+    icon: [
+      { url: '/favicon.ico', sizes: '16x16 32x32 48x48', type: 'image/x-icon' },
+      { url: '/favicon-logo.png', sizes: '192x192', type: 'image/png' },
+    ],
+    shortcut: '/favicon.ico',
     apple: '/favicon-logo.png',
   },
   themeColor: '#F58220',
@@ -61,6 +66,11 @@ export default function RootLayout({ children }) {
     <html lang="en" suppressHydrationWarning>
       <head>
         <meta name="twitter:image:alt" content="The DentalBrace Clinic exterior Bathinda Punjab" />
+        {/* Explicit favicon links for Googlebot and older crawlers that don't run JS */}
+        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="192x192" href="/favicon-logo.png" />
+        <link rel="apple-touch-icon" href="/favicon-logo.png" />
+        <link rel="shortcut icon" href="/favicon.ico" />
       </head>
       <body className={`${outfit.variable} ${inter.variable}`} suppressHydrationWarning>
         <Header />
