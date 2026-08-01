@@ -48,15 +48,18 @@ const TreatmentTemplate = ({ params }) => {
     "procedureType": "SurgicalProcedure",
     "preparation": "Consultation and 3D digital scanning required.",
     "followup": data.recovery,
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.9",
-      "reviewCount": "124"
-    },
     ...(sameAsMap[slug] ? { "sameAs": sameAsMap[slug] } : {}),
     "provider": {
       "@type": "Dentist",
-      "name": "The DentalBrace Clinic",
+      "name": "The DentalBrace Clinic & Implant Centre",
+      "url": "https://www.thedentalbrace.com",
+      "telephone": "+917496849392",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "bestRating": "5",
+        "reviewCount": "124"
+      },
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "196, Bibi Wala Rd, near LIC Building, opposite Petrol Pump, Kamla Nehru Colony",
@@ -77,6 +80,31 @@ const TreatmentTemplate = ({ params }) => {
         { "@type": "City", "name": "Raman" },
         { "@type": "City", "name": "Mandi Dabwali" }
       ]
+    }
+  };
+
+  // Service schema — supports aggregateRating for Google rich star results
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": data.title,
+    "description": data.overview,
+    "url": `https://www.thedentalbrace.com/treatments/${slug}`,
+    "provider": {
+      "@type": "Dentist",
+      "name": "The DentalBrace Clinic & Implant Centre",
+      "url": "https://www.thedentalbrace.com"
+    },
+    "areaServed": {
+      "@type": "City",
+      "name": "Bathinda"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "bestRating": "5",
+      "worstRating": "1",
+      "reviewCount": "124"
     }
   };
 
@@ -104,6 +132,7 @@ const TreatmentTemplate = ({ params }) => {
     <div className="page-wrapper">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(medicalProcedureSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableSchema) }} />
 
