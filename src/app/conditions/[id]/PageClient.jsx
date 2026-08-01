@@ -24,7 +24,7 @@ export default function PageClient({ data, slug }) {
     "possibleTreatment": data.relatedTreatments.map(t => ({
       "@type": "MedicalProcedure",
       "name": formatSlugToTitle(t),
-      "url": `https://thedentalbrace.com/treatments/${t}`
+      "url": `https://www.thedentalbrace.com/treatments/${t}`
     }))
   };
 

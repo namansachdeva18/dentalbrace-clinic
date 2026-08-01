@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 import { useEffect } from 'react';
 import Image from 'next/image';
 
@@ -14,9 +14,9 @@ const drRituSchema = {
   "name": "Dr. Ritu Saneja",
   "jobTitle": "Consultant Prosthodontist & Implantologist",
   "description": "MDS Gold Medalist (Prosthodontics) — BHU Varanasi. Ex-Resident AIIMS Delhi & PGIMER Chandigarh. Ex-Senior Resident AIIMS Bathinda. 5000+ implants placed. Bathinda's leading implantologist.",
-  "image": "https://thedentalbrace.com/dr-ritu.jpg",
+  "image": "https://www.thedentalbrace.com/dr-ritu.jpg",
   "telephone": "+917496849392",
-  "url": "https://thedentalbrace.com/doctors/dr-ritu-saneja",
+  "url": "https://www.thedentalbrace.com/doctors/dr-ritu-saneja",
   "medicalSpecialty": [
     { "@type": "MedicalSpecialty", "name": "Prosthodontics", "sameAs": "https://en.wikipedia.org/wiki/Prosthodontics" },
     { "@type": "MedicalSpecialty", "name": "Implantology", "sameAs": "https://en.wikipedia.org/wiki/Dental_implant" }

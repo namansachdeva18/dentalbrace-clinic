@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 import { useEffect } from 'react';
 import Image from 'next/image';
 
@@ -14,9 +14,9 @@ const drSandeepSchema = {
   "name": "Dr. Sandeep Kumar",
   "jobTitle": "Consultant Orthodontist & Certified Invisalign Provider",
   "description": "BDS, MDS (Orthodontics) - BHU Varanasi. Ex-Resident AIIMS New Delhi. 5500+ braces & aligner cases. Bathinda's leading Invisalign provider and orthodontist.",
-  "image": "https://thedentalbrace.com/dr-sandeep.jpg",
+  "image": "https://www.thedentalbrace.com/dr-sandeep.jpg",
   "telephone": "+917496849392",
-  "url": "https://thedentalbrace.com/doctors/dr-sandeep-kumar",
+  "url": "https://www.thedentalbrace.com/doctors/dr-sandeep-kumar",
   "medicalSpecialty": [
     { "@type": "MedicalSpecialty", "name": "Orthodontics", "sameAs": "https://en.wikipedia.org/wiki/Orthodontics" }
   ],

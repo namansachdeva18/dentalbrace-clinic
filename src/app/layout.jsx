@@ -1,4 +1,4 @@
-import '../index.css';
+﻿import '../index.css';
 import '../App.css';
 import '../mobile.css';
 import Header from '@/components/Header';
@@ -38,12 +38,12 @@ export const metadata = {
   themeColor: '#F58220',
   openGraph: {
     type: 'website',
-    url: 'https://thedentalbrace.com/',
+    url: 'https://www.thedentalbrace.com/',
     title: 'Best Invisalign & Dental Implants Clinic in Bathinda | The DentalBrace',
     description: '5000+ braces & aligner cases. 3000+ implants placed. AIIMS-trained Dr. Sandeep Kumar (Orthodontist) & Dr. Ritu Saneja (Gold Medalist Implantologist). Book your consultation today (just ₹200/-) in Bathinda, Punjab.',
     images: [
       {
-        url: 'https://thedentalbrace.com/hero-image.jpg',
+        url: 'https://www.thedentalbrace.com/hero-image.jpg',
         width: 1200,
         height: 630,
         alt: 'The DentalBrace Clinic and Implant Centre, 196, Bibi Wala Rd Bathinda — Dr. Sandeep Kumar Orthodontist and Dr. Ritu Saneja Implantologist',
@@ -57,7 +57,7 @@ export const metadata = {
     site: '@thedentalbrace',
     title: 'Best Invisalign & Dental Implants in Bathinda | The DentalBrace',
     description: "Bathinda's most experienced orthodontist & implantologist team. AIIMS-trained. 10k+ transformed smiles. Consultation at a nominal ₹200/-.",
-    images: ['https://thedentalbrace.com/hero-image.jpg'],
+    images: ['https://www.thedentalbrace.com/hero-image.jpg'],
   },
 };
 

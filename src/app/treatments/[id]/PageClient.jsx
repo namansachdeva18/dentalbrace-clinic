@@ -84,9 +84,9 @@ const TreatmentTemplate = ({ params }) => {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://thedentalbrace.com/" },
-      { "@type": "ListItem", "position": 2, "name": "Treatments", "item": "https://thedentalbrace.com/#treatments" },
-      { "@type": "ListItem", "position": 3, "name": data.title, "item": `https://thedentalbrace.com/treatments/${slug}` }
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.thedentalbrace.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Treatments", "item": "https://www.thedentalbrace.com/#treatments" },
+      { "@type": "ListItem", "position": 3, "name": data.title, "item": `https://www.thedentalbrace.com/treatments/${slug}` }
     ]
   };
 

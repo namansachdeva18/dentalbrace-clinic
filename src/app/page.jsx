@@ -1,4 +1,4 @@
-
+﻿
 import Hero from '@/components/Hero';
 import FAQSection from '@/components/FAQSection';
 import AboutSection from '@/components/AboutSection';
@@ -26,7 +26,7 @@ const Home = () => {
         "@type": ["Dentist", "MedicalClinic"],
         "name": "The DentalBrace Clinic & Implant Centre",
         "image": "https://images.unsplash.com/photo-1606811841689-23dfddce3e95?q=80&w=1600",
-        "@id": "https://thedentalbrace.com/#dentist",
+        "@id": "https://www.thedentalbrace.com/#dentist",
         "url": "https://thedentalbrace.com",
         "telephone": "+917496849392",
         "priceRange": "₹₹₹",
@@ -103,21 +103,21 @@ const Home = () => {
             "name": "Dr. Sandeep Kumar",
             "jobTitle": "Consultant Orthodontist",
             "description": "BDS, MDS (Orthodontics) - BHU Varanasi. Ex Resident - AIIMS New Delhi. 5500+ braces & aligner cases. Bathinda's leading Invisalign provider.",
-            "url": "https://thedentalbrace.com/doctors/dr-sandeep-kumar"
+            "url": "https://www.thedentalbrace.com/doctors/dr-sandeep-kumar"
           },
           {
             "@type": "Person",
             "name": "Dr. Ritu Saneja",
             "jobTitle": "Consultant Prosthodontist & Implantologist",
             "description": "MDS (Gold Medalist), BDS, MDS (Prosthodontics) - BHU Varanasi. Ex-Resident - AIIMS Delhi, PGIMER Chandigarh. Ex-Senior Resident - AIIMS Bathinda. 5000+ implants placed.",
-            "url": "https://thedentalbrace.com/doctors/dr-ritu-saneja"
+            "url": "https://www.thedentalbrace.com/doctors/dr-ritu-saneja"
           }
         ]
       },
       {
         "@type": "WebPage",
-        "@id": "https://thedentalbrace.com/#webpage",
-        "url": "https://thedentalbrace.com/",
+        "@id": "https://www.thedentalbrace.com/#webpage",
+        "url": "https://www.thedentalbrace.com/",
         "name": "Best Invisalign & Dental Implants Clinic in Bathinda | The DentalBrace",
         "description": "Bathinda's #1 Invisalign provider & implant clinic. 5500+ braces & aligner cases by Dr. Sandeep Kumar. 5000+ implants by Dr. Ritu Saneja. Book consultation."
       }
