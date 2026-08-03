@@ -65,7 +65,7 @@ const Header = () => {
                   src="/logo.webp" 
                   alt="The DentalBrace Clinic and Implant Centre logo — Best Dental Clinic in Bathinda Punjab, Dr. Sandeep Kumar Orthodontist Dr. Ritu Saneja Implantologist" 
                   className="logo-img" 
-                  style={{ height: '80px', width: 'auto', mixBlendMode: 'multiply' }} 
+                  style={{ height: '80px', width: 'auto' }} 
                   width={175} 
                   height={175} 
                   sizes="105px"
