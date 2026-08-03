@@ -1,11 +1,11 @@
-﻿export const metadata = {
-  title: 'All Dental Treatments in Bathinda â€” Invisalign, Implants, Veneers & More | The DentalBrace',
-  description: 'Explore all dental treatments at The DentalBrace Clinic Bathinda â€” Invisalign clear aligners, full mouth dental implants, All-on-4, porcelain veneers, smile makeover, digital smile design, teeth whitening, metal & ceramic braces. AIIMS-trained specialists. Book at â‚¹200/-.',
+export const metadata = {
+  title: 'All Dental Treatments in Bathinda - Invisalign, Implants, Veneers & More | The DentalBrace',
+  description: 'Explore all dental treatments at The DentalBrace Clinic Bathinda - Invisalign clear aligners, full mouth dental implants, All-on-4, porcelain veneers, smile makeover, digital smile design, teeth whitening, metal & ceramic braces. AIIMS-trained specialists. Book at Rs.200/-.',
   alternates: {
     canonical: 'https://www.thedentalbrace.com/services',
   },
   openGraph: {
-    title: 'All Dental Treatments in Bathinda â€” Invisalign, Implants, Veneers | The DentalBrace Clinic',
+    title: 'All Dental Treatments in Bathinda - Invisalign, Implants, Veneers | The DentalBrace Clinic',
     description: 'Complete dental services at The DentalBrace Clinic Bathinda. Orthodontics, Prosthodontics, Cosmetic Dentistry & General Dentistry by AIIMS-trained specialists.',
     url: 'https://www.thedentalbrace.com/services',
     images: [
@@ -13,7 +13,7 @@
         url: 'https://www.thedentalbrace.com/hero-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'Dental Treatments at The DentalBrace Clinic Bathinda â€” Invisalign, Implants, Smile Makeover',
+        alt: 'Dental Treatments at The DentalBrace Clinic Bathinda - Invisalign, Implants, Smile Makeover',
       },
     ],
   },
@@ -28,4 +28,3 @@
 export default function Layout({ children }) {
   return children;
 }
-
