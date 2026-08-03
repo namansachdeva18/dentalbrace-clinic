@@ -77,13 +77,14 @@ const Footer = () => {
           <ul className="footer-links">
             <li><Link href="/">Home</Link></li>
             <li><Link href="/about">About Us</Link></li>
+            <li><Link href="/services">All Treatments</Link></li>
+            <li><Link href="/doctors">Our Specialists</Link></li>
             <li><Link href="/doctors/dr-sandeep-kumar">Dr. Sandeep Kumar</Link></li>
             <li><Link href="/doctors/dr-ritu-saneja">Dr. Ritu Saneja</Link></li>
-            <li><Link href="/faq">FAQs</Link></li>
-            <li><Link href="/contact">Contact Us</Link></li>
-            <li><a href="/#book">Book Appointment</a></li>
             <li><Link href="/gallery">Smile Gallery</Link></li>
+            <li><Link href="/faq">FAQs</Link></li>
             <li><Link href="/blog">Blog & Patient Hub</Link></li>
+            <li><Link href="/contact">Contact Us</Link></li>
           </ul>
         </div>
 

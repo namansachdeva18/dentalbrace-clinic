@@ -158,6 +158,7 @@ const Header = () => {
                        <div className="mega-column">
                           <Link href="/doctors/dr-sandeep-kumar" onClick={handleNavClick}>Dr. Sandeep Kumar — Orthodontist</Link>
                           <Link href="/doctors/dr-ritu-saneja" onClick={handleNavClick}>Dr. Ritu Saneja — Prosthodontist</Link>
+                          <Link href="/doctors" onClick={handleNavClick} style={{ color: 'var(--accent-color)', fontWeight: 600, display: 'flex', alignItems: 'center', gap: '0.25rem', fontSize: '0.9rem', marginTop: '0.5rem' }}>View All Specialists <ArrowRight size={14}/></Link>
                        </div>
                     </div>
                   </div>
