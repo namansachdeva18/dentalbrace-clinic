@@ -54,12 +54,6 @@ const TreatmentTemplate = ({ params }) => {
       "name": "The DentalBrace Clinic & Implant Centre",
       "url": "https://www.thedentalbrace.com",
       "telephone": "+917496849392",
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.9",
-        "bestRating": "5",
-        "reviewCount": "124"
-      },
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "196, Bibi Wala Rd, near LIC Building, opposite Petrol Pump, Kamla Nehru Colony",
@@ -126,7 +120,7 @@ const TreatmentTemplate = ({ params }) => {
     "@type": "BreadcrumbList",
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.thedentalbrace.com/" },
-      { "@type": "ListItem", "position": 2, "name": "Treatments", "item": "https://www.thedentalbrace.com/#treatments" },
+      { "@type": "ListItem", "position": 2, "name": "Treatments", "item": "https://www.thedentalbrace.com/services" },
       { "@type": "ListItem", "position": 3, "name": data.title, "item": `https://www.thedentalbrace.com/treatments/${slug}` }
     ]
   };
