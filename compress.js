@@ -22,7 +22,6 @@ const compressImage = async (filename, quality = 70, resizeWidth = null) => {
 const run = async () => {
   console.log('Starting image compression...');
   await compressImage('clinic-interior.jpg', 60, 1920); // Max width 1920px for hero images
-  await compressImage('favicon-logo.png', 80, 512); // Favicon doesn't need to be huge
   console.log('Finished.');
 };
 

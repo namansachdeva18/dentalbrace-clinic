@@ -84,7 +84,7 @@ const TreatmentTemplate = ({ params }) => {
     "name": "The DentalBrace Clinic & Implant Centre",
     "url": "https://www.thedentalbrace.com",
     "telephone": "+917496849392",
-    "image": "https://www.thedentalbrace.com/favicon-logo.png",
+    "image": "https://www.thedentalbrace.com/hero-image.jpg",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "196, Bibi Wala Rd, near LIC Building, opposite Petrol Pump, Kamla Nehru Colony",
