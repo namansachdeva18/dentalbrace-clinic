@@ -27,16 +27,6 @@ export const metadata = {
   alternates: {
     canonical: 'https://www.thedentalbrace.com/',
   },
-  icons: {
-    icon: [
-      { url: '/favicon.ico', sizes: '32x32', type: 'image/x-icon' },
-      { url: '/favicon-logo.png', sizes: '96x96', type: 'image/png' },
-      { url: '/favicon-logo.png', sizes: '192x192', type: 'image/png' },
-      { url: '/favicon-logo.png', sizes: '512x512', type: 'image/png' },
-    ],
-    shortcut: [{ url: '/favicon.ico', type: 'image/x-icon' }],
-    apple: [{ url: '/favicon-logo.png', sizes: '180x180', type: 'image/png' }],
-  },
   manifest: '/site.webmanifest',
   themeColor: '#F58220',
   openGraph: {
@@ -69,12 +59,6 @@ export default function RootLayout({ children }) {
     <html lang="en" suppressHydrationWarning>
       <head>
         <meta name="twitter:image:alt" content="The DentalBrace Clinic exterior Bathinda Punjab" />
-        {/* Explicit favicon links for Googlebot and older crawlers that don't run JS */}
-        <link rel="icon" type="image/x-icon" href="/favicon.ico" sizes="32x32" />
-        <link rel="icon" type="image/png" sizes="96x96" href="/favicon-logo.png" />
-        <link rel="icon" type="image/png" sizes="192x192" href="/favicon-logo.png" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/favicon-logo.png" />
-        <link rel="manifest" href="/site.webmanifest" />
       </head>
       <body className={`${outfit.variable} ${inter.variable}`} suppressHydrationWarning>
         <Header />

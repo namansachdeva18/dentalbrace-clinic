@@ -1,4 +1,4 @@
-﻿
+
 import Hero from '@/components/Hero';
 import FAQSection from '@/components/FAQSection';
 import AboutSection from '@/components/AboutSection';
@@ -27,7 +27,7 @@ const Home = () => {
         "name": "The DentalBrace Clinic & Implant Centre",
         "image": "https://images.unsplash.com/photo-1606811841689-23dfddce3e95?q=80&w=1600",
         "@id": "https://www.thedentalbrace.com/#dentist",
-        "url": "https://thedentalbrace.com",
+        "url": "https://www.thedentalbrace.com",
         "telephone": "+917496849392",
         "priceRange": "₹₹₹",
         "paymentAccepted": "Cash, Credit Card, UPI, EMI",
@@ -77,7 +77,8 @@ const Home = () => {
         },
         "sameAs": [
           "https://www.instagram.com/thedentalbrace_bathinda?igsh=MWhxaXNpejU5bjFhdw==",
-          "https://www.google.com/maps/place/The+DentalBrace+Clinic+and+Implant+Centre+-+Best+Dentist+in+Bathinda/@30.210994,74.945475,17z"
+          "https://www.google.com/maps/place/The+DentalBrace+Clinic+and+Implant+Centre+-+Best+Dentist+in+Bathinda/@30.210994,74.945475,17z",
+          "https://www.justdial.com/Bhatinda/The-DentalBrace-Clinic-Implant-Centre-Near-Lic-Office-Bibi-Wala/0164P1643STD200732_BZDET"
         ],
         "availableService": [
           { "@type": "MedicalProcedure", "name": "Invisalign Clear Aligners Bathinda", "sameAs": "https://www.wikidata.org/wiki/Q5130635" },
