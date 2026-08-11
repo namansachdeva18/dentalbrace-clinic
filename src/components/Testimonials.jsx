@@ -276,7 +276,7 @@ const ReviewCard = ({ review }) => (
       background: 'var(--accent-color)'
     }} />
 
-    <div itemProp="itemReviewed" itemScope itemType="https://schema.org/MedicalBusiness" style={{ display: 'none' }}>
+    <div itemProp="itemReviewed" itemScope itemType="https://schema.org/LocalBusiness" style={{ display: 'none' }}>
       <meta itemProp="name" content="The Dental Brace Clinic" />
     </div>
 
@@ -403,7 +403,7 @@ const Testimonials = () => {
           }}
           itemScope itemType="https://schema.org/AggregateRating"
           >
-            <div itemProp="itemReviewed" itemScope itemType="https://schema.org/MedicalBusiness" style={{ display: 'none' }}>
+            <div itemProp="itemReviewed" itemScope itemType="https://schema.org/LocalBusiness" style={{ display: 'none' }}>
               <meta itemProp="name" content="The Dental Brace Clinic" />
             </div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>

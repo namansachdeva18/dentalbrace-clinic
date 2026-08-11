@@ -79,7 +79,7 @@ const TreatmentTemplate = ({ params }) => {
   // Dentist (LocalBusiness) schema — Google-supported type for aggregateRating rich results
   const clinicRatingSchema = {
     "@context": "https://schema.org",
-    "@type": "Dentist",
+    "@type": "LocalBusiness",
     "name": "The DentalBrace Clinic & Implant Centre",
     "url": "https://www.thedentalbrace.com",
     "telephone": "+917496849392",
