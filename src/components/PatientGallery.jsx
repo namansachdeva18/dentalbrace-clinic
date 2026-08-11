@@ -69,7 +69,7 @@ const galleryItems = [
   },
   { 
     id: 8,  
-    src: '/patient-gallery/case-8.jpg', 
+    src: '/patient-gallery/case-8.webp', 
     alt: 'Clear aligners orthodontic treatment result at The DentalBrace Clinic Bathinda — patient Dapinder Singh from Australia showing straight teeth after clear aligner therapy by Dr. Sandeep Kumar MDS Orthodontist, best Invisalign provider in Bathinda Punjab India',  
     label: 'Clear Aligners',
     review: "I traveled from Australia to Bathinda specifically for my clear aligner treatment with Dr. Sandeep Kumar. The process was incredibly smooth, and the aligners are so discreet that nobody even notices them. The clinic's international standards of care and Dr. Sandeep's orthodontic expertise are truly world-class. Highly recommended!",
