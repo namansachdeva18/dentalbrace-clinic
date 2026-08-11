@@ -108,7 +108,7 @@ const DoctorsIntro = () => {
               </div>
             </div>
 
-            <a href="/#book" className="doctors-intro__combined-cta">
+            <a href="/dental-offer-bathinda#campaign-form" className="doctors-intro__combined-cta">
               Book a Consultation <ArrowRight size={16} />
             </a>
           </div>

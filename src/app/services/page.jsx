@@ -270,7 +270,7 @@ const ServicesPage = () => {
               Schedule a comprehensive 3D digital consultation with our BHU &amp; AIIMS-trained specialists at The DentalBrace Clinic.
             </p>
             <div className="services-trust-cta__actions">
-              <a href="/#book" className="btn btn-primary" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>
+              <a href="/dental-offer-bathinda#campaign-form" className="btn btn-primary" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>
                 <Calendar size={18} /> Book Consultation @ ₹200
               </a>
               <a href="tel:7496849392" className="btn btn-outline" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>

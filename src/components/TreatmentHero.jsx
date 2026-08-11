@@ -31,7 +31,7 @@ const TreatmentHero = ({ data }) => {
           <p className="hero-intro text-lg opacity-90 mb-8">{data.subtitle}</p>
           
           <div className="hero-cta-group">
-            <a href="/#book" className="btn btn-primary"><Calendar size={20} /> Book Appointment</a>
+            <a href="/dental-offer-bathinda#campaign-form" className="btn btn-primary"><Calendar size={20} /> Book Appointment</a>
             <a href="tel:7496849392" className="btn" style={{ background: 'rgba(255,255,255,0.12)', color: '#ffffff', border: '1px solid rgba(255,255,255,0.35)', backdropFilter: 'blur(8px)', display: 'inline-flex', alignItems: 'center', gap: '0.4rem' }}><Phone size={20} /> Call Now</a>
             <a href="https://api.whatsapp.com/send/?phone=917496849392&text=Hi%21%20I%20would%20like%20to%20book%20an%20appointment%20at%20The%20DentalBrace%20Clinic." target="_blank" rel="noopener noreferrer" className="btn btn-whatsapp"><MessageCircle size={20} /> WhatsApp</a>
           </div>

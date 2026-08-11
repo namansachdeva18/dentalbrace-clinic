@@ -117,7 +117,7 @@ const InvisalignHero = () => {
 
 
             <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-              <a href="/#book" style={{
+              <a href="/dental-offer-bathinda#campaign-form" style={{
                 display: 'inline-flex', alignItems: 'center', gap: '0.6rem',
                 padding: '1rem 2rem',
                 background: 'var(--accent-color)',

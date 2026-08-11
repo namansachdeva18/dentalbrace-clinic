@@ -179,7 +179,7 @@ const Header = () => {
                        </div>
                        <div className="mega-column">
                           <a href="/#faq" onClick={handleNavClick}>FAQs</a>
-                          <a href="/#book" onClick={handleNavClick}>Book Appointment</a>
+                          <a href="/dental-offer-bathinda#campaign-form" onClick={handleNavClick}>Book Appointment</a>
                           <a href="/#contact" onClick={handleNavClick}>Contact Us</a>
                        </div>
                     </div>
@@ -213,7 +213,7 @@ const Header = () => {
                 </Link>
               </div>
               <div className="nav-item">
-                <a href="/#book" className="btn btn-primary nav-cta magnetic" onClick={handleNavClick} style={{ whiteSpace: 'nowrap' }}>Book Appointment</a>
+                <a href="/dental-offer-bathinda#campaign-form" className="btn btn-primary nav-cta magnetic" onClick={handleNavClick} style={{ whiteSpace: 'nowrap' }}>Book Appointment</a>
               </div>
             </div>
           </div>
@@ -234,7 +234,7 @@ const Header = () => {
         <a href="https://maps.app.goo.gl/uksfFySwX9RL5uu56?g_st=iw" target="_blank" rel="noopener noreferrer" className="bottom-bar-item">
           <MapPin size={20} /> Directions
         </a>
-        <a href="/#book" className="bottom-bar-item primary-bg">
+        <a href="/dental-offer-bathinda#campaign-form" className="bottom-bar-item primary-bg">
           Book
         </a>
       </div>

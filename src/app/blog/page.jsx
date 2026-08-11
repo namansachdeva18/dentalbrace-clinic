@@ -165,7 +165,7 @@ const Blog = () => {
             Book a 3D digital consultation with Dr. Sandeep Kumar or Dr. Ritu Saneja at The DentalBrace Clinic Bathinda.
           </p>
           <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
-            <a href="/#book" className="btn btn-primary">Book Consultation @ ₹200</a>
+            <a href="/dental-offer-bathinda#campaign-form" className="btn btn-primary">Book Consultation @ ₹200</a>
             <a href="tel:7496849392" className="btn btn-outline" style={{ background: 'transparent', color: '#ffffff', borderColor: 'rgba(255,255,255,0.3)' }}>Call +91 74968-49392</a>
           </div>
         </div>

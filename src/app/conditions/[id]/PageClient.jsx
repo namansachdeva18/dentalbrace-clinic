@@ -153,7 +153,7 @@ export default function PageClient({ data, slug }) {
             <div className="sidebar-card doctor-cta">
               <h3 className="cta-title">Concerned about {data.title.split(' ')[0]}?</h3>
               <p className="cta-subtitle">Book a clinical evaluation with our specialists today.</p>
-              <a href="/#book" className="btn btn-primary w-full" style={{ display: 'block', textAlign: 'center' }}>Book Evaluation</a>
+              <a href="/dental-offer-bathinda#campaign-form" className="btn btn-primary w-full" style={{ display: 'block', textAlign: 'center' }}>Book Evaluation</a>
             </div>
           </aside>
         </div>

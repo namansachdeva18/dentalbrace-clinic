@@ -130,7 +130,7 @@ const Specialists = () => {
               </div>
 
               <div style={{ display: 'flex', gap: '0.75rem', flexDirection: 'column', marginTop: 'auto' }}>
-                <a href="/#book" className="btn btn-primary w-full" style={{ textAlign: 'center', display: 'block' }}>
+                <a href="/dental-offer-bathinda#campaign-form" className="btn btn-primary w-full" style={{ textAlign: 'center', display: 'block' }}>
                   Book with Dr. Sandeep
                 </a>
                 <Link href="/treatments/invisalign" style={{
@@ -213,7 +213,7 @@ const Specialists = () => {
               </div>
 
               <div style={{ display: 'flex', gap: '0.75rem', flexDirection: 'column', marginTop: 'auto' }}>
-                <a href="/#book" className="btn btn-primary w-full" style={{ textAlign: 'center', display: 'block' }}>
+                <a href="/dental-offer-bathinda#campaign-form" className="btn btn-primary w-full" style={{ textAlign: 'center', display: 'block' }}>
                   Book with Dr. Ritu
                 </a>
                 <Link href="/treatments/smile-makeover" style={{

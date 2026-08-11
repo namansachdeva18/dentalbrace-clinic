@@ -164,7 +164,7 @@ const TreatmentTemplate = ({ params }) => {
             <span><Activity size={16} color="var(--accent-color)" /> <strong style={{ color: 'white', fontWeight: '600' }}>Recovery:</strong> {data.recovery}</span>
             <span><ShieldCheck size={16} color="var(--accent-color)" /> <strong style={{ color: 'white', fontWeight: '600' }}>Expert:</strong> {data.doctor}</span>
           </div>
-          <a href="/#book" className="btn btn-primary" style={{ marginTop: '1.5rem', display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>
+          <a href="/dental-offer-bathinda#campaign-form" className="btn btn-primary" style={{ marginTop: '1.5rem', display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>
             Book Consultation <ArrowRight size={16} />
           </a>
         </div>
@@ -388,7 +388,7 @@ const TreatmentTemplate = ({ params }) => {
             }}>
               <h3 style={{ fontSize: '1.5rem', fontWeight: '800', color: 'white', margin: '0 0 0.75rem 0' }}>Ready to get started?</h3>
               <p style={{ fontSize: '0.95rem', color: 'rgba(255,255,255,0.8)', margin: '0 0 1.5rem 0', lineHeight: '1.5' }}>Book a consultation with our specialists today.</p>
-              <a href="/#book" className="btn btn-primary w-full" style={{ display: 'block', textAlign: 'center', padding: '1rem', borderRadius: '8px', fontWeight: 'bold' }}>Book Now</a>
+              <a href="/dental-offer-bathinda#campaign-form" className="btn btn-primary w-full" style={{ display: 'block', textAlign: 'center', padding: '1rem', borderRadius: '8px', fontWeight: 'bold' }}>Book Now</a>
               <a href="tel:7496849392" className="btn w-full" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem', marginTop: '1rem', backgroundColor: 'transparent', border: '1px solid rgba(255,255,255,0.3)', color: 'white', padding: '0.8rem', borderRadius: '8px', transition: 'background-color 0.2s' }}>
                 <Phone size={16} />
                 +91 74968-49392

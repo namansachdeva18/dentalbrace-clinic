@@ -208,7 +208,7 @@ const DoctorsPage = () => {
             Book a consultation with our AIIMS-trained specialists today. Experience premium dental care in Bathinda.
           </p>
           <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
-            <a href="/#book" className="btn btn-primary">Book Appointment <ArrowRight size={16} /></a>
+            <a href="/dental-offer-bathinda#campaign-form" className="btn btn-primary">Book Appointment <ArrowRight size={16} /></a>
             <Link href="/contact" className="btn btn-outline" style={{ color: '#fff', borderColor: 'rgba(255,255,255,0.3)' }}>Contact Us</Link>
           </div>
         </div>

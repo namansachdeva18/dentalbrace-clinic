@@ -70,7 +70,7 @@ const DrRituPage = () => {
                 <div className="doctor-hero-stat"><span className="stat-num">🥇</span><span className="stat-label">Gold Medalist</span></div>
               </div>
               <div className="doctor-hero-ctas">
-                <a href="/#book" className="btn btn-primary">Book with Dr. Ritu <ArrowRight size={16} /></a>
+                <a href="/dental-offer-bathinda#campaign-form" className="btn btn-primary">Book with Dr. Ritu <ArrowRight size={16} /></a>
                 <a href="tel:7496849392" className="btn" style={{ background: 'rgba(255,255,255,0.12)', color: '#ffffff', border: '1px solid rgba(255,255,255,0.35)', backdropFilter: 'blur(8px)', display: 'inline-flex', alignItems: 'center', gap: '0.4rem' }}><Phone size={15} /> +91 74968-49392</a>
               </div>
             </div>
@@ -165,7 +165,7 @@ const DrRituPage = () => {
             <div className="sidebar-card doctor-cta">
               <h3 className="cta-title">Book with Dr. Ritu</h3>
               <p className="cta-subtitle">Book your consultation today. Get a personalized treatment plan from a Gold Medalist.</p>
-              <a href="/#book" className="btn btn-primary w-full" style={{ display: 'block', textAlign: 'center' }}>Book Appointment</a>
+              <a href="/dental-offer-bathinda#campaign-form" className="btn btn-primary w-full" style={{ display: 'block', textAlign: 'center' }}>Book Appointment</a>
               <a href="tel:7496849392" className="btn btn-outline w-full" style={{ display: 'block', textAlign: 'center', marginTop: '0.75rem' }}>
                 <Phone size={14} style={{ display: 'inline', marginRight: '0.4rem' }} /> +91 74968-49392
               </a>

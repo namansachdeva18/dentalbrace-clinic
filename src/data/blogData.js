@@ -185,7 +185,7 @@ export const blogArticles = {
         <h3>Ready to Preview Your New Smile in 3D?</h3>
         <p>Book a consultation with Dr. Sandeep Kumar at The DentalBrace Clinic Bathinda. Get your complimentary 3D iTero smile scan today!</p>
         <div class="cta-buttons">
-          <a href="/#book" class="btn btn-primary">Book 3D Scan @ ₹200</a>
+          <a href="/dental-offer-bathinda#campaign-form" class="btn btn-primary">Book 3D Scan @ ₹200</a>
           <a href="tel:7496849392" class="btn btn-outline">Call +91 74968-49392</a>
         </div>
       </div>
@@ -276,7 +276,7 @@ export const blogArticles = {
         <h3>Replace Missing Teeth Permanently</h3>
         <p>Schedule a 3D CBCT Implant Consultation with Dr. Ritu Saneja at The DentalBrace Clinic Bathinda. Flexible 0% EMI options available.</p>
         <div class="cta-buttons">
-          <a href="/#book" class="btn btn-primary">Book Implant Consultation @ ₹200</a>
+          <a href="/dental-offer-bathinda#campaign-form" class="btn btn-primary">Book Implant Consultation @ ₹200</a>
           <a href="tel:7496849392" class="btn btn-outline">Call +91 74968-49392</a>
         </div>
       </div>
@@ -331,7 +331,7 @@ export const blogArticles = {
         <h3>Transform Your Life with Permanent Fixed Teeth</h3>
         <p>Book a Full Mouth Implant Assessment with Dr. Ritu Saneja. Call or WhatsApp our clinic coordinator directly.</p>
         <div class="cta-buttons">
-          <a href="/#book" class="btn btn-primary">Book Full Arch Consultation</a>
+          <a href="/dental-offer-bathinda#campaign-form" class="btn btn-primary">Book Full Arch Consultation</a>
           <a href="tel:7496849392" class="btn btn-outline">Call +91 74968-49392</a>
         </div>
       </div>
@@ -384,7 +384,7 @@ export const blogArticles = {
         <h3>Schedule Your Digital Smile Preview</h3>
         <p>Book a cosmetic consultation with Dr. Ritu Saneja and see your customized smile simulation.</p>
         <div class="cta-buttons">
-          <a href="/#book" class="btn btn-primary">Book Smile Makeover Consult</a>
+          <a href="/dental-offer-bathinda#campaign-form" class="btn btn-primary">Book Smile Makeover Consult</a>
           <a href="tel:7496849392" class="btn btn-outline">Call +91 74968-49392</a>
         </div>
       </div>
@@ -424,7 +424,7 @@ export const blogArticles = {
         <h3>Suffering from Severe Tooth Pain?</h3>
         <p>Don't wait for the infection to spread. We offer same-day emergency dental relief in Bathinda.</p>
         <div class="cta-buttons">
-          <a href="/#book" class="btn btn-primary">Book Emergency Relief @ ₹200</a>
+          <a href="/dental-offer-bathinda#campaign-form" class="btn btn-primary">Book Emergency Relief @ ₹200</a>
           <a href="tel:7496849392" class="btn btn-outline">Call +91 74968-49392</a>
         </div>
       </div>
@@ -462,7 +462,7 @@ export const blogArticles = {
         <h3>Experience Digital Precision</h3>
         <p>Book your 3D Digital Smile Consultation at The DentalBrace Clinic today.</p>
         <div class="cta-buttons">
-          <a href="/#book" class="btn btn-primary">Book Digital Scan @ ₹200</a>
+          <a href="/dental-offer-bathinda#campaign-form" class="btn btn-primary">Book Digital Scan @ ₹200</a>
           <a href="tel:7496849392" class="btn btn-outline">Call +91 74968-49392</a>
         </div>
       </div>
