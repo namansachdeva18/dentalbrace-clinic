@@ -302,9 +302,10 @@ const ReviewCard = ({ review }) => (
     </div>
 
     <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-      <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+      <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }} itemProp="reviewRating" itemScope itemType="https://schema.org/Rating">
         <StarRating rating={review.rating} />
-        <span style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', fontWeight: '500' }}>{review.rating}.0</span>
+        <span itemProp="ratingValue" style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', fontWeight: '500' }}>{review.rating}.0</span>
+        <meta itemProp="bestRating" content="5" />
       </div>
       <span style={{ fontSize: '0.75rem', color: 'var(--text-secondary)' }}>{review.date}</span>
     </div>
@@ -413,6 +414,7 @@ const Testimonials = () => {
             <div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                 <span style={{ fontSize: '2rem', fontWeight: '900', color: 'var(--text-primary)', lineHeight: 1 }} itemProp="ratingValue">5.0</span>
+                <meta itemProp="bestRating" content="5" />
                 <StarRating rating={5} size={18} />
               </div>
               <div style={{ color: 'var(--text-secondary)', fontSize: '0.8rem', marginTop: '0.2rem' }}>
