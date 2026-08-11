@@ -178,3 +178,12 @@
     padding-bottom: 70px;
   }
 }
+
+.developer-credit-link {
+  transition: opacity 0.3s ease, text-decoration 0.3s ease;
+}
+
+.developer-credit-link:hover {
+  opacity: 0.8;
+  text-decoration: underline !important;
+}

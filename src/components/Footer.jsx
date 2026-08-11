@@ -122,6 +122,7 @@ const Footer = () => {
             <span>by</span>
             <a 
               href="tel:+919592097515" 
+              className="developer-credit-link"
               style={{ 
                 color: 'var(--accent-color)', 
                 fontWeight: 700,
@@ -129,8 +130,6 @@ const Footer = () => {
                 textDecoration: 'none',
                 position: 'relative',
               }}
-              onMouseEnter={(e) => { e.target.style.opacity = '0.8'; e.target.style.textDecoration = 'underline'; }}
-              onMouseLeave={(e) => { e.target.style.opacity = '1'; e.target.style.textDecoration = 'none'; }}
             >
               Naman Sachdeva
             </a>
