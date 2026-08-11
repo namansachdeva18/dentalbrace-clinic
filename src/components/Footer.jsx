@@ -115,6 +115,27 @@ const Footer = () => {
       <div className="footer-bottom">
         <div className="container footer-bottom-content">
           <p>&copy; {new Date().getFullYear()} The DentalBrace Clinic & Implant Centre. All rights reserved.</p>
+          
+          <div className="footer-credit" style={{ display: 'flex', alignItems: 'center', gap: '4px', fontSize: '0.9rem', color: 'var(--text-secondary)' }}>
+            <span>Made with</span>
+            <span style={{ color: '#e25555', fontSize: '1rem', animation: 'pulse 2s infinite' }}>❤️</span>
+            <span>by</span>
+            <a 
+              href="tel:+919592097515" 
+              style={{ 
+                color: 'var(--accent-color)', 
+                fontWeight: 700,
+                marginLeft: '2px',
+                textDecoration: 'none',
+                position: 'relative',
+              }}
+              onMouseEnter={(e) => { e.target.style.opacity = '0.8'; e.target.style.textDecoration = 'underline'; }}
+              onMouseLeave={(e) => { e.target.style.opacity = '1'; e.target.style.textDecoration = 'none'; }}
+            >
+              Naman Sachdeva
+            </a>
+          </div>
+
           <div className="footer-legal">
             <Link href="/privacy">Privacy Policy</Link>
             <Link href="/terms">Terms of Service</Link>
