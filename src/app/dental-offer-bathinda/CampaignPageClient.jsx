@@ -253,7 +253,7 @@ const CampaignPageClient = () => {
                 {CAMPAIGN_CONFIG.CTA_PRIMARY} <ArrowRight size={18} aria-hidden="true" />
               </a>
               <a
-                href="tel:7496849392"
+                href="tel:+917496849392"
                 className="btn btn-outline"
                 onClick={() => window.gtag?.('event', 'phone_click', { source: 'campaign_hero' })}
               >
@@ -448,7 +448,7 @@ const CampaignPageClient = () => {
 
               {/* Clinic contact */}
               <div className="cp-form-contact">
-                <a href="tel:7496849392" className="cp-contact-btn" onClick={() => window.gtag?.('event', 'phone_click', { source: 'campaign_form_sidebar' })}>
+                <a href="tel:+917496849392" className="cp-contact-btn" onClick={() => window.gtag?.('event', 'phone_click', { source: 'campaign_form_sidebar' })}>
                   <Phone size={18} /> +91 74968-49392
                 </a>
                 <a
@@ -464,7 +464,7 @@ const CampaignPageClient = () => {
             </div>
 
             {/* Right: the form */}
-            <div className="cp-form-right">
+            <div className="cp-form-right" id="campaign-form">
               <div className="cp-form-card">
                 <CampaignLeadForm source="campaign_landing_page" />
               </div>
@@ -526,7 +526,7 @@ const CampaignPageClient = () => {
                 >
                   <MapPin size={16} /> Get Directions
                 </a>
-                <a href="tel:7496849392" className="btn btn-primary" onClick={() => window.gtag?.('event', 'phone_click', { source: 'campaign_location' })}>
+                <a href="tel:+917496849392" className="btn btn-primary" onClick={() => window.gtag?.('event', 'phone_click', { source: 'campaign_location' })}>
                   <Phone size={16} /> Call Now
                 </a>
               </div>
@@ -569,7 +569,7 @@ const CampaignPageClient = () => {
             <a href="#campaign-form" className="btn btn-primary">
               {campaignActive ? CAMPAIGN_CONFIG.CTA_PRIMARY : 'Book a Consultation'} <ArrowRight size={18} />
             </a>
-            <a href="tel:7496849392" className="btn btn-outline" style={{ background: 'transparent', color: '#ffffff', borderColor: 'rgba(255,255,255,0.35)' }}>
+            <a href="tel:+917496849392" className="btn btn-outline" style={{ background: 'transparent', color: '#ffffff', borderColor: 'rgba(255,255,255,0.35)' }}>
               <Phone size={18} /> +91 74968-49392
             </a>
           </div>
