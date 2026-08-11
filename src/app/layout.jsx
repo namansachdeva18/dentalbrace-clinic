@@ -143,7 +143,7 @@ export default function RootLayout({ children }) {
         {/* Campaign announcement bar — renders above fixed header, zero CLS */}
         <CampaignAnnouncementBar />
         <Header />
-        <main style={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
+        <main style={{ flex: 1, display: 'flex', flexDirection: 'column', paddingTop: 'var(--announcement-height, 0px)' }}>
           <TransitionWrapper>
             {children}
           </TransitionWrapper>

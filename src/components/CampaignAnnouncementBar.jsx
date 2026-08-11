@@ -33,6 +33,28 @@ const CampaignAnnouncementBar = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  // Sync banner height to CSS variable for layout adjustments
+  useEffect(() => {
+    if (!visible) {
+      document.documentElement.style.setProperty('--announcement-height', '0px');
+      return;
+    }
+
+    const updateHeight = () => {
+      const el = document.getElementById('campaign-announcement-bar');
+      if (el) {
+        document.documentElement.style.setProperty('--announcement-height', `${el.offsetHeight}px`);
+      }
+    };
+
+    updateHeight();
+    window.addEventListener('resize', updateHeight);
+    return () => {
+      window.removeEventListener('resize', updateHeight);
+      document.documentElement.style.setProperty('--announcement-height', '0px');
+    };
+  }, [visible]);
+
   const handleDismiss = () => {
     setVisible(false);
     sessionStorage.setItem('campaign_bar_dismissed', '1');
@@ -60,7 +82,11 @@ const CampaignAnnouncementBar = () => {
         color: '#ffffff',
         padding: '10px 16px',
         textAlign: 'center',
-        position: 'relative',
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        right: 0,
+        width: '100%',
         zIndex: 1100,
         // Reserve height so fixed header accounts for it — no CLS
         minHeight: '44px',
