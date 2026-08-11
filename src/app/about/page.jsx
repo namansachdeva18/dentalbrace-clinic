@@ -2,7 +2,7 @@
 import { useEffect } from 'react';
 import Image from 'next/image';
 
-import { Award, Shield, Users, ArrowRight } from 'lucide-react';
+import { Award, Shield, Users, ArrowRight, GraduationCap, Sparkles, ShieldCheck, HeartHandshake } from 'lucide-react';
 import Link from 'next/link';
 import './About.css';
 
@@ -24,7 +24,7 @@ const About = () => {
               Setting the Gold Standard in <span>Dentistry</span>
             </h1>
             <p className="about-subtitle fade-in" style={{ animationDelay: '0.2s' }}>
-              Founded with a vision to bring world-class dental care to Bathinda and the broader Malwa region, our clinic combines AIIMS-trained expertise with cutting-edge digital technology. We proudly serve patients from Bathinda, Mansa, Muktsar, Faridkot, Rampura Phul, Talwandi Sabo, and Mandi Dabwali, delivering painless, precise, and permanent results.
+              Founded with a vision to bring <strong className="text-accent font-bold">world-class dental care</strong> to <strong className="text-primary font-bold">Bathinda</strong> and the broader Malwa region, our clinic combines <strong className="text-primary font-bold">BHU &amp; AIIMS-trained expertise</strong> with <strong className="text-accent font-bold">cutting-edge digital technology</strong>. We proudly serve patients from Bathinda, Mansa, Muktsar, Faridkot, Rampura Phul, Talwandi Sabo, and Mandi Dabwali, delivering <strong className="text-primary font-bold">painless, precise, and permanent</strong> results.
             </p>
             <div className="about-hero__stats fade-in" style={{ animationDelay: '0.3s' }}>
               <div className="about-stat">
@@ -96,49 +96,56 @@ const About = () => {
         </div>
       </section>
 
-      {/* Timeline Section */}
-      <section className="about-timeline-section section-padding bg-white">
+      {/* Standards of Excellence (Why Choose Us) */}
+      <section className="about-standards-section section-padding bg-white">
         <div className="container">
           <div className="text-center mb-16">
-            <span className="section-badge">Our Journey</span>
-            <h2 className="heading-secondary mt-4">A Decade of Excellence</h2>
+            <span className="section-badge">Why Choose DentalBrace</span>
+            <h2 className="heading-secondary mt-4">The Standards That Set Us Apart</h2>
+            <p className="text-secondary max-w-2xl mx-auto mt-4">
+              We go beyond standard dentistry. Every aspect of your care is engineered for safety, comfort, and uncompromising clinical outcomes.
+            </p>
           </div>
           
-          <div className="about-timeline-wrapper">
-            <div className="about-timeline-item">
-              <div className="about-timeline-marker">
-                <div className="about-timeline-dot"></div>
-                <div className="about-timeline-line"></div>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '2rem' }}>
+            <div className="glass p-8 rounded-lg hover-elevate" style={{ background: '#ffffff', border: '1px solid var(--border-color)', borderRadius: '20px', padding: '2rem', boxShadow: '0 10px 30px rgba(0,0,0,0.03)' }}>
+              <div style={{ width: '56px', height: '56px', borderRadius: '16px', backgroundColor: 'rgba(245,130,32,0.1)', color: 'var(--accent-color)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '1.5rem' }}>
+                <GraduationCap size={28} />
               </div>
-              <div className="about-timeline-content glass shadow-soft hover-elevate">
-                <div className="about-timeline-date">2012</div>
-                <h4>The Foundation</h4>
-                <p>Established with a commitment to bring ethical, high-quality specialist dentistry to Bathinda.</p>
-              </div>
+              <h3 style={{ fontSize: '1.25rem', fontWeight: '700', color: 'var(--text-primary)', marginBottom: '0.75rem' }}>BHU &amp; AIIMS Specialists</h3>
+              <p style={{ fontSize: '0.92rem', color: 'var(--text-secondary)', lineHeight: '1.65' }}>
+                Your treatment is directly led by MDS specialists trained at India's premier institutes (BHU Varanasi &amp; AIIMS New Delhi) — zero delegation to inexperienced trainees.
+              </p>
             </div>
-            
-            <div className="about-timeline-item">
-              <div className="about-timeline-marker">
-                <div className="about-timeline-dot"></div>
-                <div className="about-timeline-line"></div>
+
+            <div className="glass p-8 rounded-lg hover-elevate" style={{ background: '#ffffff', border: '1px solid var(--border-color)', borderRadius: '20px', padding: '2rem', boxShadow: '0 10px 30px rgba(0,0,0,0.03)' }}>
+              <div style={{ width: '56px', height: '56px', borderRadius: '16px', backgroundColor: 'rgba(245,130,32,0.1)', color: 'var(--accent-color)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '1.5rem' }}>
+                <Sparkles size={28} />
               </div>
-              <div className="about-timeline-content glass shadow-soft hover-elevate">
-                <div className="about-timeline-date">2016</div>
-                <h4>Digital Transformation</h4>
-                <p>Introduced advanced digital workflows, shifting from traditional impressions to precise 3D scanning and planning.</p>
-              </div>
+              <h3 style={{ fontSize: '1.25rem', fontWeight: '700', color: 'var(--text-primary)', marginBottom: '0.75rem' }}>100% 3D Digital Precision</h3>
+              <p style={{ fontSize: '0.92rem', color: 'var(--text-secondary)', lineHeight: '1.65' }}>
+                No messy, gag-inducing putty impressions. We use state-of-the-art iTero 3D intraoral scanners for 100% digital accuracy and instant smile previews.
+              </p>
             </div>
-            
-            <div className="about-timeline-item">
-              <div className="about-timeline-marker">
-                <div className="about-timeline-dot"></div>
-                <div className="about-timeline-line"></div>
+
+            <div className="glass p-8 rounded-lg hover-elevate" style={{ background: '#ffffff', border: '1px solid var(--border-color)', borderRadius: '20px', padding: '2rem', boxShadow: '0 10px 30px rgba(0,0,0,0.03)' }}>
+              <div style={{ width: '56px', height: '56px', borderRadius: '16px', backgroundColor: 'rgba(245,130,32,0.1)', color: 'var(--accent-color)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '1.5rem' }}>
+                <ShieldCheck size={28} />
               </div>
-              <div className="about-timeline-content glass shadow-soft hover-elevate">
-                <div className="about-timeline-date">2023</div>
-                <h4>Multi-Specialty Expansion</h4>
-                <p>Expanded into a state-of-the-art facility offering comprehensive implantology, aligners, and full-mouth rehabilitation.</p>
+              <h3 style={{ fontSize: '1.25rem', fontWeight: '700', color: 'var(--text-primary)', marginBottom: '0.75rem' }}>6-Step Sterilization Guarantee</h3>
+              <p style={{ fontSize: '0.92rem', color: 'var(--text-secondary)', lineHeight: '1.65' }}>
+                Strict adherence to international Class-B autoclaving protocols. Every instrument pouch is individually vacuum-sealed and opened right before your eyes.
+              </p>
+            </div>
+
+            <div className="glass p-8 rounded-lg hover-elevate" style={{ background: '#ffffff', border: '1px solid var(--border-color)', borderRadius: '20px', padding: '2rem', boxShadow: '0 10px 30px rgba(0,0,0,0.03)' }}>
+              <div style={{ width: '56px', height: '56px', borderRadius: '16px', backgroundColor: 'rgba(245,130,32,0.1)', color: 'var(--accent-color)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '1.5rem' }}>
+                <HeartHandshake size={28} />
               </div>
+              <h3 style={{ fontSize: '1.25rem', fontWeight: '700', color: 'var(--text-primary)', marginBottom: '0.75rem' }}>Ethical &amp; Painless Care</h3>
+              <p style={{ fontSize: '0.92rem', color: 'var(--text-secondary)', lineHeight: '1.65' }}>
+                Transparent pricing with no hidden charges, clear explanations before any procedure, and computerized painless local anesthesia for total comfort.
+              </p>
             </div>
           </div>
         </div>

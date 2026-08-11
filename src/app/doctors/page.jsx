@@ -138,7 +138,7 @@ const DoctorsPage = () => {
                       <Link href={`/doctors/${doc.slug}`} className="btn btn-primary" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem' }}>
                         View Full Profile <ArrowRight size={16} />
                       </Link>
-                      <a href="tel:7496849392" className="btn btn-outline" style={{ color: '#fff', borderColor: 'rgba(255,255,255,0.25)' }}>
+                      <a href="tel:7496849392" className="btn" style={{ background: 'rgba(255,255,255,0.12)', color: '#ffffff', border: '1px solid rgba(255,255,255,0.35)', backdropFilter: 'blur(8px)', display: 'inline-flex', alignItems: 'center', gap: '0.4rem' }}>
                         <Phone size={15} /> +91 74968-49392
                       </a>
                     </div>

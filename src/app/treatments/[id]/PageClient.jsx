@@ -5,7 +5,6 @@ import { CheckCircle2, Phone, Activity, Clock, ShieldCheck, ArrowLeft, ArrowRigh
 import BeforeAfterSlider from '@/components/BeforeAfterSlider';
 import { AutoLinker } from '@/components/AutoLinker';
 import TreatmentSnapshot from '@/components/TreatmentSnapshot';
-import ClinicalTransparency from '@/components/ClinicalTransparency';
 import ContinueExploring from '@/components/ContinueExploring';
 import './TreatmentTemplate.css';
 import treatmentData from '@/data';
@@ -315,9 +314,6 @@ const TreatmentTemplate = ({ params }) => {
                 </div>
               </div>
             )}
-
-            {/* Clinical Transparency (Financial & Risks) */}
-            <ClinicalTransparency data={data} />
 
             {/* FAQs */}
             <div className="page-wrapper">

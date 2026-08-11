@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 import { useEffect } from 'react';
 import Image from 'next/image';
 
@@ -71,7 +71,7 @@ const DrRituPage = () => {
               </div>
               <div className="doctor-hero-ctas">
                 <a href="/#book" className="btn btn-primary">Book with Dr. Ritu <ArrowRight size={16} /></a>
-                <a href="tel:7496849392" className="btn btn-outline"><Phone size={15} /> +91 74968-49392</a>
+                <a href="tel:7496849392" className="btn" style={{ background: 'rgba(255,255,255,0.12)', color: '#ffffff', border: '1px solid rgba(255,255,255,0.35)', backdropFilter: 'blur(8px)', display: 'inline-flex', alignItems: 'center', gap: '0.4rem' }}><Phone size={15} /> +91 74968-49392</a>
               </div>
             </div>
             <div className="doctor-hero-photo">

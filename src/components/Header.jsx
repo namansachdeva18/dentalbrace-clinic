@@ -83,7 +83,9 @@ const Header = () => {
             </button>
 
             <div className={`nav-links ${isMenuOpen ? 'open glass' : ''}`}>
-              <Link href="/" className="nav-link" onClick={handleNavClick}>Home</Link>
+              <div className="nav-item">
+                <Link href="/" className="nav-link" onClick={handleNavClick}>Home</Link>
+              </div>
               <div 
                 className="nav-item" 
                 onMouseEnter={() => handleMouseEnter('treatments')}
@@ -185,11 +187,34 @@ const Header = () => {
                 )}
               </div>
 
-              <Link href="/about" className="nav-link" onClick={handleNavClick}>About</Link>
-              <Link href="/blog" className="nav-link" onClick={handleNavClick}>Blog</Link>
-              <Link href="/contact" className="nav-link" onClick={handleNavClick}>Contact</Link>
-              
-              <a href="/#book" className="btn btn-primary nav-cta magnetic" onClick={handleNavClick} style={{ whiteSpace: 'nowrap' }}>Book Appointment</a>
+              <div className="nav-item">
+                <Link href="/about" className="nav-link" onClick={handleNavClick}>About</Link>
+              </div>
+              <div className="nav-item">
+                <Link href="/blog" className="nav-link" onClick={handleNavClick}>Blog</Link>
+              </div>
+              <div className="nav-item">
+                <Link href="/contact" className="nav-link" onClick={handleNavClick}>Contact</Link>
+              </div>
+              {/* Campaign offer link — remove after 31 Aug 2026 */}
+              <div className="nav-item">
+                <Link
+                  href="/dental-offer-bathinda"
+                  onClick={() => { handleNavClick(); window.gtag?.('event', 'offer_cta_click', { location: 'nav' }); }}
+                  style={{
+                    display: 'inline-flex', alignItems: 'center', gap: '5px',
+                    padding: '0.45rem 1rem', borderRadius: '9999px',
+                    background: 'rgba(245,130,32,0.1)', border: '1px solid rgba(245,130,32,0.35)',
+                    color: 'var(--accent-color)', fontWeight: 700, fontSize: '0.82rem',
+                    whiteSpace: 'nowrap', textDecoration: 'none',
+                  }}
+                >
+                  🏷️ Special Offer
+                </Link>
+              </div>
+              <div className="nav-item">
+                <a href="/#book" className="btn btn-primary nav-cta magnetic" onClick={handleNavClick} style={{ whiteSpace: 'nowrap' }}>Book Appointment</a>
+              </div>
             </div>
           </div>
         </nav>

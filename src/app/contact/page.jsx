@@ -17,6 +17,46 @@ const ContactPage = () => {
     window.scrollTo(0, 0);
   }, []);
 
+  const localBusinessSchema = {
+    "@context": "https://schema.org",
+    "@type": "Dentist",
+    "name": "The DentalBrace Clinic & Implant Centre",
+    "image": "https://www.thedentalbrace.com/images/my-contact-photo.jpg",
+    "@id": "https://www.thedentalbrace.com/#localbusiness",
+    "url": "https://www.thedentalbrace.com/contact",
+    "telephone": "+917496849392",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "196, Bibi Wala Road, Kamla Nehru Colony",
+      "addressLocality": "Bathinda",
+      "addressRegion": "Punjab",
+      "postalCode": "151001",
+      "addressCountry": "IN"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 30.210994,
+      "longitude": 74.945475
+    },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday"
+      ],
+      "opens": "09:00",
+      "closes": "20:00"
+    },
+    "sameAs": [
+      "https://www.instagram.com/thedentalbrace_bathinda?igsh=MWhxaXNpejU5bjFhdw==",
+      "https://www.google.com/maps/place/The+DentalBrace+Clinic+and+Implant+Centre"
+    ]
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
@@ -52,7 +92,7 @@ const ContactPage = () => {
 
   return (
     <div className="page-wrapper">
-      
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }} />
 
       {/* Hero Section */}
       <section className="contact-hero relative overflow-hidden pt-32 pb-20">

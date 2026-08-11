@@ -264,3 +264,68 @@
 .related-card:hover .read-more-link {
   gap: 0.5rem;
 }
+
+/* ── Table & Highlight Box Styles for SEO Articles ── */
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+  margin: 2rem 0;
+  border-radius: 16px;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.03);
+}
+
+.blog-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.95rem;
+  background: #ffffff;
+}
+
+.blog-table th {
+  background: var(--bg-navy);
+  color: #ffffff;
+  padding: 1rem 1.25rem;
+  font-weight: 700;
+}
+
+.blog-table td {
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+  color: var(--text-primary);
+}
+
+.blog-table tr:last-child td {
+  border-bottom: none;
+}
+
+.highlight-box {
+  background: rgba(245, 130, 32, 0.08);
+  border-left: 4px solid var(--accent-color);
+  border-radius: 0 16px 16px 0;
+  padding: 1.5rem 1.75rem;
+  margin: 2rem 0;
+  font-size: 1rem;
+  color: var(--text-primary);
+  line-height: 1.7;
+}
+
+.cta-box {
+  background: linear-gradient(135deg, var(--bg-cream) 0%, var(--bg-ivory) 100%);
+  border: 1px solid rgba(245, 130, 32, 0.25);
+  border-radius: 24px;
+  padding: 2.5rem;
+  text-align: center;
+  margin: 3rem 0 2rem;
+  box-shadow: 0 10px 30px rgba(245, 130, 32, 0.08);
+}
+
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+}
+

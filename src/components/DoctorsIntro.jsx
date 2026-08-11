@@ -120,7 +120,7 @@ const DoctorsIntro = () => {
               alt="Dr. Sandeep Kumar and Dr. Ritu Saneja — The DentalBrace Clinic Bathinda — Expert Orthodontist and Implantologist duo"
               width={893}
               height={595}
-              style={{ width: '100%', height: 'auto', objectFit: 'cover' }}
+              style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top' }}
               sizes="(max-width: 768px) 100vw, 50vw"
             />
           </div>

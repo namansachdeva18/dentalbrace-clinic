@@ -1,9 +1,11 @@
 'use client';
 import { useEffect, useRef } from 'react';
+import Link from 'next/link';
 import Image from 'next/image';
 import gsap from 'gsap';
-import { Calendar, Phone, Star, ShieldCheck, HeartPulse, Award, ArrowRight, CheckCircle, Users } from 'lucide-react';
+import { Calendar, Phone, Star, ShieldCheck, HeartPulse, Award, ArrowRight, CheckCircle, Users, Tag } from 'lucide-react';
 import AnimatedCounter from './AnimatedCounter';
+import { CAMPAIGN_CONFIG, isCampaignActive } from '@/data/campaignConfig';
 import './Hero.css';
 
 const Hero = () => {
@@ -98,6 +100,36 @@ const Hero = () => {
               <Phone size={20} /> 74968-49392
             </a>
           </div>
+
+          {/* Campaign offer badge — rendered only when active */}
+          {isCampaignActive() && CAMPAIGN_CONFIG.SHOW_DISCOUNT && (
+            <Link
+              href={CAMPAIGN_CONFIG.CAMPAIGN_URL}
+              onClick={() => window.gtag?.('event', 'offer_cta_click', { location: 'hero_badge', campaign_name: CAMPAIGN_CONFIG.CAMPAIGN_NAME })}
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: '10px',
+                padding: '0.75rem 1.25rem',
+                background: 'rgba(245,130,32,0.12)',
+                border: '1px solid rgba(245,130,32,0.35)',
+                borderRadius: '16px',
+                textDecoration: 'none',
+                marginTop: '0.5rem',
+                transition: 'background 0.2s ease',
+              }}
+              onMouseEnter={e => e.currentTarget.style.background = 'rgba(245,130,32,0.2)'}
+              onMouseLeave={e => e.currentTarget.style.background = 'rgba(245,130,32,0.12)'}
+              aria-label="View our limited-time dental care offer"
+            >
+              <Tag size={16} color="#F58220" aria-hidden="true" />
+              <div style={{ flex: 1 }}>
+                <div style={{ fontSize: '0.72rem', color: '#F58220', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.5px' }}>Limited-Time Offer</div>
+                <div style={{ fontSize: '0.88rem', color: '#ffffff', fontWeight: 600 }}>{CAMPAIGN_CONFIG.DISCOUNT_LINE} • Valid Until {CAMPAIGN_CONFIG.EXPIRY_DISPLAY}</div>
+              </div>
+              <ArrowRight size={14} color="#F58220" aria-hidden="true" />
+            </Link>
+          )}
 
           {/* Impact Banner */}
           <div className="hero-impact-card">
