@@ -227,22 +227,16 @@ const PatientGallery = () => {
               aria-label={`View ${item.label} Review`}
             >
               <div className="pg-img-wrapper">
-                <picture>
-                  <source
-                    srcSet={item.src.replace(/\.(jpg|jpeg|png)$/i, '.webp')}
-                    type="image/webp"
-                  />
-                  <img 
-                    src={item.src} 
-                    alt={item.alt} 
-                    title={`${item.label} — The DentalBrace Clinic Bathinda`}
-                    className="pg-img" 
-                    width="600"
-                    height="450"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                </picture>
+                <img 
+                  src={item.src} 
+                  alt={item.alt} 
+                  title={`${item.label} — The DentalBrace Clinic Bathinda`}
+                  className="pg-img" 
+                  width="600"
+                  height="450"
+                  loading="lazy"
+                  decoding="async"
+                />
                 <div className="pg-overlay">
                   <ZoomIn size={48} className="pg-zoom-icon" />
                 </div>
@@ -296,21 +290,15 @@ const PatientGallery = () => {
           )}
 
           <div className="lightbox-content" onClick={(e) => e.stopPropagation()}>
-            <picture>
-              <source
-                srcSet={galleryItems[lightbox].src.replace(/\.(jpg|jpeg|png)$/i, '.webp')}
-                type="image/webp"
-              />
-              <img
-                src={galleryItems[lightbox].src}
-                alt={galleryItems[lightbox].alt}
-                className="lightbox-img"
-                width="800"
-                height="600"
-                loading="lazy"
-                decoding="async"
-              />
-            </picture>
+            <img
+              src={galleryItems[lightbox].src}
+              alt={galleryItems[lightbox].alt}
+              className="lightbox-img"
+              width="800"
+              height="600"
+              loading="lazy"
+              decoding="async"
+            />
             
             <div className="lightbox-review-panel" onClick={(e) => e.stopPropagation()}>
               <div className="lightbox-stars">
