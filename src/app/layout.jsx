@@ -53,6 +53,15 @@ export const metadata = {
     description: "Bathinda's most experienced orthodontist & implantologist team. AIIMS-trained. 10,000+ transformed smiles.",
     images: ['https://www.thedentalbrace.com/hero-image.jpg'],
   },
+  icons: {
+    icon: [
+      { url: '/favicon.ico', sizes: '48x48' },
+      { url: '/icon.png', type: 'image/png', sizes: '192x192' }
+    ],
+    apple: [
+      { url: '/apple-icon.png', sizes: '180x180', type: 'image/png' }
+    ],
+  },
 };
 
 export const viewport = {
