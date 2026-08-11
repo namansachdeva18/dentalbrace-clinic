@@ -1,8 +1,9 @@
 'use client';
 import { useState, useEffect, useRef, useCallback } from 'react';
 import Link from 'next/link';
-import { X, Tag, ArrowRight, ShieldCheck } from 'lucide-react';
+import { X, Tag, ShieldCheck } from 'lucide-react';
 import { CAMPAIGN_CONFIG, isCampaignActive } from '@/data/campaignConfig';
+import CampaignLeadForm from './CampaignLeadForm';
 
 /**
  * CampaignPopup
@@ -41,15 +42,10 @@ const CampaignPopup = () => {
   useEffect(() => {
     if (!isCampaignActive()) return;
 
-    const isMobile = () => window.innerWidth < 768;
-    let timer;
+    // Trigger automatically on site open (2 seconds delay for smooth load)
+    let timer = setTimeout(show, 2000);
 
-    // Desktop timer trigger
-    if (!isMobile()) {
-      timer = setTimeout(show, CAMPAIGN_CONFIG.POPUP_DELAY_MS);
-    }
-
-    // Scroll trigger (both mobile + desktop)
+    // Scroll trigger (fallback)
     const handleScroll = () => {
       const scrolled = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
       if (scrolled >= CAMPAIGN_CONFIG.POPUP_SCROLL_THRESHOLD) {
@@ -228,31 +224,10 @@ const CampaignPopup = () => {
             <span>BHU &amp; AIIMS-trained specialists • Bathinda</span>
           </div>
 
-          {/* CTAs */}
-          <Link
-            href={CAMPAIGN_CONFIG.CAMPAIGN_URL}
-            onClick={handleCtaClick}
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              gap: '8px',
-              width: '100%',
-              padding: '0.9rem 1.5rem',
-              background: '#F58220',
-              color: '#ffffff',
-              borderRadius: '9999px',
-              fontWeight: 700,
-              fontSize: '1rem',
-              textDecoration: 'none',
-              marginBottom: '0.75rem',
-              transition: 'background 0.2s ease',
-            }}
-            onMouseEnter={e => e.currentTarget.style.background = '#E87413'}
-            onMouseLeave={e => e.currentTarget.style.background = '#F58220'}
-          >
-            {CAMPAIGN_CONFIG.CTA_PRIMARY} <ArrowRight size={16} />
-          </Link>
+          {/* The Embedded Form */}
+          <div style={{ marginTop: '1rem' }}>
+            <CampaignLeadForm source="automatic_popup" />
+          </div>
 
           <button
             onClick={handleClose}
