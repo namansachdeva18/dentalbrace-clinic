@@ -123,10 +123,9 @@ const Specialists = () => {
               <div className="specialties-tags flex flex-wrap gap-2 mb-8">
                 <span className="bg-cream text-primary px-3 py-1 rounded-full text-sm font-medium border border-border-color">Invisalign</span>
                 <span className="bg-cream text-primary px-3 py-1 rounded-full text-sm font-medium border border-border-color">Clear Aligners</span>
-                <span className="bg-cream text-primary px-3 py-1 rounded-full text-sm font-medium border border-border-color">Invisible Braces</span>
                 <span className="bg-cream text-primary px-3 py-1 rounded-full text-sm font-medium border border-border-color">Dentofacial Orthopedics</span>
                 <span className="bg-cream text-primary px-3 py-1 rounded-full text-sm font-medium border border-border-color">Damon Braces</span>
-                <span className="bg-cream text-primary px-3 py-1 rounded-full text-sm font-medium border border-border-color">Jaw Correction</span>
+                <span className="bg-cream text-primary px-3 py-1 rounded-full text-sm font-medium border border-border-color">Online Video Consultations</span>
               </div>
 
               <div style={{ display: 'flex', gap: '0.75rem', flexDirection: 'column', marginTop: 'auto' }}>
@@ -208,8 +207,7 @@ const Specialists = () => {
                 <span className="bg-cream text-primary px-3 py-1 rounded-full text-sm font-medium border border-border-color">All-on-4 / All-on-6</span>
                 <span className="bg-cream text-primary px-3 py-1 rounded-full text-sm font-medium border border-border-color">Smile Makeover</span>
                 <span className="bg-cream text-primary px-3 py-1 rounded-full text-sm font-medium border border-border-color">Veneers</span>
-                <span className="bg-cream text-primary px-3 py-1 rounded-full text-sm font-medium border border-border-color">Zirconia Crowns</span>
-                <span className="bg-cream text-primary px-3 py-1 rounded-full text-sm font-medium border border-border-color">FMR</span>
+                <span className="bg-cream text-primary px-3 py-1 rounded-full text-sm font-medium border border-border-color">Online Video Consultations</span>
               </div>
 
               <div style={{ display: 'flex', gap: '0.75rem', flexDirection: 'column', marginTop: 'auto' }}>

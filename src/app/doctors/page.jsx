@@ -15,7 +15,7 @@ const doctors = [
       { num: '5500+', label: 'Braces & Aligner Cases' },
       { num: '10+', label: 'Years Experience' },
     ],
-    specialties: ['Invisalign Clear Aligners', 'Metal & Ceramic Braces', 'Dentofacial Orthopedics', 'Kids Orthodontics'],
+    specialties: ['Invisalign Clear Aligners', 'Metal & Ceramic Braces', 'Dentofacial Orthopedics', 'Online Video Consultations'],
     gradient: 'linear-gradient(135deg, #0d2b2b 0%, #1a3a3a 100%)',
   },
   {
@@ -29,7 +29,7 @@ const doctors = [
       { num: '5000+', label: 'Implants Placed' },
       { num: '10+', label: 'Years Experience' },
     ],
-    specialties: ['Full Mouth Dental Implants', 'All-on-4 / All-on-6', 'Maxillofacial Prosthetics', 'Smile Makeover & Veneers'],
+    specialties: ['Full Mouth Dental Implants', 'All-on-4 / All-on-6', 'Maxillofacial Prosthetics', 'Online Video Consultations'],
     gradient: 'linear-gradient(135deg, #1a1428 0%, #2d1f45 100%)',
   },
 ];
@@ -51,7 +51,7 @@ const DoctorsPage = () => {
             Meet the <span className="text-accent">Experts</span> Behind Your Smile
           </h1>
           <p className="text-secondary max-w-2xl mx-auto" style={{ marginTop: '1rem', fontSize: '1.1rem' }}>
-            AIIMS-trained dental specialists with a combined 20+ years of experience and over 10,000 transformed smiles across Bathinda and Punjab.
+            AIIMS-trained dental specialists with a combined 20+ years of experience and over 10,000 transformed smiles. Offering in-clinic care in Bathinda and secure online video consultations for outstation &amp; international patients.
           </p>
         </div>
       </section>

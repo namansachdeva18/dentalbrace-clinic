@@ -1,6 +1,6 @@
 'use client';
 import React, { useState } from 'react';
-import { ChevronRight, ArrowRight, CheckCircle2, UserCircle2, CalendarDays, MessageCircle, Send, Loader2 } from 'lucide-react';
+import { ChevronRight, ArrowRight, CheckCircle2, UserCircle2, CalendarDays, MessageCircle, Send, Loader2, Video, Building } from 'lucide-react';
 
 const treatments = [
   { id: 'invisalign', label: 'Invisalign / Aligners' },
@@ -10,6 +10,7 @@ const treatments = [
   { id: 'rootcanal', label: 'Root Canal' },
   { id: 'checkup', label: 'General Check-up' },
   { id: 'whitening', label: 'Teeth Whitening' },
+  { id: 'video-consult', label: 'Online Video Consultation' },
   { id: 'emergency', label: 'Emergency Care' }
 ];
 
@@ -19,6 +20,7 @@ const doctorMap = {
   'implants': 'Dr. Ritu Saneja',
   'smile': 'Dr. Ritu Saneja',
   'whitening': 'Dr. Ritu Saneja',
+  'video-consult': 'Specialist Doctor (Video Conference)',
   'rootcanal': 'Either Available Doctor',
   'checkup': 'Either Available Doctor',
   'emergency': 'First Available Doctor'
@@ -26,6 +28,7 @@ const doctorMap = {
 
 const SmartBooking = () => {
   const [step, setStep] = useState(1);
+  const [consultationMode, setConsultationMode] = useState('in-clinic'); // 'in-clinic' | 'online-video'
   const [selectedTreatment, setSelectedTreatment] = useState(null);
   const [selectedDate, setSelectedDate] = useState('');
   const [selectedTime, setSelectedTime] = useState('');
@@ -44,6 +47,7 @@ const SmartBooking = () => {
     setIsSubmitting(true);
     
     const treatmentLabel = treatments.find(t=>t.id===selectedTreatment)?.label;
+    const modeLabel = consultationMode === 'online-video' ? 'Online Video Consultation (Virtual / Remote)' : 'In-Clinic Visit (Bathinda)';
     
     try {
       const response = await fetch("https://api.web3forms.com/submit", {
@@ -56,6 +60,7 @@ const SmartBooking = () => {
           access_key: "47caca69-8b06-48fb-a428-1cc00e6b99ec",
           subject: "New Appointment Booking",
           from_name: "DentalBrace Website Booking",
+          "Consultation Mode": modeLabel,
           "Patient Name": patientName,
           "Phone Number": patientPhone,
           "Treatment": treatmentLabel,
@@ -79,6 +84,7 @@ const SmartBooking = () => {
 
   const handleReset = () => {
     setStep(1);
+    setConsultationMode('in-clinic');
     setSelectedTreatment(null);
     setSelectedDate('');
     setSelectedTime('');
@@ -147,6 +153,62 @@ const SmartBooking = () => {
           {/* STEP 1: Treatment */}
           {step === 1 && (
             <div>
+              {/* Consultation Mode Selection */}
+              <div style={{ marginBottom: '2rem' }}>
+                <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: '700', textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--text-secondary)', marginBottom: '0.75rem', textAlign: 'center' }}>
+                  Choose Consultation Mode
+                </label>
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', maxWidth: '500px', margin: '0 auto' }}>
+                  <button
+                    type="button"
+                    onClick={() => setConsultationMode('in-clinic')}
+                    style={{
+                      padding: '0.85rem 1rem',
+                      borderRadius: '12px',
+                      border: `2px solid ${consultationMode === 'in-clinic' ? 'var(--accent-color)' : 'var(--border-color)'}`,
+                      backgroundColor: consultationMode === 'in-clinic' ? 'rgba(245,130,32,0.08)' : 'white',
+                      cursor: 'pointer',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      gap: '0.5rem',
+                      fontWeight: '700',
+                      fontSize: '0.92rem',
+                      color: consultationMode === 'in-clinic' ? 'var(--accent-color)' : 'var(--text-primary)',
+                      transition: 'all 0.2s ease'
+                    }}
+                  >
+                    <Building size={18} /> In-Clinic Visit
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setConsultationMode('online-video')}
+                    style={{
+                      padding: '0.85rem 1rem',
+                      borderRadius: '12px',
+                      border: `2px solid ${consultationMode === 'online-video' ? 'var(--accent-color)' : 'var(--border-color)'}`,
+                      backgroundColor: consultationMode === 'online-video' ? 'rgba(245,130,32,0.08)' : 'white',
+                      cursor: 'pointer',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      gap: '0.5rem',
+                      fontWeight: '700',
+                      fontSize: '0.92rem',
+                      color: consultationMode === 'online-video' ? 'var(--accent-color)' : 'var(--text-primary)',
+                      transition: 'all 0.2s ease'
+                    }}
+                  >
+                    <Video size={18} /> Online Video Mode
+                  </button>
+                </div>
+                {consultationMode === 'online-video' && (
+                  <p style={{ textAlign: 'center', fontSize: '0.82rem', color: 'var(--accent-color)', marginTop: '0.75rem', fontWeight: '600' }}>
+                    📹 Secure HD Video Call — Perfect for initial evaluations, aligner checkups &amp; outstation/NRI patients.
+                  </p>
+                )}
+              </div>
+
               <h3 style={{ fontSize: '1.25rem', fontWeight: '700', marginBottom: '1.5rem', textAlign: 'center' }}>
                 Select a Treatment Need
               </h3>
@@ -288,7 +350,7 @@ const SmartBooking = () => {
                     Booking Confirmed!
                   </h3>
                   <p style={{ color: 'var(--text-secondary)', marginBottom: '2rem' }}>
-                    Thank you, {patientName}. We have received your booking request for {selectedDate} at {selectedTime}. We will call you shortly to confirm your appointment.
+                    Thank you, {patientName}. We have received your {consultationMode === 'online-video' ? 'online video consultation' : 'appointment'} request for {selectedDate} at {selectedTime}. We will contact you shortly with confirmation and access details.
                   </p>
                   <button 
                     onClick={handleReset}
@@ -313,12 +375,13 @@ const SmartBooking = () => {
                     display: 'flex', justifyContent: 'center', alignItems: 'center',
                     margin: '0 auto 1.5rem'
                   }}>
-                    <CalendarDays size={32} />
+                    {consultationMode === 'online-video' ? <Video size={32} /> : <CalendarDays size={32} />}
                   </div>
                   <h3 style={{ fontSize: '1.5rem', fontWeight: '800', marginBottom: '1rem' }}>
                     Ready to Book
                   </h3>
                   <div style={{ backgroundColor: '#f9f9f9', padding: '1.5rem', borderRadius: 'var(--radius-md)', marginBottom: '2rem', textAlign: 'left' }}>
+                    <p style={{ margin: '0 0 0.5rem 0' }}><strong>Mode:</strong> {consultationMode === 'online-video' ? '📹 Online Video Consultation (Virtual / Remote)' : '🏥 In-Clinic Visit (Bathinda Centre)'}</p>
                     <p style={{ margin: '0 0 0.5rem 0' }}><strong>Treatment:</strong> {treatments.find(t=>t.id===selectedTreatment)?.label}</p>
                     <p style={{ margin: '0 0 0.5rem 0' }}><strong>Doctor:</strong> {recommendedDoctor}</p>
                     <p style={{ margin: '0 0 0.5rem 0' }}><strong>Date:</strong> {selectedDate}</p>

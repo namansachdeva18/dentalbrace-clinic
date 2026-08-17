@@ -127,7 +127,7 @@ financialData: {"startingPrice":"Consultation Required","paymentOptions":["Cash"
       { step: 1, title: 'Orthodontic & Airway Screening', desc: 'At age 7, we take a Cephalometric X-ray to analyze the relationship between the upper jaw, lower jaw, and cranial base.' },
       { step: 2, title: 'Custom Appliance Fabrication', desc: 'If a discrepancy is found, digital scans are taken to fabricate a custom orthopedic appliance (like an expander or Twin Block).' },
       { step: 3, title: 'Appliance Fitting', desc: 'The appliance is fitted. Some are glued in permanently (fixed), while others are removable and must be worn specific hours a day.' },
-      { step: 4, title: 'Growth Modification Phase', desc: 'Over 9-18 months, the appliance gently applies pressure to the jaw bones, physically altering their growth trajectory.' },
+      { step: 4, title: 'Growth Modification & Progress Reviews', desc: 'Over 9-18 months, the appliance guides jaw bone growth. Routine monitoring is conducted in-clinic and via online video conference checkups for outstation families.' },
       { step: 5, title: 'Resting Phase', desc: 'Once the skeletal foundation is corrected, we wait for the remaining adult teeth to erupt before evaluating if a short phase of braces is needed.' }
     ],
     faqs: [
@@ -142,7 +142,7 @@ financialData: {"startingPrice":"Consultation Required","paymentOptions":["Cash"
     medicalDisclaimer: 'Orthopedic correction relies entirely on the child\'s remaining growth potential. If a patient presents post-puberty, these appliances are ineffective and surgical alternatives must be discussed.',
     reviewedBy: 'Dr. Sandeep Kumar',
 patientProblems: ["Child has a severely receding lower jaw","Child breathes through their mouth constantly","Upper jaw is too narrow"],
-    travelLogistics: {"consultation":"Same-day growth analysis using lateral cephalograms.","visitsRequired":"Visits every 4-8 weeks to monitor appliance progress.","followUp":"Long-term growth monitoring until skeletal maturity."},
+    travelLogistics: {"consultation":"Same-day growth analysis using lateral cephalograms. Online video pre-consultations available.","visitsRequired":"Visits every 4-8 weeks to monitor appliance progress.","followUp":"Long-term growth monitoring until skeletal maturity (supported with video progress reviews)."},
 quickAnswer: "Dentofacial orthopedics involves guiding the growth and development of a child's facial bones to correct severe skeletal imbalances before they stop growing.",
     reasonsToChoose: ["Early dentofacial intervention can prevent the need for invasive jaw surgery in adulthood.","Orthopedic appliances can expand a narrow palate, resolving chronic mouth-breathing and sleep apnea in children.","Correcting jaw growth creates a highly harmonious and attractive facial profile."],
     whenToAvoid: "Dentofacial orthopedics is generally ineffective in adults, as their facial bones have completely fused and stopped growing.",

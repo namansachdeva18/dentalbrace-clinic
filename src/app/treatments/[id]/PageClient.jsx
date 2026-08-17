@@ -1,7 +1,7 @@
 'use client';
 import { useEffect } from 'react';
 import Link from 'next/link';
-import { CheckCircle2, Phone, Activity, Clock, ShieldCheck, ArrowLeft, ArrowRight } from 'lucide-react';
+import { CheckCircle2, Phone, Activity, Clock, ShieldCheck, ArrowLeft, ArrowRight, Video } from 'lucide-react';
 import BeforeAfterSlider from '@/components/BeforeAfterSlider';
 import { AutoLinker } from '@/components/AutoLinker';
 import TreatmentSnapshot from '@/components/TreatmentSnapshot';
@@ -377,6 +377,42 @@ const TreatmentTemplate = ({ params }) => {
               </div>
             </div>
 
+            {/* Online Video Consultation & Remote Monitoring Card */}
+            <div style={{
+              background: 'linear-gradient(135deg, rgba(15, 61, 62, 0.04) 0%, rgba(245, 130, 32, 0.08) 100%)',
+              borderRadius: '16px',
+              border: '1px solid rgba(245, 130, 32, 0.25)',
+              padding: '1.75rem',
+              marginBottom: '2rem',
+              boxShadow: '0 8px 24px rgba(0,0,0,0.03)'
+            }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '0.75rem' }}>
+                <div style={{
+                  width: '36px',
+                  height: '36px',
+                  borderRadius: '50%',
+                  backgroundColor: 'var(--accent-color)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  color: 'white',
+                  flexShrink: 0
+                }}>
+                  <Video size={18} />
+                </div>
+                <h4 style={{ fontSize: '1.05rem', fontWeight: '800', color: 'var(--text-primary)', margin: 0 }}>
+                  Online Video Consultations
+                </h4>
+              </div>
+              <p style={{ fontSize: '0.88rem', color: 'var(--text-secondary)', lineHeight: '1.55', margin: '0 0 1rem 0' }}>
+                Can&apos;t visit the clinic? Routine progress checkups, aligner evaluations, and specialist consultations are available via secure HD video conference for outstation, NRI, and busy patients.
+              </p>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.8rem', fontWeight: '700', color: 'var(--primary-dark)' }}>
+                <span style={{ width: '8px', height: '8px', borderRadius: '50%', backgroundColor: '#10B981', display: 'inline-block' }}></span>
+                In-Clinic &amp; Online Video Modes Available
+              </div>
+            </div>
+
             {/* CTA */}
             <div style={{
               backgroundColor: 'var(--primary-dark)',
@@ -387,8 +423,8 @@ const TreatmentTemplate = ({ params }) => {
               boxShadow: '0 8px 30px rgba(0,0,0,0.1)'
             }}>
               <h3 style={{ fontSize: '1.5rem', fontWeight: '800', color: 'white', margin: '0 0 0.75rem 0' }}>Ready to get started?</h3>
-              <p style={{ fontSize: '0.95rem', color: 'rgba(255,255,255,0.8)', margin: '0 0 1.5rem 0', lineHeight: '1.5' }}>Book a consultation with our specialists today.</p>
-              <a href="/dental-offer-bathinda#campaign-form" className="btn btn-primary w-full" style={{ display: 'block', textAlign: 'center', padding: '1rem', borderRadius: '8px', fontWeight: 'bold' }}>Book Now</a>
+              <p style={{ fontSize: '0.95rem', color: 'rgba(255,255,255,0.8)', margin: '0 0 1.5rem 0', lineHeight: '1.5' }}>Book an in-clinic appointment or an online video consultation with our specialists.</p>
+              <a href="/dental-offer-bathinda#campaign-form" className="btn btn-primary w-full" style={{ display: 'block', textAlign: 'center', padding: '1rem', borderRadius: '8px', fontWeight: 'bold' }}>Book Consultation</a>
               <a href="tel:7496849392" className="btn w-full" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem', marginTop: '1rem', backgroundColor: 'transparent', border: '1px solid rgba(255,255,255,0.3)', color: 'white', padding: '0.8rem', borderRadius: '8px', transition: 'background-color 0.2s' }}>
                 <Phone size={16} />
                 +91 74968-49392

@@ -5,9 +5,10 @@ import { CAMPAIGN_CONFIG } from '@/data/campaignConfig';
 
 const TREATMENT_OPTIONS = [
   { value: '', label: 'Select Treatment of Interest' },
+  { value: 'Invisalign / Clear Aligners', label: 'Invisalign / Clear Aligners' },
+  { value: 'Online Video Consultation', label: 'Online Video Consultation (Remote / NRI)' },
   { value: 'Dental Implants', label: 'Dental Implants' },
   { value: 'Full Mouth Rehabilitation', label: 'Full Mouth Rehabilitation' },
-  { value: 'Invisalign / Clear Aligners', label: 'Invisalign / Clear Aligners' },
   { value: 'Traditional Braces', label: 'Traditional Braces' },
   { value: 'Smile Makeover', label: 'Smile Makeover' },
   { value: 'Dental Veneers', label: 'Dental Veneers' },

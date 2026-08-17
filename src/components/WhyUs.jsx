@@ -16,8 +16,8 @@ const timelineData = [
   },
   {
     id: 2,
-    title: 'Advanced Technology',
-    desc: <>State-of-the-art <strong className="text-primary font-bold">digital scanners</strong> and equipment for precise treatments.</>,
+    title: 'Advanced Digital & Hybrid Care',
+    desc: <>State-of-the-art <strong className="text-primary font-bold">3D digital scanners</strong> and <strong className="text-primary font-bold">online video consultations</strong> for seamless in-clinic and remote progress checkups.</>,
     icon: <Microscope size={24} />
   },
   {

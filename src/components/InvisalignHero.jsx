@@ -102,10 +102,10 @@ const InvisalignHero = () => {
             {/* Benefits List */}
             <ul style={{ display: 'flex', flexDirection: 'column', gap: '0.9rem', marginBottom: '2.5rem' }}>
               {[
-                <><strong className="text-white font-bold">Nearly invisible</strong> — no one can tell you're wearing them</>,
-                <><strong className="text-white font-bold">Removable</strong> for eating, brushing & special occasions</>,
-                <><strong className="text-white font-bold">Treats crowding, gaps,</strong> overbites & underbites</>,
-                <><strong className="text-white font-bold">Dentofacial orthopedics</strong> for jaw alignment</>,
+                <><strong className="text-white font-bold">Nearly invisible</strong> — no one can tell you&apos;re wearing them</>,
+                <><strong className="text-white font-bold">Removable</strong> for eating, brushing &amp; special occasions</>,
+                <><strong className="text-white font-bold">Treats crowding, gaps,</strong> overbites &amp; underbites</>,
+                <><strong className="text-white font-bold">In-clinic &amp; online video checkups</strong> — flexible virtual progress monitoring for outstation patients</>,
                 <><strong className="text-white font-bold">Faster than traditional braces</strong> in most cases</>
               ].map((item, i) => (
                 <li key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.75rem', color: 'rgba(255,255,255,0.8)' }}>

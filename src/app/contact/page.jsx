@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 
 
-import { MapPin, Phone, Mail, Clock, Calendar, MessageSquare, ArrowRight, Loader2, CheckCircle2 } from 'lucide-react';
+import { MapPin, Phone, Mail, Clock, Calendar, MessageSquare, ArrowRight, Loader2, CheckCircle2, Video } from 'lucide-react';
 import './ContactPage.css';
 
 const ContactPage = () => {
@@ -181,6 +181,17 @@ const ContactPage = () => {
                     <p>Sunday: Closed</p>
                   </div>
                 </div>
+
+                <div className="detail-card glass shadow-soft">
+                  <div className="icon-wrapper bg-accent-light text-accent">
+                    <Video size={24} />
+                  </div>
+                  <div className="detail-content">
+                    <h4>Online Video Consultations</h4>
+                    <p>Connect with our AIIMS-trained specialists from anywhere. Routine progress checkups, aligner tracking &amp; remote consultations available.</p>
+                    <span className="text-xs text-accent font-semibold uppercase tracking-wider mt-2 block">For Outstation &amp; Global Patients</span>
+                  </div>
+                </div>
               </div>
 
               {/* WhatsApp CTA */}
@@ -200,7 +211,7 @@ const ContactPage = () => {
             <div className="contact-form-col glass shadow-soft rounded-2xl p-8 lg:p-10">
               <div className="form-header mb-8">
                 <h2 className="heading-secondary text-2xl mb-2">Request an Appointment</h2>
-                <p className="text-secondary text-sm">Fill out the form below and our front desk will call you to confirm your preferred time slot.</p>
+                <p className="text-secondary text-sm">Fill out the form below for an in-clinic visit or an online video consultation.</p>
               </div>
 
               <form className="modern-form" onSubmit={handleSubmit}>
@@ -225,8 +236,10 @@ const ContactPage = () => {
                   <div className="select-wrapper">
                     <select id="treatment" value={formData.treatment} onChange={(e) => setFormData({...formData, treatment: e.target.value})} required aria-label="Select a treatment">
                       <option value="" disabled>Select a treatment...</option>
-                      <option value="implants">Dental Implants</option>
                       <option value="invisalign">Invisalign / Clear Aligners</option>
+                      <option value="video-consult">Online Video Consultation (Remote / Outstation)</option>
+                      <option value="aligner-checkup">Aligner Video Progress Checkup</option>
+                      <option value="implants">Dental Implants</option>
                       <option value="braces">Braces</option>
                       <option value="smile">Smile Makeover / Veneers</option>
                       <option value="general">General Checkup / Cleaning</option>

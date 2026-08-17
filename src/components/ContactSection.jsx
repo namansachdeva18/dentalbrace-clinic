@@ -97,10 +97,10 @@ const ContactSection = () => {
           <span className="section-badge" style={{ backgroundColor: 'white', boxShadow: 'var(--shadow-sm)' }}>Get in Touch</span>
           <h2 className="heading-primary mt-4" style={{ color: 'var(--text-primary)', textShadow: '0 2px 10px rgba(255,255,255,0.8)' }}>We're Here for Your Smile</h2>
           <p className="max-w-2xl mx-auto mt-4" style={{ color: 'var(--text-primary)', fontWeight: '500', textShadow: '0 1px 4px rgba(255,255,255,0.8)' }}>
-            Visit our premium facility or book an appointment online. We are ready to assist you.
+            Visit our premium facility or book an in-clinic / online video consultation. We are ready to assist you.
           </p>
           <p className="max-w-2xl mx-auto mt-2" style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', fontWeight: '500' }}>
-            Proudly serving patients from Bathinda, Rampura Phul, Talwandi Sabo, Mansa, Muktsar, Faridkot, and Mandi Dabwali.
+            Proudly serving patients in Bathinda, Punjab, outstation travelers, and international NRI patients.
           </p>
         </div>
 
@@ -135,7 +135,7 @@ const ContactSection = () => {
               <li style={{ display: 'flex', alignItems: 'flex-start', gap: '1rem' }}>
                 <Mail color="var(--accent-color)" size={28} className="flex-shrink-0 mt-1" />
                 <div>
-                  <strong style={{ fontSize: '1.1rem', display: 'block', marginBottom: '0.25rem', color: '#FFF9F1' }}>Email</strong>
+                  <strong style={{ fontSize: '1.1rem', display: 'block', marginBottom: '0.25rem', color: '#FFF9F1' }}>Email &amp; Video Consults</strong>
                   <a href="mailto:thedentalbrace2019@gmail.com" style={{ color: 'rgba(255,255,255,0.8)', textDecoration: 'none' }}>thedentalbrace2019@gmail.com</a>
                 </div>
               </li>
@@ -220,9 +220,13 @@ const ContactSection = () => {
                   onFocus={(e) => { e.target.style.borderColor = 'var(--accent-color)'; e.target.style.boxShadow = '0 0 0 3px rgba(245, 130, 32, 0.1)'; }}
                   onBlur={(e) => { e.target.style.borderColor = 'rgba(0,0,0,0.1)'; e.target.style.boxShadow = 'none'; }}
                 >
-                  <option value="">Select Treatment</option>
+                  <option value="">Select Treatment / Consultation</option>
+                  <option value="Invisalign / Clear Aligners">Invisalign / Clear Aligners</option>
+                  <option value="Online Video Consultation">Online Video Consultation (Remote / Outstation)</option>
+                  <option value="Aligner Video Progress Checkup">Aligner Video Progress Checkup</option>
                   <option value="Dental Implants">Dental Implants</option>
-                  <option value="Braces / Invisalign">Braces / Invisalign</option>
+                  <option value="Braces">Braces</option>
+                  <option value="Smile Makeover">Smile Makeover</option>
                   <option value="General Checkup">General Checkup</option>
                   <option value="Emergency">Emergency</option>
                 </select>

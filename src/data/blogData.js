@@ -178,7 +178,7 @@ export const blogArticles = {
         <li><strong>3D Digital iTero Scan:</strong> No messy impression putty! We scan your teeth in under 5 minutes.</li>
         <li><strong>3D Smile Simulation:</strong> View a 3D video of how your teeth will move and see your final smile before starting!</li>
         <li><strong>Custom Aligner Fabrication:</strong> Your medical-grade aligners are custom-printed and delivered to our clinic.</li>
-        <li><strong>Progress Checkups Every 6-8 Weeks:</strong> Quick, hassle-free visits to monitor your alignment progress.</li>
+        <li><strong>Progress Checkups Every 6-8 Weeks (In-Clinic or Online Video):</strong> Quick, hassle-free in-clinic visits or secure online video conferences to monitor your alignment progress from anywhere.</li>
       </ol>
 
       <div class="cta-box">

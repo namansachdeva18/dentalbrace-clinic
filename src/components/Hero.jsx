@@ -70,7 +70,7 @@ const Hero = () => {
 
           {/* Subtext */}
           <p className="hero-subtitle">
-            <strong className="text-white font-bold">50k+ transformed smiles</strong> — led by <strong className="text-accent font-bold">BHU &amp; AIIMS-trained specialists</strong>. Comprehensive care ranging from painless cosmetic dentistry to <strong className="text-white font-bold">advanced maxillofacial rehabilitation</strong>. Expert consultations available.
+            <strong className="text-white font-bold">50k+ transformed smiles</strong> — led by <strong className="text-accent font-bold">BHU &amp; AIIMS-trained specialists</strong>. Comprehensive care ranging from painless cosmetic dentistry to <strong className="text-white font-bold">advanced maxillofacial rehabilitation</strong>. In-clinic visits &amp; online video consultations available.
           </p>
 
           {/* Doctor Credentials */}

@@ -103,6 +103,10 @@ const FAQS = [
     a: 'Yes. The final offer eligibility, applicable discount, and treatment plan will be discussed and confirmed by our specialist during your consultation. No commitment is required when submitting an enquiry.',
   },
   {
+    q: 'Can I do my initial consultation or progress checkup via online video mode?',
+    a: 'Yes! If you are an outstation, busy, or NRI patient, you can request an online video consultation. Our specialists conduct secure video conferences to evaluate your concerns, review aligner progress, and guide treatment before or between in-clinic visits.',
+  },
+  {
     q: 'Where is The DentalBrace Clinic located in Bathinda?',
     a: '196, Bibi Wala Road, near LIC Building, opposite Petrol Pump, Kamla Nehru Colony, Bathinda, Punjab — 151001. We serve patients from Bathinda, Mansa, Muktsar, Faridkot, Rampura Phul, Talwandi Sabo, and surrounding areas.',
   },
