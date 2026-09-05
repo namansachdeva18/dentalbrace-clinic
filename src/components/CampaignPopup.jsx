@@ -110,14 +110,15 @@ const CampaignPopup = () => {
         style={{
           position: 'fixed',
           inset: 0,
-          background: 'rgba(15, 61, 62, 0.65)',
-          backdropFilter: 'blur(4px)',
+          background: 'rgba(15, 23, 25, 0.72)',
+          backdropFilter: 'blur(6px)',
+          WebkitBackdropFilter: 'blur(6px)',
           zIndex: 9000,
           animation: prefersReducedMotion ? 'none' : 'fadeOverlay 0.25s ease forwards',
         }}
       />
 
-      {/* Modal */}
+      {/* Modal Card matching reference ratio */}
       <div
         role="dialog"
         aria-modal="true"
@@ -130,132 +131,122 @@ const CampaignPopup = () => {
           transform: 'translate(-50%, -50%)',
           zIndex: 9001,
           background: '#ffffff',
-          borderRadius: '24px',
-          padding: '0',
-          width: 'min(92vw, 480px)',
-          maxHeight: '90vh',
+          borderRadius: '26px',
+          padding: '1.5rem 1.4rem 1.25rem',
+          width: 'min(92vw, 440px)',
+          maxHeight: '94vh',
           overflowY: 'auto',
-          boxShadow: '0 30px 80px rgba(15,61,62,0.35)',
-          animation: prefersReducedMotion ? 'none' : 'slideUp 0.3s cubic-bezier(0.34,1.56,0.64,1) forwards',
+          boxShadow: '0 24px 70px rgba(0, 0, 0, 0.38), 0 0 0 1px rgba(184, 129, 61, 0.15)',
+          animation: prefersReducedMotion ? 'none' : 'slideUp 0.28s cubic-bezier(0.2, 0.9, 0.3, 1) forwards',
+          boxSizing: 'border-box',
         }}
       >
-        {/* Dark header band */}
-        <div style={{
-          background: 'linear-gradient(135deg, #0F3D3E 0%, #1a5254 100%)',
-          padding: '2rem 2rem 1.5rem',
-          borderRadius: '24px 24px 0 0',
-          position: 'relative',
-          textAlign: 'center',
-        }}>
-          {/* Close button */}
-          <button
-            ref={closeRef}
-            onClick={handleClose}
-            aria-label="Close offer popup"
-            style={{
-              position: 'absolute',
-              top: '14px',
-              right: '14px',
-              background: 'rgba(255,255,255,0.15)',
-              border: 'none',
-              borderRadius: '50%',
-              width: '36px',
-              height: '36px',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              cursor: 'pointer',
-              color: '#ffffff',
-              transition: 'background 0.2s ease',
-            }}
-            onMouseEnter={e => e.currentTarget.style.background = 'rgba(255,255,255,0.25)'}
-            onMouseLeave={e => e.currentTarget.style.background = 'rgba(255,255,255,0.15)'}
-          >
-            <X size={18} />
-          </button>
+        {/* Floating circular close button (top right) */}
+        <button
+          ref={closeRef}
+          onClick={handleClose}
+          aria-label="Close offer popup"
+          style={{
+            position: 'absolute',
+            top: '14px',
+            right: '14px',
+            background: '#ffffff',
+            border: '1px solid #e7e0d6',
+            borderRadius: '50%',
+            width: '34px',
+            height: '34px',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            cursor: 'pointer',
+            color: '#6e655d',
+            boxShadow: '0 2px 8px rgba(0,0,0,0.06)',
+            transition: 'all 0.18s ease',
+            zIndex: 10,
+          }}
+          onMouseEnter={e => {
+            e.currentTarget.style.transform = 'scale(1.05)';
+            e.currentTarget.style.color = '#2E1F1B';
+            e.currentTarget.style.borderColor = '#b8813d';
+          }}
+          onMouseLeave={e => {
+            e.currentTarget.style.transform = 'none';
+            e.currentTarget.style.color = '#6e655d';
+            e.currentTarget.style.borderColor = '#e7e0d6';
+          }}
+        >
+          <X size={17} />
+        </button>
 
-          {/* Badge */}
+        {/* Header Content */}
+        <div style={{ textAlign: 'center', marginBottom: '1rem', paddingTop: '0.2rem' }}>
+          {/* Reference pill badge: ANNIVERSARY SPECIAL • 20% OFF */}
           <div style={{
             display: 'inline-flex',
             alignItems: 'center',
             gap: '6px',
-            background: 'rgba(245,130,32,0.15)',
-            border: '1px solid rgba(245,130,32,0.4)',
+            background: '#1d1711',
+            border: '1px solid rgba(220, 168, 88, 0.45)',
             borderRadius: '9999px',
-            padding: '5px 14px',
-            marginBottom: '1rem',
+            padding: '4px 13px',
+            marginBottom: '0.65rem',
+            boxShadow: '0 2px 10px rgba(0,0,0,0.12)',
           }}>
-            <Tag size={13} color="#F58220" />
-            <span style={{ fontSize: '0.72rem', fontWeight: 700, color: '#F58220', letterSpacing: '0.8px', textTransform: 'uppercase' }}>
-              Limited-Time Offer
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="#e5aa52" stroke="none"><path d="M12 2l2.4 7.2h7.6l-6.1 4.5 2.3 7.3-6.2-4.6-6.2 4.6 2.3-7.3-6.1-4.5h7.6z"/></svg>
+            <span style={{
+              fontSize: '0.68rem',
+              fontWeight: 800,
+              color: '#f3be6c',
+              letterSpacing: '0.6px',
+              textTransform: 'uppercase',
+            }}>
+              Anniversary Special • 20% OFF
             </span>
           </div>
 
+          {/* Heading: Unlock Your 20% Anniversary Offer */}
           <h2
             id="popup-heading"
-            style={{ color: '#ffffff', fontSize: 'clamp(1.3rem, 4vw, 1.6rem)', fontWeight: 800, lineHeight: 1.15, marginBottom: '0.5rem', fontFamily: 'var(--font-heading)' }}
-          >
-            {CAMPAIGN_CONFIG.HEADLINE}
-          </h2>
-
-          {CAMPAIGN_CONFIG.SHOW_DISCOUNT && (
-            <p style={{ color: '#F58220', fontWeight: 700, fontSize: '1.05rem', marginBottom: '0.25rem' }}>
-              {CAMPAIGN_CONFIG.DISCOUNT_LINE}
-            </p>
-          )}
-          <p style={{ color: 'rgba(255,255,255,0.85)', fontSize: '0.9rem', marginBottom: 0 }}>
-            {CAMPAIGN_CONFIG.BONUS_LINE}
-          </p>
-        </div>
-
-        {/* Body */}
-        <div style={{ padding: '1.75rem 2rem 2rem' }}>
-          <p
-            id="popup-desc"
-            style={{ fontSize: '0.9rem', color: '#6B6B6B', lineHeight: 1.6, marginBottom: '1.5rem', textAlign: 'center' }}
-          >
-            Submit your enquiry online to check your eligibility for selected premium dental treatments.
-            Valid until <strong style={{ color: '#2E1F1B' }}>{CAMPAIGN_CONFIG.EXPIRY_DISPLAY}</strong>.
-          </p>
-
-          {/* Trust row */}
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.4rem', marginBottom: '1.5rem', fontSize: '0.8rem', color: '#6B6B6B' }}>
-            <ShieldCheck size={15} color="#0F3D3E" />
-            <span>BHU &amp; AIIMS-trained specialists • Bathinda</span>
-          </div>
-
-          {/* The Embedded Form */}
-          <div style={{ marginTop: '1rem' }}>
-            <CampaignLeadForm source="automatic_popup" />
-          </div>
-
-          <button
-            onClick={handleClose}
             style={{
-              width: '100%',
-              padding: '0.7rem',
-              background: 'transparent',
-              border: 'none',
-              color: '#6B6B6B',
-              cursor: 'pointer',
-              fontSize: '0.88rem',
-              fontWeight: 600,
+              color: '#211c19',
+              fontSize: 'clamp(1.32rem, 4.2vw, 1.55rem)',
+              fontWeight: 800,
+              lineHeight: 1.22,
+              margin: '0 0 0.4rem',
+              fontFamily: 'var(--font-heading)',
+              letterSpacing: '-0.3px',
             }}
           >
-            Maybe Later
-          </button>
+            Unlock Your <span style={{ color: '#a87538' }}>20% Anniversary Offer</span>
+          </h2>
+
+          <p
+            id="popup-desc"
+            style={{
+              fontSize: '0.84rem',
+              color: '#736b63',
+              lineHeight: 1.45,
+              margin: '0 auto',
+              maxWidth: '350px',
+            }}
+          >
+            Enter your details to claim your instant 20% Anniversary Benefit on eligible treatments in Bathinda.
+          </p>
         </div>
+
+        {/* Ultra-compact form with icons */}
+        <CampaignLeadForm popupMode={true} source="automatic_popup" />
       </div>
 
-      {/* Keyframe styles injected once */}
+      {/* Keyframe styles */}
       <style>{`
         @keyframes fadeOverlay {
           from { opacity: 0 }
           to   { opacity: 1 }
         }
         @keyframes slideUp {
-          from { opacity: 0; transform: translate(-50%, calc(-50% + 30px)) }
-          to   { opacity: 1; transform: translate(-50%, -50%) }
+          from { opacity: 0; transform: translate(-50%, calc(-50% + 22px)) scale(0.97) }
+          to   { opacity: 1; transform: translate(-50%, -50%) scale(1) }
         }
         @media (prefers-reduced-motion: reduce) {
           @keyframes fadeOverlay { from {} to {} }

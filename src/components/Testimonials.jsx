@@ -254,6 +254,7 @@ const StarRating = ({ rating, size = 16 }) => (
 
 const ReviewCard = ({ review }) => (
   <article
+    className="testimonial-card"
     style={{
       background: 'white',
       borderRadius: 'var(--radius-lg)',
@@ -280,13 +281,14 @@ const ReviewCard = ({ review }) => (
       <meta itemProp="name" content="The Dental Brace Clinic" />
     </div>
 
-    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
-      <div style={{ display: 'flex', alignItems: 'center', gap: '0.875rem' }} itemProp="author" itemScope itemType="https://schema.org/Person">
+    <div className="testimonial-card__header" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
+      <div className="testimonial-card__author" style={{ display: 'flex', alignItems: 'center', gap: '0.875rem' }} itemProp="author" itemScope itemType="https://schema.org/Person">
         <Image
           src={review.avatar}
           alt={`${review.name} — ${review.treatment} patient at The DentalBrace Bathinda`}
           width={52}
           height={52}
+          className="testimonial-card__avatar"
           style={{
             width: '52px', height: '52px', borderRadius: '50%',
             objectFit: 'cover',
@@ -294,23 +296,23 @@ const ReviewCard = ({ review }) => (
           }}
         />
         <div>
-          <div style={{ fontWeight: '700', color: 'var(--text-primary)', fontSize: '1rem' }} itemProp="name">{review.name}</div>
-          <div style={{ color: 'var(--text-secondary)', fontSize: '0.8rem' }}>{review.location}</div>
+          <div className="testimonial-card__name" style={{ fontWeight: '700', color: 'var(--text-primary)', fontSize: '1rem' }} itemProp="name">{review.name}</div>
+          <div className="testimonial-card__location" style={{ color: 'var(--text-secondary)', fontSize: '0.8rem' }}>{review.location}</div>
         </div>
       </div>
       <GoogleIcon />
     </div>
 
-    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+    <div className="testimonial-card__rating-row" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
       <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }} itemProp="reviewRating" itemScope itemType="https://schema.org/Rating">
         <StarRating rating={review.rating} />
         <span itemProp="ratingValue" style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', fontWeight: '500' }}>{review.rating}.0</span>
         <meta itemProp="bestRating" content="5" />
       </div>
-      <span style={{ fontSize: '0.75rem', color: 'var(--text-secondary)' }}>{review.date}</span>
+      <span className="testimonial-card__date" style={{ fontSize: '0.75rem', color: 'var(--text-secondary)' }}>{review.date}</span>
     </div>
 
-    <span style={{
+    <span className="testimonial-card__badge" style={{
       display: 'inline-flex', alignItems: 'center', gap: '0.35rem',
       padding: '0.3rem 0.85rem',
       background: 'rgba(245,130,32,0.1)',
@@ -324,6 +326,7 @@ const ReviewCard = ({ review }) => (
     </span>
 
     <blockquote
+      className="testimonial-card__quote"
       style={{
         margin: 0, padding: 0,
         color: 'var(--text-secondary)',
@@ -337,7 +340,7 @@ const ReviewCard = ({ review }) => (
       "{review.reviewText}"
     </blockquote>
 
-    <div style={{
+    <div className="testimonial-card__doctor" style={{
       display: 'flex', alignItems: 'center', gap: '0.5rem',
       paddingTop: '1rem',
       borderTop: '1px solid var(--border-color)'
@@ -364,9 +367,9 @@ const Testimonials = () => {
         overflow: 'hidden'
       }}
     >
-      <div className="container" style={{ marginBottom: '3.5rem' }}>
+      <div className="container testimonials-header-container" style={{ marginBottom: '3.5rem' }}>
         <div style={{ textAlign: 'center' }}>
-          <span style={{
+          <span className="testimonials-eyebrow" style={{
             display: 'inline-flex', alignItems: 'center', gap: '0.5rem',
             padding: '0.4rem 1.25rem',
             background: 'rgba(245, 130, 32, 0.1)',
@@ -380,7 +383,7 @@ const Testimonials = () => {
             <GoogleIcon /> Verified Google Reviews
           </span>
 
-          <h2 style={{
+          <h2 className="testimonials-title" style={{
             fontSize: 'clamp(1.9rem, 4vw, 2.75rem)',
             fontWeight: '800',
             color: 'var(--text-primary)',
@@ -389,11 +392,11 @@ const Testimonials = () => {
           }}>
             What Our Patients Say
           </h2>
-          <p style={{ color: 'var(--text-secondary)', fontSize: '1.1rem', maxWidth: '550px', margin: '0 auto 2rem' }}>
+          <p className="testimonials-subtitle" style={{ color: 'var(--text-secondary)', fontSize: '1.1rem', maxWidth: '550px', margin: '0 auto 2rem' }}>
             Real stories from real patients in Bathinda. Over <strong>350+ verified Google reviews</strong> and counting.
           </p>
 
-          <div style={{
+          <div className="testimonials-google-badge" style={{
             display: 'inline-flex', alignItems: 'center', gap: '1.5rem',
             padding: '1rem 2rem',
             background: 'white',
@@ -438,7 +441,7 @@ const Testimonials = () => {
         </div>
 
         {/* Row 2 - Right to Left */}
-        <div className="marquee-row" style={{ marginTop: '2rem' }}>
+        <div className="marquee-row marquee-row--second" style={{ marginTop: '2rem' }}>
           <div className="marquee-track track-right">
             {[...reviewsRow2, ...reviewsRow2].map((review, idx) => (
               <ReviewCard key={`row2-${idx}`} review={review} />
@@ -449,11 +452,12 @@ const Testimonials = () => {
       </div>
 
       <div className="container">
-        <div style={{ textAlign: 'center', marginTop: '3.5rem' }}>
+        <div className="testimonials-bottom-ctas" style={{ textAlign: 'center', marginTop: '3.5rem' }}>
           <a
             href="https://share.google/IjLrpZOU9W83dtITe"
             target="_blank"
             rel="noopener noreferrer"
+            className="testimonials-btn-google"
             style={{
               display: 'inline-flex', alignItems: 'center', gap: '0.6rem',
               padding: '0.9rem 2rem',
@@ -475,6 +479,7 @@ const Testimonials = () => {
 
           <a
             href="#book"
+            className="testimonials-btn-book"
             style={{
               display: 'inline-flex', alignItems: 'center', gap: '0.6rem',
               padding: '0.9rem 2rem',
@@ -536,13 +541,122 @@ const Testimonials = () => {
         }
 
         @media (max-width: 768px) {
-          .track-left, .track-right {
-            animation-duration: 50s; /* Slower, more readable speed */
+          #testimonials {
+            padding: 2rem 0 2.25rem !important;
           }
-          article {
-            min-width: 290px !important;
-            max-width: 290px !important;
-            padding: 1.5rem !important; /* Slightly less padding on mobile */
+          .testimonials-header-container {
+            margin-bottom: 1rem !important;
+          }
+          .testimonials-eyebrow {
+            font-size: 0.65rem !important;
+            padding: 0.22rem 0.7rem !important;
+            margin-bottom: 0.45rem !important;
+            gap: 0.35rem !important;
+          }
+          .testimonials-title {
+            font-size: 1.35rem !important;
+            margin-bottom: 0.35rem !important;
+            line-height: 1.2 !important;
+          }
+          .testimonials-subtitle {
+            font-size: 0.78rem !important;
+            margin-bottom: 0.85rem !important;
+            line-height: 1.35 !important;
+          }
+          .testimonials-google-badge {
+            padding: 0.45rem 0.95rem !important;
+            gap: 0.75rem !important;
+            border-radius: 12px !important;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.05) !important;
+          }
+          .testimonials-google-badge span[itemprop="ratingValue"] {
+            font-size: 1.2rem !important;
+          }
+          .testimonials-google-badge div[style*="font-size: 0.8rem"] {
+            font-size: 0.7rem !important;
+          }
+          .marquee-container {
+            padding: 0.25rem 0 !important;
+          }
+          .marquee-row--second {
+            margin-top: 0.5rem !important;
+          }
+          .track-left, .track-right {
+            gap: 0.65rem !important;
+            animation-duration: 40s !important;
+          }
+          article,
+          .testimonial-card {
+            min-width: 250px !important;
+            max-width: 250px !important;
+            padding: 0.85rem 0.85rem 0.75rem !important;
+            border-radius: 14px !important;
+            gap: 0.5rem !important;
+          }
+          .testimonial-card__header {
+            margin-bottom: 0 !important;
+          }
+          .testimonial-card__author {
+            gap: 0.55rem !important;
+          }
+          .testimonial-card__avatar {
+            width: 36px !important;
+            height: 36px !important;
+          }
+          .testimonial-card__name {
+            font-size: 0.84rem !important;
+            line-height: 1.2 !important;
+          }
+          .testimonial-card__location {
+            font-size: 0.68rem !important;
+          }
+          .testimonial-card__rating-row {
+            margin: -0.1rem 0 !important;
+          }
+          .testimonial-card__rating-row span {
+            font-size: 0.7rem !important;
+          }
+          .testimonial-card__badge {
+            font-size: 0.68rem !important;
+            padding: 0.15rem 0.55rem !important;
+            gap: 0.25rem !important;
+          }
+          .testimonial-card__badge svg {
+            width: 11px !important;
+            height: 11px !important;
+          }
+          .testimonial-card__quote,
+          article blockquote,
+          article p {
+            font-size: 0.76rem !important;
+            line-height: 1.4 !important;
+            margin: 0 !important;
+            display: -webkit-box !important;
+            -webkit-line-clamp: 4 !important;
+            -webkit-box-orient: vertical !important;
+            overflow: hidden !important;
+          }
+          .testimonial-card__doctor {
+            padding-top: 0.5rem !important;
+            margin-top: auto !important;
+            gap: 0.35rem !important;
+          }
+          .testimonial-card__doctor span {
+            font-size: 0.72rem !important;
+          }
+          .testimonials-bottom-ctas {
+            margin-top: 1.75rem !important;
+            display: flex;
+            flex-direction: column;
+            gap: 0.65rem;
+          }
+          .testimonials-btn-google,
+          .testimonials-btn-book {
+            width: 100% !important;
+            justify-content: center !important;
+            margin-right: 0 !important;
+            padding: 0.75rem 1rem !important;
+            font-size: 0.88rem !important;
           }
         }
       `}</style>

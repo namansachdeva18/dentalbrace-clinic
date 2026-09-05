@@ -59,11 +59,12 @@ const labelStyle = {
  *
  * Props:
  * - compact: boolean — render a more compact layout for sidebar/widget use
+ * - popupMode: boolean — render the ultra-compact, icon-adorned card layout matching mobile popup ratio
  * - source: string — identifies where the form is embedded (for analytics)
  */
-const CampaignLeadForm = ({ compact = false, source = 'campaign_page' }) => {
+const CampaignLeadForm = ({ compact = false, popupMode = false, source = 'campaign_page' }) => {
   const [form, setForm] = useState({
-    name: '', phone: '', email: '', treatment: '', callback: '', consent: false, botcheck: false,
+    name: '', phone: '', email: '', treatment: '', callback: '', notes: '', consent: true, botcheck: false,
   });
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -132,7 +133,8 @@ const CampaignLeadForm = ({ compact = false, source = 'campaign_page' }) => {
           'Mobile Number': form.phone.trim(),
           'Email': form.email.trim() || 'Not provided',
           'Treatment Interest': form.treatment,
-          'Preferred Callback Time': form.callback || 'Not specified',
+          'Preferred Callback Time': form.callback || 'Anytime / First Available',
+          'Notes / Goal': form.notes.trim() || 'Not specified',
           botcheck: form.botcheck, // Honeypot field for Web3Forms spam prevention
           'Campaign': CAMPAIGN_CONFIG.CAMPAIGN_NAME,
           'Campaign End Date': CAMPAIGN_CONFIG.EXPIRY_DISPLAY,
@@ -167,49 +169,294 @@ const CampaignLeadForm = ({ compact = false, source = 'campaign_page' }) => {
       <div
         role="status"
         aria-live="polite"
-        style={{ textAlign: 'center', padding: compact ? '2rem 1rem' : '3rem 1.5rem' }}
+        style={{ textAlign: 'center', padding: popupMode ? '1.5rem 0.5rem' : compact ? '2rem 1rem' : '3rem 1.5rem' }}
       >
         <div style={{
-          width: '70px', height: '70px', borderRadius: '50%',
+          width: popupMode ? '56px' : '70px',
+          height: popupMode ? '56px' : '70px',
+          borderRadius: '50%',
           background: 'rgba(16, 185, 129, 0.1)',
           display: 'flex', alignItems: 'center', justifyContent: 'center',
-          margin: '0 auto 1.25rem',
+          margin: '0 auto 1rem',
         }}>
-          <CheckCircle2 size={36} color="#10B981" />
+          <CheckCircle2 size={popupMode ? 30 : 36} color="#10B981" />
         </div>
-        <h3 style={{ fontWeight: 800, fontSize: '1.4rem', color: '#0F3D3E', marginBottom: '0.75rem' }}>
+        <h3 style={{ fontWeight: 800, fontSize: popupMode ? '1.25rem' : '1.4rem', color: '#0F3D3E', marginBottom: '0.5rem' }}>
           Enquiry Received!
         </h3>
-        <p style={{ color: '#6B6B6B', lineHeight: 1.7, fontSize: '0.95rem', marginBottom: '1.5rem' }}>
+        <p style={{ color: '#6B6B6B', lineHeight: 1.6, fontSize: popupMode ? '0.88rem' : '0.95rem', marginBottom: '1.25rem' }}>
           Thank you, <strong style={{ color: '#2E1F1B' }}>{form.name}</strong>. Our team at The DentalBrace Clinic
-          will contact you to confirm your consultation and discuss your campaign eligibility.
+          will contact you to confirm your consultation and 20% anniversary eligibility.
         </p>
-        <p style={{ fontSize: '0.8rem', color: '#6B6B6B', marginBottom: '2rem', fontStyle: 'italic' }}>
-          Please note: The applicable campaign benefit will be confirmed by the clinic before treatment.
-        </p>
-        <div style={{ display: 'flex', gap: '0.75rem', justifyContent: 'center', flexWrap: 'wrap' }}>
+        <div style={{ display: 'flex', gap: '0.6rem', justifyContent: 'center', flexWrap: 'wrap' }}>
           <a
             href="tel:7496849392"
             onClick={() => window.gtag?.('event', 'phone_click', { source: 'form_success' })}
-            style={{ display: 'flex', alignItems: 'center', gap: '6px', padding: '0.7rem 1.4rem', background: '#0F3D3E', color: '#fff', borderRadius: '9999px', textDecoration: 'none', fontWeight: 700, fontSize: '0.9rem' }}
+            style={{ display: 'flex', alignItems: 'center', gap: '6px', padding: '0.65rem 1.25rem', background: '#0F3D3E', color: '#fff', borderRadius: '9999px', textDecoration: 'none', fontWeight: 700, fontSize: '0.86rem' }}
           >
-            <Phone size={16} /> Call Clinic
+            <Phone size={15} /> Call Clinic
           </a>
           <a
             href={`https://api.whatsapp.com/send/?phone=917496849392&text=${encodeURIComponent('Hi! I just submitted an enquiry for the dental care offer. My name is ' + form.name + '.')}`}
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => window.gtag?.('event', 'whatsapp_click', { source: 'form_success' })}
-            style={{ display: 'flex', alignItems: 'center', gap: '6px', padding: '0.7rem 1.4rem', background: '#25D366', color: '#fff', borderRadius: '9999px', textDecoration: 'none', fontWeight: 700, fontSize: '0.9rem' }}
+            style={{ display: 'flex', alignItems: 'center', gap: '6px', padding: '0.65rem 1.25rem', background: '#25D366', color: '#fff', borderRadius: '9999px', textDecoration: 'none', fontWeight: 700, fontSize: '0.86rem' }}
           >
-            <MessageCircle size={16} /> WhatsApp
+            <MessageCircle size={15} /> WhatsApp
           </a>
         </div>
       </div>
     );
   }
 
-  // ── FORM STATE ─────────────────────────────────────────────────────
+  // ── POPUP COMPACT MODE (Reference Ratio & Inputs with Icons) ──────────
+  if (popupMode) {
+    const fieldWrapStyle = {
+      position: 'relative',
+      display: 'flex',
+      alignItems: 'center',
+      borderRadius: '16px',
+      border: '1.5px solid #ebe4d8',
+      background: '#ffffff',
+      transition: 'border-color 0.2s, box-shadow 0.2s',
+    };
+
+    const iconStyle = {
+      position: 'absolute',
+      left: '14px',
+      color: '#a07844',
+      pointerEvents: 'none',
+      flexShrink: 0,
+    };
+
+    const inputInnerStyle = (hasError) => ({
+      width: '100%',
+      padding: '0.78rem 1rem 0.78rem 2.75rem',
+      borderRadius: '16px',
+      border: hasError ? '1.5px solid #e53e3e' : 'none',
+      background: 'transparent',
+      fontSize: '0.88rem',
+      color: '#2E1F1B',
+      outline: 'none',
+      fontFamily: 'inherit',
+      letterSpacing: '0.1px',
+    });
+
+    return (
+      <form
+        onSubmit={handleSubmit}
+        noValidate
+        aria-label="Campaign lead generation form"
+        style={{ display: 'flex', flexDirection: 'column', gap: '0.68rem', width: '100%' }}
+      >
+        {/* Honeypot Field */}
+        <input 
+          type="checkbox" 
+          name="botcheck" 
+          className="hidden" 
+          style={{ display: 'none' }} 
+          checked={form.botcheck}
+          onChange={e => handleChange('botcheck', e.target.checked)}
+          tabIndex="-1"
+          autoComplete="off"
+        />
+
+        {/* 1. Full Name */}
+        <div>
+          <div style={{ ...fieldWrapStyle, borderColor: errors.name ? '#e53e3e' : '#ebe4d8' }}>
+            <svg style={iconStyle} width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            <input
+              id="cf-name"
+              type="text"
+              autoComplete="name"
+              placeholder="Full Name *"
+              value={form.name}
+              onChange={e => handleChange('name', e.target.value)}
+              required
+              aria-required="true"
+              aria-invalid={!!errors.name}
+              style={inputInnerStyle(errors.name)}
+              onFocus={e => e.currentTarget.parentElement.style.borderColor = '#b8813d'}
+              onBlur={e => e.currentTarget.parentElement.style.borderColor = errors.name ? '#e53e3e' : '#ebe4d8'}
+            />
+          </div>
+          {errors.name && <p role="alert" style={{ color: '#e53e3e', fontSize: '0.74rem', margin: '2px 0 0 10px' }}>{errors.name}</p>}
+        </div>
+
+        {/* 2. Phone */}
+        <div>
+          <div style={{ ...fieldWrapStyle, borderColor: errors.phone ? '#e53e3e' : '#ebe4d8' }}>
+            <svg style={iconStyle} width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <input
+              id="cf-phone"
+              type="tel"
+              inputMode="tel"
+              autoComplete="tel"
+              placeholder="10-Digit Mobile Number *"
+              value={form.phone}
+              onChange={e => handleChange('phone', e.target.value.replace(/[^0-9+\-\s()]/g, ''))}
+              required
+              aria-required="true"
+              aria-invalid={!!errors.phone}
+              style={inputInnerStyle(errors.phone)}
+              onFocus={e => e.currentTarget.parentElement.style.borderColor = '#b8813d'}
+              onBlur={e => e.currentTarget.parentElement.style.borderColor = errors.phone ? '#e53e3e' : '#ebe4d8'}
+            />
+          </div>
+          {errors.phone && <p role="alert" style={{ color: '#e53e3e', fontSize: '0.74rem', margin: '2px 0 0 10px' }}>{errors.phone}</p>}
+        </div>
+
+        {/* 3. Treatment Dropdown */}
+        <div>
+          <div style={{ ...fieldWrapStyle, borderColor: errors.treatment ? '#e53e3e' : '#ebe4d8', position: 'relative' }}>
+            <svg style={iconStyle} width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4.8 2.3A.3.3 0 1 0 5 2H4a2 2 0 0 0-2 2v5a6 6 0 0 0 6 6v0a6 6 0 0 0 6-6V4a2 2 0 0 0-2-2h-1a.2.2 0 1 0 .3.3"/><path d="M8 15v1a6 6 0 0 0 6 6v0a6 6 0 0 0 6-6v-4"/><circle cx="20" cy="10" r="2"/></svg>
+            <select
+              id="cf-treatment"
+              value={form.treatment}
+              onChange={e => handleChange('treatment', e.target.value)}
+              required
+              aria-required="true"
+              aria-invalid={!!errors.treatment}
+              style={{
+                ...inputInnerStyle(errors.treatment),
+                appearance: 'none',
+                WebkitAppearance: 'none',
+                cursor: 'pointer',
+                paddingRight: '2rem',
+                color: form.treatment ? '#2E1F1B' : '#7c756f',
+              }}
+              onFocus={e => e.currentTarget.parentElement.style.borderColor = '#b8813d'}
+              onBlur={e => e.currentTarget.parentElement.style.borderColor = errors.treatment ? '#e53e3e' : '#ebe4d8'}
+            >
+              <option value="" disabled>Select Treatment Interested In *</option>
+              {TREATMENT_OPTIONS.filter(o => o.value).map(o => (
+                <option key={o.value} value={o.value}>{o.label}</option>
+              ))}
+            </select>
+            <svg style={{ position: 'absolute', right: '14px', pointerEvents: 'none', color: '#a07844' }} width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+          </div>
+          {errors.treatment && <p role="alert" style={{ color: '#e53e3e', fontSize: '0.74rem', margin: '2px 0 0 10px' }}>{errors.treatment}</p>}
+        </div>
+
+        {/* 4. Preferred Time */}
+        <div>
+          <div style={{ ...fieldWrapStyle, borderColor: '#ebe4d8', position: 'relative' }}>
+            <svg style={iconStyle} width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <select
+              id="cf-callback"
+              value={form.callback}
+              onChange={e => handleChange('callback', e.target.value)}
+              style={{
+                ...inputInnerStyle(false),
+                appearance: 'none',
+                WebkitAppearance: 'none',
+                cursor: 'pointer',
+                paddingRight: '2rem',
+                color: form.callback ? '#2E1F1B' : '#7c756f',
+              }}
+              onFocus={e => e.currentTarget.parentElement.style.borderColor = '#b8813d'}
+              onBlur={e => e.currentTarget.parentElement.style.borderColor = '#ebe4d8'}
+            >
+              <option value="">Preferred Time: Anytime / First Available</option>
+              <option value="Morning (9am–12pm)">Morning (9am–12pm)</option>
+              <option value="Afternoon (12pm–4pm)">Afternoon (12pm–4pm)</option>
+              <option value="Evening (4pm–8pm)">Evening (4pm–8pm)</option>
+            </select>
+            <svg style={{ position: 'absolute', right: '14px', pointerEvents: 'none', color: '#a07844' }} width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+          </div>
+        </div>
+
+        {/* 5. Optional Note / Event date */}
+        <div>
+          <div style={fieldWrapStyle}>
+            <svg style={iconStyle} width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            <input
+              id="cf-notes"
+              type="text"
+              placeholder="Optional: Tell us about your goal or wedding/event date"
+              value={form.notes}
+              onChange={e => handleChange('notes', e.target.value)}
+              style={inputInnerStyle(false)}
+              onFocus={e => e.currentTarget.parentElement.style.borderColor = '#b8813d'}
+              onBlur={e => e.currentTarget.parentElement.style.borderColor = '#ebe4d8'}
+            />
+          </div>
+        </div>
+
+        {/* Server Error */}
+        {submitError && (
+          <div role="alert" style={{ display: 'flex', alignItems: 'center', gap: '8px', padding: '0.6rem 0.8rem', background: '#FEF2F2', border: '1px solid #FECACA', borderRadius: '12px', fontSize: '0.8rem', color: '#B91C1C' }}>
+            <AlertCircle size={15} /> {submitError}
+          </div>
+        )}
+
+        {/* Golden Gradient Pill Submit Button */}
+        <button
+          type="submit"
+          disabled={isSubmitting}
+          aria-disabled={isSubmitting}
+          style={{
+            width: '100%',
+            marginTop: '0.35rem',
+            padding: '0.88rem 1.2rem',
+            background: isSubmitting
+              ? '#b5a18a'
+              : 'linear-gradient(135deg, #9b723e 0%, #875c2a 100%)',
+            color: '#ffffff',
+            border: 'none',
+            borderRadius: '16px',
+            fontSize: '0.98rem',
+            fontWeight: 700,
+            letterSpacing: '0.2px',
+            cursor: isSubmitting ? 'not-allowed' : 'pointer',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            gap: '8px',
+            boxShadow: '0 8px 24px rgba(155, 114, 62, 0.35)',
+            transition: 'transform 0.15s ease, box-shadow 0.15s ease, background 0.2s',
+            fontFamily: 'inherit',
+          }}
+          onMouseEnter={e => {
+            if (!isSubmitting) {
+              e.currentTarget.style.transform = 'translateY(-1px)';
+              e.currentTarget.style.boxShadow = '0 10px 28px rgba(155, 114, 62, 0.45)';
+            }
+          }}
+          onMouseLeave={e => {
+            if (!isSubmitting) {
+              e.currentTarget.style.transform = 'none';
+              e.currentTarget.style.boxShadow = '0 8px 24px rgba(155, 114, 62, 0.35)';
+            }
+          }}
+        >
+          {isSubmitting ? (
+            <><Loader2 size={18} style={{ animation: 'spin 1s linear infinite' }} /> Unlocking Offer...</>
+          ) : (
+            <>
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 2l2.4 7.2h7.6l-6.1 4.5 2.3 7.3-6.2-4.6-6.2 4.6 2.3-7.3-6.1-4.5h7.6z"/></svg>
+              <span>Unlock My 20% Offer</span>
+              <ArrowRight size={17} />
+            </>
+          )}
+        </button>
+
+        {/* Compact Footer Trust Badge & Legal */}
+        <div style={{ marginTop: '0.4rem', textAlign: 'center' }}>
+          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '5px', fontSize: '0.74rem', color: '#2b7852', fontWeight: 600 }}>
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+            <span>100% Confidential • Doctor-Led Consultation in Bathinda</span>
+          </div>
+          <p style={{ fontSize: '0.67rem', color: '#908a82', lineHeight: 1.35, margin: '4px 0 0' }}>
+            By submitting, you agree to be contacted by The DentalBrace Clinic regarding your enquiry.
+          </p>
+        </div>
+      </form>
+    );
+  }
+
+  // ── STANDARD / PAGE EMBED FORM STATE ───────────────────────────────
   return (
     <form
       onSubmit={handleSubmit}

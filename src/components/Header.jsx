@@ -2,7 +2,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Phone, MapPin, Clock, Menu, X, ChevronDown, Search, ArrowRight } from 'lucide-react';
+import { Phone, MapPin, Clock, Menu, X, ChevronDown, Search, ArrowRight, Calendar, Sparkles, Gift } from 'lucide-react';
 import './Header.css';
 
 const Header = () => {
@@ -42,10 +42,16 @@ const Header = () => {
       <header className={`header ${scrolled ? 'scrolled bg-white shadow-soft' : ''}`} onMouseLeave={handleMouseLeave}>
         <div className={`top-bar ${scrolled ? 'hidden' : ''} bg-cream text-secondary`}>
           <div className="container top-bar-content">
-            <div className="top-bar-item">
+            <a 
+              href="https://maps.app.goo.gl/uksfFySwX9RL5uu56?g_st=iw" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="top-bar-item top-bar-map-link"
+              title="Open The DentalBrace Clinic on Google Maps"
+            >
               <MapPin size={16} />
               <span>Bathinda, Punjab</span>
-            </div>
+            </a>
             <div className="top-bar-item">
               <Clock size={16} />
               <span>Mon - Sat: 9:00 AM - 8:00 PM</span>
@@ -74,23 +80,74 @@ const Header = () => {
                 <div className="logo-text-wrapper" style={{ display: 'flex', flexDirection: 'column' }}>
                   <span className="logo-text">The DentalBrace</span>
                   <span className="logo-subtext">Clinic & Implant Centre</span>
+                  <span className="logo-location">Bathinda, Punjab</span>
                 </div>
               </Link>
             </div>
 
-            <button className="mobile-menu-btn" onClick={toggleMenu} aria-label="Toggle menu">
-              {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
-            </button>
+            <div className="nav-mobile-actions">
+              <Link
+                href="/wedding-season-dental-offer-bathinda"
+                className="header-offer-btn"
+                aria-label="View 20% OFF Offer"
+                title="View 20% OFF Offer"
+                onClick={() => {
+                  window.gtag?.('event', 'header_offer_click', { location: 'mobile_header_top' });
+                }}
+              >
+                <span className="header-offer-btn__icon">
+                  <Gift size={13} />
+                </span>
+                <span className="header-offer-btn__text">
+                  <strong className="header-offer-btn__badge">20% OFF</strong>
+                </span>
+              </Link>
 
-            <div className={`nav-links ${isMenuOpen ? 'open glass' : ''}`}>
+
+              <button className="mobile-menu-btn" onClick={toggleMenu} aria-label="Toggle menu">
+                {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
+              </button>
+            </div>
+
+            <div className={`nav-links ${isMenuOpen ? 'open' : ''}`}>
+              {/* Mobile Quick Action Pill Strip */}
+              <div className="mobile-nav-pills">
+                <Link
+                  href="/wedding-season-dental-offer-bathinda"
+                  className="mobile-nav-pill mobile-nav-pill--offer"
+                  onClick={() => { handleNavClick(); window.gtag?.('event', 'wedding_offer_nav_click', { location: 'mobile_nav_top' }); }}
+                >
+                  <Sparkles size={14} />
+                  <span>20% Off Wedding Offer</span>
+                </Link>
+                <a
+                  href="https://maps.app.goo.gl/uksfFySwX9RL5uu56?g_st=iw"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mobile-nav-pill"
+                >
+                  <MapPin size={14} />
+                  <span>Bibi Wala Rd</span>
+                </a>
+              </div>
+
               <div className="nav-item">
                 <Link href="/" className="nav-link" onClick={handleNavClick}>Home</Link>
               </div>
+
               <div 
-                className="nav-item" 
+                className={`nav-item has-dropdown ${activeMegaMenu === 'treatments' ? 'dropdown-active' : ''}`}
                 onMouseEnter={() => handleMouseEnter('treatments')}
               >
-                <span className="nav-link" onClick={() => handleClickMenu('treatments')}>Treatments <ChevronDown size={14} /></span>
+                <button 
+                  type="button" 
+                  className="nav-link nav-link-toggle" 
+                  onClick={() => handleClickMenu('treatments')}
+                  aria-expanded={activeMegaMenu === 'treatments'}
+                >
+                  <span>Treatments</span>
+                  <ChevronDown size={16} className={`chevron-icon ${activeMegaMenu === 'treatments' ? 'rotate' : ''}`} />
+                </button>
                 {activeMegaMenu === 'treatments' && (
                   <div className="mega-menu glass shadow-soft">
                     <div className="mega-menu-grid">
@@ -128,10 +185,18 @@ const Header = () => {
               </div>
 
               <div 
-                className="nav-item"
+                className={`nav-item has-dropdown ${activeMegaMenu === 'digital' ? 'dropdown-active' : ''}`}
                 onMouseEnter={() => handleMouseEnter('digital')}
               >
-                <span className="nav-link" onClick={() => handleClickMenu('digital')}>Digital Dentistry <ChevronDown size={14} /></span>
+                <button 
+                  type="button" 
+                  className="nav-link nav-link-toggle" 
+                  onClick={() => handleClickMenu('digital')}
+                  aria-expanded={activeMegaMenu === 'digital'}
+                >
+                  <span>Digital Dentistry</span>
+                  <ChevronDown size={16} className={`chevron-icon ${activeMegaMenu === 'digital' ? 'rotate' : ''}`} />
+                </button>
                 {activeMegaMenu === 'digital' && (
                   <div className="mega-menu glass shadow-soft">
                     <div className="mega-menu-grid two-col">
@@ -152,8 +217,19 @@ const Header = () => {
                 )}
               </div>
               
-              <div className="nav-item" onMouseEnter={() => handleMouseEnter('specialists')}>
-                <span className="nav-link" onClick={() => handleClickMenu('specialists')}>Specialists <ChevronDown size={14} /></span>
+              <div 
+                className={`nav-item has-dropdown ${activeMegaMenu === 'specialists' ? 'dropdown-active' : ''}`}
+                onMouseEnter={() => handleMouseEnter('specialists')}
+              >
+                <button 
+                  type="button" 
+                  className="nav-link nav-link-toggle" 
+                  onClick={() => handleClickMenu('specialists')}
+                  aria-expanded={activeMegaMenu === 'specialists'}
+                >
+                  <span>Specialists</span>
+                  <ChevronDown size={16} className={`chevron-icon ${activeMegaMenu === 'specialists' ? 'rotate' : ''}`} />
+                </button>
                 {activeMegaMenu === 'specialists' && (
                   <div className="mega-menu glass shadow-soft">
                     <div className="mega-menu-grid two-col">
@@ -167,8 +243,19 @@ const Header = () => {
                 )}
               </div>
 
-              <div className="nav-item" onMouseEnter={() => handleMouseEnter('patients')}>
-                 <span className="nav-link" onClick={() => handleClickMenu('patients')}>Patients <ChevronDown size={14} /></span>
+              <div 
+                className={`nav-item has-dropdown ${activeMegaMenu === 'patients' ? 'dropdown-active' : ''}`}
+                onMouseEnter={() => handleMouseEnter('patients')}
+              >
+                 <button 
+                   type="button" 
+                   className="nav-link nav-link-toggle" 
+                   onClick={() => handleClickMenu('patients')}
+                   aria-expanded={activeMegaMenu === 'patients'}
+                 >
+                   <span>Patients</span>
+                   <ChevronDown size={16} className={`chevron-icon ${activeMegaMenu === 'patients' ? 'rotate' : ''}`} />
+                 </button>
                  {activeMegaMenu === 'patients' && (
                   <div className="mega-menu glass shadow-soft">
                     <div className="mega-menu-grid">
@@ -196,24 +283,25 @@ const Header = () => {
               <div className="nav-item">
                 <Link href="/contact" className="nav-link" onClick={handleNavClick}>Contact</Link>
               </div>
-              {/* Campaign offer link — remove after 31 Aug 2026 */}
-              <div className="nav-item">
-                <Link
-                  href="/dental-offer-bathinda"
-                  onClick={() => { handleNavClick(); window.gtag?.('event', 'offer_cta_click', { location: 'nav' }); }}
-                  style={{
-                    display: 'inline-flex', alignItems: 'center', gap: '5px',
-                    padding: '0.45rem 1rem', borderRadius: '9999px',
-                    background: 'rgba(245,130,32,0.1)', border: '1px solid rgba(245,130,32,0.35)',
-                    color: 'var(--accent-color)', fontWeight: 700, fontSize: '0.82rem',
-                    whiteSpace: 'nowrap', textDecoration: 'none',
-                  }}
+
+              {/* Mobile Menu Footer Action Card */}
+              <div className="mobile-nav-footer">
+                <a
+                  href="/wedding-season-dental-offer-bathinda#wedding-consultation-form"
+                  className="mobile-nav-book-btn"
+                  onClick={handleNavClick}
                 >
-                  🏷️ Special Offer
-                </Link>
-              </div>
-              <div className="nav-item">
-                <a href="/dental-offer-bathinda#campaign-form" className="btn btn-primary nav-cta magnetic" onClick={handleNavClick} style={{ whiteSpace: 'nowrap' }}>Book Appointment</a>
+                  <Calendar size={18} />
+                  <span>Book Consultation</span>
+                </a>
+                <div className="mobile-nav-contact-chips">
+                  <a href="tel:7496849392" className="mobile-contact-chip">
+                    <Phone size={14} /> +91 74968-49392
+                  </a>
+                  <span className="mobile-hours-chip">
+                    <Clock size={13} /> Mon–Sat 9AM–8PM
+                  </span>
+                </div>
               </div>
             </div>
           </div>
@@ -234,7 +322,7 @@ const Header = () => {
         <a href="https://maps.app.goo.gl/uksfFySwX9RL5uu56?g_st=iw" target="_blank" rel="noopener noreferrer" className="bottom-bar-item">
           <MapPin size={20} /> Directions
         </a>
-        <a href="/dental-offer-bathinda#campaign-form" className="bottom-bar-item primary-bg">
+        <a href="/wedding-season-dental-offer-bathinda#wedding-consultation-form" className="bottom-bar-item primary-bg">
           Book
         </a>
       </div>

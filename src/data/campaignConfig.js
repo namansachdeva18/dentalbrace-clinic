@@ -21,20 +21,20 @@ export const CAMPAIGN_CONFIG = {
   SHOW_DISCOUNT: true,
 
   // ─── Offer Expiry ─────────────────────────────────────────────────
-  // Campaign expires at end of August 31, 2026 (India Standard Time = UTC+5:30)
-  EXPIRY_DATE: new Date('2026-08-31T23:59:59+05:30'),
-  EXPIRY_DISPLAY: '31 August 2026',
+  // Campaign expires at end of September 30, 2026 (India Standard Time = UTC+5:30)
+  EXPIRY_DATE: new Date('2026-09-30T23:59:59+05:30'),
+  EXPIRY_DISPLAY: '30 September 2026',
 
   // ─── Campaign Identity ─────────────────────────────────────────────
-  CAMPAIGN_NAME: 'august_2026_dental_offer',
-  CAMPAIGN_URL: '/dental-offer-bathinda',
+  CAMPAIGN_NAME: 'anniversary_wedding_dental_offer',
+  CAMPAIGN_URL: '/wedding-season-dental-offer-bathinda',
 
   // ─── Copy Strings ─────────────────────────────────────────────────
-  HEADLINE: 'Limited-Time Dental Care Offer',
-  DISCOUNT_LINE: 'Up to 20% OFF Selected Premium Dental Treatments',
-  BONUS_LINE: 'Plus a Complimentary Consultation',
-  VALIDITY_LINE: 'Valid Until 31 August 2026',
-  CTA_PRIMARY: 'Claim My Offer',
+  HEADLINE: 'Anniversary Special',
+  DISCOUNT_LINE: '20% OFF Eligible Premium Dental Treatments',
+  BONUS_LINE: 'Wedding Season Smile Offer',
+  VALIDITY_LINE: 'Valid Till 30 September 2026',
+  CTA_PRIMARY: 'Claim 20% Offer',
   CTA_SECONDARY: 'Book Consultation',
   CTA_FORM: 'Check My Eligibility',
 

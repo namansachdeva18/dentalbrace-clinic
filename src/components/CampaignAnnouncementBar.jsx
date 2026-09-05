@@ -1,39 +1,33 @@
 'use client';
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { X, Tag } from 'lucide-react';
+import { X, ArrowRight, Sparkles } from 'lucide-react';
 import { CAMPAIGN_CONFIG, isCampaignActive } from '@/data/campaignConfig';
 
 /**
  * CampaignAnnouncementBar
  *
- * - Renders above the fixed Header (pushes header down, no CLS)
- * - Dismissible: closes and remembers via sessionStorage
- * - No layout shift on initial render (SSR-safe with useEffect check)
- * - Respects prefers-reduced-motion
- * - Keyboard accessible (close with ESC or Tab→button→Enter)
- * - Does NOT render if campaign is inactive/expired
+ * - Styled to match the requested premium top banner:
+ *   Rich dark bronze/brown tone, vibrant 20% OFF pill, clear typography,
+ *   golden CTA button with hover effect, and dismiss control.
  */
 const CampaignAnnouncementBar = () => {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    // Campaign expiry check — purely client-side so no hydration mismatch
     if (!isCampaignActive()) return;
 
-    const dismissed = sessionStorage.getItem('campaign_bar_dismissed');
+    // Use current campaign key so updates re-appear
+    const dismissed = sessionStorage.getItem(`campaign_bar_dismissed_${CAMPAIGN_CONFIG.CAMPAIGN_NAME}`);
     if (!dismissed) setVisible(true);
 
-    // ESC key dismissal
     const onKey = (e) => {
       if (e.key === 'Escape') handleDismiss();
     };
     window.addEventListener('keydown', onKey);
     return () => window.removeEventListener('keydown', onKey);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  // Sync banner height to CSS variable for layout adjustments
   useEffect(() => {
     if (!visible) {
       document.documentElement.style.setProperty('--announcement-height', '0px');
@@ -57,10 +51,9 @@ const CampaignAnnouncementBar = () => {
 
   const handleDismiss = () => {
     setVisible(false);
-    sessionStorage.setItem('campaign_bar_dismissed', '1');
+    sessionStorage.setItem(`campaign_bar_dismissed_${CAMPAIGN_CONFIG.CAMPAIGN_NAME}`, '1');
   };
 
-  // Track CTA clicks for analytics
   const handleCtaClick = () => {
     if (typeof window !== 'undefined' && window.gtag) {
       window.gtag('event', 'offer_cta_click', {
@@ -73,26 +66,26 @@ const CampaignAnnouncementBar = () => {
   if (!visible) return null;
 
   return (
-    <div
+    <aside
       id="campaign-announcement-bar"
       role="banner"
       aria-label="Limited-time dental care offer"
       style={{
-        background: 'linear-gradient(90deg, #0F3D3E 0%, #1a5254 50%, #0F3D3E 100%)',
-        color: '#ffffff',
-        padding: '10px 16px',
-        textAlign: 'center',
+        background: 'linear-gradient(90deg, #2b1f17 0%, #3a2b20 50%, #2b1f17 100%)',
+        borderBottom: '1px solid rgba(229, 168, 85, 0.25)',
+        color: '#f8f5ee',
+        padding: '8px 16px',
         position: 'fixed',
         top: 0,
         left: 0,
         right: 0,
         width: '100%',
         zIndex: 1100,
-        // Reserve height so fixed header accounts for it — no CLS
         minHeight: '44px',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
+        boxShadow: '0 2px 10px rgba(0,0,0,0.2)',
       }}
     >
       <style dangerouslySetInnerHTML={{ __html: `
@@ -100,94 +93,159 @@ const CampaignAnnouncementBar = () => {
           display: flex;
           align-items: center;
           justify-content: center;
-          gap: 10px;
+          gap: 12px;
           flex-wrap: nowrap;
-          max-width: 1200px;
+          max-width: 1350px;
           margin: 0 auto;
-          padding-right: 32px;
+          padding-right: 28px;
         }
-        .cab-tag { display: flex; align-items: center; gap: 6px; font-size: 0.82rem; font-weight: 700; letter-spacing: 0.5px; color: #F58220; white-space: nowrap; }
-        .cab-dot { font-size: 0.82rem; color: rgba(255,255,255,0.5); }
-        .cab-discount { font-size: 0.82rem; font-weight: 600; color: #ffffff; white-space: nowrap; }
-        .cab-date { font-size: 0.82rem; color: rgba(255,255,255,0.7); white-space: nowrap; }
+        .cab-badge {
+          display: inline-flex;
+          align-items: center;
+          gap: 4px;
+          background: rgba(229, 168, 85, 0.18);
+          border: 1px solid rgba(229, 168, 85, 0.45);
+          color: #f7ba63;
+          font-size: 0.74rem;
+          font-weight: 800;
+          padding: 2px 8px;
+          border-radius: 6px;
+          letter-spacing: 0.5px;
+          white-space: nowrap;
+          flex-shrink: 0;
+        }
+        .cab-text-group {
+          font-size: 0.84rem;
+          line-height: 1.35;
+          color: #eedcc6;
+          display: inline-flex;
+          align-items: center;
+          gap: 6px;
+          white-space: nowrap;
+        }
+        .cab-text-group strong {
+          color: #fce7cf;
+          font-weight: 700;
+        }
+        .cab-dot {
+          color: rgba(238, 220, 198, 0.4);
+          font-size: 0.8rem;
+          margin: 0 1px;
+        }
         .cab-btn {
-          background: #F58220;
-          color: #ffffff;
-          padding: 5px 14px;
+          display: inline-flex;
+          align-items: center;
+          gap: 6px;
+          background: linear-gradient(135deg, #d89b47 0%, #be812e 100%);
+          color: #1a120c;
+          padding: 5px 16px;
           border-radius: 9999px;
-          font-size: 0.78rem;
+          font-size: 0.8rem;
           font-weight: 700;
           text-decoration: none;
           white-space: nowrap;
-          transition: background 0.2s ease;
+          box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+          transition: all 0.2s ease;
           flex-shrink: 0;
         }
-        .cab-btn:hover { background: #E87413; }
-        
-        @media (max-width: 900px) {
-          .cab-date, .cab-dot.date-dot { display: none; }
+        .cab-btn:hover {
+          background: linear-gradient(135deg, #e4a856 0%, #ce8f38 100%);
+          transform: translateY(-1px);
+          box-shadow: 0 4px 12px rgba(216, 155, 71, 0.4);
+          color: #120c08;
+        }
+        .cab-close {
+          position: absolute;
+          right: 10px;
+          top: 50%;
+          transform: translateY(-50%);
+          background: transparent;
+          border: none;
+          color: rgba(238, 220, 198, 0.6);
+          cursor: pointer;
+          padding: 5px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          line-height: 1;
+          transition: color 0.2s ease;
+        }
+        .cab-close:hover {
+          color: #ffffff;
+        }
+
+        @media (max-width: 1100px) {
+          .cab-validity {
+            display: none;
+          }
+        }
+        @media (max-width: 860px) {
+          .cab-bonus {
+            display: none;
+          }
         }
         @media (max-width: 600px) {
-          .cab-wrapper { flex-wrap: wrap; gap: 6px; padding: 2px 24px 2px 0; justify-content: center; }
-          .cab-tag { width: 100%; justify-content: center; margin-bottom: 2px; }
-          .cab-dot.tag-dot { display: none; }
-          .cab-discount { font-size: 0.78rem; }
-          .cab-btn { font-size: 0.75rem; padding: 4px 12px; }
+          #campaign-announcement-bar {
+            padding: 6px 12px;
+          }
+          .cab-wrapper {
+            gap: 8px;
+            padding-right: 22px;
+            width: 100%;
+            justify-content: space-between;
+          }
+          .cab-text-group {
+            font-size: 0.74rem;
+            white-space: normal;
+            display: -webkit-box;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            line-height: 1.25;
+          }
+          .cab-badge {
+            font-size: 0.68rem;
+            padding: 2px 6px;
+          }
+          .cab-btn {
+            font-size: 0.72rem;
+            padding: 4px 10px;
+            gap: 3px;
+          }
         }
       `}} />
 
-      {/* Content */}
       <div className="cab-wrapper">
-        <span className="cab-tag">
-          <Tag size={15} color="#F58220" aria-hidden="true" />
-          {CAMPAIGN_CONFIG.HEADLINE.toUpperCase()}
+        <span className="cab-badge">
+          <Sparkles size={11} /> 20% OFF
         </span>
-        <span className="cab-dot tag-dot">•</span>
-        {CAMPAIGN_CONFIG.SHOW_DISCOUNT && (
-          <span className="cab-discount">
-            {CAMPAIGN_CONFIG.DISCOUNT_LINE}
-          </span>
-        )}
-        <span className="cab-dot date-dot">•</span>
-        <span className="cab-date">
-          Valid Until {CAMPAIGN_CONFIG.EXPIRY_DISPLAY}
+
+        <span className="cab-text-group">
+          <strong>{CAMPAIGN_CONFIG.HEADLINE}:</strong> {CAMPAIGN_CONFIG.DISCOUNT_LINE}
+          <span className="cab-dot cab-bonus">•</span>
+          <span className="cab-bonus">{CAMPAIGN_CONFIG.BONUS_LINE}</span>
+          <span className="cab-dot cab-validity">•</span>
+          <span className="cab-validity">{CAMPAIGN_CONFIG.VALIDITY_LINE}</span>
         </span>
+
         <Link
           href={CAMPAIGN_CONFIG.CAMPAIGN_URL}
           onClick={handleCtaClick}
           className="cab-btn"
         >
-          {CAMPAIGN_CONFIG.CTA_PRIMARY}
+          <span>{CAMPAIGN_CONFIG.CTA_PRIMARY}</span>
+          <ArrowRight size={13} />
         </Link>
       </div>
 
-      {/* Dismiss button */}
       <button
         onClick={handleDismiss}
-        aria-label="Dismiss campaign announcement"
-        style={{
-          position: 'absolute',
-          right: '12px',
-          top: '50%',
-          transform: 'translateY(-50%)',
-          background: 'transparent',
-          border: 'none',
-          color: 'rgba(255,255,255,0.7)',
-          cursor: 'pointer',
-          padding: '6px',
-          borderRadius: '50%',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          lineHeight: 1,
-          transition: 'color 0.2s ease',
-        }}
-        onMouseEnter={e => e.currentTarget.style.color = '#ffffff'}
-        onMouseLeave={e => e.currentTarget.style.color = 'rgba(255,255,255,0.7)'}
+        aria-label="Dismiss announcement"
+        className="cab-close"
       >
-        <X size={16} />
+        <X size={15} />
       </button>
-    </div>
+    </aside>
   );
 };
 

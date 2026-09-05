@@ -239,8 +239,31 @@ const CampaignPageClient = () => {
             )}
 
             <p className="cp-hero__bonus">
-              {campaignActive ? CAMPAIGN_CONFIG.BONUS_LINE : 'This campaign has now ended. Book a regular consultation below.'}
+              {campaignActive ? CAMPAIGN_CONFIG.BONUS_LINE : 'This campaign has now ended. Our new seasonal campaign is now live below:'}
             </p>
+
+            {/* Wedding Campaign Live Banner */}
+            <div style={{
+              margin: '1.25rem 0',
+              padding: '1.25rem',
+              borderRadius: '16px',
+              background: 'linear-gradient(135deg, rgba(245, 130, 32, 0.2) 0%, rgba(15, 61, 62, 0.6) 100%)',
+              border: '1.5px solid rgba(245, 130, 32, 0.6)',
+            }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: '#F58220', fontWeight: 800, fontSize: '0.85rem', textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: '0.4rem' }}>
+                <span>💍 NOW LIVE: WEDDING SEASON SMILE CAMPAIGN</span>
+              </div>
+              <p style={{ color: '#ffffff', fontSize: '1rem', fontWeight: 700, margin: '0 0 0.75rem', lineHeight: 1.35 }}>
+                Get Wedding-Ready With a Smile You'll Love in Bathinda
+              </p>
+              <Link
+                href="/wedding-season-dental-offer-bathinda"
+                className="btn btn-primary"
+                style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem', fontSize: '0.9rem', padding: '0.65rem 1.25rem' }}
+              >
+                View Wedding Campaign &rarr;
+              </Link>
+            </div>
 
             {campaignActive && (
               <p className="cp-hero__subtext">

@@ -84,6 +84,7 @@ const Footer = () => {
             <li><Link href="/gallery">Smile Gallery</Link></li>
             <li><Link href="/faq">FAQs</Link></li>
             <li><Link href="/blog">Blog & Patient Hub</Link></li>
+            <li><Link href="/wedding-season-dental-offer-bathinda" style={{ color: 'var(--accent-color)', fontWeight: 600 }}>💍 Wedding Smile Campaign</Link></li>
             <li><Link href="/contact">Contact Us</Link></li>
           </ul>
         </div>

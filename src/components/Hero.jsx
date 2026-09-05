@@ -3,7 +3,7 @@ import { useEffect, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import gsap from 'gsap';
-import { Calendar, Phone, Star, ShieldCheck, HeartPulse, Award, ArrowRight, CheckCircle, Users, Tag } from 'lucide-react';
+import { Calendar, Phone, Star, ShieldCheck, HeartPulse, Award, ArrowRight, CheckCircle, Users, Tag, Sparkles, Gift, Percent } from 'lucide-react';
 import AnimatedCounter from './AnimatedCounter';
 import { CAMPAIGN_CONFIG, isCampaignActive } from '@/data/campaignConfig';
 import './Hero.css';
@@ -164,6 +164,8 @@ const Hero = () => {
           />
           {/* Gradient overlay on bottom */}
           <div className="hero-image-overlay" />
+
+
         </div>
 
         {/* Floating review card */}

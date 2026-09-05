@@ -1,0 +1,2421 @@
+/* WeddingCampaignPage.css — Elite Wedding Season Dental Campaign Landing Page */
+
+/* ── Sticky Mobile CTA Bar ─────────────────────────────────────────── */
+.wcp-mobile-sticky-bar {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: rgba(15, 61, 62, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-top: 1px solid rgba(245, 130, 32, 0.35);
+  padding: 0.65rem 1rem calc(0.65rem + env(safe-area-inset-bottom, 0px));
+  box-shadow: 0 -8px 24px rgba(0, 0, 0, 0.25);
+  transition: transform 0.3s ease;
+}
+
+.wcp-mobile-sticky-bar__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  max-width: 500px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.wcp-sticky-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  padding: 0.65rem 0.85rem;
+  border-radius: 9999px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-decoration: none;
+  text-align: center;
+  flex: 1;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+}
+
+.wcp-sticky-btn--wa {
+  background: #25D366;
+  color: #ffffff;
+}
+
+.wcp-sticky-btn--book {
+  background: #F58220;
+  color: #ffffff;
+  flex: 1.35;
+}
+
+.wcp-sticky-btn--call {
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  flex: 0.9;
+}
+
+/* ── Hero Section ─────────────────────────────────────────────────── */
+.wcp-hero {
+  position: relative;
+  background: radial-gradient(circle at 80% 20%, #1f5e60 0%, #0F3D3E 60%, #092627 100%);
+  color: #ffffff;
+  padding-top: calc(var(--header-height, 90px) + 2rem);
+  padding-bottom: 4.5rem;
+  overflow: hidden;
+}
+
+.wcp-hero::before {
+  content: '';
+  position: absolute;
+  top: -100px;
+  right: -100px;
+  width: 450px;
+  height: 450px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(245, 130, 32, 0.15) 0%, transparent 70%);
+  filter: blur(50px);
+  pointer-events: none;
+}
+
+.wcp-hero__inner {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 3.5rem;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.wcp-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.65);
+  margin-bottom: 1.25rem;
+}
+.wcp-breadcrumb a {
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.wcp-breadcrumb a:hover {
+  color: #F58220;
+}
+
+.wcp-campaign-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.45rem 1.1rem;
+  border-radius: 9999px;
+  background: rgba(245, 130, 32, 0.18);
+  border: 1px solid rgba(245, 130, 32, 0.45);
+  color: #F58220;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  margin-bottom: 1.25rem;
+}
+
+.wcp-hero__h1 {
+  font-size: clamp(2.3rem, 4.8vw, 3.75rem);
+  font-weight: 800;
+  line-height: 1.12;
+  color: #ffffff;
+  margin-bottom: 1.2rem;
+  letter-spacing: -0.025em;
+}
+
+.wcp-hero__h1 span {
+  background: linear-gradient(135deg, #ffffff 40%, #F58220 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.wcp-hero__subtext {
+  font-size: clamp(1rem, 2vw, 1.15rem);
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.68;
+  max-width: 620px;
+  margin-bottom: 2rem;
+}
+
+.wcp-hero__ctas {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.wcp-btn-wa {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.6rem;
+  border-radius: 9999px;
+  background: #25D366;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 16px rgba(37, 211, 102, 0.35);
+}
+.wcp-btn-wa:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.45);
+}
+
+.wcp-hero__trust-strip {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+  padding-top: 1.25rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.wcp-trust-item {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 500;
+}
+.wcp-trust-item strong {
+  color: #ffffff;
+}
+
+/* Hero Right Visual */
+.wcp-hero__visual {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.wcp-hero__card-wrap {
+  position: relative;
+  width: 100%;
+  height: 480px;
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.45);
+  border: 2px solid rgba(255, 255, 255, 0.15);
+}
+
+.wcp-hero__overlay-pill {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 1.5rem;
+  right: 1.5rem;
+  background: rgba(15, 61, 62, 0.88);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(245, 130, 32, 0.35);
+  border-radius: 20px;
+  padding: 1rem 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.wcp-overlay-pill__icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(245, 130, 32, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #F58220;
+  flex-shrink: 0;
+}
+
+.wcp-overlay-pill__text h4 {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0 0 0.15rem;
+}
+.wcp-overlay-pill__text p {
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.75);
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* ── Section: Wedding Desire / Problem ────────────────────────────── */
+.wcp-desire-section {
+  background: var(--bg-ivory);
+  padding: 5.5rem 0;
+}
+
+.wcp-desire-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.wcp-desire-img-wrap {
+  position: relative;
+  width: 100%;
+  height: 420px;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+}
+
+.wcp-concern-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.wcp-concern-card {
+  position: relative;
+  background: #ffffff;
+  border: 1px solid rgba(245, 130, 32, 0.18);
+  border-radius: 16px;
+  padding: 1.15rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
+  box-shadow: 0 4px 14px rgba(15, 61, 62, 0.04);
+}
+
+.wcp-concern-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, #F58220, #f8a14d);
+  opacity: 0;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.35s ease, opacity 0.35s ease;
+}
+
+.wcp-concern-card:hover {
+  transform: translateY(-4px) scale(1.01);
+  border-color: rgba(245, 130, 32, 0.45);
+  box-shadow: 0 12px 28px rgba(245, 130, 32, 0.12);
+}
+
+.wcp-concern-card:hover::before {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+.wcp-concern-card__icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: rgba(245, 130, 32, 0.12);
+  color: #F58220;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.wcp-concern-card:hover .wcp-concern-card__icon {
+  transform: scale(1.15) rotate(6deg);
+  background: #F58220;
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(245, 130, 32, 0.35);
+}
+
+.wcp-concern-card__text {
+  flex: 1;
+}
+
+.wcp-concern-card__text h4 {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0 0 0.2rem;
+  transition: color 0.2s ease;
+}
+
+.wcp-concern-card:hover .wcp-concern-card__text h4 {
+  color: #0F3D3E;
+}
+
+.wcp-concern-card__text p {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  margin: 0;
+  line-height: 1.45;
+}
+
+/* ── Section: Treatments ──────────────────────────────────────────── */
+.wcp-treatments-section {
+  background: #F8FAF9;
+  padding: 6rem 0;
+}
+
+/* Non-Wedding Availability Callout Banner */
+.wcp-open-access-banner {
+  max-width: 820px;
+  margin: 1.5rem auto 0;
+  background: linear-gradient(135deg, rgba(15, 61, 62, 0.05) 0%, rgba(245, 130, 32, 0.08) 100%);
+  border: 1px solid rgba(245, 130, 32, 0.25);
+  border-radius: 14px;
+  padding: 0.85rem 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  color: var(--text-primary);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+}
+
+.wcp-open-access-banner__icon {
+  color: #F58220;
+  flex-shrink: 0;
+}
+
+.wcp-open-access-banner__text {
+  font-size: 0.88rem;
+  line-height: 1.5;
+  color: var(--text-secondary);
+}
+
+.wcp-open-access-banner__text strong {
+  color: #0F3D3E;
+  font-weight: 700;
+}
+
+.wcp-trust-item--highlight {
+  background: rgba(16, 185, 129, 0.12);
+  padding: 0.2rem 0.6rem;
+  border-radius: 8px;
+  border: 1px solid rgba(16, 185, 129, 0.25);
+}
+
+.wcp-treatments-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-top: 2.2rem;
+}
+
+.wcp-treatment-card {
+  position: relative;
+  background: #ffffff;
+  border: 1px solid rgba(15, 61, 62, 0.08);
+  border-radius: 20px;
+  padding: 1.85rem 1.6rem;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  text-decoration: none;
+  color: inherit;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(15, 61, 62, 0.04);
+}
+
+.wcp-treatment-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3.5px;
+  background: linear-gradient(90deg, #F58220, #0F3D3E);
+  opacity: 0;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.35s ease, opacity 0.35s ease;
+}
+
+.wcp-treatment-card:hover {
+  transform: translateY(-5px) scale(1.01);
+  box-shadow: 0 20px 38px rgba(15, 61, 62, 0.1);
+  border-color: rgba(245, 130, 32, 0.45);
+}
+
+.wcp-treatment-card:hover::before {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+.wcp-treatment-card__icon-box {
+  width: 52px;
+  height: 52px;
+  border-radius: 16px;
+  background: rgba(15, 61, 62, 0.06);
+  color: #0F3D3E;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.2rem;
+  transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.wcp-treatment-card:hover .wcp-treatment-card__icon-box {
+  background: #F58220;
+  color: #ffffff;
+  transform: scale(1.12) rotate(6deg);
+  box-shadow: 0 6px 16px rgba(245, 130, 32, 0.35);
+}
+
+.wcp-treatment-card__title {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin: 0 0 0.5rem;
+  line-height: 1.25;
+  transition: color 0.2s ease;
+}
+
+.wcp-treatment-card:hover .wcp-treatment-card__title {
+  color: #0F3D3E;
+}
+
+.wcp-treatment-card__desc {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin: 0 0 1rem;
+  flex-grow: 1;
+}
+
+.wcp-treatment-card__candidate {
+  font-size: 0.78rem;
+  background: rgba(15, 61, 62, 0.04);
+  padding: 0.4rem 0.65rem;
+  border-radius: 8px;
+  color: #0F3D3E;
+  margin-bottom: 1.25rem;
+  line-height: 1.45;
+}
+.wcp-treatment-card__candidate strong {
+  color: #2E1F1B;
+}
+
+.wcp-treatment-card__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #F58220;
+  transition: gap 0.2s ease;
+}
+.wcp-treatment-card:hover .wcp-treatment-card__cta {
+  gap: 0.6rem;
+}
+
+/* ── Section: Intent Pathways (Not Sure What You Need?) ───────────── */
+.wcp-intent-section {
+  background: var(--bg-ivory);
+  padding: 5rem 0;
+}
+
+.wcp-intent-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+
+.wcp-intent-card {
+  position: relative;
+  background: #ffffff;
+  border: 1.5px solid var(--border-color);
+  border-radius: 20px;
+  padding: 2rem 1.6rem;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(15, 61, 62, 0.03);
+}
+
+.wcp-intent-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3.5px;
+  background: linear-gradient(90deg, #F58220, #0F3D3E);
+  opacity: 0;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.35s ease, opacity 0.35s ease;
+}
+
+.wcp-intent-card:hover {
+  border-color: #0F3D3E;
+  box-shadow: 0 16px 36px rgba(15, 61, 62, 0.1);
+  transform: translateY(-5px) scale(1.01);
+}
+
+.wcp-intent-card:hover::before {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+.wcp-intent-card__tag {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #F58220;
+  margin-bottom: 0.75rem;
+  transition: letter-spacing 0.25s ease;
+}
+
+.wcp-intent-card:hover .wcp-intent-card__tag {
+  letter-spacing: 0.8px;
+}
+
+.wcp-intent-card__goal {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 0.75rem;
+  line-height: 1.3;
+  transition: color 0.2s ease;
+}
+
+.wcp-intent-card:hover .wcp-intent-card__goal {
+  color: #0F3D3E;
+}
+
+.wcp-intent-card__rec {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+
+.wcp-intent-card__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #0F3D3E;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.wcp-intent-card__btn svg {
+  transition: transform 0.25s ease;
+}
+
+.wcp-intent-card:hover .wcp-intent-card__btn {
+  color: #F58220;
+}
+
+.wcp-intent-card:hover .wcp-intent-card__btn svg {
+  transform: translate(2px, -2px);
+}
+
+/* ── Section: Bride / Groom / Family ──────────────────────────────── */
+.wcp-roles-section {
+  background: #ffffff;
+  padding: 5.5rem 0;
+}
+
+.wcp-roles-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+
+.wcp-role-card--highlight {
+  background: #ffffff;
+  border: 1.5px solid rgba(15, 61, 62, 0.25);
+  box-shadow: 0 10px 30px rgba(15, 61, 62, 0.06);
+}
+
+.wcp-role-card--highlight:hover {
+  border-color: #0F3D3E;
+  box-shadow: 0 20px 45px rgba(15, 61, 62, 0.12);
+}
+
+.wcp-role-card {
+  position: relative;
+  background: var(--bg-ivory);
+  border: 1px solid var(--border-color);
+  border-radius: 24px;
+  padding: 2.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
+}
+
+.wcp-role-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3.5px;
+  background: linear-gradient(90deg, #F58220, #0F3D3E);
+  opacity: 0;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.35s ease, opacity 0.35s ease;
+}
+
+.wcp-role-card:hover {
+  background: #ffffff;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.08);
+  border-color: rgba(245, 130, 32, 0.45);
+  transform: translateY(-5px) scale(1.01);
+}
+
+.wcp-role-card:hover::before {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+.wcp-role-card__header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.wcp-role-card__icon {
+  width: 54px;
+  height: 54px;
+  border-radius: 16px;
+  background: rgba(245, 130, 32, 0.12);
+  color: #F58220;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.wcp-role-card:hover .wcp-role-card__icon {
+  transform: scale(1.12) rotate(6deg);
+  background: #F58220;
+  color: #ffffff;
+  box-shadow: 0 6px 16px rgba(245, 130, 32, 0.35);
+}
+
+.wcp-role-card__title {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.wcp-role-card__desc {
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+  line-height: 1.68;
+  margin-bottom: 1.5rem;
+}
+
+.wcp-role-card__list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  flex-grow: 1;
+}
+
+.wcp-role-card__list li {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-size: 0.88rem;
+  color: var(--text-primary);
+}
+.wcp-role-card__list li svg {
+  color: #10B981;
+  flex-shrink: 0;
+}
+
+/* ── Section: Why Start Early & Timeline ──────────────────────────── */
+.wcp-why-early-section {
+  background: linear-gradient(135deg, #0F3D3E 0%, #154546 100%);
+  color: #ffffff;
+  padding: 6rem 0;
+}
+
+.wcp-early-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  margin-bottom: 4rem;
+}
+
+.wcp-early-reasons {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  margin-top: 1.5rem;
+}
+
+.wcp-early-reason-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+  padding: 1.2rem 1.4rem;
+}
+.wcp-early-reason-item__icon {
+  color: #F58220;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+.wcp-early-reason-item h4 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 0.25rem;
+}
+.wcp-early-reason-item p {
+  font-size: 0.88rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0;
+  line-height: 1.55;
+}
+
+/* Timeline Horizontal Steps */
+.wcp-timeline-steps {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1.25rem;
+  position: relative;
+  margin-top: 2.5rem;
+}
+
+.wcp-timeline-step {
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 18px;
+  padding: 1.75rem 1.25rem;
+  position: relative;
+}
+
+.wcp-timeline-step__badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  background: #F58220;
+  color: #ffffff;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.85rem;
+}
+
+.wcp-timeline-step__title {
+  font-size: 1rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+  line-height: 1.3;
+}
+
+.wcp-timeline-step__desc {
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.55;
+  margin: 0;
+}
+
+/* ── Section: Campaign Offer ──────────────────────────────────────── */
+.wcp-offer-section {
+  background: var(--bg-cream);
+  padding: 5.5rem 0;
+}
+
+.wcp-offer-box {
+  background: #ffffff;
+  border: 2px solid rgba(245, 130, 32, 0.3);
+  border-radius: 28px;
+  padding: 3rem;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.06);
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.wcp-offer-inclusions {
+  list-style: none;
+  padding: 0;
+  margin: 1.75rem 0 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.wcp-offer-inclusions li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  font-size: 0.95rem;
+  color: var(--text-primary);
+  font-weight: 600;
+}
+.wcp-offer-inclusions li svg {
+  color: #10B981;
+  margin-top: 3px;
+  flex-shrink: 0;
+}
+
+.wcp-offer-card-right {
+  background: linear-gradient(145deg, #0F3D3E 0%, #174c4d 100%);
+  color: #ffffff;
+  border-radius: 22px;
+  padding: 2.25rem 2rem;
+  text-align: center;
+}
+
+/* ── Section: Lead Form Area ──────────────────────────────────────── */
+.wcp-form-section {
+  background: linear-gradient(135deg, #092627 0%, #0F3D3E 100%);
+  padding: 6rem 0;
+  color: #ffffff;
+}
+
+.wcp-form-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.wcp-form-card-container {
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 2.5rem;
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.35);
+  color: var(--text-primary);
+}
+
+/* Form Inner Styling */
+.wedding-lead-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.wedding-form-header {
+  margin-bottom: 0.5rem;
+}
+
+.wedding-form-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.35rem 0.9rem;
+  border-radius: 9999px;
+  background: rgba(245, 130, 32, 0.12);
+  color: #F58220;
+  font-size: 0.78rem;
+  font-weight: 700;
+  margin-bottom: 0.65rem;
+}
+
+.wedding-form-title {
+  font-size: 1.45rem;
+  font-weight: 800;
+  color: #0F3D3E;
+  margin: 0 0 0.35rem;
+}
+
+.wedding-form-subtitle {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  line-height: 1.55;
+  margin: 0;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-label {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #2E1F1B;
+  margin-bottom: 0.4rem;
+}
+.form-label .req {
+  color: #e53e3e;
+}
+
+.form-error {
+  color: #e53e3e;
+  font-size: 0.78rem;
+  margin-top: 0.35rem;
+}
+
+.form-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.form-radio-row {
+  display: flex;
+  gap: 1.25rem;
+}
+
+.form-radio-label {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.88rem;
+  color: var(--text-primary);
+  cursor: pointer;
+}
+.form-radio-label input[type="radio"] {
+  accent-color: #0F3D3E;
+}
+
+.form-checkbox-label {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  cursor: pointer;
+}
+.form-checkbox-label input[type="checkbox"] {
+  accent-color: #0F3D3E;
+  width: 18px;
+  height: 18px;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+.form-checkbox-label span {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.wedding-form-submit-btn {
+  width: 100%;
+  padding: 1rem;
+  border-radius: 9999px;
+  background: #F58220;
+  color: #ffffff;
+  font-size: 1.05rem;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 18px rgba(245, 130, 32, 0.35);
+  font-family: inherit;
+}
+.wedding-form-submit-btn:hover:not(:disabled) {
+  background: #E87413;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(245, 130, 32, 0.45);
+}
+.wedding-form-submit-btn:disabled {
+  background: #d1d5db;
+  cursor: not-allowed;
+}
+
+.wedding-form-privacy-note {
+  font-size: 0.75rem;
+  color: #9CA3AF;
+  text-align: center;
+  margin: 0.25rem 0 0;
+  line-height: 1.5;
+}
+
+/* Success Card */
+.wedding-form-success {
+  text-align: center;
+  padding: 2.5rem 1.5rem;
+}
+.wedding-form-success__icon {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: rgba(16, 185, 129, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+}
+.wedding-form-success__title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #0F3D3E;
+  margin-bottom: 0.75rem;
+}
+.wedding-form-success__msg {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.68;
+  margin-bottom: 1.5rem;
+}
+.wedding-form-success__disclaimer {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(15, 61, 62, 0.05);
+  padding: 0.75rem 1rem;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  color: #0F3D3E;
+  text-align: left;
+  margin-bottom: 2rem;
+}
+.wedding-form-success__actions {
+  display: flex;
+  gap: 0.85rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ── Section: FAQ ─────────────────────────────────────────────────── */
+.wcp-faq-section {
+  background: var(--bg-ivory);
+  padding: 5.5rem 0;
+}
+
+.wcp-faq-container {
+  max-width: 820px;
+  margin: 2.5rem auto 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.wcp-faq-item {
+  background: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: border-color 0.2s ease;
+}
+.wcp-faq-item[open] {
+  border-color: #0F3D3E;
+}
+
+.wcp-faq-question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem 1.6rem;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  cursor: pointer;
+  list-style: none;
+  gap: 1rem;
+}
+.wcp-faq-question::-webkit-details-marker {
+  display: none;
+}
+
+.wcp-faq-indicator {
+  font-size: 1.4rem;
+  color: #F58220;
+  font-weight: 400;
+  transition: transform 0.25s ease;
+  line-height: 1;
+}
+.wcp-faq-item[open] .wcp-faq-indicator {
+  transform: rotate(45deg);
+}
+
+.wcp-faq-answer {
+  padding: 0 1.6rem 1.35rem;
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+  line-height: 1.72;
+  margin: 0;
+}
+
+/* ── Section: Clinic & Local Bathinda Trust ───────────────────────── */
+.wcp-location-section {
+  background: var(--bg-cream);
+  padding: 5rem 0;
+}
+
+.wcp-location-layout {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 3rem;
+  align-items: stretch;
+}
+
+.wcp-location-card {
+  background: #ffffff;
+  border: 1.5px solid rgba(15, 61, 62, 0.1);
+  border-radius: 24px;
+  padding: 2.25rem;
+  box-shadow: 0 12px 36px rgba(15, 61, 62, 0.05);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.wcp-location-card:hover {
+  border-color: rgba(245, 130, 32, 0.4);
+  box-shadow: 0 16px 44px rgba(15, 61, 62, 0.08);
+}
+
+.wcp-location-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.85rem;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.wcp-location-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.75rem;
+  margin-bottom: 0 !important;
+}
+
+.wcp-pulse-beacon {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #10B981;
+  display: inline-block;
+  position: relative;
+}
+
+.wcp-pulse-beacon::after {
+  content: '';
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: rgba(16, 185, 129, 0.4);
+  animation: beaconPulse 2s infinite ease-out;
+}
+
+@keyframes beaconPulse {
+  0% {
+    transform: scale(0.6);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+.wcp-location-status {
+  font-size: 0.76rem;
+  font-weight: 600;
+  color: #0F3D3E;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: rgba(15, 61, 62, 0.05);
+  padding: 0.25rem 0.65rem;
+  border-radius: 9999px;
+}
+
+.wcp-location-title {
+  font-size: 1.65rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  line-height: 1.25;
+  margin: 0 0 1rem;
+}
+
+.cp-location__address {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+  background: #faf8f5;
+  border: 1px solid rgba(245, 130, 32, 0.2);
+  border-radius: 16px;
+  padding: 1rem 1.15rem;
+  margin-bottom: 1.25rem;
+}
+
+.cp-location__address-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: rgba(245, 130, 32, 0.12);
+  color: #F58220;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.cp-location__address strong {
+  font-size: 0.96rem;
+  color: var(--text-primary);
+  display: block;
+  margin-bottom: 0.2rem;
+}
+
+.cp-location__address p {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  line-height: 1.45;
+  margin: 0;
+}
+
+.cp-location__ctas {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  margin-bottom: 1.15rem;
+}
+
+.wcp-map-cta-btn {
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.72rem 1.15rem;
+  background: #ffffff;
+  border: 1.5px solid #0F3D3E;
+  color: #0F3D3E;
+  border-radius: 12px;
+  font-size: 0.88rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(15, 61, 62, 0.06);
+}
+
+.wcp-map-cta-btn:hover {
+  background: #0F3D3E;
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(15, 61, 62, 0.15);
+}
+
+.wcp-call-cta-btn {
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.72rem 1.15rem;
+  background: linear-gradient(135deg, #F58220 0%, #D46B10 100%);
+  border: none;
+  color: #ffffff;
+  border-radius: 12px;
+  font-size: 0.88rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 14px rgba(245, 130, 32, 0.3);
+}
+
+.wcp-call-cta-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(245, 130, 32, 0.45);
+}
+
+.wcp-location-connectivity {
+  font-size: 0.78rem;
+  color: #64748b;
+  line-height: 1.45;
+  background: rgba(15, 61, 62, 0.03);
+  padding: 0.55rem 0.85rem;
+  border-radius: 10px;
+}
+
+.cp-location__map {
+  position: relative;
+  min-height: 280px;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 12px 36px rgba(15, 61, 62, 0.08);
+  border: 2px solid rgba(15, 61, 62, 0.08);
+}
+
+.cp-location__map-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  z-index: 5;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  padding: 0.35rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #0F3D3E;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  pointer-events: none;
+}
+
+/* ── Section: Final CTA ───────────────────────────────────────────── */
+.wcp-final-cta-section {
+  background: linear-gradient(135deg, #092627 0%, #0F3D3E 50%, #124041 100%);
+  color: #ffffff;
+  padding: 5.5rem 0 calc(5.5rem + 30px);
+  text-align: center;
+  position: relative;
+}
+
+/* ── Spin Animation for Loader ────────────────────────────────────── */
+.spin-animate {
+  animation: wcpSpin 1s linear infinite;
+}
+@keyframes wcpSpin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* ── Responsive Rules ─────────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .wcp-hero__inner {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  .wcp-hero__card-wrap {
+    height: 380px;
+  }
+  .wcp-desire-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  .wcp-treatments-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .wcp-intent-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .wcp-roles-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .wcp-early-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  .wcp-timeline-steps {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .wcp-offer-box {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 2rem;
+  }
+  .wcp-form-layout {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  .wcp-location-layout {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+/* ── Comprehensive Compact Mobile Rules ───────────────────────────── */
+@media (max-width: 1024px) {
+  .wcp-hero__inner {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .wcp-hero__card-wrap {
+    height: 320px;
+  }
+  .wcp-desire-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .wcp-treatments-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+  .wcp-intent-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+  .wcp-roles-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .wcp-early-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .wcp-timeline-steps {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+  .wcp-offer-box {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 1.75rem;
+  }
+  .wcp-form-layout {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .wcp-location-layout {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Show Sticky Mobile CTA Bar */
+  .wcp-mobile-sticky-bar {
+    display: block;
+    padding: 0.45rem 0.5rem calc(0.45rem + env(safe-area-inset-bottom, 0px));
+  }
+  .wcp-mobile-sticky-bar__inner {
+    gap: 0.35rem;
+  }
+  .wcp-sticky-btn {
+    padding: 0.5rem 0.45rem;
+    font-size: 0.74rem;
+    gap: 0.2rem;
+  }
+  .wcp-sticky-btn--book {
+    flex: 1.25;
+  }
+  .wcp-sticky-btn--call {
+    flex: 0.55;
+    padding: 0.5rem 0.35rem;
+  }
+  .wcp-sticky-btn--map {
+    flex: 0.85;
+    padding: 0.5rem 0.35rem;
+  }
+
+  /* Compact Hero Section */
+  .wcp-hero {
+    padding-top: calc(76px + 1.5rem);
+    padding-bottom: 2.25rem;
+  }
+  .wcp-hero__inner {
+    gap: 1.25rem;
+  }
+  .wcp-campaign-badge {
+    padding: 0.35rem 0.85rem;
+    font-size: 0.72rem;
+    margin-bottom: 0.85rem;
+    gap: 0.35rem;
+  }
+  .wcp-hero__h1 {
+    font-size: 1.85rem;
+    line-height: 1.15;
+    margin-bottom: 0.75rem;
+    letter-spacing: -0.015em;
+  }
+  .wcp-hero__subtext {
+    font-size: 0.88rem;
+    line-height: 1.5;
+    margin-bottom: 1.15rem;
+  }
+  .wcp-hero__ctas {
+    display: none; /* Redundant on mobile because WhatsApp, Book, and Call are permanently accessible via the bottom sticky bar */
+  }
+  .wcp-hero__trust-strip {
+    gap: 0.75rem;
+    padding-top: 0.85rem;
+  }
+  .wcp-trust-item {
+    font-size: 0.75rem;
+    gap: 0.3rem;
+  }
+  .wcp-hero__card-wrap {
+    height: 220px;
+    border-radius: 16px;
+  }
+  .wcp-overlay-pill {
+    padding: 0.65rem 0.85rem;
+    bottom: 0.65rem;
+    left: 0.65rem;
+    right: 0.65rem;
+    border-radius: 12px;
+  }
+  .wcp-overlay-pill__icon {
+    width: 32px;
+    height: 32px;
+  }
+  .wcp-overlay-pill__text h4 {
+    font-size: 0.82rem;
+  }
+  .wcp-overlay-pill__text p {
+    font-size: 0.72rem;
+    display: none; /* keep super compact on small screens */
+  }
+
+  /* Compact Desire Section with 2 cards per row */
+  .wcp-desire-section {
+    padding: 1.25rem 0 1rem;
+  }
+  .wcp-desire-grid {
+    gap: 0.85rem;
+  }
+  .wcp-desire-img-wrap {
+    height: 150px;
+    border-radius: 14px;
+  }
+  .wcp-desire-text .section-badge {
+    font-size: 0.68rem;
+    padding: 0.22rem 0.65rem;
+    margin-bottom: 0.35rem;
+  }
+  .wcp-desire-text .cp-section-heading {
+    font-size: 1.35rem !important;
+    line-height: 1.18 !important;
+    margin-top: 0.35rem !important;
+    margin-bottom: 0.35rem !important;
+  }
+  .wcp-desire-text .cp-section-subheading {
+    font-size: 0.78rem !important;
+    line-height: 1.4 !important;
+    margin-bottom: 0.75rem !important;
+  }
+  .wcp-concern-cards {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.55rem;
+    margin: 0.5rem 0 0.75rem;
+  }
+  .wcp-concern-card {
+    flex-direction: column;
+    padding: 0.75rem 0.65rem;
+    border-radius: 14px;
+    gap: 0.5rem;
+    align-items: flex-start;
+  }
+  .wcp-concern-card__icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 8px;
+  }
+  .wcp-concern-card__text h4 {
+    font-size: 0.8rem;
+    line-height: 1.25;
+    margin-bottom: 0.2rem;
+  }
+  .wcp-concern-card__text p {
+    font-size: 0.7rem;
+    line-height: 1.35;
+  }
+  .wcp-desire-text .btn {
+    width: 100%;
+    justify-content: center;
+    padding: 0.7rem;
+    font-size: 0.88rem;
+    margin-bottom: 0;
+  }
+
+  /* Compact Treatments Section with 2 cards per row */
+  .wcp-treatments-section {
+    padding: 1.5rem 0 2rem;
+  }
+  .wcp-treatments-section .cp-section-heading {
+    font-size: 1.6rem !important;
+    line-height: 1.2 !important;
+    margin-top: 0.4rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+  .wcp-treatments-section .cp-section-subheading {
+    font-size: 0.82rem !important;
+    line-height: 1.45 !important;
+    margin-bottom: 0.65rem !important;
+  }
+  .wcp-open-access-banner {
+    margin: 0.5rem 0 0.85rem;
+    padding: 0.65rem 0.75rem;
+    border-radius: 10px;
+    gap: 0.55rem;
+  }
+  .wcp-open-access-banner__icon {
+    width: 16px;
+    height: 16px;
+  }
+  .wcp-open-access-banner__text {
+    font-size: 0.74rem;
+    line-height: 1.35;
+  }
+  .wcp-treatments-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.65rem;
+    margin-top: 1.25rem;
+  }
+  .wcp-treatment-card {
+    padding: 0.85rem 0.75rem;
+    border-radius: 14px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+  }
+  .wcp-treatment-card__icon-box {
+    width: 34px;
+    height: 34px;
+    border-radius: 10px;
+    margin-bottom: 0.5rem;
+  }
+  .wcp-treatment-card__icon-box svg {
+    width: 18px;
+    height: 18px;
+  }
+  .wcp-treatment-card__title {
+    font-size: 0.88rem;
+    line-height: 1.2;
+    margin-bottom: 0.3rem;
+  }
+  .wcp-treatment-card__desc {
+    font-size: 0.72rem;
+    line-height: 1.35;
+    margin-bottom: 0.5rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .wcp-treatment-card__candidate {
+    font-size: 0.68rem;
+    padding: 0.25rem 0.45rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.3;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    border-radius: 6px;
+  }
+  .wcp-treatment-card__cta {
+    font-size: 0.76rem;
+    gap: 0.25rem;
+    margin-top: auto;
+  }
+
+  /* Compact Intent Pathways with 2 cards per row */
+  .wcp-intent-section {
+    padding: 1.5rem 0 2rem;
+  }
+  .wcp-intent-section .section-badge {
+    font-size: 0.68rem;
+    padding: 0.25rem 0.75rem;
+    margin-bottom: 0.35rem;
+  }
+  .wcp-intent-section .cp-section-heading {
+    font-size: 1.45rem !important;
+    line-height: 1.2 !important;
+    margin-top: 0.35rem !important;
+    margin-bottom: 0.45rem !important;
+  }
+  .wcp-intent-section .cp-section-subheading {
+    font-size: 0.8rem !important;
+    line-height: 1.4 !important;
+    margin-bottom: 0.75rem !important;
+  }
+  .wcp-intent-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.65rem;
+    margin-top: 0.85rem;
+  }
+  .wcp-intent-card {
+    padding: 0.75rem 0.65rem;
+    border-radius: 14px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+  }
+  .wcp-intent-card__tag {
+    font-size: 0.62rem;
+    margin-bottom: 0.25rem;
+  }
+  .wcp-intent-card__goal {
+    font-size: 0.82rem;
+    line-height: 1.2;
+    margin-bottom: 0.3rem;
+  }
+  .wcp-intent-card__rec {
+    font-size: 0.7rem;
+    line-height: 1.3;
+    margin-bottom: 0.5rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .wcp-intent-card__btn {
+    font-size: 0.72rem;
+    gap: 0.25rem;
+    margin-top: auto;
+  }
+
+  /* Compact Roles Section with 2 cards per row */
+  .wcp-roles-section {
+    padding: 2.75rem 0;
+  }
+  .wcp-roles-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.65rem;
+    margin-top: 1.25rem;
+  }
+  .wcp-role-card {
+    padding: 0.85rem 0.75rem;
+    border-radius: 14px;
+  }
+  .wcp-role-card__header {
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+    align-items: center;
+  }
+  .wcp-role-card__icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+  }
+  .wcp-role-card__icon svg {
+    width: 17px;
+    height: 17px;
+  }
+  .wcp-role-card__title {
+    font-size: 0.88rem;
+    line-height: 1.2;
+  }
+  .wcp-role-card__desc {
+    font-size: 0.72rem;
+    line-height: 1.35;
+    margin-bottom: 0.55rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .wcp-role-card__list {
+    gap: 0.35rem;
+    margin-bottom: 0.75rem;
+  }
+  .wcp-role-card__list li {
+    font-size: 0.7rem;
+    line-height: 1.3;
+    gap: 0.35rem;
+  }
+  .wcp-role-card__list li svg {
+    width: 13px;
+    height: 13px;
+  }
+  .wcp-role-card .btn {
+    padding: 0.55rem 0.65rem;
+    font-size: 0.74rem;
+    margin-top: auto;
+  }
+
+  /* Compact Why Start Early & Timeline with 2 cards per row */
+  .wcp-why-early-section {
+    padding: 2.5rem 0;
+  }
+  .wcp-early-grid {
+    gap: 1.25rem;
+    margin-bottom: 1.5rem;
+  }
+  .wcp-early-grid h2 {
+    font-size: 1.65rem !important;
+    line-height: 1.2 !important;
+    margin: 0.65rem 0 !important;
+  }
+  .wcp-early-grid p {
+    font-size: 0.85rem !important;
+    line-height: 1.5 !important;
+  }
+  .wcp-early-grid .btn {
+    width: 100%;
+    justify-content: center;
+    padding: 0.75rem 1rem;
+    font-size: 0.9rem;
+    margin-top: 1rem !important;
+  }
+  .wcp-early-reasons {
+    gap: 0.6rem;
+    margin-top: 0.75rem;
+  }
+  .wcp-early-reason-item {
+    padding: 0.75rem 0.85rem;
+    gap: 0.65rem;
+    border-radius: 12px;
+  }
+  .wcp-early-reason-item__icon {
+    width: 20px;
+    height: 20px;
+  }
+  .wcp-early-reason-item h4 {
+    font-size: 0.84rem;
+    margin-bottom: 0.15rem;
+  }
+  .wcp-early-reason-item p {
+    font-size: 0.72rem !important;
+    line-height: 1.35 !important;
+  }
+  .wcp-timeline-steps {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.65rem;
+    margin-top: 1.25rem;
+  }
+  .wcp-timeline-step {
+    padding: 0.85rem 0.75rem;
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.08);
+  }
+  .wcp-timeline-step:last-child {
+    grid-column: 1 / -1; /* Step 5 spans full width on mobile for visual balance */
+  }
+  .wcp-timeline-step__badge {
+    padding: 0.2rem 0.55rem;
+    font-size: 0.64rem;
+    margin-bottom: 0.4rem;
+  }
+  .wcp-timeline-step__title {
+    font-size: 0.86rem;
+    line-height: 1.2;
+    margin-bottom: 0.3rem;
+  }
+  .wcp-timeline-step__desc {
+    font-size: 0.72rem;
+    line-height: 1.35;
+  }
+
+  /* Compact Offer Box */
+  .wcp-offer-section {
+    padding: 2.75rem 0;
+  }
+  .wcp-offer-box {
+    padding: 1.35rem 1.15rem;
+    border-radius: 20px;
+    gap: 1.25rem;
+  }
+  .wcp-offer-inclusions {
+    gap: 0.6rem;
+    margin: 1rem 0;
+  }
+  .wcp-offer-inclusions li {
+    font-size: 0.82rem;
+  }
+  .wcp-offer-card-right {
+    padding: 1.25rem;
+    border-radius: 16px;
+  }
+
+  /* Compact Form Section */
+  .wcp-form-section {
+    padding: 2.75rem 0;
+  }
+  .wcp-form-layout {
+    gap: 1.5rem;
+  }
+  .wcp-form-card-container {
+    padding: 1.25rem 1rem;
+    border-radius: 18px;
+  }
+  .wedding-form-title {
+    font-size: 1.25rem;
+  }
+  .wedding-form-subtitle {
+    font-size: 0.82rem;
+    margin-bottom: 1.1rem;
+  }
+  .form-field {
+    margin-bottom: 0.85rem;
+  }
+  .form-label {
+    font-size: 0.8rem;
+    margin-bottom: 0.35rem;
+  }
+  .wedding-lead-form input,
+  .wedding-lead-form select,
+  .wedding-lead-form textarea {
+    padding: 0.75rem 0.9rem !important;
+    font-size: 0.88rem !important;
+    border-radius: 10px !important;
+  }
+  .wedding-form-submit-btn {
+    padding: 0.85rem 1rem;
+    font-size: 0.95rem;
+  }
+
+  /* Compact FAQ Section for Mobile */
+  .wcp-faq-section {
+    padding: 1.5rem 0 2rem;
+  }
+  .wcp-faq-section .section-badge {
+    font-size: 0.68rem;
+    padding: 0.22rem 0.65rem;
+    margin-bottom: 0.25rem;
+  }
+  .wcp-faq-section .cp-section-heading {
+    font-size: 1.35rem !important;
+    line-height: 1.2 !important;
+    margin-top: 0.35rem !important;
+    margin-bottom: 0.35rem !important;
+  }
+  .wcp-faq-section .cp-section-subheading {
+    font-size: 0.78rem !important;
+    line-height: 1.35 !important;
+    margin-bottom: 0.6rem !important;
+  }
+  .wcp-faq-container {
+    margin-top: 0.85rem;
+    gap: 0.45rem;
+  }
+  .wcp-faq-item {
+    border-radius: 12px;
+  }
+  .wcp-faq-question {
+    padding: 0.65rem 0.85rem;
+    font-size: 0.82rem;
+    line-height: 1.35;
+    gap: 0.5rem;
+  }
+  .wcp-faq-indicator {
+    font-size: 1.15rem;
+  }
+  .wcp-faq-answer {
+    padding: 0 0.85rem 0.65rem;
+    font-size: 0.76rem;
+    line-height: 1.45;
+  }
+
+  /* Compact Location Section for Mobile */
+  .wcp-location-section {
+    padding: 1.5rem 0 2rem;
+  }
+  .wcp-location-layout {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+  .wcp-location-card {
+    padding: 1.15rem 1rem;
+    border-radius: 18px;
+  }
+  .wcp-location-title {
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+  }
+  .cp-location__address {
+    padding: 0.75rem 0.85rem;
+    gap: 0.65rem;
+    margin-bottom: 0.85rem;
+    border-radius: 12px;
+  }
+  .cp-location__address-icon {
+    width: 30px;
+    height: 30px;
+  }
+  .cp-location__address strong {
+    font-size: 0.86rem;
+  }
+  .cp-location__address p {
+    font-size: 0.76rem;
+  }
+  .cp-location__ctas {
+    gap: 0.6rem;
+    margin-bottom: 0.75rem;
+  }
+  .wcp-map-cta-btn,
+  .wcp-call-cta-btn {
+    padding: 0.65rem 0.75rem;
+    font-size: 0.82rem;
+    border-radius: 10px;
+  }
+  .wcp-location-connectivity {
+    font-size: 0.72rem;
+    padding: 0.45rem 0.65rem;
+  }
+  .cp-location__map {
+    min-height: 220px;
+    height: 220px;
+    border-radius: 18px;
+  }
+  .wcp-final-cta-section {
+    padding: 3rem 0 calc(5.5rem + env(safe-area-inset-bottom, 0px));
+  }
+  .wcp-final-cta-section h2 {
+    font-size: 1.75rem !important;
+  }
+  .wcp-final-cta-section p {
+    font-size: 0.88rem !important;
+    margin-bottom: 1.5rem !important;
+  }
+  .wcp-final-cta-section .btn,
+  .wcp-final-cta-section .wcp-btn-wa {
+    width: 100%;
+    justify-content: center;
+    padding: 0.75rem 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .wcp-hero__h1 {
+    font-size: 1.65rem;
+  }
+  .wcp-campaign-badge {
+    font-size: 0.68rem;
+    padding: 0.25rem 0.65rem;
+  }
+  .wcp-hero__card-wrap {
+    height: 180px;
+  }
+  .wcp-desire-img-wrap {
+    height: 170px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wcp-treatment-card,
+  .wcp-intent-card,
+  .wcp-role-card,
+  .wedding-form-submit-btn,
+  .wcp-btn-wa,
+  .wcp-floating-offer-badge {
+    transition: none !important;
+    transform: none !important;
+    animation: none !important;
+  }
+  .spin-animate,
+  .wcp-floating-offer-badge__pulse {
+    animation: none !important;
+  }
+}
+
+/* ═════════════════════════════════════════════════════════════════
+   FLOATING ANIMATED 'CLAIM 20% OFF' OFFER BADGE & MODAL
+══════════════════════════════════════════════════════════════════ */
+
+@keyframes badgeFloat {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-7px) rotate(-1deg);
+  }
+}
+
+@keyframes badgeGlowPulse {
+  0%, 100% {
+    box-shadow: 0 8px 24px rgba(245, 130, 32, 0.4), 0 0 0 0 rgba(245, 130, 32, 0.5);
+  }
+  50% {
+    box-shadow: 0 14px 34px rgba(245, 130, 32, 0.65), 0 0 0 8px rgba(245, 130, 32, 0);
+  }
+}
+
+@keyframes badgeShimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.wcp-floating-offer-badge {
+  position: fixed;
+  bottom: 80px; /* Above the mobile sticky action bar */
+  right: 14px;
+  z-index: 998;
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.45rem 0.8rem;
+  background: linear-gradient(135deg, #F58220 0%, #D46B10 50%, #FF9E43 100%);
+  background-size: 200% auto;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 9999px;
+  color: #ffffff;
+  cursor: pointer;
+  animation: badgeFloat 3.2s ease-in-out infinite, badgeGlowPulse 2.4s ease-in-out infinite;
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  text-decoration: none;
+  font-family: inherit;
+  outline: none;
+}
+
+.wcp-floating-offer-badge:hover {
+  transform: translateY(-3px) scale(1.04);
+  animation-play-state: paused;
+}
+
+.wcp-floating-offer-badge__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 50%;
+  color: #ffffff;
+  flex-shrink: 0;
+  backdrop-filter: blur(4px);
+}
+
+.wcp-floating-offer-badge__icon svg {
+  width: 13px;
+  height: 13px;
+}
+
+.wcp-floating-offer-badge__text {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  line-height: 1.1;
+}
+
+.wcp-floating-offer-badge__text strong {
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.2px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.wcp-floating-offer-badge__text small {
+  font-size: 0.58rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  opacity: 0.95;
+}
+
+/* On desktop, keep it compact and discrete in the bottom corner */
+@media (min-width: 769px) {
+  .wcp-floating-offer-badge {
+    bottom: 28px;
+    right: 28px;
+    padding: 0.55rem 0.95rem;
+    gap: 0.55rem;
+  }
+  .wcp-floating-offer-badge__icon {
+    width: 28px;
+    height: 28px;
+  }
+  .wcp-floating-offer-badge__icon svg {
+    width: 15px;
+    height: 15px;
+  }
+  .wcp-floating-offer-badge__text strong {
+    font-size: 0.82rem;
+  }
+  .wcp-floating-offer-badge__text small {
+    font-size: 0.62rem;
+  }
+}
+
+/* ── Offer Modal Styles ────────────────────────────────────────── */
+.wcp-offer-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  background: rgba(15, 61, 62, 0.75);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  animation: fadeInModal 0.25s ease-out forwards;
+}
+
+@keyframes fadeInModal {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUpModal {
+  from {
+    opacity: 0;
+    transform: translateY(24px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.wcp-offer-modal-card {
+  position: relative;
+  background: #ffffff;
+  border-radius: 26px;
+  max-width: 440px;
+  width: 100%;
+  max-height: 94vh;
+  overflow-y: auto;
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.36);
+  border: 1px solid rgba(184, 129, 61, 0.2);
+  animation: slideUpModal 0.28s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  scrollbar-width: thin;
+}
+
+.wcp-offer-modal-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 10;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 1px solid #e7e0d6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #6e655d;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+  transition: all 0.2s ease;
+}
+
+.wcp-offer-modal-close:hover {
+  background: #f8f6f3;
+  color: #2E1F1B;
+  transform: rotate(90deg);
+}
+
+.wcp-offer-modal-header {
+  background: #ffffff;
+  padding: 1.4rem 1.4rem 0.5rem;
+  color: #2E1F1B;
+  border-top-left-radius: 26px;
+  border-top-right-radius: 26px;
+  position: relative;
+  text-align: center;
+}
+
+.wcp-offer-modal-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.24rem 0.75rem;
+  background: #1d1711;
+  border: 1px solid rgba(220, 168, 88, 0.45);
+  border-radius: 9999px;
+  color: #f3be6c;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-bottom: 0.45rem;
+}
+
+.wcp-offer-modal-heading {
+  font-size: 1.25rem;
+  font-weight: 800;
+  line-height: 1.22;
+  color: #211c19;
+  margin-bottom: 0.25rem;
+  letter-spacing: -0.2px;
+}
+
+.wcp-offer-modal-heading span {
+  color: #a87538;
+}
+
+.wcp-offer-modal-subtext {
+  font-size: 0.8rem;
+  color: #736b63;
+  line-height: 1.45;
+  margin-bottom: 0;
+}
+
+.wcp-offer-modal-body {
+  padding: 0.6rem 1.35rem 1.25rem;
+}
+
+.wcp-offer-modal-body .form-field {
+  margin-bottom: 0.65rem;
+}
+
+.wcp-offer-modal-body .form-label {
+  font-size: 0.76rem;
+  margin-bottom: 0.25rem;
+  font-weight: 700;
+}
+
+.wcp-offer-modal-body input,
+.wcp-offer-modal-body select,
+.wcp-offer-modal-body textarea {
+  padding: 0.65rem 0.8rem !important;
+  font-size: 0.84rem !important;
+  border-radius: 10px !important;
+}
+
+.wcp-offer-modal-body .form-grid-2 {
+  gap: 0.5rem;
+}
+
+.wcp-offer-modal-body .wedding-form-submit-btn {
+  padding: 0.75rem 1rem;
+  font-size: 0.92rem;
+  margin-top: 0.25rem;
+}
+
+@media (max-width: 600px) {
+  .wcp-offer-modal-overlay {
+    padding: 0.5rem;
+    align-items: flex-end; /* Slides up like a bottom sheet on mobile for optimal thumb ergonomics */
+  }
+
+  .wcp-offer-modal-card {
+    max-height: 88vh;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border-radius: 20px 20px 0 0;
+    border-bottom: none;
+  }
+
+  .wcp-offer-modal-header {
+    padding: 1rem 1rem 0.85rem;
+  }
+
+  .wcp-offer-modal-heading {
+    font-size: 1.1rem;
+  }
+
+  .wcp-offer-modal-subtext {
+    font-size: 0.74rem;
+  }
+
+  .wcp-offer-modal-body {
+    padding: 0.75rem 0.85rem 1.25rem;
+  }
+}

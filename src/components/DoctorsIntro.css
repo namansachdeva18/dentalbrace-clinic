@@ -426,12 +426,12 @@
   .doctors-intro__combined {
     grid-template-columns: 1fr;
     min-height: auto;
+    margin-bottom: 2.5rem;
   }
 
   .doctors-intro__combined-photo {
-    /* Let the photo determine its own height naturally */
     height: auto;
-    aspect-ratio: 4 / 3;
+    aspect-ratio: 16 / 9;
     order: -1;
   }
 
@@ -442,58 +442,261 @@
     object-position: center top;
   }
 
-  /* On mobile, gradient blends downward from photo into text panel */
   .doctors-intro__combined-photo::before {
     background: linear-gradient(
       to bottom,
       transparent 0%,
-      transparent 55%,
+      transparent 60%,
       var(--bg-navy) 100%
     );
   }
 
   .doctors-intro__combined-text {
-    padding: 32px 28px 40px;
+    padding: 24px 20px 28px;
   }
 
   .doctors-intro__stats-row {
-    gap: 1.5rem;
+    gap: 1.25rem;
   }
 }
 
 @media (max-width: 720px) {
   .doctors-intro {
-    padding: 64px 0;
+    padding: 36px 0;
   }
 
   .doctors-intro__header {
-    margin-bottom: 48px;
+    margin-bottom: 24px;
   }
 
-  .doctors-intro__cards {
-    grid-template-columns: 1fr;
+  .doctors-intro__eyebrow {
+    font-size: 0.68rem;
+    padding: 0.25rem 0.75rem;
+    margin-bottom: 0.65rem;
+  }
+
+  .doctors-intro__title {
+    font-size: 1.65rem;
+    line-height: 1.2;
+    margin-bottom: 0.65rem;
+  }
+
+  .doctors-intro__subtitle {
+    font-size: 0.84rem;
+    line-height: 1.5;
+  }
+
+  /* Compact Combined Banner */
+  .doctors-intro__combined {
+    border-radius: 16px;
+    margin-bottom: 1.25rem;
+    box-shadow: 0 12px 32px rgba(15, 61, 62, 0.12);
+  }
+
+  .doctors-intro__combined-photo {
+    height: 200px;
+    max-height: 220px;
+    aspect-ratio: auto;
+    background: #2a1625;
+  }
+
+  .doctors-intro__combined-photo img {
+    object-fit: cover !important;
+    object-position: center 22% !important;
+    width: 100% !important;
+    height: 100% !important;
+  }
+
+  .doctors-intro__combined-photo::before {
+    background: linear-gradient(
+      to bottom,
+      transparent 0%,
+      transparent 65%,
+      var(--bg-navy) 100%
+    );
   }
 
   .doctors-intro__combined-text {
-    padding: 28px 20px 36px;
+    padding: 12px 12px 14px;
   }
 
-  /* Remove the gap between photo and text — they should feel connected */
-  .doctors-intro__combined-photo {
-    aspect-ratio: 3 / 2;
+  .doctors-intro__combined-tag {
+    font-size: 0.62rem;
+    padding: 0.15rem 0.55rem;
+    margin-bottom: 0.4rem;
+    gap: 0.3rem;
   }
 
   .doctors-intro__combined-heading {
-    font-size: 1.75rem;
+    font-size: 1.15rem;
+    line-height: 1.18;
+    margin-bottom: 0.35rem;
+  }
+
+  .doctors-intro__combined-desc {
+    font-size: 0.74rem;
+    line-height: 1.35;
+    margin-bottom: 0.65rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
 
   .doctors-intro__stats-row {
-    gap: 1.25rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.35rem;
+    margin-bottom: 0.75rem;
+    padding: 0.5rem 0.65rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    text-align: center;
+  }
+
+  .doctors-intro__stat {
+    gap: 0.1rem;
+    align-items: center;
+  }
+
+  .doctors-intro__stat-number {
+    font-size: 1.05rem;
+  }
+
+  .doctors-intro__stat-label {
+    font-size: 0.62rem;
+    line-height: 1.2;
+  }
+
+  .doctors-intro__combined-cta {
+    width: 100%;
+    justify-content: center;
+    padding: 0.55rem 1rem;
+    font-size: 0.8rem;
+  }
+
+  /* 2 Cards in 1 Row on Mobile for the 2 Doctors! */
+  .doctors-intro__cards {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.65rem;
+    align-items: stretch;
+  }
+
+  .doctors-intro__card {
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .doctors-intro__card-photo-wrap {
+    height: 160px;
+    flex-shrink: 0;
+  }
+
+  .doctors-intro__card-badge {
+    font-size: 0.58rem;
+    padding: 0.2rem 0.45rem;
+    top: 6px;
+    left: 6px;
+    right: 6px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: inline-block;
+  }
+
+  .doctors-intro__card-body {
+    padding: 10px 8px 12px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+
+  .doctors-intro__card-name {
+    font-size: 0.88rem;
+    margin-bottom: 0.2rem;
+    line-height: 1.2;
+    min-height: 2.1rem;
+    display: flex;
+    align-items: center;
+  }
+
+  .doctors-intro__card-role {
+    font-size: 0.7rem;
+    margin-bottom: 0.45rem;
+    line-height: 1.3;
+    min-height: 2.6rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .doctors-intro__card-bio {
+    font-size: 0.72rem;
+    line-height: 1.38;
+    margin-bottom: 0.6rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    min-height: 3.9rem;
+  }
+
+  .doctors-intro__card-quals {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    margin-bottom: 0.65rem;
+    min-height: 6.8rem;
+  }
+
+  .doctors-intro__card-qual {
+    font-size: 0.68rem;
+    line-height: 1.25;
+    gap: 0.35rem;
+    align-items: flex-start;
+  }
+
+  .doctors-intro__card-qual svg {
+    width: 12px;
+    height: 12px;
+    margin-top: 1px;
+    flex-shrink: 0;
+  }
+
+  .doctors-intro__card-tags {
+    display: flex;
     flex-wrap: wrap;
+    gap: 0.25rem;
+    margin-bottom: 0.75rem;
+    min-height: 3.8rem;
+    align-content: flex-start;
+  }
+
+  .doctors-intro__card-tags span {
+    font-size: 0.64rem;
+    padding: 0.18rem 0.45rem;
+    line-height: 1.2;
+  }
+
+  .doctors-intro__card-cta {
+    padding: 0.55rem 0.5rem;
+    font-size: 0.74rem;
+    margin-top: auto;
+    width: 100%;
+    justify-content: center;
   }
 
   .doctors-intro__trust {
-    gap: 1rem;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+    padding-top: 1.25rem;
+  }
+
+  .doctors-intro__trust-item {
+    font-size: 0.72rem;
   }
 
   .doctors-intro__trust-divider {

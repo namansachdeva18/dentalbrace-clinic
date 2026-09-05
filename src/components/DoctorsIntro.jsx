@@ -165,6 +165,10 @@ const DoctorsIntro = () => {
                   <CheckCircle2 size={14} />
                   <span><strong className="text-accent">Certified Invisalign Provider</strong></span>
                 </div>
+                <div className="doctors-intro__card-qual">
+                  <Medal size={14} />
+                  <span><strong className="text-accent">5,500+ Braces &amp; Aligners</strong> Cases</span>
+                </div>
               </div>
 
               <div className="doctors-intro__card-tags">
