@@ -2,6 +2,7 @@
 import { useState, useRef } from 'react';
 import { CheckCircle2, Loader2, Phone, MessageCircle, AlertCircle, ArrowRight, ShieldCheck, HeartHandshake } from 'lucide-react';
 import { WEDDING_CAMPAIGN_CONFIG } from '@/data/weddingCampaignConfig';
+import './WeddingLeadForm.css';
 
 const TREATMENT_OPTIONS = [
   { value: '', label: 'Select Preferred Treatment *' },

@@ -53,7 +53,7 @@
   --grid-gap: var(--spacing-8);
   --grid-gap-lg: var(--spacing-12);
   --card-pad: var(--spacing-8); /* 32px padding on cards */
-  --header-height: 90px;
+  --header-height: 140px;
 
   /* Section badge shared style */
   --badge-bg: rgba(245, 130, 32, 0.1);

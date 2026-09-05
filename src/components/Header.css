@@ -524,11 +524,11 @@
   /* Compact, modern slide drawer */
   .nav-links {
     position: fixed;
-    top: var(--header-height);
+    top: calc(var(--announcement-height, 0px) + var(--header-height, 76px));
     left: 0;
     right: 0;
     width: 100vw;
-    height: calc(100vh - var(--header-height) - 60px);
+    height: calc(100vh - var(--announcement-height, 0px) - var(--header-height, 76px) - 60px);
     flex-direction: column;
     align-items: stretch;
     padding: 0.85rem 1rem 2rem 1rem;

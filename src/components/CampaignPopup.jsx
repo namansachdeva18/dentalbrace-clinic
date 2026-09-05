@@ -1,22 +1,17 @@
 'use client';
 import { useState, useEffect, useRef, useCallback } from 'react';
-import Link from 'next/link';
-import { X, Tag, ShieldCheck } from 'lucide-react';
+import { X, Tag } from 'lucide-react';
 import { CAMPAIGN_CONFIG, isCampaignActive } from '@/data/campaignConfig';
-import CampaignLeadForm from './CampaignLeadForm';
+import WeddingLeadForm from './WeddingLeadForm';
 
 /**
  * CampaignPopup
  *
- * Triggers:
- * - Desktop: after POPUP_DELAY_MS (10s) OR when scroll > POPUP_SCROLL_THRESHOLD%
- * - Mobile: only on scroll threshold (not on load)
- *
- * Rules:
- * - Shown only ONCE per session (sessionStorage key)
- * - ESC key closes it
- * - Focus is trapped inside the modal while open
- * - prefers-reduced-motion respected (no transition animation)
+ * Universal site-wide popup form:
+ * - Appears after 2.5s delay or scroll threshold
+ * - Can be triggered programmatically via window.openOfferPopup() or 'open_offer_popup' event
+ * - Shows the verified high-converting 20% OFF Smile Makeover Lead Form
+ * - Shown once per session (dismissable via X, Escape key, or clicking backdrop)
  */
 const CampaignPopup = () => {
   const [open, setOpen] = useState(false);
@@ -31,7 +26,6 @@ const CampaignPopup = () => {
     setOpen(true);
     setTriggered(true);
 
-    // Analytics event
     if (typeof window !== 'undefined' && window.gtag) {
       window.gtag('event', 'campaign_popup_view', {
         campaign_name: CAMPAIGN_CONFIG.CAMPAIGN_NAME,
@@ -39,11 +33,25 @@ const CampaignPopup = () => {
     }
   }, [triggered]);
 
+  // Global trigger listener
+  useEffect(() => {
+    const handleOpen = () => setOpen(true);
+    window.addEventListener('open_offer_popup', handleOpen);
+    window.addEventListener('open_campaign_popup', handleOpen);
+    window.openOfferPopup = handleOpen;
+
+    return () => {
+      window.removeEventListener('open_offer_popup', handleOpen);
+      window.removeEventListener('open_campaign_popup', handleOpen);
+      delete window.openOfferPopup;
+    };
+  }, []);
+
   useEffect(() => {
     if (!isCampaignActive()) return;
 
-    // Trigger automatically on site open (2 seconds delay for smooth load)
-    let timer = setTimeout(show, 2000);
+    // Trigger automatically on site open (2.5 seconds delay for smooth load)
+    let timer = setTimeout(show, 2500);
 
     // Scroll trigger (fallback)
     const handleScroll = () => {
@@ -64,34 +72,23 @@ const CampaignPopup = () => {
   useEffect(() => {
     if (!open) return;
 
-    // Focus the close button when popup opens
     setTimeout(() => closeRef.current?.focus(), 50);
 
     const onKey = (e) => {
       if (e.key === 'Escape') handleClose();
     };
     window.addEventListener('keydown', onKey);
-    document.body.style.overflow = 'hidden'; // Prevent background scroll
+    document.body.style.overflow = 'hidden';
 
     return () => {
       window.removeEventListener('keydown', onKey);
       document.body.style.overflow = '';
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [open]);
 
   const handleClose = () => {
     setOpen(false);
     sessionStorage.setItem('campaign_popup_dismissed', '1');
-  };
-
-  const handleCtaClick = () => {
-    if (typeof window !== 'undefined' && window.gtag) {
-      window.gtag('event', 'campaign_popup_cta_click', {
-        campaign_name: CAMPAIGN_CONFIG.CAMPAIGN_NAME,
-      });
-    }
-    handleClose();
   };
 
   if (!open) return null;
@@ -118,12 +115,13 @@ const CampaignPopup = () => {
         }}
       />
 
-      {/* Modal Card matching reference ratio */}
+      {/* Modal Card matching reference screenshot */}
       <div
         role="dialog"
         aria-modal="true"
         aria-labelledby="popup-heading"
         aria-describedby="popup-desc"
+        className="campaign-popup-card"
         style={{
           position: 'fixed',
           top: '50%',
@@ -132,10 +130,12 @@ const CampaignPopup = () => {
           zIndex: 9001,
           background: '#ffffff',
           borderRadius: '26px',
-          padding: '1.5rem 1.4rem 1.25rem',
+          padding: '1.6rem 1.45rem 1.35rem',
           width: 'min(92vw, 440px)',
           maxHeight: '94vh',
           overflowY: 'auto',
+          scrollbarWidth: 'none',
+          msOverflowStyle: 'none',
           boxShadow: '0 24px 70px rgba(0, 0, 0, 0.38), 0 0 0 1px rgba(184, 129, 61, 0.15)',
           animation: prefersReducedMotion ? 'none' : 'slideUp 0.28s cubic-bezier(0.2, 0.9, 0.3, 1) forwards',
           boxSizing: 'border-box',
@@ -179,8 +179,8 @@ const CampaignPopup = () => {
         </button>
 
         {/* Header Content */}
-        <div style={{ textAlign: 'center', marginBottom: '1rem', paddingTop: '0.2rem' }}>
-          {/* Reference pill badge: ANNIVERSARY SPECIAL • 20% OFF */}
+        <div style={{ textAlign: 'center', marginBottom: '0.85rem', paddingTop: '0.1rem' }}>
+          {/* Badge: EXCLUSIVE SEASONAL OFFER */}
           <div style={{
             display: 'inline-flex',
             alignItems: 'center',
@@ -188,11 +188,11 @@ const CampaignPopup = () => {
             background: '#1d1711',
             border: '1px solid rgba(220, 168, 88, 0.45)',
             borderRadius: '9999px',
-            padding: '4px 13px',
+            padding: '5px 14px',
             marginBottom: '0.65rem',
             boxShadow: '0 2px 10px rgba(0,0,0,0.12)',
           }}>
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="#e5aa52" stroke="none"><path d="M12 2l2.4 7.2h7.6l-6.1 4.5 2.3 7.3-6.2-4.6-6.2 4.6 2.3-7.3-6.1-4.5h7.6z"/></svg>
+            <Tag size={13} color="#f3be6c" />
             <span style={{
               fontSize: '0.68rem',
               fontWeight: 800,
@@ -200,16 +200,16 @@ const CampaignPopup = () => {
               letterSpacing: '0.6px',
               textTransform: 'uppercase',
             }}>
-              Anniversary Special • 20% OFF
+              Exclusive Seasonal Offer
             </span>
           </div>
 
-          {/* Heading: Unlock Your 20% Anniversary Offer */}
+          {/* Heading: Claim 20% OFF Your Smile Makeover */}
           <h2
             id="popup-heading"
             style={{
               color: '#211c19',
-              fontSize: 'clamp(1.32rem, 4.2vw, 1.55rem)',
+              fontSize: 'clamp(1.35rem, 4.5vw, 1.55rem)',
               fontWeight: 800,
               lineHeight: 1.22,
               margin: '0 0 0.4rem',
@@ -217,7 +217,7 @@ const CampaignPopup = () => {
               letterSpacing: '-0.3px',
             }}
           >
-            Unlock Your <span style={{ color: '#a87538' }}>20% Anniversary Offer</span>
+            Claim <span style={{ color: '#D47A22' }}>20% OFF</span> Your Smile Makeover
           </h2>
 
           <p
@@ -227,19 +227,27 @@ const CampaignPopup = () => {
               color: '#736b63',
               lineHeight: 1.45,
               margin: '0 auto',
-              maxWidth: '350px',
+              maxWidth: '360px',
             }}
           >
-            Enter your details to claim your instant 20% Anniversary Benefit on eligible treatments in Bathinda.
+            Lock in your priority consultation and 20% seasonal voucher on select aesthetic &amp; smile packages. Fill out the quick details below:
           </p>
         </div>
 
-        {/* Ultra-compact form with icons */}
-        <CampaignLeadForm popupMode={true} source="automatic_popup" />
+        {/* Universal Wedding / Smile Lead Form */}
+        <div className="popup-form-wrapper" style={{ marginTop: '0.65rem' }}>
+          <WeddingLeadForm
+            source="universal_website_popup"
+            compactMode={true}
+          />
+        </div>
       </div>
 
       {/* Keyframe styles */}
       <style>{`
+        .campaign-popup-card::-webkit-scrollbar {
+          display: none;
+        }
         @keyframes fadeOverlay {
           from { opacity: 0 }
           to   { opacity: 1 }

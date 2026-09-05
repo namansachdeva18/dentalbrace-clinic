@@ -1,0 +1,218 @@
+/* WeddingLeadForm.css — Universal styles for WeddingLeadForm across all pages */
+
+.wedding-lead-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  width: 100%;
+}
+
+.wedding-form-header {
+  margin-bottom: 0.5rem;
+}
+
+.wedding-form-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.35rem 0.9rem;
+  border-radius: 9999px;
+  background: rgba(245, 130, 32, 0.12);
+  color: #F58220;
+  font-size: 0.78rem;
+  font-weight: 700;
+  margin-bottom: 0.65rem;
+}
+
+.wedding-form-title {
+  font-size: 1.45rem;
+  font-weight: 800;
+  color: #0F3D3E;
+  margin: 0 0 0.35rem;
+}
+
+.wedding-form-subtitle {
+  font-size: 0.88rem;
+  color: #6B6B6B;
+  line-height: 1.55;
+  margin: 0;
+}
+
+.wedding-lead-form .form-field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0.2rem;
+}
+
+.wedding-lead-form .form-label {
+  font-size: 0.84rem;
+  font-weight: 700;
+  color: #2E1F1B;
+  margin-bottom: 0.35rem;
+}
+
+.wedding-lead-form .form-label .req {
+  color: #e53e3e;
+  margin-left: 2px;
+}
+
+.wedding-lead-form input,
+.wedding-lead-form select {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border-radius: 12px;
+  border: 1.5px solid #EFE7DA;
+  font-size: 0.92rem;
+  color: #2E1F1B;
+  background-color: #FFFFFF;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  font-family: inherit;
+  box-sizing: border-box;
+}
+
+.wedding-lead-form input:focus,
+.wedding-lead-form select:focus {
+  border-color: #F58220 !important;
+  box-shadow: 0 0 0 3px rgba(245, 130, 32, 0.15);
+}
+
+.wedding-lead-form .form-error {
+  color: #e53e3e;
+  font-size: 0.76rem;
+  margin-top: 0.3rem;
+  font-weight: 500;
+}
+
+.wedding-lead-form .form-server-error {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  background: #fff5f5;
+  border: 1px solid #fed7d7;
+  border-radius: 10px;
+  color: #c53030;
+  font-size: 0.82rem;
+  margin-top: 0.35rem;
+}
+
+.wedding-form-submit-btn {
+  width: 100%;
+  padding: 0.9rem 1.25rem;
+  border-radius: 9999px;
+  background: linear-gradient(135deg, #F58220 0%, #E87413 100%);
+  color: #ffffff;
+  font-size: 0.98rem;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: all 0.25s ease;
+  box-shadow: 0 6px 20px rgba(245, 130, 32, 0.38);
+  font-family: inherit;
+  margin-top: 0.4rem;
+}
+
+.wedding-form-submit-btn:hover:not(:disabled) {
+  background: linear-gradient(135deg, #E87413 0%, #D46B10 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(245, 130, 32, 0.48);
+}
+
+.wedding-form-submit-btn:disabled {
+  background: #d1d5db;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.wedding-form-privacy-note {
+  font-size: 0.74rem;
+  color: #8C827A;
+  text-align: center;
+  margin: 0.35rem 0 0;
+  line-height: 1.4;
+}
+
+/* Success Card */
+.wedding-form-success {
+  text-align: center;
+  padding: 1.8rem 1rem;
+}
+
+.wedding-form-success__icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: rgba(16, 185, 129, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.25rem;
+}
+
+.wedding-form-success__title {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #0F3D3E;
+  margin-bottom: 0.6rem;
+}
+
+.wedding-form-success__msg {
+  font-size: 0.9rem;
+  color: #6B6B6B;
+  line-height: 1.6;
+  margin-bottom: 1.25rem;
+}
+
+.wedding-form-success__disclaimer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  font-size: 0.75rem;
+  color: #9CA3AF;
+  margin-bottom: 1.25rem;
+}
+
+.wedding-form-success__actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.wedding-form-success__actions a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.8rem 1.25rem;
+  border-radius: 9999px;
+  font-weight: 700;
+  font-size: 0.92rem;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.wedding-form-success__actions .btn-outline {
+  border: 1.5px solid #0F3D3E;
+  color: #0F3D3E;
+  background: transparent;
+}
+
+.wedding-form-success__actions .btn-outline:hover {
+  background: rgba(15, 61, 62, 0.06);
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.spin-animate {
+  animation: spin 1s linear infinite;
+}

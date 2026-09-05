@@ -69,23 +69,32 @@
    HERO
    ================================================================ */
 @media (max-width: 768px) {
+  :root {
+    --header-height: 76px;
+  }
+
   .hero {
     grid-template-columns: 1fr;
     min-height: auto;
+    padding-top: var(--header-height, 76px);
   }
 
   .hero-right {
     order: 1;
     width: 100%;
     min-height: 380px;
-    height: 60vw;
-    max-height: 480px;
+    height: 75vw;
+    max-height: 500px;
   }
 
   .hero-right .hero-image-wrapper {
     width: 100%;
     height: 100%;
     min-height: 100%;
+  }
+
+  .hero-right .hero-image {
+    object-position: center 36% !important;
   }
 
   .hero-left {

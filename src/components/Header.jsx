@@ -1,5 +1,5 @@
 'use client';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Phone, MapPin, Clock, Menu, X, ChevronDown, Search, ArrowRight, Calendar, Sparkles, Gift } from 'lucide-react';
@@ -9,11 +9,34 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeMegaMenu, setActiveMegaMenu] = useState(null);
+  const headerRef = useRef(null);
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 50);
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    const updateHeaderHeight = () => {
+      if (headerRef.current && window.scrollY <= 10) {
+        const height = headerRef.current.offsetHeight;
+        if (height > 0) {
+          document.documentElement.style.setProperty('--header-height', `${height}px`);
+        }
+      }
+    };
+
+    updateHeaderHeight();
+
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener('resize', updateHeaderHeight);
+
+    const timer = setTimeout(updateHeaderHeight, 250);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', updateHeaderHeight);
+      clearTimeout(timer);
+    };
   }, []);
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
@@ -39,7 +62,7 @@ const Header = () => {
 
   return (
     <>
-      <header className={`header ${scrolled ? 'scrolled bg-white shadow-soft' : ''}`} onMouseLeave={handleMouseLeave}>
+      <header className={`header ${scrolled ? 'scrolled bg-white shadow-soft' : ''}`} onMouseLeave={handleMouseLeave} ref={headerRef}>
         <div className={`top-bar ${scrolled ? 'hidden' : ''} bg-cream text-secondary`}>
           <div className="container top-bar-content">
             <a 
