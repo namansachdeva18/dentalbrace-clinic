@@ -26,14 +26,14 @@ export const CAMPAIGN_CONFIG = {
   EXPIRY_DISPLAY: '30 September 2026',
 
   // ─── Campaign Identity ─────────────────────────────────────────────
-  CAMPAIGN_NAME: 'anniversary_wedding_dental_offer',
+  CAMPAIGN_NAME: 'wedding_season_dental_offer',
   CAMPAIGN_URL: '/wedding-season-dental-offer-bathinda',
 
   // ─── Copy Strings ─────────────────────────────────────────────────
-  HEADLINE: 'Anniversary Special',
-  DISCOUNT_LINE: '20% OFF Eligible Premium Dental Treatments',
-  BONUS_LINE: 'Wedding Season Smile Offer',
-  VALIDITY_LINE: 'Valid Till 30 September 2026',
+  HEADLINE: 'Wedding Season Special',
+  DISCOUNT_LINE: '20% OFF Camera-Ready Smile Makeovers & Clear Aligners',
+  BONUS_LINE: 'Perfect Smiles for Brides, Grooms & Families',
+  VALIDITY_LINE: 'Limited Wedding Slots · Valid Till 30 September 2026',
   CTA_PRIMARY: 'Claim 20% Offer',
   CTA_SECONDARY: 'Book Consultation',
   CTA_FORM: 'Check My Eligibility',

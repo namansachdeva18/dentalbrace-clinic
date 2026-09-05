@@ -186,7 +186,7 @@ const CampaignLeadForm = ({ compact = false, popupMode = false, source = 'campai
         </h3>
         <p style={{ color: '#6B6B6B', lineHeight: 1.6, fontSize: popupMode ? '0.88rem' : '0.95rem', marginBottom: '1.25rem' }}>
           Thank you, <strong style={{ color: '#2E1F1B' }}>{form.name}</strong>. Our team at The DentalBrace Clinic
-          will contact you to confirm your consultation and 20% anniversary eligibility.
+          will contact you to confirm your consultation and 20% wedding season smile voucher.
         </p>
         <div style={{ display: 'flex', gap: '0.6rem', justifyContent: 'center', flexWrap: 'wrap' }}>
           <a
