@@ -234,21 +234,42 @@ export default function WeddingCampaignClient() {
   const [showOfferModal, setShowOfferModal] = useState(false);
   const [modalConfig, setModalConfig] = useState(null);
 
-  const openRoleModal = (role, title, subtitle) => {
+  const openRoleModal = (role = 'Consultation', title, subtitle) => {
+    const roleKey = role || 'Consultation';
     setModalConfig({
-      role,
-      title,
-      subtitle,
-      source: `role_button_${role.toLowerCase().replace(/[^a-z0-9]/g, '_')}`,
+      role: roleKey,
+      title: title || 'Book Your Smile Consultation',
+      subtitle: subtitle || 'Schedule your personalized assessment with our AIIMS & BHU-trained specialists in Bathinda.',
+      source: `role_button_${String(roleKey).toLowerCase().replace(/[^a-z0-9]/g, '_')}`,
     });
     setShowOfferModal(true);
-    window.gtag?.('event', 'role_modal_click', { role });
+    window.gtag?.('event', 'role_modal_click', { role: roleKey });
   };
 
   const handleCloseModal = () => {
     setShowOfferModal(false);
     setModalConfig(null);
   };
+
+  // Allow global triggers to open the modal directly on this page
+  useEffect(() => {
+    const handleGlobalOpen = (e) => {
+      const config = e?.detail;
+      if (config) {
+        openRoleModal(config.role || 'Consultation', config.title, config.subtitle);
+      } else {
+        openRoleModal('Consultation');
+      }
+    };
+
+    window.addEventListener('open_offer_popup', handleGlobalOpen);
+    window.addEventListener('open_campaign_popup', handleGlobalOpen);
+
+    return () => {
+      window.removeEventListener('open_offer_popup', handleGlobalOpen);
+      window.removeEventListener('open_campaign_popup', handleGlobalOpen);
+    };
+  }, []);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -314,7 +335,7 @@ export default function WeddingCampaignClient() {
             className="wcp-sticky-btn wcp-sticky-btn--book"
             onClick={() => {
               window.gtag?.('event', 'hero_cta_click', { source: 'mobile_sticky_cta' });
-              openPersonaModal('Consultation');
+              openRoleModal('Consultation');
             }}
           >
             <Calendar size={16} /> {WEDDING_CAMPAIGN_CONFIG.CTA_STICKY_BOOK}
@@ -351,7 +372,7 @@ export default function WeddingCampaignClient() {
                 className="btn btn-primary"
                 onClick={() => {
                   window.gtag?.('event', 'hero_cta_click', { location: 'hero_primary' });
-                  openPersonaModal('Consultation');
+                  openRoleModal('Consultation');
                 }}
               >
                 {WEDDING_CAMPAIGN_CONFIG.CTA_HERO_PRIMARY} <ArrowRight size={18} />
@@ -493,7 +514,7 @@ export default function WeddingCampaignClient() {
                 className="btn btn-primary"
                 onClick={() => {
                   window.gtag?.('event', 'desire_cta_click', { location: 'desire_section' });
-                  openPersonaModal('Consultation');
+                  openRoleModal('Consultation');
                 }}
               >
                 Plan My Wedding-Ready Smile <ArrowRight size={18} />

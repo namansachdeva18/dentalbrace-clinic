@@ -70,108 +70,196 @@ const CampaignAnnouncementBar = () => {
       id="campaign-announcement-bar"
       role="banner"
       aria-label="Limited-time dental care offer"
-      style={{
-        background: 'linear-gradient(90deg, #2b1f17 0%, #3a2b20 50%, #2b1f17 100%)',
-        borderBottom: '1px solid rgba(229, 168, 85, 0.25)',
-        color: '#f8f5ee',
-        padding: '8px 16px',
-        position: 'fixed',
-        top: 0,
-        left: 0,
-        right: 0,
-        width: '100%',
-        zIndex: 1100,
-        minHeight: '44px',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        boxShadow: '0 2px 10px rgba(0,0,0,0.2)',
-      }}
+      className="cab-root"
     >
       <style dangerouslySetInnerHTML={{ __html: `
+        .cab-root {
+          position: fixed;
+          top: 0;
+          left: 0;
+          right: 0;
+          width: 100%;
+          z-index: 1100;
+          min-height: 44px;
+          background: linear-gradient(90deg, #072223 0%, #0F3D3E 38%, #144f50 62%, #092829 100%);
+          border-bottom: 1px solid rgba(245, 130, 32, 0.38);
+          box-shadow: 0 4px 20px rgba(7, 34, 35, 0.45);
+          color: #FFF9F1;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 7px 18px;
+          font-family: var(--font-heading, 'Outfit', sans-serif);
+          overflow: hidden;
+        }
+
+        /* Subtle animated ambient light beam */
+        .cab-root::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: -60%;
+          width: 50%;
+          height: 100%;
+          background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.08), rgba(245, 130, 32, 0.12), transparent);
+          transform: skewX(-25deg);
+          animation: cabShimmer 6s infinite ease-in-out;
+          pointer-events: none;
+        }
+
+        @keyframes cabShimmer {
+          0% { left: -60%; opacity: 0; }
+          20% { opacity: 1; }
+          45% { left: 130%; opacity: 0; }
+          100% { left: 130%; opacity: 0; }
+        }
+
         .cab-wrapper {
           display: flex;
           align-items: center;
           justify-content: center;
           gap: 12px;
           flex-wrap: nowrap;
-          max-width: 1350px;
+          max-width: 1380px;
           margin: 0 auto;
-          padding-right: 28px;
+          padding-right: 32px;
+          position: relative;
+          z-index: 1;
         }
+
+        /* Innovative Glowing Pill Badge */
         .cab-badge {
           display: inline-flex;
           align-items: center;
-          gap: 4px;
-          background: rgba(229, 168, 85, 0.18);
-          border: 1px solid rgba(229, 168, 85, 0.45);
-          color: #f7ba63;
-          font-size: 0.74rem;
+          gap: 5px;
+          background: linear-gradient(135deg, rgba(245, 130, 32, 0.22) 0%, rgba(245, 130, 32, 0.12) 100%);
+          border: 1px solid rgba(245, 130, 32, 0.6);
+          color: #FFA542;
+          font-size: 0.73rem;
           font-weight: 800;
-          padding: 2px 8px;
-          border-radius: 6px;
-          letter-spacing: 0.5px;
+          padding: 3px 10px;
+          border-radius: 9999px;
+          letter-spacing: 0.6px;
           white-space: nowrap;
           flex-shrink: 0;
+          box-shadow: 0 0 14px rgba(245, 130, 32, 0.22);
+          text-transform: uppercase;
         }
+
+        .cab-badge-icon {
+          color: #FFB35C;
+          animation: cabPulse 2.4s infinite ease-in-out;
+        }
+
+        @keyframes cabPulse {
+          0%, 100% { transform: scale(1) rotate(0deg); filter: drop-shadow(0 0 2px #F58220); }
+          50% { transform: scale(1.18) rotate(12deg); filter: drop-shadow(0 0 6px #FFA542); }
+        }
+
         .cab-text-group {
           font-size: 0.84rem;
           line-height: 1.35;
-          color: #eedcc6;
+          color: #E6F0EE;
           display: inline-flex;
           align-items: center;
-          gap: 6px;
+          gap: 7px;
           white-space: nowrap;
+          letter-spacing: 0.15px;
         }
+
         .cab-text-group strong {
-          color: #fce7cf;
+          color: #FFFFFF;
           font-weight: 700;
         }
-        .cab-dot {
-          color: rgba(238, 220, 198, 0.4);
-          font-size: 0.8rem;
-          margin: 0 1px;
+
+        .cab-highlight {
+          color: #FFAA47;
+          font-weight: 700;
         }
+
+        .cab-dot {
+          color: rgba(230, 240, 238, 0.35);
+          font-size: 0.8rem;
+          margin: 0 2px;
+        }
+
+        /* Innovative CTA Button: The DentalBrace Warm Orange with Subtle Sheen */
         .cab-btn {
           display: inline-flex;
           align-items: center;
           gap: 6px;
-          background: linear-gradient(135deg, #d89b47 0%, #be812e 100%);
-          color: #1a120c;
+          background: linear-gradient(135deg, #F58220 0%, #D86A08 100%);
+          color: #FFFFFF;
           padding: 5px 16px;
           border-radius: 9999px;
           font-size: 0.8rem;
           font-weight: 700;
           text-decoration: none;
           white-space: nowrap;
-          box-shadow: 0 2px 8px rgba(0,0,0,0.25);
-          transition: all 0.2s ease;
+          box-shadow: 0 2px 10px rgba(245, 130, 32, 0.38), 0 0 0 1px rgba(255, 255, 255, 0.15) inset;
+          transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
           flex-shrink: 0;
+          position: relative;
+          overflow: hidden;
         }
+
+        .cab-btn::after {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: -100%;
+          width: 60%;
+          height: 100%;
+          background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent);
+          transform: skewX(-20deg);
+          transition: left 0.5s ease;
+        }
+
         .cab-btn:hover {
-          background: linear-gradient(135deg, #e4a856 0%, #ce8f38 100%);
-          transform: translateY(-1px);
-          box-shadow: 0 4px 12px rgba(216, 155, 71, 0.4);
-          color: #120c08;
+          background: linear-gradient(135deg, #FF9133 0%, #E87413 100%);
+          transform: translateY(-1px) scale(1.02);
+          box-shadow: 0 4px 16px rgba(245, 130, 32, 0.55), 0 0 0 1px rgba(255, 255, 255, 0.3) inset;
+          color: #FFFFFF;
         }
+
+        .cab-btn:hover::after {
+          left: 140%;
+        }
+
+        .cab-btn-arrow {
+          transition: transform 0.2s ease;
+        }
+
+        .cab-btn:hover .cab-btn-arrow {
+          transform: translateX(2px);
+        }
+
+        /* Close Button */
         .cab-close {
           position: absolute;
-          right: 10px;
+          right: 12px;
           top: 50%;
           transform: translateY(-50%);
-          background: transparent;
-          border: none;
-          color: rgba(238, 220, 198, 0.6);
+          background: rgba(255, 255, 255, 0.08);
+          border: 1px solid rgba(255, 255, 255, 0.12);
+          border-radius: 50%;
+          color: rgba(230, 240, 238, 0.75);
           cursor: pointer;
-          padding: 5px;
+          width: 26px;
+          height: 26px;
           display: flex;
           align-items: center;
           justify-content: center;
           line-height: 1;
-          transition: color 0.2s ease;
+          transition: all 0.2s ease;
+          z-index: 2;
         }
+
         .cab-close:hover {
-          color: #ffffff;
+          background: rgba(255, 255, 255, 0.18);
+          color: #FFFFFF;
+          border-color: rgba(245, 130, 32, 0.5);
+          transform: translateY(-50%) scale(1.08);
         }
 
         @media (max-width: 1100px) {
@@ -185,17 +273,17 @@ const CampaignAnnouncementBar = () => {
           }
         }
         @media (max-width: 600px) {
-          #campaign-announcement-bar {
-            padding: 6px 12px;
+          .cab-root {
+            padding: 6px 10px;
           }
           .cab-wrapper {
-            gap: 8px;
-            padding-right: 22px;
+            gap: 7px;
+            padding-right: 28px;
             width: 100%;
             justify-content: space-between;
           }
           .cab-text-group {
-            font-size: 0.74rem;
+            font-size: 0.73rem;
             white-space: normal;
             display: -webkit-box;
             -webkit-line-clamp: 1;
@@ -204,12 +292,12 @@ const CampaignAnnouncementBar = () => {
             line-height: 1.25;
           }
           .cab-badge {
-            font-size: 0.68rem;
-            padding: 2px 6px;
+            font-size: 0.65rem;
+            padding: 2px 7px;
           }
           .cab-btn {
             font-size: 0.72rem;
-            padding: 4px 10px;
+            padding: 4px 11px;
             gap: 3px;
           }
         }
@@ -217,11 +305,12 @@ const CampaignAnnouncementBar = () => {
 
       <div className="cab-wrapper">
         <span className="cab-badge">
-          <Sparkles size={11} /> 20% OFF
+          <Sparkles size={12} className="cab-badge-icon" /> 20% OFF
         </span>
 
         <span className="cab-text-group">
-          <strong>{CAMPAIGN_CONFIG.HEADLINE}:</strong> {CAMPAIGN_CONFIG.DISCOUNT_LINE}
+          <strong>{CAMPAIGN_CONFIG.HEADLINE}:</strong>{' '}
+          <span className="cab-highlight">{CAMPAIGN_CONFIG.DISCOUNT_LINE}</span>
           <span className="cab-dot cab-bonus">•</span>
           <span className="cab-bonus">{CAMPAIGN_CONFIG.BONUS_LINE}</span>
           <span className="cab-dot cab-validity">•</span>
@@ -234,7 +323,7 @@ const CampaignAnnouncementBar = () => {
           className="cab-btn"
         >
           <span>{CAMPAIGN_CONFIG.CTA_PRIMARY}</span>
-          <ArrowRight size={13} />
+          <ArrowRight size={13} className="cab-btn-arrow" />
         </Link>
       </div>
 
@@ -243,7 +332,7 @@ const CampaignAnnouncementBar = () => {
         aria-label="Dismiss announcement"
         className="cab-close"
       >
-        <X size={15} />
+        <X size={14} />
       </button>
     </aside>
   );

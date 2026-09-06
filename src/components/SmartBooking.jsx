@@ -142,13 +142,16 @@ const SmartBooking = () => {
         </div>
 
         {/* Step Content Card */}
-        <div style={{ 
-          backgroundColor: 'white', 
-          borderRadius: 'var(--radius-lg)', 
-          padding: '2.5rem',
-          color: 'var(--text-primary)',
-          boxShadow: '0 20px 40px rgba(0,0,0,0.2)'
-        }}>
+        <div 
+          className="smart-booking-card"
+          style={{ 
+            backgroundColor: 'white', 
+            borderRadius: 'var(--radius-lg)', 
+            padding: '2.5rem',
+            color: 'var(--text-primary)',
+            boxShadow: '0 20px 40px rgba(0,0,0,0.2)'
+          }}
+        >
           
           {/* STEP 1: Treatment */}
           {step === 1 && (

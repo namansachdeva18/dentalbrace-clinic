@@ -99,7 +99,34 @@ const TreatmentSection = ({ data, id }) => {
             <div className="sidebar-card doctor-cta">
               <h3 className="cta-title">Ready to transform your smile?</h3>
               <p className="cta-subtitle">Book a consultation with our AIIMS trained specialists today.</p>
-              <a href="#book" className="btn btn-primary w-full">Book Now</a>
+              <a
+                href="#book"
+                className="btn btn-primary w-full"
+                onClick={(e) => {
+                  e.preventDefault();
+                  if (typeof window !== 'undefined') {
+                    if (typeof window.openOfferPopup === 'function') {
+                      window.openOfferPopup({
+                        source: 'treatment_sidebar_cta',
+                        title: 'Book Your Smile Consultation',
+                        subtitle: 'Schedule your consultation with AIIMS & BHU-trained dental specialists at The DentalBrace Bathinda.',
+                        badge: 'Priority Clinic Booking',
+                      });
+                    } else {
+                      window.dispatchEvent(new CustomEvent('open_offer_popup', {
+                        detail: {
+                          source: 'treatment_sidebar_cta',
+                          title: 'Book Your Smile Consultation',
+                          subtitle: 'Schedule your consultation with AIIMS & BHU-trained dental specialists at The DentalBrace Bathinda.',
+                          badge: 'Priority Clinic Booking',
+                        }
+                      }));
+                    }
+                  }
+                }}
+              >
+                Book Now
+              </a>
             </div>
 
           </aside>

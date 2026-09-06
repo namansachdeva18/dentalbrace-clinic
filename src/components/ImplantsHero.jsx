@@ -42,7 +42,7 @@ const ImplantsHero = () => {
           </span>
         </div>
 
-        <div style={{
+        <div className="feature-grid-2col implants-grid" style={{
           display: 'grid',
           gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
           gap: '4rem',

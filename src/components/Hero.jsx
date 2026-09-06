@@ -93,7 +93,32 @@ const Hero = () => {
 
           {/* CTA Buttons */}
           <div className="hero-cta-group">
-            <a href="#book" className="btn-hero-primary">
+            <a
+              href="#book"
+              className="btn-hero-primary"
+              onClick={(e) => {
+                e.preventDefault();
+                if (typeof window !== 'undefined') {
+                  if (typeof window.openOfferPopup === 'function') {
+                    window.openOfferPopup({
+                      source: 'homepage_hero_cta',
+                      title: 'Book Your Smile Consultation',
+                      subtitle: 'Schedule your consultation with AIIMS & BHU-trained dental specialists at The DentalBrace Bathinda.',
+                      badge: 'Priority Clinic Booking',
+                    });
+                  } else {
+                    window.dispatchEvent(new CustomEvent('open_offer_popup', {
+                      detail: {
+                        source: 'homepage_hero_cta',
+                        title: 'Book Your Smile Consultation',
+                        subtitle: 'Schedule your consultation with AIIMS & BHU-trained dental specialists at The DentalBrace Bathinda.',
+                        badge: 'Priority Clinic Booking',
+                      }
+                    }));
+                  }
+                }
+              }}
+            >
               <Calendar size={20} /> Book Consultation <ArrowRight size={18} />
             </a>
             <a href="tel:7496849392" className="btn-hero-outline">

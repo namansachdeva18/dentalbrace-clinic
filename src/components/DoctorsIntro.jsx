@@ -108,7 +108,34 @@ const DoctorsIntro = () => {
               </div>
             </div>
 
-            <a href="/dental-offer-bathinda#campaign-form" className="doctors-intro__combined-cta">
+            <a
+              href="/wedding-season-dental-offer-bathinda#wedding-consultation-form"
+              className="doctors-intro__combined-cta"
+              onClick={(e) => {
+                e.preventDefault();
+                if (typeof window !== 'undefined') {
+                  if (typeof window.openOfferPopup === 'function') {
+                    window.openOfferPopup({
+                      source: 'doctors_intro_combined_cta',
+                      title: 'Book a Consultation',
+                      subtitle: 'Schedule your personalized assessment with Dr. Sandeep Kumar & Dr. Ritu Saneja at The DentalBrace Bathinda.',
+                      badge: 'Specialist Consultation',
+                    });
+                  } else {
+                    window.dispatchEvent(
+                      new CustomEvent('open_offer_popup', {
+                        detail: {
+                          source: 'doctors_intro_combined_cta',
+                          title: 'Book a Consultation',
+                          subtitle: 'Schedule your personalized assessment with Dr. Sandeep Kumar & Dr. Ritu Saneja at The DentalBrace Bathinda.',
+                          badge: 'Specialist Consultation',
+                        },
+                      })
+                    );
+                  }
+                }
+              }}
+            >
               Book a Consultation <ArrowRight size={16} />
             </a>
           </div>

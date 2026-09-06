@@ -480,6 +480,28 @@ const Testimonials = () => {
           <a
             href="#book"
             className="testimonials-btn-book"
+            onClick={(e) => {
+              e.preventDefault();
+              if (typeof window !== 'undefined') {
+                if (typeof window.openOfferPopup === 'function') {
+                  window.openOfferPopup({
+                    source: 'testimonials_join_happy_patients',
+                    title: 'Book Your Smile Consultation',
+                    subtitle: 'Schedule your consultation with AIIMS & BHU-trained dental specialists at The DentalBrace Bathinda.',
+                    badge: 'Priority Clinic Booking',
+                  });
+                } else {
+                  window.dispatchEvent(new CustomEvent('open_offer_popup', {
+                    detail: {
+                      source: 'testimonials_join_happy_patients',
+                      title: 'Book Your Smile Consultation',
+                      subtitle: 'Schedule your consultation with AIIMS & BHU-trained dental specialists at The DentalBrace Bathinda.',
+                      badge: 'Priority Clinic Booking',
+                    }
+                  }));
+                }
+              }
+            }}
             style={{
               display: 'inline-flex', alignItems: 'center', gap: '0.6rem',
               padding: '0.9rem 2rem',
@@ -489,7 +511,8 @@ const Testimonials = () => {
               fontWeight: '700', textDecoration: 'none',
               fontSize: '0.95rem',
               boxShadow: '0 4px 20px rgba(245,130,32,0.35)',
-              transition: 'all 0.2s ease'
+              transition: 'all 0.2s ease',
+              cursor: 'pointer'
             }}
             onMouseEnter={e => e.currentTarget.style.transform = 'translateY(-2px)'}
             onMouseLeave={e => e.currentTarget.style.transform = 'none'}

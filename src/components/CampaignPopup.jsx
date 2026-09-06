@@ -15,6 +15,7 @@ import WeddingLeadForm from './WeddingLeadForm';
  */
 const CampaignPopup = () => {
   const [open, setOpen] = useState(false);
+  const [popupConfig, setPopupConfig] = useState(null);
   const [triggered, setTriggered] = useState(false);
   const closeRef = useRef(null);
   const overlayRef = useRef(null);
@@ -23,6 +24,7 @@ const CampaignPopup = () => {
     if (triggered) return;
     const dismissed = sessionStorage.getItem('campaign_popup_dismissed');
     if (dismissed) return;
+    setPopupConfig(null);
     setOpen(true);
     setTriggered(true);
 
@@ -33,12 +35,20 @@ const CampaignPopup = () => {
     }
   }, [triggered]);
 
-  // Global trigger listener
+  // Global trigger listener — explicit clicks ALWAYS open regardless of past dismissal
   useEffect(() => {
-    const handleOpen = () => setOpen(true);
+    const handleOpen = (e) => {
+      const config = e?.detail || null;
+      setPopupConfig(config);
+      setOpen(true);
+    };
+
     window.addEventListener('open_offer_popup', handleOpen);
     window.addEventListener('open_campaign_popup', handleOpen);
-    window.openOfferPopup = handleOpen;
+    window.openOfferPopup = (config) => {
+      setPopupConfig(config || null);
+      setOpen(true);
+    };
 
     return () => {
       window.removeEventListener('open_offer_popup', handleOpen);
@@ -200,11 +210,11 @@ const CampaignPopup = () => {
               letterSpacing: '0.6px',
               textTransform: 'uppercase',
             }}>
-              Exclusive Seasonal Offer
+              {popupConfig?.badge || 'Exclusive Seasonal Offer'}
             </span>
           </div>
 
-          {/* Heading: Claim 20% OFF Your Smile Makeover */}
+          {/* Heading */}
           <h2
             id="popup-heading"
             style={{
@@ -217,7 +227,11 @@ const CampaignPopup = () => {
               letterSpacing: '-0.3px',
             }}
           >
-            Claim <span style={{ color: '#D47A22' }}>20% OFF</span> Your Smile Makeover
+            {popupConfig?.title ? (
+              popupConfig.title
+            ) : (
+              <>Claim <span style={{ color: '#D47A22' }}>20% OFF</span> Your Smile Makeover</>
+            )}
           </h2>
 
           <p
@@ -230,14 +244,17 @@ const CampaignPopup = () => {
               maxWidth: '360px',
             }}
           >
-            Lock in your priority consultation and 20% seasonal voucher on select aesthetic &amp; smile packages. Fill out the quick details below:
+            {popupConfig?.subtitle || 'Lock in your priority consultation and 20% seasonal voucher on select aesthetic & smile packages. Fill out the quick details below:'}
           </p>
         </div>
 
         {/* Universal Wedding / Smile Lead Form */}
         <div className="popup-form-wrapper" style={{ marginTop: '0.65rem' }}>
           <WeddingLeadForm
-            source="universal_website_popup"
+            key={popupConfig ? (popupConfig.role || popupConfig.source || 'configured_popup') : 'default_popup'}
+            source={popupConfig?.source || 'universal_website_popup'}
+            initialRole={popupConfig?.role || ''}
+            initialTreatment={popupConfig?.treatment || ''}
             compactMode={true}
           />
         </div>

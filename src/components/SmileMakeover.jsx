@@ -79,7 +79,7 @@ const SmileMakeover = () => {
         </div>
 
         {/* Split Editorial Layout */}
-        <div style={{
+        <div className="feature-grid-2col smile-makeover-grid" style={{
           display: 'grid',
           gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
           gap: '2rem',

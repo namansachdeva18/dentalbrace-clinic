@@ -44,6 +44,7 @@ const BeforeAfterSlider = ({ beforeImage, afterImage, beforeAlt = "Before", afte
   return (
     <div 
       ref={containerRef}
+      className="before-after-slider-container"
       style={{
         position: 'relative',
         width: '100%',
@@ -66,7 +67,7 @@ const BeforeAfterSlider = ({ beforeImage, afterImage, beforeAlt = "Before", afte
         decoding="async"
         style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', objectFit: 'cover' }} 
       />
-      <div style={{
+      <div className="slider-badge slider-badge--after" style={{
         position: 'absolute',
         top: '1rem',
         right: '1rem',
@@ -76,7 +77,8 @@ const BeforeAfterSlider = ({ beforeImage, afterImage, beforeAlt = "Before", afte
         fontSize: '0.875rem',
         fontWeight: 'bold',
         color: 'var(--text-primary)',
-        boxShadow: 'var(--shadow-sm)'
+        boxShadow: 'var(--shadow-sm)',
+        zIndex: 5
       }}>After</div>
       
       {/* Before Image (Foreground, clipped) */}
@@ -98,7 +100,7 @@ const BeforeAfterSlider = ({ beforeImage, afterImage, beforeAlt = "Before", afte
           decoding="async"
           style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', objectFit: 'cover', maxWidth: 'none' }} 
         />
-        <div style={{
+        <div className="slider-badge slider-badge--before" style={{
           position: 'absolute',
           top: '1rem',
           left: '1rem',
@@ -108,17 +110,19 @@ const BeforeAfterSlider = ({ beforeImage, afterImage, beforeAlt = "Before", afte
           fontSize: '0.875rem',
           fontWeight: 'bold',
           color: 'var(--text-primary)',
-          boxShadow: 'var(--shadow-sm)'
+          boxShadow: 'var(--shadow-sm)',
+          zIndex: 5
         }}>Before</div>
       </div>
 
       {/* Slider Handle */}
       <div 
+        className="slider-divider-line"
         style={{
           position: 'absolute',
           top: 0,
           bottom: 0,
-          width: '4px',
+          width: '3px',
           backgroundColor: 'white',
           boxShadow: '0 0 10px rgba(0,0,0,0.5)',
           left: `${sliderPosition}%`,
@@ -126,21 +130,24 @@ const BeforeAfterSlider = ({ beforeImage, afterImage, beforeAlt = "Before", afte
           zIndex: 10
         }}
       >
-        <div style={{
-          position: 'absolute',
-          top: '50%',
-          left: '50%',
-          transform: 'translate(-50%, -50%)',
-          width: '40px',
-          height: '40px',
-          backgroundColor: 'white',
-          borderRadius: '50%',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          boxShadow: '0 0 15px rgba(0,0,0,0.3)'
-        }}>
-          <ArrowLeftRight size={20} color="var(--accent-color)" />
+        <div 
+          className="slider-handle-button"
+          style={{
+            position: 'absolute',
+            top: '50%',
+            left: '50%',
+            transform: 'translate(-50%, -50%)',
+            width: '40px',
+            height: '40px',
+            backgroundColor: 'white',
+            borderRadius: '50%',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            boxShadow: '0 0 15px rgba(0,0,0,0.3)'
+          }}
+        >
+          <ArrowLeftRight size={18} color="var(--accent-color)" />
         </div>
       </div>
     </div>

@@ -96,9 +96,33 @@ const TreatmentNavigator = () => {
           .nav-grid { grid-template-columns: repeat(4, 1fr) !important; }
         }
         @media (max-width: 767px) {
-          .nav-grid { grid-template-columns: repeat(3, 1fr) !important; }
-          .nav-card { padding: 1rem 0.25rem !important; }
-          .nav-card span { font-size: 0.75rem !important; }
+          .treatment-navigator { padding: 1.5rem 0 !important; }
+          .nav-grid { 
+            grid-template-columns: repeat(4, 1fr) !important; 
+            gap: 0.5rem !important; 
+          }
+          .nav-card { 
+            padding: 0.65rem 0.25rem !important; 
+            border-radius: 12px !important;
+            min-height: 80px !important;
+          }
+          .nav-card .nav-icon { 
+            margin-bottom: 0.35rem !important; 
+          }
+          .nav-card .nav-icon svg { 
+            width: 24px !important; 
+            height: 24px !important; 
+          }
+          .nav-card span { 
+            font-size: 0.68rem !important; 
+            line-height: 1.15 !important;
+          }
+        }
+        @media (max-width: 400px) {
+          .nav-grid {
+            grid-template-columns: repeat(3, 1fr) !important;
+            gap: 0.45rem !important;
+          }
         }
       `}</style>
     </section>

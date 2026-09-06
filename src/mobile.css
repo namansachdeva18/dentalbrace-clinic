@@ -38,25 +38,68 @@
    HEADER / NAV
    ================================================================ */
 @media (max-width: 768px) {
-  .top-bar-item:not(.contact-item) {
-    display: flex;
-    font-size: 0.8rem;
+  :root {
+    --header-height: 58px;
   }
-  .top-bar-content {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: nowrap;
-    padding: 0.5rem 0;
-  }
-  
-  .hide-on-mobile {
+
+  .top-bar {
     display: none !important;
   }
-  
-  /* Make sure the logo scales nicely on small screens */
+
+  .main-nav {
+    padding: 0.42rem 0 !important;
+  }
+
+  .logo a {
+    gap: 0.55rem !important;
+  }
+
+  /* Sleek, compact logo sizing on small screens */
   .logo-img {
-    height: 60px !important;
+    height: 44px !important;
+    width: auto !important;
+  }
+
+  .logo-text {
+    font-size: 1.15rem !important;
+    line-height: 1.12 !important;
+  }
+
+  .logo-subtext {
+    font-size: 0.62rem !important;
+    letter-spacing: 0.5px !important;
+    line-height: 1.15 !important;
+  }
+
+  .logo-location {
+    font-size: 0.54rem !important;
+    letter-spacing: 0.4px !important;
+    line-height: 1.1 !important;
+  }
+
+  .nav-mobile-actions {
+    gap: 0.45rem;
+  }
+
+  .header-offer-btn {
+    padding: 0.28rem 0.6rem 0.28rem 0.4rem;
+    gap: 0.35rem;
+    border-radius: 9999px;
+  }
+
+  .header-offer-btn__icon {
+    width: 22px;
+    height: 22px;
+  }
+
+  .header-offer-btn__badge {
+    font-size: 0.74rem;
+  }
+
+  .mobile-menu-btn {
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
   }
 
   /* Mobile nav menu styles handled in Header.css */
@@ -65,18 +108,45 @@
   }
 }
 
+@media (max-width: 420px) {
+  .logo-img {
+    height: 40px !important;
+  }
+
+  .logo-text {
+    font-size: 1.05rem !important;
+  }
+
+  .logo-subtext {
+    font-size: 0.58rem !important;
+  }
+
+  .logo-location {
+    font-size: 0.52rem !important;
+  }
+
+  .header-offer-btn {
+    padding: 0.24rem 0.48rem 0.24rem 0.32rem;
+  }
+
+  .header-offer-btn__badge {
+    font-size: 0.68rem;
+  }
+
+  .mobile-menu-btn {
+    width: 35px;
+    height: 35px;
+  }
+}
+
 /* ================================================================
    HERO
    ================================================================ */
 @media (max-width: 768px) {
-  :root {
-    --header-height: 76px;
-  }
-
   .hero {
     grid-template-columns: 1fr;
     min-height: auto;
-    padding-top: var(--header-height, 76px);
+    padding-top: var(--header-height, 58px);
   }
 
   .hero-right {
@@ -226,7 +296,7 @@
 }
 
 /* ================================================================
-   INVISALIGN HERO / IMPLANTS HERO  (inline-style sections)
+   HOMEPAGE SHOWCASE & CONTENT SECTIONS (Compact Mobile Alignment)
    ================================================================ */
 @media (min-width: 769px) {
   .implants-content { order: 2; }
@@ -234,98 +304,447 @@
 }
 
 @media (max-width: 768px) {
-  /* Full-bleed showcase sections that use inline grid */
+  /* 1. Global Section Compaction on Mobile */
   section[id="invisalign"],
   section[id="implants"],
-  div[id="invisalign"],
-  div[id="implants"] {
-    padding: 3rem 0 !important;
+  section[id="maxillofacial-prosthetics"],
+  section[id="smile-makeover"],
+  .about-section,
+  .about-section .section-padding,
+  .premium-feature,
+  .cgal-section,
+  #testimonials,
+  #faq,
+  #faq section,
+  #faq .section-padding {
+    padding: 2.5rem 0 !important;
   }
 
-  /* Make two-column feature sections stack */
+  /* Make two-column feature sections stack seamlessly */
   .feature-grid-2col,
+  .invisalign-grid,
+  .implants-grid,
+  .maxillofacial-grid,
+  .smile-makeover-grid,
+  .about-container,
   [style*="gridTemplateColumns: '1fr 1fr'"],
   [style*="grid-template-columns: 1fr 1fr"] {
     grid-template-columns: 1fr !important;
+    gap: 1.75rem !important;
+  }
+
+  /* Top badge / pill headers across all sections */
+  section[id="invisalign"] span[style*="border-radius: var(--radius-full)"],
+  section[id="implants"] span[style*="border-radius: var(--radius-full)"],
+  section[id="maxillofacial-prosthetics"] span[style*="border-radius: var(--radius-full)"],
+  section[id="smile-makeover"] span[style*="border-radius: var(--radius-full)"],
+  .section-badge {
+    font-size: 0.72rem !important;
+    padding: 0.3rem 0.85rem !important;
+    letter-spacing: 0.8px !important;
+    margin-bottom: 0.75rem !important;
+  }
+
+  /* Section top header wrappers */
+  section[id="invisalign"] > div > div:first-child,
+  section[id="implants"] > div > div:first-child,
+  section[id="maxillofacial-prosthetics"] > div > div:first-child,
+  section[id="smile-makeover"] > div > div:first-child {
+    margin-bottom: 1.5rem !important;
+  }
+
+  /* Compact Heading Typography */
+  section[id="invisalign"] h2,
+  section[id="implants"] h2,
+  section[id="maxillofacial-prosthetics"] h2,
+  section[id="smile-makeover"] h2,
+  .heading-primary,
+  .heading-secondary,
+  .testimonials-title,
+  .cgal-heading h2 {
+    font-size: clamp(1.45rem, 5.8vw, 1.85rem) !important;
+    line-height: 1.22 !important;
+    margin-bottom: 0.65rem !important;
+    letter-spacing: -0.015em !important;
+  }
+
+  /* Paragraphs and description copy */
+  section[id="invisalign"] p,
+  section[id="implants"] p,
+  section[id="maxillofacial-prosthetics"] p,
+  section[id="smile-makeover"] p,
+  .about-subtitle,
+  .premium-content p,
+  .testimonials-subtitle,
+  .cgal-sub {
+    font-size: 0.88rem !important;
+    line-height: 1.55 !important;
+    margin-bottom: 1.15rem !important;
+  }
+
+  /* Compact Stat Counter Boxes (Invisalign & Implants) */
+  section[id="invisalign"] div[style*="display: flex; gap: 2.5rem"],
+  section[id="implants"] div[style*="display: flex; gap: 2.5rem"] {
+    gap: 1rem !important;
+    padding: 0.75rem 1rem !important;
+    margin-bottom: 1.25rem !important;
+    border-radius: 12px !important;
+    justify-content: space-around !important;
+  }
+
+  section[id="invisalign"] div[style*="fontSize: '2.25rem'"],
+  section[id="implants"] div[style*="fontSize: '2.25rem'"],
+  section[id="invisalign"] div[style*="font-size: 2.25rem"],
+  section[id="implants"] div[style*="font-size: 2.25rem"] {
+    font-size: 1.45rem !important;
+    line-height: 1.1 !important;
+  }
+
+  section[id="invisalign"] div[style*="fontSize: '0.875rem'"],
+  section[id="implants"] div[style*="fontSize: '0.875rem'"] {
+    font-size: 0.72rem !important;
+  }
+
+  /* Checklists & Benefit items (Invisalign, Implants, Maxillofacial) */
+  section[id="invisalign"] ul,
+  section[id="implants"] ul,
+  section[id="maxillofacial-prosthetics"] ul,
+  .maxillofacial-list {
+    gap: 0.45rem !important;
+    margin-bottom: 1rem !important;
+    padding-left: 0 !important;
+  }
+
+  section[id="invisalign"] ul li,
+  section[id="implants"] ul li,
+  section[id="maxillofacial-prosthetics"] ul li,
+  .maxillofacial-list-item {
+    font-size: 0.8rem !important;
+    line-height: 1.35 !important;
+    gap: 0.45rem !important;
+    align-items: flex-start !important;
+  }
+
+  .maxillofacial-item-text {
+    flex: 1;
+    font-size: 0.8rem;
+    line-height: 1.35;
+  }
+
+  .maxillofacial-item-text strong {
+    color: var(--text-primary);
+  }
+
+  .maxillofacial-item-desc {
+    color: var(--text-secondary);
+  }
+
+  section[id="invisalign"] ul li svg,
+  section[id="implants"] ul li svg,
+  section[id="maxillofacial-prosthetics"] ul li svg,
+  .maxillofacial-heart-icon {
+    width: 14px !important;
+    height: 14px !important;
+    margin-top: 2px !important;
+  }
+
+  /* Maxillofacial Tech Callout Box */
+  .maxillofacial-tech-box,
+  section[id="maxillofacial-prosthetics"] div[style*="padding: 1.25rem"] {
+    padding: 0.65rem 0.75rem !important;
+    margin-bottom: 1rem !important;
+    border-radius: 10px !important;
+    gap: 0.35rem !important;
+  }
+
+  .maxillofacial-tech-heading,
+  section[id="maxillofacial-prosthetics"] div[style*="padding: 1.25rem"] span[style*="fontSize: '0.75rem'"] {
+    font-size: 0.62rem !important;
+    letter-spacing: 0.8px !important;
+  }
+
+  .maxillofacial-tech-tags,
+  section[id="maxillofacial-prosthetics"] div[style*="display: flex; gap: 1.5rem"] {
+    gap: 0.35rem 0.65rem !important;
+  }
+
+  .maxillofacial-tech-chip,
+  section[id="maxillofacial-prosthetics"] div[style*="display: flex; gap: 1.5rem"] span {
+    font-size: 0.74rem !important;
+    gap: 0.3rem !important;
+  }
+
+  .maxillofacial-tech-chip svg {
+    width: 13px !important;
+    height: 13px !important;
+  }
+
+  /* CTA Buttons Row */
+  .maxillofacial-actions,
+  section[id="invisalign"] div[style*="display: flex; gap: 1rem"],
+  section[id="implants"] div[style*="display: flex; gap: 1rem"],
+  section[id="maxillofacial-prosthetics"] div[style*="display: flex; gap: 1rem"] {
+    gap: 0.5rem !important;
+  }
+
+  .btn-maxillofacial-primary,
+  .btn-maxillofacial-outline,
+  section[id="invisalign"] a,
+  section[id="implants"] a,
+  section[id="maxillofacial-prosthetics"] a {
+    padding: 0.6rem 1.1rem !important;
+    font-size: 0.82rem !important;
+  }
+
+  /* Before/After Sliders on Mobile */
+  .before-after-slider-container {
+    height: 235px !important;
+    border-radius: 14px !important;
+  }
+
+  .slider-badge {
+    padding: 0.15rem 0.65rem !important;
+    font-size: 0.72rem !important;
+    top: 0.65rem !important;
+  }
+
+  .slider-badge--after { right: 0.65rem !important; }
+  .slider-badge--before { left: 0.65rem !important; }
+
+  .slider-handle-button {
+    width: 32px !important;
+    height: 32px !important;
+  }
+
+  .slider-handle-button svg {
+    width: 14px !important;
+    height: 14px !important;
+  }
+
+  /* Maxillofacial Dual Sliders Gap */
+  .maxillofacial-gallery {
+    gap: 0.85rem !important;
+  }
+
+  .maxillofacial-gallery div[style*="marginBottom: '0.5rem'"] {
+    margin-bottom: 0.2rem !important;
   }
 }
 
 /* ================================================================
-   SERVICES GRID
+   SERVICES GRID (Compacted)
    ================================================================ */
 @media (max-width: 768px) {
-  /* Services cards — 1 column on mobile */
+  #treatments,
+  .services {
+    padding: 2.5rem 0 !important;
+  }
+
+  .services-header {
+    margin-bottom: 1.5rem !important;
+  }
+
   .services-grid {
     grid-template-columns: 1fr !important;
-    gap: 1rem !important;
+    gap: 0.85rem !important;
   }
 
   .service-card {
-    padding: 1.5rem !important;
+    padding: 1.15rem !important;
+    border-radius: 14px !important;
   }
-}
 
-@media (max-width: 480px) {
-  .services-grid {
-    grid-template-columns: 1fr !important;
+  .featured-service-card {
+    padding: 1.25rem !important;
+  }
+
+  .service-icon {
+    margin-bottom: 0.75rem !important;
+    padding: 0.65rem !important;
+    border-radius: 10px !important;
+  }
+
+  .service-icon svg {
+    width: 22px !important;
+    height: 22px !important;
+  }
+
+  .service-title {
+    font-size: 1.05rem !important;
+    margin-bottom: 0.35rem !important;
+  }
+
+  .service-desc {
+    font-size: 0.82rem !important;
+    line-height: 1.45 !important;
+    margin-bottom: 0.85rem !important;
+  }
+
+  .service-link {
+    font-size: 0.82rem !important;
   }
 }
 
 /* ================================================================
-   PREMIUM SECTIONS (Digital Dentistry Before/After)
+   PREMIUM SECTIONS (Digital Dentistry Compacted)
    ================================================================ */
 @media (max-width: 768px) {
-  .premium-grid,
-  .before-after-section {
-    flex-direction: column !important;
-    grid-template-columns: 1fr !important;
+  .premium-feature {
+    padding: 2.25rem 0 !important;
+  }
+
+  .premium-container {
+    gap: 1.5rem !important;
+  }
+
+  .premium-content {
+    max-width: 100% !important;
+  }
+
+  .premium-visual {
+    aspect-ratio: 16/10 !important;
+    min-height: 220px !important;
+    max-height: 280px !important;
+    border-radius: 14px !important;
+  }
+
+  .premium-visual img {
+    min-height: 220px !important;
+    max-height: 280px !important;
+  }
+
+  .feature-list {
+    gap: 0.5rem !important;
+  }
+
+  .feature-list li {
+    font-size: 0.82rem !important;
+    gap: 0.4rem !important;
   }
 }
 
 /* ================================================================
-   SPECIALISTS
+   ABOUT SECTION (Compacted)
    ================================================================ */
 @media (max-width: 768px) {
-  .specialists-grid {
+  .about-section {
+    padding: 0 !important;
+  }
+
+  .about-section .section-padding {
+    padding: 2.5rem 0 !important;
+  }
+
+  .about-container {
     grid-template-columns: 1fr !important;
     gap: 1.5rem !important;
   }
 
-  .specialist-card {
-    flex-direction: column;
-    text-align: center;
-  }
-}
-
-/* ================================================================
-   ABOUT SECTION
-   ================================================================ */
-@media (max-width: 768px) {
-  .about-section > .section-padding > .container {
-    grid-template-columns: 1fr !important;
-    gap: 2rem !important;
+  .about-image-container {
+    border-radius: 14px !important;
   }
 
   .about-image-container img {
-    min-height: 550px !important;
-    max-height: 600px;
+    min-height: 240px !important;
+    height: 260px !important;
+    max-height: 280px !important;
     object-fit: cover;
   }
 
   .mission-list {
+    gap: 0.85rem !important;
+    margin-top: 1.25rem !important;
+  }
+
+  .mission-list h3 {
+    font-size: 0.95rem !important;
+  }
+
+  .mission-list p {
+    font-size: 0.78rem !important;
+    line-height: 1.4 !important;
+  }
+
+  .mission-list svg {
+    width: 20px !important;
+    height: 20px !important;
+  }
+
+  /* Geo stats bar inside About */
+  .about-section .text-white.py-12.mt-16 {
+    padding: 1.75rem 0 !important;
+    margin-top: 2rem !important;
+  }
+
+  .about-section .text-white.py-12.mt-16 div[style*="gridTemplateColumns"] {
+    grid-template-columns: 1fr 1fr !important;
     gap: 1rem !important;
+  }
+
+  .about-section .text-4xl {
+    font-size: 1.5rem !important;
+  }
+
+  .about-section .text-gray-300 {
+    font-size: 0.72rem !important;
   }
 }
 
 /* ================================================================
-   SMILE MAKEOVER
+   SMILE MAKEOVER (Compacted)
    ================================================================ */
 @media (max-width: 768px) {
-  /* Force single column layout */
-  [id="smile-makeover"] > section > div,
-  [id="smile-makeover"] section > div {
-    flex-direction: column !important;
+  #smile-makeover section,
+  [id="smile-makeover"] > section {
+    padding: 2.5rem 0 !important;
+  }
+
+  [id="smile-makeover"] > section > div > div:first-child {
+    margin-bottom: 1.75rem !important;
+  }
+
+  .smile-makeover-grid {
     grid-template-columns: 1fr !important;
+    gap: 1.25rem !important;
+    margin-bottom: 2rem !important;
+  }
+
+  .smile-makeover-grid > div:first-child {
+    min-height: 220px !important;
+    height: 220px !important;
+    border-radius: 14px !important;
+  }
+
+  .smile-makeover-grid > div:last-child {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 0.75rem !important;
+  }
+
+  .smile-makeover-grid > div:last-child > div {
+    padding: 0.85rem !important;
+    border-radius: 12px !important;
+  }
+
+  .smile-makeover-grid > div:last-child > div span {
+    font-size: 1.15rem !important;
+    margin-bottom: 0.35rem !important;
+  }
+
+  .smile-makeover-grid > div:last-child > div h3 {
+    font-size: 0.88rem !important;
+    margin-bottom: 0.25rem !important;
+  }
+
+  .smile-makeover-grid > div:last-child > div p {
+    font-size: 0.74rem !important;
+    line-height: 1.35 !important;
+  }
+
+  /* Smile makeover bottom CTA / stats block */
+  [id="smile-makeover"] div[style*="marginTop: '4rem'"],
+  [id="smile-makeover"] div[style*="margin-top: 4rem"] {
+    margin-top: 1.5rem !important;
+    gap: 1rem !important;
   }
 }
 
@@ -334,49 +753,28 @@
    ================================================================ */
 @media (max-width: 768px) {
   .gallery-section {
-    padding: 3.5rem 0;
+    padding: 2.5rem 0 !important;
   }
 
-  /* Apple-style Horizontal Swipe Carousel */
-  .gallery-grid {
-    display: flex !important;
-    overflow-x: auto !important;
-    scroll-snap-type: x mandatory;
-    gap: 1rem !important;
-    padding-bottom: 1.5rem !important;
-    -webkit-overflow-scrolling: touch; /* smooth momentum scrolling */
-    scrollbar-width: none; /* Firefox */
+  .gallery-heading {
+    margin-bottom: 1.5rem !important;
   }
 
-  .gallery-grid::-webkit-scrollbar {
-    display: none; /* Safari/Chrome */
+  .pg-grid {
+    column-count: 1 !important;
+    padding: 0 !important;
   }
 
-  .gallery-card, 
-  .gallery-grid .gallery-card:first-child {
-    flex: 0 0 85% !important; /* Peek the next card */
-    scroll-snap-align: center;
-    min-height: 250px !important;
-    border-radius: 16px;
-  }
-
-  .gallery-card {
-    min-height: 140px;
-  }
-
-  .gallery-placeholder-label {
-    font-size: 0.75rem;
-  }
-
-  .gallery-placeholder-hint {
-    display: none;
+  .pg-card {
+    margin-bottom: 1rem !important;
+    border-radius: 16px !important;
   }
 
   .gallery-footer-inner {
     flex-direction: column;
     text-align: center;
-    padding: 1rem 1.25rem;
-    border-radius: var(--radius-lg);
+    padding: 0.85rem 1rem !important;
+    border-radius: var(--radius-md);
   }
 }
 
@@ -388,61 +786,162 @@
 }
 
 /* ================================================================
-   TESTIMONIALS — marquee cards
+   TESTIMONIALS — marquee cards (Compacted)
    ================================================================ */
 @media (max-width: 768px) {
-  .marquee-container {
-    padding: 0.5rem 0;
+  #testimonials {
+    padding: 2.25rem 0 !important;
   }
 
-  /* Narrow cards slightly on mobile */
-  article[itemscope] {
-    min-width: 300px !important;
-    max-width: 300px !important;
-    padding: 1.5rem !important;
+  .testimonials-header-container {
+    margin-bottom: 1.5rem !important;
+  }
+
+  .testimonials-eyebrow {
+    font-size: 0.72rem !important;
+    padding: 0.3rem 0.85rem !important;
+    margin-bottom: 0.65rem !important;
+  }
+
+  .testimonials-title {
+    font-size: clamp(1.4rem, 5.5vw, 1.8rem) !important;
+    margin-bottom: 0.5rem !important;
+  }
+
+  .testimonials-subtitle {
+    font-size: 0.85rem !important;
+    line-height: 1.5 !important;
+    margin: 0 auto 1.25rem !important;
+  }
+
+  .testimonials-google-badge {
+    padding: 0.5rem 0.85rem !important;
+    gap: 0.75rem !important;
+    border-radius: 12px !important;
+  }
+
+  .marquee-container {
+    padding: 0.35rem 0 !important;
+  }
+
+  /* Compact review card */
+  article[itemscope].testimonial-card,
+  .testimonial-card {
+    min-width: 275px !important;
+    max-width: 275px !important;
+    padding: 1.15rem !important;
+    gap: 0.85rem !important;
+    border-radius: 14px !important;
+  }
+
+  .testimonial-card__avatar {
+    width: 40px !important;
+    height: 40px !important;
+  }
+
+  .testimonial-card__name {
+    font-size: 0.9rem !important;
+  }
+
+  .testimonial-card__quote {
+    font-size: 0.82rem !important;
+    line-height: 1.5 !important;
+  }
+
+  .testimonial-card__doctor {
+    padding-top: 0.65rem !important;
+    font-size: 0.75rem !important;
   }
 }
 
 /* ================================================================
-   SMART BOOKING WIDGET
+   SMART BOOKING WIDGET (Compacted)
    ================================================================ */
 @media (max-width: 768px) {
   #book {
-    padding: 3rem 0;
+    padding: 2.5rem 0 !important;
   }
 
-  #book .step-row,
-  #book > div > div > div:first-child {
-    flex-direction: column;
-    align-items: stretch;
+  #book > div > div:first-child {
+    margin-bottom: 1.5rem !important;
   }
 
-  #book [style*="grid-template-columns"],
-  #book .treatment-grid {
+  #book h2 {
+    font-size: 1.5rem !important;
+    line-height: 1.2 !important;
+    margin-bottom: 0.5rem !important;
+  }
+
+  #book p {
+    font-size: 0.85rem !important;
+  }
+
+  /* Progress bar */
+  #book > div > div[style*="justify-content: space-between"] {
+    margin-bottom: 1.75rem !important;
+  }
+
+  /* Step Card Container */
+  .smart-booking-card {
+    padding: 1.25rem 1rem !important;
+    border-radius: 16px !important;
+  }
+
+  /* Consultation mode button selector */
+  .smart-booking-card div[style*="display: grid; gridTemplateColumns: '1fr 1fr'"],
+  .smart-booking-card div[style*="display: grid; grid-template-columns: 1fr 1fr"] {
+    gap: 0.65rem !important;
+  }
+
+  .smart-booking-card button {
+    font-size: 0.82rem !important;
+  }
+
+  /* Treatment Buttons Grid: 2 clean compact columns */
+  .smart-booking-card div[style*="gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))'"],
+  .smart-booking-card div[style*="grid-template-columns: repeat(auto-fit, minmax(150px, 1fr))"] {
     grid-template-columns: 1fr 1fr !important;
+    gap: 0.55rem !important;
+  }
+
+  .smart-booking-card div[style*="gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))'"] button,
+  .smart-booking-card div[style*="grid-template-columns: repeat(auto-fit, minmax(150px, 1fr))"] button {
+    padding: 0.75rem 0.5rem !important;
+    font-size: 0.78rem !important;
+    border-radius: 10px !important;
   }
 }
 
 /* ================================================================
-   FAQ
+   FAQ (Compacted)
    ================================================================ */
 @media (max-width: 768px) {
-  #faq section,
-  #faq > section {
-    padding: 3rem 0 !important;
+  #faq {
+    padding: 2.5rem 0 !important;
+  }
+
+  #faq .section-padding {
+    padding: 0 !important;
+  }
+
+  #faq .mb-10 {
+    margin-bottom: 1.25rem !important;
   }
 
   .faq-question {
-    font-size: 0.95rem;
+    font-size: 0.88rem !important;
+    padding: 0.85rem 1rem !important;
   }
 
   .faq-answer {
-    font-size: 0.9rem;
+    font-size: 0.82rem !important;
+    line-height: 1.5 !important;
+    padding: 0 1rem 0.85rem !important;
   }
 }
 
 /* ================================================================
-   CONTACT SECTION (map background + card)
+   CONTACT SECTION (Map background + card compacted)
    ================================================================ */
 @media (max-width: 768px) {
   #contact {
@@ -450,23 +949,60 @@
     padding: 0 !important;
   }
 
-  /* Stack the contact grid */
-  #contact .container > div[style*="grid"] {
-    grid-template-columns: 1fr !important;
+  /* Map iframe height */
+  #contact > div:first-child {
+    height: 180px !important;
   }
 
   #contact .container {
-    padding: 3rem 1.25rem !important;
+    padding: 2rem 1rem 2.5rem !important;
   }
 
-  /* Map iframe stays at top, card below */
-  #contact > div:first-child {
-    height: 220px !important;
+  #contact .text-center.mb-12 {
+    margin-bottom: 1.5rem !important;
   }
 
-  /* Fix card padding */
+  /* Form & Info Card Stack */
+  #contact div[style*="gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))'"],
+  #contact div[style*="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr))"] {
+    grid-template-columns: 1fr !important;
+    gap: 1.25rem !important;
+  }
+
   .contact-info {
-    padding: 2rem 1.5rem !important;
+    padding: 1.25rem 1rem !important;
+    border-radius: 14px !important;
+  }
+
+  .contact-info h3 {
+    font-size: 1.25rem !important;
+    margin-bottom: 1rem !important;
+  }
+
+  .contact-list {
+    gap: 1rem !important;
+  }
+
+  .contact-list li strong {
+    font-size: 0.95rem !important;
+  }
+
+  .contact-list li p,
+  .contact-list li a {
+    font-size: 0.82rem !important;
+    line-height: 1.4 !important;
+  }
+
+  .contact-list svg {
+    width: 20px !important;
+    height: 20px !important;
+  }
+
+  /* Form container card */
+  #contact form,
+  #contact .contact-form-wrap {
+    padding: 1.25rem 1rem !important;
+    border-radius: 14px !important;
   }
 }
 
@@ -504,22 +1040,43 @@
 }
 
 /* ================================================================
-   MOBILE BOTTOM BAR — Redesigned Premium
+   MOBILE BOTTOM BAR — Ultra-Premium Floating Island Dock
    ================================================================ */
 @media (max-width: 768px) {
   .mobile-bottom-bar {
     display: flex;
     position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    z-index: 999;
-    border-top: 1px solid rgba(0,0,0,0.08);
-    /* Apple iOS style glassmorphism */
-    background: rgba(255, 255, 255, 0.85);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    padding-bottom: env(safe-area-inset-bottom); /* iOS notch support */
+    bottom: 12px;
+    left: 12px;
+    right: 12px;
+    width: auto;
+    z-index: 9999;
+    background: rgba(255, 255, 255, 0.94);
+    backdrop-filter: blur(24px) saturate(180%);
+    -webkit-backdrop-filter: blur(24px) saturate(180%);
+    border-radius: 24px;
+    padding: 6px 8px;
+    padding-bottom: calc(6px + env(safe-area-inset-bottom, 0px));
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    box-shadow: 
+      0 12px 36px -4px rgba(15, 61, 62, 0.22),
+      0 4px 12px -2px rgba(0, 0, 0, 0.08),
+      0 0 0 1px rgba(15, 61, 62, 0.06);
+    gap: 4px;
+    align-items: center;
+    transform: translateZ(0);
+    animation: barEntrance 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  @keyframes barEntrance {
+    from {
+      transform: translateY(120%) scale(0.96);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0) scale(1);
+      opacity: 1;
+    }
   }
 
   .bottom-bar-item {
@@ -528,47 +1085,217 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 0.75rem 0.25rem; /* Larger touch target */
-    gap: 0.35rem;
-    font-size: 0.65rem; /* iOS standard size */
-    font-weight: 500;
-    color: var(--text-secondary);
+    padding: 7px 4px;
+    border-radius: 16px;
+    gap: 3px;
+    text-decoration: none;
+    color: #4A5568;
+    position: relative;
+    border: none;
+    transition: all 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .bottom-bar-icon-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 12px;
+    background: rgba(15, 61, 62, 0.05);
+    color: #0F3D3E;
+    transition: all 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+
+  .bottom-bar-item--wa .bottom-bar-icon-wrap {
+    background: rgba(37, 211, 102, 0.12);
+    color: #128C7E;
+  }
+
+  .bottom-bar-item--map .bottom-bar-icon-wrap {
+    background: rgba(245, 130, 32, 0.08);
+    color: #D47A22;
+  }
+
+  .bottom-bar-label {
+    font-size: 0.65rem;
+    font-weight: 600;
     letter-spacing: 0.2px;
-    transition: all 0.2s ease;
-    border-right: 1px solid rgba(0,0,0,0.04);
+    line-height: 1.1;
+    font-family: var(--font-heading, 'Outfit', sans-serif);
   }
 
-  .bottom-bar-item:last-child {
-    border-right: none;
-  }
-
-  .bottom-bar-item:hover,
+  /* Micro-interactions on active/tap */
   .bottom-bar-item:active {
-    color: var(--accent-color);
+    transform: scale(0.92);
   }
 
-  .bottom-bar-item.primary-bg {
-    background: var(--accent-color);
-    color: white;
-    font-weight: 700;
-    font-size: 0.82rem;
-    box-shadow: none;
-    flex: 1.2;
-    padding: 0.75rem 0.25rem; /* Ensure consistent height */
+  .bottom-bar-item:active .bottom-bar-icon-wrap {
+    background: rgba(15, 61, 62, 0.12);
+    transform: translateY(1px);
   }
 
-  .bottom-bar-item.primary-bg:hover {
-    background: var(--accent-hover);
-    color: white;
+  /* Hero / Main Booking CTA in the Bar */
+  .bottom-bar-item.bottom-bar-item--book {
+    flex: 1.45;
+    background: linear-gradient(135deg, #FF8A1E 0%, #F58220 50%, #E06805 100%);
+    color: #FFFFFF !important;
+    border-radius: 18px;
+    padding: 8px 10px;
+    position: relative;
+    overflow: visible;
+    box-shadow: 
+      0 6px 18px rgba(245, 130, 32, 0.42),
+      0 2px 6px rgba(245, 130, 32, 0.25),
+      inset 0 1px 1px rgba(255, 255, 255, 0.35);
+    transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+    animation: bookCtaPulse 3.5s infinite ease-in-out;
   }
 
-  .text-whatsapp {
-    color: #25D366 !important;
+  @keyframes bookCtaPulse {
+    0%, 100% {
+      box-shadow: 
+        0 6px 18px rgba(245, 130, 32, 0.42),
+        0 2px 6px rgba(245, 130, 32, 0.25),
+        inset 0 1px 1px rgba(255, 255, 255, 0.35);
+      transform: scale(1);
+    }
+    50% {
+      box-shadow: 
+        0 8px 24px rgba(245, 130, 32, 0.65),
+        0 0 0 4px rgba(245, 130, 32, 0.2),
+        inset 0 1px 1px rgba(255, 255, 255, 0.5);
+      transform: scale(1.02);
+    }
   }
 
-  /* Give some bottom padding to page so content isn't hidden behind bottom bar */
+  /* Radial ambient ring behind button */
+  .book-pulse-ring {
+    position: absolute;
+    inset: -3px;
+    border-radius: 21px;
+    background: linear-gradient(135deg, rgba(255, 160, 60, 0.6), rgba(245, 130, 32, 0.1));
+    z-index: -1;
+    opacity: 0.7;
+    animation: ringBreathing 2.4s infinite ease-out;
+    pointer-events: none;
+  }
+
+  @keyframes ringBreathing {
+    0% {
+      transform: scale(0.96);
+      opacity: 0.8;
+    }
+    50% {
+      transform: scale(1.05);
+      opacity: 0.2;
+    }
+    100% {
+      transform: scale(0.96);
+      opacity: 0.8;
+    }
+  }
+
+  /* Shimmer beam across button */
+  .book-pill-shine {
+    position: absolute;
+    top: 0;
+    left: -120%;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(255, 255, 255, 0.45) 50%,
+      transparent 100%
+    );
+    transform: skewX(-24deg);
+    animation: ctaShimmer 3.2s infinite ease-in-out;
+    pointer-events: none;
+    border-radius: 18px;
+  }
+
+  @keyframes ctaShimmer {
+    0%, 35% {
+      left: -120%;
+    }
+    65%, 100% {
+      left: 180%;
+    }
+  }
+
+  /* Mini badge sitting above Book Now */
+  .book-discount-tag {
+    position: absolute;
+    top: -9px;
+    right: 6px;
+    background: #0F3D3E;
+    color: #FFE2AA;
+    font-size: 0.58rem;
+    font-weight: 800;
+    padding: 1px 6px;
+    border-radius: 999px;
+    display: inline-flex;
+    align-items: center;
+    gap: 2px;
+    letter-spacing: 0.3px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(245, 130, 32, 0.5);
+    animation: tagBounce 3.5s infinite ease-in-out;
+    pointer-events: none;
+  }
+
+  @keyframes tagBounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-2px);
+    }
+  }
+
+  .book-btn-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    width: 100%;
+    position: relative;
+    z-index: 2;
+  }
+
+  .book-btn-text {
+    font-size: 0.88rem;
+    font-weight: 800;
+    letter-spacing: 0.3px;
+    font-family: var(--font-heading, 'Outfit', sans-serif);
+    line-height: 1;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  }
+
+  .book-btn-icon {
+    flex-shrink: 0;
+    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.15));
+  }
+
+  .book-btn-arrow {
+    flex-shrink: 0;
+    transition: transform 0.2s ease;
+    filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.2));
+  }
+
+  .bottom-bar-item.bottom-bar-item--book:active {
+    transform: scale(0.95);
+  }
+
+  .bottom-bar-item.bottom-bar-item--book:active .book-btn-arrow {
+    transform: translateX(2px);
+  }
+
+  /* Ensure page content has comfortable spacing above floating dock */
   body {
-    padding-bottom: 64px;
+    padding-bottom: 92px !important;
   }
 }
 

@@ -9,7 +9,7 @@ const AboutSection = () => {
     <section id="about" className="about-section bg-ivory">
       
       <div className="section-padding">
-        <div className="container" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '4rem', alignItems: 'center' }}>
+        <div className="container about-container feature-grid-2col" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '4rem', alignItems: 'center' }}>
           
           <motion.div 
             style={{ position: 'relative' }}
