@@ -405,93 +405,37 @@
     font-size: 0.72rem !important;
   }
 
-  /* Checklists & Benefit items (Invisalign, Implants, Maxillofacial) */
+  /* Checklists & Benefit items (Invisalign, Implants only — maxillofacial now self-contained) */
   section[id="invisalign"] ul,
-  section[id="implants"] ul,
-  section[id="maxillofacial-prosthetics"] ul,
-  .maxillofacial-list {
+  section[id="implants"] ul {
     gap: 0.45rem !important;
     margin-bottom: 1rem !important;
     padding-left: 0 !important;
   }
 
   section[id="invisalign"] ul li,
-  section[id="implants"] ul li,
-  section[id="maxillofacial-prosthetics"] ul li,
-  .maxillofacial-list-item {
+  section[id="implants"] ul li {
     font-size: 0.8rem !important;
     line-height: 1.35 !important;
     gap: 0.45rem !important;
     align-items: flex-start !important;
   }
 
-  .maxillofacial-item-text {
-    flex: 1;
-    font-size: 0.8rem;
-    line-height: 1.35;
-  }
-
-  .maxillofacial-item-text strong {
-    color: var(--text-primary);
-  }
-
-  .maxillofacial-item-desc {
-    color: var(--text-secondary);
-  }
-
   section[id="invisalign"] ul li svg,
-  section[id="implants"] ul li svg,
-  section[id="maxillofacial-prosthetics"] ul li svg,
-  .maxillofacial-heart-icon {
+  section[id="implants"] ul li svg {
     width: 14px !important;
     height: 14px !important;
     margin-top: 2px !important;
   }
 
-  /* Maxillofacial Tech Callout Box */
-  .maxillofacial-tech-box,
-  section[id="maxillofacial-prosthetics"] div[style*="padding: 1.25rem"] {
-    padding: 0.65rem 0.75rem !important;
-    margin-bottom: 1rem !important;
-    border-radius: 10px !important;
-    gap: 0.35rem !important;
-  }
-
-  .maxillofacial-tech-heading,
-  section[id="maxillofacial-prosthetics"] div[style*="padding: 1.25rem"] span[style*="fontSize: '0.75rem'"] {
-    font-size: 0.62rem !important;
-    letter-spacing: 0.8px !important;
-  }
-
-  .maxillofacial-tech-tags,
-  section[id="maxillofacial-prosthetics"] div[style*="display: flex; gap: 1.5rem"] {
-    gap: 0.35rem 0.65rem !important;
-  }
-
-  .maxillofacial-tech-chip,
-  section[id="maxillofacial-prosthetics"] div[style*="display: flex; gap: 1.5rem"] span {
-    font-size: 0.74rem !important;
-    gap: 0.3rem !important;
-  }
-
-  .maxillofacial-tech-chip svg {
-    width: 13px !important;
-    height: 13px !important;
-  }
-
-  /* CTA Buttons Row */
-  .maxillofacial-actions,
+  /* CTA Buttons Row (Invisalign & Implants) */
   section[id="invisalign"] div[style*="display: flex; gap: 1rem"],
-  section[id="implants"] div[style*="display: flex; gap: 1rem"],
-  section[id="maxillofacial-prosthetics"] div[style*="display: flex; gap: 1rem"] {
+  section[id="implants"] div[style*="display: flex; gap: 1rem"] {
     gap: 0.5rem !important;
   }
 
-  .btn-maxillofacial-primary,
-  .btn-maxillofacial-outline,
   section[id="invisalign"] a,
-  section[id="implants"] a,
-  section[id="maxillofacial-prosthetics"] a {
+  section[id="implants"] a {
     padding: 0.6rem 1.1rem !important;
     font-size: 0.82rem !important;
   }
@@ -520,16 +464,9 @@
     width: 14px !important;
     height: 14px !important;
   }
-
-  /* Maxillofacial Dual Sliders Gap */
-  .maxillofacial-gallery {
-    gap: 0.85rem !important;
-  }
-
-  .maxillofacial-gallery div[style*="marginBottom: '0.5rem'"] {
-    margin-bottom: 0.2rem !important;
-  }
 }
+
+
 
 /* ================================================================
    SERVICES GRID (Compacted)
@@ -1055,7 +992,7 @@
     backdrop-filter: blur(24px) saturate(180%);
     -webkit-backdrop-filter: blur(24px) saturate(180%);
     border-radius: 24px;
-    padding: 6px 8px;
+    padding: 14px 8px 6px;
     padding-bottom: calc(6px + env(safe-area-inset-bottom, 0px));
     border: 1px solid rgba(255, 255, 255, 0.8);
     box-shadow: 
@@ -1064,6 +1001,7 @@
       0 0 0 1px rgba(15, 61, 62, 0.06);
     gap: 4px;
     align-items: center;
+    overflow: visible;
     transform: translateZ(0);
     animation: barEntrance 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   }
@@ -1228,13 +1166,13 @@
   /* Mini badge sitting above Book Now */
   .book-discount-tag {
     position: absolute;
-    top: -9px;
-    right: 6px;
+    top: -11px;
+    right: 8px;
     background: #0F3D3E;
     color: #FFE2AA;
     font-size: 0.58rem;
     font-weight: 800;
-    padding: 1px 6px;
+    padding: 2px 7px;
     border-radius: 999px;
     display: inline-flex;
     align-items: center;
@@ -1244,6 +1182,7 @@
     border: 1px solid rgba(245, 130, 32, 0.5);
     animation: tagBounce 3.5s infinite ease-in-out;
     pointer-events: none;
+    z-index: 10;
   }
 
   @keyframes tagBounce {

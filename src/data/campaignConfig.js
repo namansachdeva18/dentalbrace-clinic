@@ -21,9 +21,9 @@ export const CAMPAIGN_CONFIG = {
   SHOW_DISCOUNT: true,
 
   // ─── Offer Expiry ─────────────────────────────────────────────────
-  // Campaign expires at end of September 30, 2026 (India Standard Time = UTC+5:30)
-  EXPIRY_DATE: new Date('2026-09-30T23:59:59+05:30'),
-  EXPIRY_DISPLAY: '30 September 2026',
+  // Campaign expires at end of October 30, 2026 (India Standard Time = UTC+5:30)
+  EXPIRY_DATE: new Date('2026-10-30T23:59:59+05:30'),
+  EXPIRY_DISPLAY: '30 October 2026',
 
   // ─── Campaign Identity ─────────────────────────────────────────────
   CAMPAIGN_NAME: 'wedding_season_dental_offer',
@@ -33,7 +33,7 @@ export const CAMPAIGN_CONFIG = {
   HEADLINE: 'Wedding Season Special',
   DISCOUNT_LINE: '20% OFF Camera-Ready Smile Makeovers & Clear Aligners',
   BONUS_LINE: 'Perfect Smiles for Brides, Grooms & Families',
-  VALIDITY_LINE: 'Limited Wedding Slots · Valid Till 30 September 2026',
+  VALIDITY_LINE: 'Limited Wedding Slots · Valid Till 30 October 2026',
   CTA_PRIMARY: 'Claim 20% Offer',
   CTA_SECONDARY: 'Book Consultation',
   CTA_FORM: 'Check My Eligibility',
