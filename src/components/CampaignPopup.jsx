@@ -22,11 +22,13 @@ const CampaignPopup = () => {
 
   const show = useCallback(() => {
     if (triggered) return;
-    const dismissed = sessionStorage.getItem('campaign_popup_dismissed');
-    if (dismissed) return;
+    // 24-hour cooldown — re-shows every new day to maximise lead capture
+    const lastShown = localStorage.getItem('campaign_popup_ts');
+    if (lastShown && Date.now() - Number(lastShown) < 24 * 60 * 60 * 1000) return;
     setPopupConfig(null);
     setOpen(true);
     setTriggered(true);
+    localStorage.setItem('campaign_popup_ts', String(Date.now()));
 
     if (typeof window !== 'undefined' && window.gtag) {
       window.gtag('event', 'campaign_popup_view', {
@@ -60,10 +62,10 @@ const CampaignPopup = () => {
   useEffect(() => {
     if (!isCampaignActive()) return;
 
-    // Trigger automatically on site open (2.5 seconds delay for smooth load)
-    let timer = setTimeout(show, 2500);
+    // Trigger 1 second after page load — maximises lead capture on every visit
+    let timer = setTimeout(show, 1000);
 
-    // Scroll trigger (fallback)
+    // Scroll trigger (fallback for users who scroll instantly)
     const handleScroll = () => {
       const scrolled = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
       if (scrolled >= CAMPAIGN_CONFIG.POPUP_SCROLL_THRESHOLD) {
@@ -98,7 +100,7 @@ const CampaignPopup = () => {
 
   const handleClose = () => {
     setOpen(false);
-    sessionStorage.setItem('campaign_popup_dismissed', '1');
+    // Keep localStorage timestamp — popup won't resurface for 24 hours
   };
 
   if (!open) return null;
@@ -189,8 +191,8 @@ const CampaignPopup = () => {
         </button>
 
         {/* Header Content */}
-        <div style={{ textAlign: 'center', marginBottom: '0.85rem', paddingTop: '0.1rem' }}>
-          {/* Badge: EXCLUSIVE SEASONAL OFFER */}
+        <div style={{ textAlign: 'center', marginBottom: '0.75rem', paddingTop: '0.1rem' }}>
+          {/* Badge pill */}
           <div style={{
             display: 'inline-flex',
             alignItems: 'center',
@@ -199,7 +201,7 @@ const CampaignPopup = () => {
             border: '1px solid rgba(220, 168, 88, 0.45)',
             borderRadius: '9999px',
             padding: '5px 14px',
-            marginBottom: '0.65rem',
+            marginBottom: '0.55rem',
             boxShadow: '0 2px 10px rgba(0,0,0,0.12)',
           }}>
             <Tag size={13} color="#f3be6c" />
@@ -210,7 +212,7 @@ const CampaignPopup = () => {
               letterSpacing: '0.6px',
               textTransform: 'uppercase',
             }}>
-              {popupConfig?.badge || 'Exclusive Seasonal Offer'}
+              {popupConfig?.badge || 'Wedding Season Special'}
             </span>
           </div>
 
@@ -222,7 +224,7 @@ const CampaignPopup = () => {
               fontSize: 'clamp(1.35rem, 4.5vw, 1.55rem)',
               fontWeight: 800,
               lineHeight: 1.22,
-              margin: '0 0 0.4rem',
+              margin: '0 0 0.35rem',
               fontFamily: 'var(--font-heading)',
               letterSpacing: '-0.3px',
             }}
@@ -230,7 +232,7 @@ const CampaignPopup = () => {
             {popupConfig?.title ? (
               popupConfig.title
             ) : (
-              <>Claim <span style={{ color: '#D47A22' }}>20% OFF</span> Your Smile Makeover</>
+              <>Book Your <span style={{ color: '#D47A22' }}>Free Smile Consultation</span></>
             )}
           </h2>
 
@@ -244,9 +246,47 @@ const CampaignPopup = () => {
               maxWidth: '360px',
             }}
           >
-            {popupConfig?.subtitle || 'Lock in your priority consultation and 20% seasonal voucher on select aesthetic & smile packages. Fill out the quick details below:'}
+            {popupConfig?.subtitle || 'Fill in your details and our team will call you to confirm your slot.'}
           </p>
         </div>
+
+        {/* ── 20% OFF Offer Strip ── */}
+        {CAMPAIGN_CONFIG.SHOW_DISCOUNT && (
+          <div style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            gap: '0.75rem',
+            background: 'linear-gradient(135deg, #0F3D3E 0%, #1a5254 100%)',
+            borderRadius: '14px',
+            padding: '0.75rem 1rem',
+            marginBottom: '0.85rem',
+            border: '1px solid rgba(245,130,32,0.25)',
+          }}>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '2px' }}>
+              <span style={{ fontSize: '0.68rem', color: 'rgba(255,255,255,0.6)', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.8px' }}>
+                🎊 Wedding Season Offer — Valid Till 30 Oct
+              </span>
+              <span style={{ fontSize: '0.92rem', color: '#ffffff', fontWeight: 700, lineHeight: 1.3 }}>
+                Smile Makeovers &amp; Clear Aligners
+              </span>
+            </div>
+            <div style={{
+              background: 'linear-gradient(135deg, #F58220 0%, #E06805 100%)',
+              color: '#ffffff',
+              fontWeight: 900,
+              fontSize: '1.15rem',
+              padding: '0.45rem 0.9rem',
+              borderRadius: '10px',
+              whiteSpace: 'nowrap',
+              letterSpacing: '-0.5px',
+              boxShadow: '0 4px 12px rgba(245,130,32,0.45)',
+              flexShrink: 0,
+            }}>
+              20% OFF
+            </div>
+          </div>
+        )}
 
         {/* Universal Wedding / Smile Lead Form */}
         <div className="popup-form-wrapper" style={{ marginTop: '0.65rem' }}>

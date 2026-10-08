@@ -347,6 +347,35 @@ export default function WeddingLeadForm({
         </div>
       )}
 
+      {/* 20% OFF Offer Reminder */}
+      <div style={{
+        display: 'flex',
+        alignItems: 'center',
+        gap: '0.6rem',
+        background: 'linear-gradient(135deg, #0F3D3E, #164f50)',
+        borderRadius: '12px',
+        padding: '0.6rem 0.9rem',
+        border: '1px solid rgba(245,130,32,0.2)',
+        marginTop: '0.25rem',
+      }}>
+        <div style={{
+          background: 'linear-gradient(135deg, #F58220, #E06805)',
+          color: '#fff',
+          fontWeight: 900,
+          fontSize: '1rem',
+          padding: '0.3rem 0.65rem',
+          borderRadius: '8px',
+          whiteSpace: 'nowrap',
+          flexShrink: 0,
+          letterSpacing: '-0.5px',
+        }}>
+          20% OFF
+        </div>
+        <span style={{ fontSize: '0.78rem', color: 'rgba(255,255,255,0.82)', lineHeight: 1.35, fontWeight: 500 }}>
+          Wedding Season offer on Smile Makeovers &amp; Aligners · Valid till 30 Oct
+        </span>
+      </div>
+
       {/* Submit Button */}
       <button
         type="submit"
